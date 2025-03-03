@@ -234,7 +234,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #a41184;
+  background: #6814c1;
   padding: 20px 40px;
   border-radius: 50px;
   font-size: 1.3rem;
@@ -249,7 +249,7 @@ a {
 }
 
 .contact-mail:hover {
-  background: #c4129d;
+  background: rgb(178, 18, 196);
   transform: scale(1.03);
 }
 
@@ -311,3 +311,19 @@ footer {
     margin: 10px 0;
   }
 }
+
+/* Uniformare l'altezza delle schede per allineare i bottoni */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.project-card .card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
