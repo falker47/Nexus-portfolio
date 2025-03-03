@@ -332,3 +332,15 @@ footer {
     justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row; /* Forza l'orientamento orizzontale */
+  }
+  .navbar ul {
+    flex-direction: row; /* Mantiene gli elementi sulla stessa riga */
+    margin-top: 0;
+  }
+  .navbar ul li {
+    margin: 0 10px; /* Margine orizzontale */
+  }
+}
