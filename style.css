@@ -334,13 +334,14 @@ footer {
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: row; /* Forza l'orientamento orizzontale */
+    flex-direction: row !important;
   }
   .navbar ul {
-    flex-direction: row; /* Mantiene gli elementi sulla stessa riga */
-    margin-top: 0;
+    flex-direction: row !important;
+    margin-top: 0 !important;
   }
   .navbar ul li {
-    margin: 0 10px; /* Margine orizzontale */
+    margin: 0 10px !important;
   }
 }
+
