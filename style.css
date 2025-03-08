@@ -239,10 +239,11 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  margin: 5px;
   background: #6814c1;
-  padding: 20px 40px;
-  border-radius: 50px;
-  font-size: 1.3rem;
+  padding: 20px 30px;
+  border-radius: 40px;
+  font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
   color: #fff;
@@ -298,6 +299,10 @@ footer {
   object-fit: cover;
   margin-right: 10px;
   vertical-align: middle;
+}
+
+footer a:hover {
+  color: #b92dfa;           /* Accento arancione ispirato alla palette */
 }
 
 /* Responsive */
