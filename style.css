@@ -337,6 +337,20 @@ footer a:hover {
     justify-content: space-between;
 }
 
+.button-row {
+  display: flex;
+  gap: 10px;      /* Spazio orizzontale tra i due bottoni */
+  margin-top: 10px;
+}
+
+/* Se vuoi uniformare lo stile dei bottoni, puoi aggiungere regole extra */
+.button-row a {
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: space-between; /* Testo a sinistra, icona a destra */
+  /* Puoi riutilizzare le stesse regole che usi per gli altri link */
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column; /* Disponi in colonne: prima il logo, poi il menu */
