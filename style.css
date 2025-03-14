@@ -338,17 +338,17 @@ footer a:hover {
 }
 
 .button-row {
-  display: flex;
-  gap: 10px;      /* Spazio orizzontale tra i due bottoni */
-  margin-top: 10px;
+  display: flex !important;
+  gap: 10px !important;      /* Spazio orizzontale tra i due bottoni */
+  margin-top: 10px !important;
 }
 
 /* Se vuoi uniformare lo stile dei bottoni, puoi aggiungere regole extra */
 .button-row a {
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: space-between; /* Testo a sinistra, icona a destra */
-  /* Puoi riutilizzare le stesse regole che usi per gli altri link */
+  display: inline-flex !important; 
+  flex: 1 !important;           /* Entrambi i link occuperanno la stessa larghezza */
+  align-items: center !important; 
+  justify-content: space-between !important; /* Testo a sinistra, icona a destra */
 }
 
 @media (max-width: 768px) {
