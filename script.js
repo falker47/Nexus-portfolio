@@ -51,6 +51,10 @@ const translations = {
     contactCurriculum: "Curriculum",
     contactMail: "Contattami",
     footerName: "Maurizio Falconi",
+    buttonVisitWeb: "Sito web",
+    githubRepo: "Repo GitHub",
+    exposition: "Esposizione",
+    WP: "Apri Whitepaper",
 
     T_NFT: "Sistema di valorizzazione NFT",
     T_Ripetizioni: "Sito Ripetizioni",
@@ -84,6 +88,10 @@ const translations = {
     contactCurriculum: "Resume",
     contactMail: "Contact Me",
     footerName: "Maurizio Falconi",
+    buttonVisitWeb: "Website",
+    githubRepo: "GitHub Repo",
+    exposition: "Exposition",
+    WP: "Open Whitepaper",
 
     T_NFT: "NFTs as Valorization System",
     T_Ripetizioni: "Tutoring Website",

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar">
@@ -33,7 +35,7 @@
       <li><a href="#projects" data-i18n="navProjects">Progetti</a></li>
       <li><a href="#contact" data-i18n="navContact">Contatti</a></li>
     </ul>
-  
+
     <!-- Toggle lingua spostato a destra -->
     <div class="language-toggle">
       <input type="checkbox" id="toggle-lang">
@@ -64,17 +66,20 @@
     <div class="about-container">
       <h2 data-i18n="aboutTitle">Chi sono?</h2>
       <p data-i18n="aboutText1">
-        Semplicemente una persona che si appassiona facilmente ad ogni cosa. Mi piace scomporre problemi complessi per trovare soluzioni eleganti, che sia in un’equazione, un algoritmo o attraverso la scrittura.
+        Semplicemente una persona che si appassiona facilmente ad ogni cosa. Mi piace scomporre problemi complessi per
+        trovare soluzioni eleganti, che sia in un’equazione, un algoritmo o attraverso la scrittura.
       </p>
       <p data-i18n="aboutText2">
-        Sono due le forze fondamentali che mi muovono: capire il mondo che mi circonda e creare cose che possano arricchirlo. Nel mio portfolio trovi un po’ di tutto: giochi che sfidano la mente, tool utili ma soprattutto una parte di me.
+        Sono due le forze fondamentali che mi muovono: capire il mondo che mi circonda e creare cose che possano
+        arricchirlo. Nel mio portfolio trovi un po’ di tutto: giochi che sfidano la mente, tool utili ma soprattutto una
+        parte di me.
       </p>
       <p data-i18n="aboutText3">Buona navigazione!</p>
     </div>
   </section>
 
-   <!-- Sezione Progetti -->
-   <section class="projects" id="projects">
+  <!-- Sezione Progetti -->
+  <section class="projects" id="projects">
     <h2 data-i18n="projectsTitle">Progetti</h2>
     <div class="project-grid">
       <!-- Qui vanno le project-card (rimangono invariate) -->
@@ -84,17 +89,18 @@
         <img src="assets/SpaceYcapstone.webp" alt="Data Science Capstone">
         <div class="card-content">
           <h3>Data Science Capstone</h3>
-          <p data-i18n="DataScience">Progetto che attraverso l’analisi dati in Python e tecniche di machine learning prevede il successo
+          <p data-i18n="DataScience">Progetto che attraverso l’analisi dati in Python e tecniche di machine learning
+            prevede il successo
             dell’atterraggio dei razzi per ottimizzare la stima dei costi e identificare eventuali siti di lancio
             ottimali.</p>
           <div class="button-row">
             <a href="https://drive.google.com/file/d/1lFVo_I6sy9K5Snj1fSZGNUSa7GafGIKC/view?usp=drive_link"
               target="_blank">
-              <span class="button-text">Esposizione</span>
+              <span class="button-text" data-i18n="exposition">Esposizione</span>
               <span class="button-icon"><i class="fas fa-file-pdf"></i></span>
             </a>
             <a href="https://github.com/falker47/applied-data-science-capstone" target="_blank">
-              <span class="button-text">Repo GitHub</span>
+              <span class="button-text" data-i18n="githubRepo">Repo GitHub</span>
               <span class="button-icon"><i class="fab fa-github"></i></span>
             </a>
           </div>
@@ -111,11 +117,11 @@
           </p>
           <div class="button-row">
             <a href="https://falker47.github.io/IBAN-Checker/" target="_blank">
-              <span class="button-text">Sito Web</span>
+              <span class="button-text" data-i18n="buttonVisitWeb">Sito Web</span>
               <span class="button-icon"><i class="fas fa-globe"></i></span>
             </a>
             <a href="https://github.com/falker47/IBAN-Checker" target="_blank">
-              <span class="button-text">Repo GitHub</span>
+              <span class="button-text" data-i18n="githubRepo">Repo GitHub</span>
               <span class="button-icon"><i class="fab fa-github"></i></span>
             </a>
           </div>
@@ -126,15 +132,16 @@
         <img src="assets/sommatrix.webp" alt="Sommatrix">
         <div class="card-content">
           <h3>Sommatrix</h3>
-          <p data-i18n="Sommatrix">Puzzle matematico in cui il giocatore seleziona o cancella numeri in una griglia per far combaciare le
+          <p data-i18n="Sommatrix">Puzzle matematico in cui il giocatore seleziona o cancella numeri in una griglia per
+            far combaciare le
             somme di ogni riga e colonna con i target prestabiliti.</p>
           <div class="button-row">
             <a href="https://falker47.github.io/SOMMATRIX/" target="_blank">
-              <span class="button-text">Sito Web</span>
+              <span class="button-text" data-i18n="buttonVisitWeb">Sito Web</span>
               <span class="button-icon"><i class="fas fa-globe"></i></span>
             </a>
             <a href="https://github.com/falker47/SOMMATRIX" target="_blank">
-              <span class="button-text">Repo GitHub</span>
+              <span class="button-text" data-i18n="githubRepo">Repo GitHub</span>
               <span class="button-icon"><i class="fab fa-github"></i></span>
             </a>
           </div>
@@ -149,11 +156,11 @@
             anagrafici e viceversa, ovvero recuperare dal codice fiscale sesso, data e luogo di nascita.</p>
           <div class="button-row">
             <a href="https://falker47.github.io/Codice-Fiscale/" target="_blank">
-              <span class="button-text">Sito Web</span>
+              <span class="button-text" data-i18n="buttonVisitWeb">Sito Web</span>
               <span class="button-icon"><i class="fas fa-globe"></i></span>
             </a>
             <a href="https://github.com/falker47/Codice-Fiscale" target="_blank">
-              <span class="button-text">Repo GitHub</span>
+              <span class="button-text" data-i18n="githubRepo">Repo GitHub</span>
               <span class="button-icon"><i class="fab fa-github"></i></span>
             </a>
           </div>
@@ -164,11 +171,12 @@
         <img src="assets/BLOCKBUSTERS_4_EY.webp" alt="NFTs as Employees Valorization System">
         <div class="card-content">
           <h3 data-i18n="T_NFT">NFTs as Valorization System</h3>
-          <p data-i18n="NFT">White Paper (in italian) about the valoritazion of the employees via NFT adoptable by companies.</p>
+          <p data-i18n="NFT">White Paper (in italian) about the valoritazion of the employees via NFT adoptable by
+            companies.</p>
           <!-- Un solo link con testo e icona -->
           <div class="button-row">
             <a href="https://drive.google.com/file/d/1b-I1mdc0nIRg-mFKSC6pRq7Ay13otWWp/view" target="_blank">
-              <span class="button-text">Apri White Paper</span>
+              <span class="button-text" data-i18n="WP">Apri White Paper</span>
               <span class="button-icon"><i class="fas fa-file-pdf"></i></span>
             </a>
           </div>
@@ -179,15 +187,16 @@
         <img src="assets/ledgerlite.webp" alt="LedgerLite">
         <div class="card-content">
           <h3>LedgerLite</h3>
-          <p data-i18n="LedgerLite">Questa applicazione ti permette di gestire in modo semplice i tuoi crediti e debiti.<br>
+          <p data-i18n="LedgerLite">Questa applicazione ti permette di gestire in modo semplice i tuoi crediti e
+            debiti.<br>
             In ogni operazione viene specificato il nominativo, l’importo e una descrizione.</p>
           <div class="button-row">
             <a href="https://falker47.github.io/LedgerLite/" target="_blank">
-              <span class="button-text">Sito Web</span>
+              <span class="button-text" data-i18n="buttonVisitWeb">Sito Web</span>
               <span class="button-icon"><i class="fas fa-globe"></i></span>
             </a>
             <a href="https://github.com/falker47/LedgerLite" target="_blank">
-              <span class="button-text">Repo GitHub</span>
+              <span class="button-text" data-i18n="githubRepo">Repo GitHub</span>
               <span class="button-icon"><i class="fab fa-github"></i></span>
             </a>
           </div>
@@ -198,15 +207,16 @@
         <img src="assets/crack-the-code.webp" alt="Crack the Code">
         <div class="card-content">
           <h3>Crack the Code</h3>
-          <p data-i18n="CracktheCode">Gioco di logica basato sulle dinamiche di Mastermind e Hit and Blow in cui devi decifrare un codice segreto
+          <p data-i18n="CracktheCode">Gioco di logica basato sulle dinamiche di Mastermind e Hit and Blow in cui devi
+            decifrare un codice segreto
             usando deduzione e feedback progressivi.</p>
           <div class="button-row">
             <a href="https://falker47.github.io/Crack-the-Code/" target="_blank">
-              <span class="button-text">Sito Web</span>
+              <span class="button-text" data-i18n="buttonVisitWeb">Sito Web</span>
               <span class="button-icon"><i class="fas fa-globe"></i></span>
             </a>
             <a href="https://github.com/falker47/Crack-the-Code" target="_blank">
-              <span class="button-text">Repo GitHub</span>
+              <span class="button-text" data-i18n="githubRepo">Repo GitHub</span>
               <span class="button-icon"><i class="fab fa-github"></i></span>
             </a>
           </div>
@@ -217,13 +227,14 @@
         <img src="assets/ripetizioni.webp" alt="Prenotazione Ripetizioni">
         <div class="card-content">
           <h3 data-i18n="T_Ripetizioni">Prenotazione Ripetizioni</h3>
-          <p data-i18n="Ripetizioni">Il sito web dove presento la mia attività di ripetizioni dove i miei studenti possono prenotare le lezioni
+          <p data-i18n="Ripetizioni">Il sito web dove presento la mia attività di ripetizioni dove i miei studenti
+            possono prenotare le lezioni
             di matematica e fisica e consultare il mio materiale
             didattico.</p>
           <div class="button-row">
             <a href="https://falker47.github.io/mauriziofalconi-ripetizioni/" target="_blank"><span
-                class="button-text">Visita sito web</span>
-              <span class="button-icon"><i class="fas fa-arrow-right"></i></span></a>
+                class="button-text" data-i18n="buttonVisitWeb">Visita sito web</span>
+              <span class="button-icon"><i class="fas fa-globe"></i></span></a>
           </div>
         </div>
       </div>
@@ -267,4 +278,5 @@
   <!-- Link al file JavaScript -->
   <script src="script.js"></script>
 </body>
+
 </html>
