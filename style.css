@@ -470,7 +470,7 @@ footer a:hover {
   /* UK bandiera trasparente quando non selezionata */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   .navbar ul li a {
     font-size: 0.9rem;
