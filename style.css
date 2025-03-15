@@ -8,8 +8,10 @@
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  background: #121212; /* Background scuro */
-  color: #ddd; /* Testo chiaro */
+  background: #121212;
+  /* Background scuro */
+  color: #ddd;
+  /* Testo chiaro */
 }
 
 a {
@@ -19,8 +21,8 @@ a {
 
 /* Navbar */
 .navbar {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 20px;
   background: rgba(0, 0, 0, 0.85);
@@ -30,14 +32,20 @@ a {
 }
 
 .navbar .logo {
+  flex: 0 0 30%;
+  margin-right: 20px;
   font-size: 1.5rem;
   font-weight: 600;
   color: #fff;
 }
 
 .navbar ul {
+  flex: 0 0 40%;
   list-style: none;
   display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* Spaziatura fra i link */
 }
 
 .navbar ul li {
@@ -79,7 +87,8 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Filtro scuro */
+  background: rgba(0, 0, 0, 0.5);
+  /* Filtro scuro */
   z-index: -1;
 }
 
@@ -99,7 +108,7 @@ a {
 
 .hero-card {
   background: rgba(0, 0, 0, 0.75);
-  padding: 20px 40px;
+  padding: 5px 40px;
   padding-bottom: 30px;
   border-radius: 10px;
   display: flex;
@@ -135,7 +144,8 @@ a {
 }
 
 /* Sezione About Me */
-.about, .contact {
+.about,
+.contact {
   padding: 60px 20px;
   background: linear-gradient(135deg, #191919, rgb(45, 11, 80));
   color: #ddd;
@@ -182,7 +192,7 @@ a {
   background: #1e1e1e;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
@@ -302,7 +312,8 @@ footer {
 }
 
 footer a:hover {
-  color: #b92dfa;           /* Accento arancione ispirato alla palette */
+  color: #b92dfa;
+  /* Accento arancione ispirato alla palette */
 }
 
 /* Responsive */
@@ -310,13 +321,16 @@ footer a:hover {
   .hero h1 {
     font-size: 2.5rem;
   }
+
   .navbar {
     flex-direction: column;
   }
+
   .navbar ul {
     flex-direction: column;
     margin-top: 10px;
   }
+
   .navbar ul li {
     margin: 10px 0;
   }
@@ -324,60 +338,163 @@ footer a:hover {
 
 /* Uniformare l'altezza delle schede per allineare i bottoni */
 .project-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .project-card .card-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .button-row {
   display: flex !important;
-  gap: 10px !important;      /* Spazio orizzontale tra i due bottoni */
+  gap: 10px !important;
+  /* Spazio orizzontale tra i due bottoni */
   margin-top: 10px !important;
 }
 
 /* Se vuoi uniformare lo stile dei bottoni, puoi aggiungere regole extra */
 .button-row a {
-  display: inline-flex !important; 
-  flex: 1 !important;           /* Entrambi i link occuperanno la stessa larghezza */
-  align-items: center !important; 
-  justify-content: space-between !important; /* Testo a sinistra, icona a destra */
+  display: inline-flex !important;
+  flex: 1 !important;
+  /* Entrambi i link occuperanno la stessa larghezza */
+  align-items: center !important;
+  justify-content: space-between !important;
+  /* Testo a sinistra, icona a destra */
 }
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* Disponi in colonne: prima il logo, poi il menu */
+    flex-direction: column;
+    /* Disponi in colonne: prima il logo, poi il menu */
     align-items: center;
   }
+
   .navbar .logo {
     width: 100%;
     text-align: center;
     margin-bottom: 10px;
   }
+
   .navbar ul {
-    flex-direction: row; /* I link rimangono in orizzontale */
+    flex-direction: row;
+    /* I link rimangono in orizzontale */
     width: 100%;
     justify-content: center;
     margin: 0;
   }
+
   .navbar ul li {
     margin: 0 10px;
+  }
+
+  .language-toggle {
+    margin-top: 15px;
   }
 }
 
 footer a {
-  color: #FFF;           
+  color: #FFF;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: rgb(178, 18, 196);              /* Hover: viola */
+  color: rgb(178, 18, 196);
+  /* Hover: viola */
+}
+
+.language-toggle {
+  flex: 0 0 30% !important;
+  margin-left: 20px;
+  /* Distanza dal menu se serve */
+  justify-content: flex-end;
+}
+
+.language-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.language-toggle .toggle {
+  
+  margin-left: auto !important;
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  /* Aumentato da 60px a 70px */
+  height: 34px;
+  /* Aumentato da 30px a 34px */
+  background: #444;
+  border-radius: 34px;
+  cursor: pointer;
+}
+
+/* Pallino bianco */
+.language-toggle .toggle-switch {
+  position: absolute;
+  z-index: 0;
+  /* Metti il pallino sotto la bandiera */
+  top: 3px;
+  left: 3px;
+  width: 28px;
+  /* Larghezza pallino */
+  height: 28px;
+  /* Altezza pallino */
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Bandiera IT a sinistra */
+.language-toggle .toggle::before {
+  z-index: 1;
+  /* Metti il pallino sotto la bandiera */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  /* Più spazio dal bordo sinistro */
+  transform: translateY(-50%);
+  width: 22px;
+  height: 15px;
+  background: url("https://flagcdn.com/h20/it.png") no-repeat center/cover;
+  border: 1px solid #fff;
+  border-radius: 2px;
+}
+
+/* Bandiera UK a destra */
+.language-toggle .toggle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  /* Più spazio dal bordo destro */
+  transform: translateY(-50%);
+  width: 22px;
+  height: 15px;
+  background: url("https://flagcdn.com/h20/gb.png") no-repeat center/cover;
+  border: 1px solid #fff;
+  border-radius: 2px;
+}
+
+/* Quando è selezionato (lingua EN), pallino si sposta a destra */
+.language-toggle input[type="checkbox"]:checked+.toggle .toggle-switch {
+  transform: translateX(36px);
+  /* Adattato alla nuova larghezza */
+}
+
+/* Opacità bandiere (opzionale) */
+.language-toggle input[type="checkbox"]:checked+.toggle::before {
+  opacity: 0.3;
+  /* IT bandiera trasparente */
+}
+
+.language-toggle input[type="checkbox"]:not(:checked)+.toggle::after {
+  opacity: 0.3;
+  /* UK bandiera trasparente quando non selezionata */
 }

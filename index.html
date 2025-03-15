@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +20,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
   <!-- Navbar -->
   <nav class="navbar">
@@ -30,11 +28,19 @@
       Maurizio Falconi
     </div>
     <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">Chi sono</a></li>
-      <li><a href="#projects">Progetti</a></li>
-      <li><a href="#contact">Contatti</a></li>
+      <li><a href="#hero" data-i18n="navHome">Home</a></li>
+      <li><a href="#about" data-i18n="navAbout">Chi sono</a></li>
+      <li><a href="#projects" data-i18n="navProjects">Progetti</a></li>
+      <li><a href="#contact" data-i18n="navContact">Contatti</a></li>
     </ul>
+  
+    <!-- Toggle lingua spostato a destra -->
+    <div class="language-toggle">
+      <input type="checkbox" id="toggle-lang">
+      <label for="toggle-lang" class="toggle">
+        <span class="toggle-switch"></span>
+      </label>
+    </div>
   </nav>
 
   <!-- Sezione Hero -->
@@ -46,9 +52,9 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-card">
-        <h1>Benvenuto in Nexus Portfolio</h1>
-        <p>Il punto d'incontro di tutti i miei progetti.</p>
-        <a href="#projects">Esplora Ora</a>
+        <h1 data-i18n="heroTitle">Benvenuto in Nexus Portfolio</h1>
+        <p data-i18n="heroSubtitle">Il punto d'incontro di tutti i miei progetti.</p>
+        <a href="#projects" data-i18n="heroButton">Esplora Ora</a>
       </div>
     </div>
   </section>
@@ -56,24 +62,20 @@
   <!-- Sezione About Me -->
   <section class="about" id="about">
     <div class="about-container">
-      <h2>Chi sono?</h2>
-      <p>
-        Semplicemente una persona che si appassiona facilmente ad ogni cosa.<br>
-        Mi piace scomporre problemi complessi per trovare soluzioni eleganti, che sia in un’equazione, un algoritmo o
-        attraverso la scrittura.
+      <h2 data-i18n="aboutTitle">Chi sono?</h2>
+      <p data-i18n="aboutText1">
+        Semplicemente una persona che si appassiona facilmente ad ogni cosa. Mi piace scomporre problemi complessi per trovare soluzioni eleganti, che sia in un’equazione, un algoritmo o attraverso la scrittura.
       </p>
-      <p>
-        Sono due le forze fondamentali che mi muovono: capire il mondo che mi circonda e creare cose che possano
-        arricchirlo.<br>
-        Nel mio portfolio trovi un po’ di tutto: giochi che sfidano la mente, tool utili ma soprattutto una parte di me.
+      <p data-i18n="aboutText2">
+        Sono due le forze fondamentali che mi muovono: capire il mondo che mi circonda e creare cose che possano arricchirlo. Nel mio portfolio trovi un po’ di tutto: giochi che sfidano la mente, tool utili ma soprattutto una parte di me.
       </p>
-      <p>Buona navigazione!</p>
+      <p data-i18n="aboutText3">Buona navigazione!</p>
     </div>
   </section>
 
-  <!-- Sezione Progetti -->
-  <section class="projects" id="projects">
-    <h2>Progetti</h2>
+   <!-- Sezione Progetti -->
+   <section class="projects" id="projects">
+    <h2 data-i18n="projectsTitle">Progetti</h2>
     <div class="project-grid">
       <!-- Qui vanno le project-card (rimangono invariate) -->
 
@@ -82,7 +84,7 @@
         <img src="assets/SpaceYcapstone.webp" alt="Data Science Capstone">
         <div class="card-content">
           <h3>Data Science Capstone</h3>
-          <p>Progetto che attraverso l’analisi dati in Python e tecniche di machine learning prevede il successo
+          <p data-i18n="DataScience">Progetto che attraverso l’analisi dati in Python e tecniche di machine learning prevede il successo
             dell’atterraggio dei razzi per ottimizzare la stima dei costi e identificare eventuali siti di lancio
             ottimali.</p>
           <div class="button-row">
@@ -102,8 +104,8 @@
       <div class="project-card">
         <img src="assets/iban-checker.webp" alt="Verifica IBAN">
         <div class="card-content">
-          <h3>Verifica IBAN</h3>
-          <p>Web app che verifica la validità degli IBAN italiani.
+          <h3 data-i18n="T_IbanChecker">Verifica IBAN</h3>
+          <p data-i18n="IbanChecker">Web app che verifica la validità degli IBAN italiani.
             In caso di IBAN errato, propone correzioni ipotizzando che si abbia inserito male un carattere o se ne siano
             invertiti due.
           </p>
@@ -124,7 +126,7 @@
         <img src="assets/sommatrix.webp" alt="Sommatrix">
         <div class="card-content">
           <h3>Sommatrix</h3>
-          <p>Puzzle matematico in cui il giocatore seleziona o cancella numeri in una griglia per far combaciare le
+          <p data-i18n="Sommatrix">Puzzle matematico in cui il giocatore seleziona o cancella numeri in una griglia per far combaciare le
             somme di ogni riga e colonna con i target prestabiliti.</p>
           <div class="button-row">
             <a href="https://falker47.github.io/SOMMATRIX/" target="_blank">
@@ -142,8 +144,8 @@
       <div class="project-card">
         <img src="assets/codice-fiscale.webp" alt="Calcolo Codice Fiscale">
         <div class="card-content">
-          <h3>Calcolo Codice Fiscale</h3>
-          <p>Web app che calcola il codice fiscale italiano a partire dai dati
+          <h3 data-i18n="T_CodiceFiscale">Calcolo Codice Fiscale</h3>
+          <p data-i18n="CodiceFiscale">Web app che calcola il codice fiscale italiano a partire dai dati
             anagrafici e viceversa, ovvero recuperare dal codice fiscale sesso, data e luogo di nascita.</p>
           <div class="button-row">
             <a href="https://falker47.github.io/Codice-Fiscale/" target="_blank">
@@ -161,8 +163,8 @@
       <div class="project-card">
         <img src="assets/BLOCKBUSTERS_4_EY.webp" alt="NFTs as Employees Valorization System">
         <div class="card-content">
-          <h3>NFTs as Employees Valorization System</h3>
-          <p>White Paper (in italian) about the valoritazion of the employees via NFT adoptable by companies.</p>
+          <h3 data-i18n="T_NFT">NFTs as Valorization System</h3>
+          <p data-i18n="NFT">White Paper (in italian) about the valoritazion of the employees via NFT adoptable by companies.</p>
           <!-- Un solo link con testo e icona -->
           <div class="button-row">
             <a href="https://drive.google.com/file/d/1b-I1mdc0nIRg-mFKSC6pRq7Ay13otWWp/view" target="_blank">
@@ -177,7 +179,7 @@
         <img src="assets/ledgerlite.webp" alt="LedgerLite">
         <div class="card-content">
           <h3>LedgerLite</h3>
-          <p>Questa applicazione ti permette di gestire in modo semplice i tuoi crediti e debiti.<br>
+          <p data-i18n="LedgerLite">Questa applicazione ti permette di gestire in modo semplice i tuoi crediti e debiti.<br>
             In ogni operazione viene specificato il nominativo, l’importo e una descrizione.</p>
           <div class="button-row">
             <a href="https://falker47.github.io/LedgerLite/" target="_blank">
@@ -196,7 +198,7 @@
         <img src="assets/crack-the-code.webp" alt="Crack the Code">
         <div class="card-content">
           <h3>Crack the Code</h3>
-          <p>Gioco di logica basato sulle dinamiche di Mastermind e Hit and Blow in cui devi decifrare un codice segreto
+          <p data-i18n="CracktheCode">Gioco di logica basato sulle dinamiche di Mastermind e Hit and Blow in cui devi decifrare un codice segreto
             usando deduzione e feedback progressivi.</p>
           <div class="button-row">
             <a href="https://falker47.github.io/Crack-the-Code/" target="_blank">
@@ -214,8 +216,8 @@
       <div class="project-card">
         <img src="assets/ripetizioni.webp" alt="Prenotazione Ripetizioni">
         <div class="card-content">
-          <h3>Prenotazione Ripetizioni</h3>
-          <p>Il sito web dove presento la mia attività di ripetizioni dove i miei studenti possono prenotare le lezioni
+          <h3 data-i18n="T_Ripetizioni">Prenotazione Ripetizioni</h3>
+          <p data-i18n="Ripetizioni">Il sito web dove presento la mia attività di ripetizioni dove i miei studenti possono prenotare le lezioni
             di matematica e fisica e consultare il mio materiale
             didattico.</p>
           <div class="button-row">
@@ -233,11 +235,11 @@
     <div class="contact-mail-container">
       <a class="contact-mail" href="https://falker47.github.io/myresume/" target="_blank">
         <i class="fas fa-user"></i>
-        <span>Curriculum</span>
+        <span data-i18n="contactCurriculum">Curriculum</span>
       </a>
       <a class="contact-mail" href="mailto:maurizio.falconi47@gmail.com">
         <i class="fas fa-envelope"></i>
-        <span>Contattami</span>
+        <span data-i18n="contactMail">Contattami</span>
       </a>
     </div>
     <div class="contact-socials">
@@ -253,11 +255,11 @@
     </div>
   </section>
 
-
+  <!-- Footer -->
   <footer>
     <p>
       <a href="https://falker47.github.io/Nexus-portfolio/">
-        &copy; <span id="currentYear"></span> Maurizio Falconi - Nexus Portfolio
+        &copy; <span id="currentYear"></span> <span data-i18n="footerName">Maurizio Falconi</span> - Nexus Portfolio
       </a>
     </p>
   </footer>
@@ -265,5 +267,4 @@
   <!-- Link al file JavaScript -->
   <script src="script.js"></script>
 </body>
-
 </html>
