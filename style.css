@@ -93,7 +93,7 @@ a {
 }
 
 .hero-content {
-  margin-top: 40px;
+  margin-top: 20px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -501,7 +501,7 @@ footer a:hover {
   }
 
   .hero-content {
-    margin-top: 60px;
+    margin-top: 40px;
   }
 
   /* Se la hero-card ha margini non voluti, puoi forzarla a centrarsi */
