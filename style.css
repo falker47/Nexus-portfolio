@@ -501,7 +501,7 @@ footer a:hover {
   }
 
   .hero-content {
-    margin-top: 90px;
+    margin-top: 60px;
   }
 
   /* Se la hero-card ha margini non voluti, puoi forzarla a centrarsi */
@@ -511,5 +511,6 @@ footer a:hover {
 
   .language-toggle {
     margin-top: 15px;
+    margin-bottom: -15px;
   }
 }
