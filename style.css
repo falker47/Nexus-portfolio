@@ -500,10 +500,6 @@ footer a:hover {
     margin: 0 10px;
   }
 
-  .hero-content {
-    margin-top: 40px;
-  }
-
   /* Se la hero-card ha margini non voluti, puoi forzarla a centrarsi */
   .hero-card {
     margin: auto;
