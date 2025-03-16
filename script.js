@@ -43,7 +43,7 @@ const translations = {
     heroTitle: "Benvenuto in Nexus Portfolio",
     heroSubtitle: "Il punto d'incontro di tutti i miei progetti.",
     heroButton: "Esplora Ora",
-    aboutTitle: "Chi sono?",
+    aboutTitle: "Chi sono",
     aboutText1: "Semplicemente una persona che si appassiona facilmente ad ogni cosa. Mi piace scomporre problemi complessi per trovare soluzioni eleganti.",
     aboutText2: "Sono due le forze fondamentali che mi muovono: capire il mondo che mi circonda e creare cose che possano arricchirlo.",
     aboutText3: "Buona navigazione!",
