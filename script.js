@@ -64,11 +64,11 @@ const translations = {
     IbanChecker: "Web app che verifica la validità degli IBAN italiani. In caso di IBAN errato, propone correzioni ipotizzando che si abbia inserito male un carattere o se ne siano invertiti due.",
     Sommatrix: "Puzzle matematico in cui il giocatore seleziona o cancella numeri in una griglia per far combaciare le somme di ogni riga e colonna con i target prestabiliti.",
     CodiceFiscale: "Web app che calcola il codice fiscale italiano a partire dai dati anagrafici e viceversa, ovvero recuperare dal codice fiscale sesso, data e luogo di nascita.",
-    DataScience: "Progetto che attraverso l’analisi dati in Python e tecniche di machine learning prevede il successo dell’atterraggio dei razzi per ottimizzare la stima dei costi e identificare eventuali siti di lancio ottimali.",
+    DataScience: "Progetto che attraverso l’analisi dati in Python e tecniche di machine learning prevede il successo dell’atterraggio di un razzo al fine di ottimizzare la stima dei costi e identificare eventuali siti di lancio ottimali.",
     CracktheCode: "Gioco di logica basato sulle dinamiche di Mastermind e Hit and Blow in cui devi decifrare un codice segreto usando deduzione e feedback progressivi.",
     LedgerLite: "Questa applicazione ti permette di gestire in modo semplice i tuoi crediti e debiti. In ogni operazione viene specificato il nominativo, l’importo e una descrizione.",
     Ripetizioni: "Il sito web dove presento la mia attività di ripetizioni dove i miei studenti possono prenotare le lezioni di matematica e fisica e consultare il mio materiale didattico.",
-    NFT: "White Paper (in italiano) sulla valorizzazione dei dipendenti tramite NFT, adottabile dalle aziende."
+    NFT: "White Paper (in italiano) su sistema di valorizzazione dei dipendenti tramite NFT gamification, stimolando un ambiente di lavoro positivo e ottimizza il processo di recruiting."
 
   },
   en: {
@@ -95,17 +95,17 @@ const translations = {
 
     T_NFT: "NFTs as Valorization System",
     T_Ripetizioni: "Tutoring Website",
-    T_IbanChecker: "Iban Checker",
+    T_IbanChecker: "IBAN Checker",
     T_CodiceFiscale: "Tax Code Calculator",
 
     IbanChecker: "Web app that checks the validity of Italian IBANs. If the IBAN is incorrect, it suggests possible corrections, assuming a character was entered incorrectly or two characters were swapped.",
     Sommatrix: "Mathematical puzzle where the player selects or removes numbers in a grid to make the sums of each row and column match the predetermined targets.",
     CodiceFiscale: "Web app that calculates the Italian tax code from personal data and vice versa, i.e., retrieves gender, date, and place of birth from the tax code.",
-    DataScience: "A project that, through data analysis in Python and machine learning techniques, predicts rocket landing success to optimize cost estimation and identify potential optimal launch sites.",
+    DataScience: "A project that, through data analysis in Python and machine learning techniques, predicts rocket landing success in order to optimize cost estimation and identify potential optimal launch sites.",
     CracktheCode: "A logic game inspired by the mechanics of Mastermind and Hit and Blow, where you must decipher a secret code using deduction and progressive feedback.",
     LedgerLite: "This application allows you to easily manage your credits and debts. Every transaction includes the name, the amount, and a description.",
     Ripetizioni: "The website where I showcase my tutoring services, where my students can book math and physics lessons and consult my teaching materials.",
-    NFT: "White Paper (in italian) about the valoritazion of the employees via NFT adoptable by companies."
+    NFT: "White Paper (in Italian) on a system for enhancing employee value through NFT gamification, fostering a positive work environment and optimizing the recruiting process."
   }
 };
 
