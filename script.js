@@ -101,7 +101,7 @@ const translations = {
     IbanChecker: "Web app that checks the validity of Italian IBANs. If the IBAN is incorrect, it suggests possible corrections, assuming a character was entered incorrectly or two characters were swapped.",
     Sommatrix: "Mathematical puzzle where the player selects or removes numbers in a grid to make the sums of each row and column match the predetermined targets.",
     CodiceFiscale: "Web app that calculates the Italian tax code from personal data and vice versa, i.e., retrieves gender, date, and place of birth from the tax code.",
-    DataScience: "A project that, through data analysis in Python and machine learning techniques, predicts rocket landing success in order to optimize cost estimation and identify potential optimal launch sites.",
+    DataScience: "A project that, through data analysis in Python and machine learning techniques, predicts rocket landing success in order to optimize cost estimation and detect optimal launch sites.",
     CracktheCode: "A logic game inspired by the mechanics of Mastermind and Hit and Blow, where you must decipher a secret code using deduction and progressive feedback.",
     LedgerLite: "This application allows you to easily manage your credits and debts. Every transaction includes the name, the amount, and a description.",
     Ripetizioni: "The website where I showcase my tutoring services, where my students can book math and physics lessons and consult my teaching materials.",
