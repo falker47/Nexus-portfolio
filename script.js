@@ -68,7 +68,7 @@ const translations = {
     CracktheCode: "Gioco di logica basato sulle dinamiche di Mastermind e Hit and Blow in cui devi decifrare un codice segreto usando deduzione e feedback progressivi.",
     LedgerLite: "Questa applicazione ti permette di gestire in modo semplice i tuoi crediti e debiti. In ogni operazione viene specificato il nominativo, l’importo e una descrizione.",
     Ripetizioni: "Il sito web dove presento la mia attività di ripetizioni dove i miei studenti possono prenotare le lezioni di matematica e fisica e consultare il mio materiale didattico.",
-    NFT: "White Paper (in italiano) su sistema di valorizzazione dei dipendenti tramite NFT gamification, stimolando un ambiente di lavoro positivo e ottimizza il processo di recruiting."
+    NFT: "White Paper (in italiano) su un sistema di valorizzazione dei dipendenti tramite NFT gamification, stimolando un ambiente di lavoro positivo e ottimizza il processo di recruiting."
 
   },
   en: {
