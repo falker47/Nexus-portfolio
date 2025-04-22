@@ -44,7 +44,7 @@ a {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   /* Spaziatura fra i link */
 }
 
@@ -470,6 +470,91 @@ footer a:hover {
   /* UK bandiera trasparente quando non selezionata */
 }
 
+/* Sezione Certificazioni */
+.certifications {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #191919, #2d0b50);
+  color: #ddd;
+  text-align: center;
+}
+.certifications-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.certifications h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+.certification-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 1200px) {
+  .certification-list { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .certification-list { grid-template-columns: repeat(2, 1fr); }
+}
+.certification-item {
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cert-thumb {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.cert-thumb:hover {
+  transform: scale(1.02);
+}
+.cert-info {
+  padding: 15px;
+  text-align: center;
+}
+.cert-info h3 { margin-bottom: 8px; font-size: 1.1rem; }
+.cert-info p  { color: #bbb; font-size: 0.9rem; }
+
+/* Lightbox Styles */
+.cert-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+.cert-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.cert-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.cert-modal-close:hover { color: #bbb; }
+
 @media (max-width: 900px) {
 
   .navbar ul li a {
@@ -508,5 +593,10 @@ footer a:hover {
   .language-toggle {
     margin-top: 15px;
     margin-bottom: -15px;
+  }
+
+  /* Nascondi la voce "Home" */
+  .navbar ul li:first-child {
+    display: none;
   }
 }

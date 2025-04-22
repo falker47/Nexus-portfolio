@@ -139,3 +139,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+// Lightbox per certificazioni
+const modal = document.getElementById('cert-modal');
+const modalImg = document.getElementById('modal-img');
+const closeBtn = document.querySelector('.cert-modal-close');
+
+document.querySelectorAll('.cert-thumb-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    modal.style.display = 'block';
+    modalImg.src = this.href;
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Chiudi cliccando fuori dall'immagine
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
