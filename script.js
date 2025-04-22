@@ -53,7 +53,7 @@ const translations = {
     footerName: "Maurizio Falconi",
     buttonVisitWeb: "Sito web",
     githubRepo: "Repo GitHub",
-    exposition: "Esposizione",
+    exposition: "Paper",
     WP: "Apri Whitepaper",
 
     T_NFT: "Sistema di valorizzazione NFT",
@@ -90,7 +90,7 @@ const translations = {
     footerName: "Maurizio Falconi",
     buttonVisitWeb: "Website",
     githubRepo: "GitHub Repo",
-    exposition: "Exposition",
+    exposition: "Paper",
     WP: "Open Whitepaper",
 
     T_NFT: "NFTs as Valorization System",
