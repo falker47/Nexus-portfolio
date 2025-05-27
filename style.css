@@ -203,8 +203,9 @@ a {
 
 .project-card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 3/2; /* Proporzione compatibile con 1152 × 768 */
+  object-fit: contain;
 }
 
 .project-card .card-content {
