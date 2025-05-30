@@ -44,7 +44,7 @@ const translations = {
     heroSubtitle: "Il punto d'incontro di tutti i miei progetti.",
     heroButton: "Esplora Ora",
     aboutTitle: "Chi sono?",
-    aboutText1: "Potrei dire un Data Analyst così come un Full-stack Developer ma più semplicemente una persona curiosa con moltissime passioni. Mi piace scomporre problemi complessi per trovare soluzioni eleganti, che sia in un’equazione, un algoritmo o attraverso la scrittura.",
+    aboutText1: "Potrei dire un Data Analyst, così come un Full-stack Developer. Ma sono semplicemente una persona piena di passioni con una curiosità insaziabile. Mi piace scomporre problemi complessi per trovare soluzioni eleganti, che sia in un’equazione, un algoritmo o attraverso la scrittura.",
     aboutText2: "Sono due le forze fondamentali che mi muovono: capire il mondo che mi circonda e creare cose che possano arricchirlo.",
     aboutText3: "Buona navigazione!",
     projectsTitle: "Progetti",
