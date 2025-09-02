@@ -71,7 +71,7 @@ const translations = {
     Ripetizioni: "Il sito web dove presento la mia attività di ripetizioni dove i miei studenti possono prenotare le lezioni di matematica e fisica e consultare il mio materiale didattico.",
     NFT: "White Paper (in italiano) sulla valorizzazione dei dipendenti tramite NFT gamification, adottabile dalle aziende.",
     Carte_S_Umanità: "Versione web tutta italiana del gioco di carte 'Cards Against Humanity', dove i giocatori completano frasi con risposte divertenti o provocatorie.",
-
+    Chi_lha_detto: "Web-quiz dove dovrai indovinare chi ha detto citazioni famose: crea streak o sblocca livelli a tema, con un breve contesto storico dopo ogni risposta."
   },
   en: {
     logoName: "Maurizio Falconi",
@@ -91,7 +91,7 @@ const translations = {
     contactMail: "Contact Me",
     footerName: "Maurizio Falconi",
     buttonVisitWeb: "Website",
-    buttonTry: "Try it!!",
+    buttonTry: "Try it!",
     githubRepo: "GitHub Repo",
     exposition: "Paper",
     WP: "Open Whitepaper",
@@ -109,7 +109,8 @@ const translations = {
     LedgerLite: "This application allows you to easily manage your credits and debts. Every transaction includes the name, the amount, and a description.",
     Ripetizioni: "The website where I showcase my tutoring services, where my students can book math and physics lessons and consult my teaching materials.",
     NFT: "White Paper (in italian) about an employees valoritazion system via NFT gamification, adoptable by companies.",
-    Carte_S_Umanità: "Italian web version of the card game 'Cards Against Humanity', where players complete sentences with funny or provocative answers."
+    Carte_S_Umanità: "Italian web version of the card game 'Cards Against Humanity', where players complete sentences with funny or provocative answers.",
+    Chi_lha_detto: "Italian-made web quiz where you guess who said famous quotes: build streaks or clear themed levels, with a short historical context after each answer."
   }
 };
 
