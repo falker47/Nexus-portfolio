@@ -114,14 +114,27 @@ const translations = {
   }
 };
 
+const curriculumLinks = {
+  it: "https://www.canva.com/design/DAFjFQpJARI/9DIpYyzdr7U8kKaLgAUVaA/view?utm_content=DAFjFQpJARI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1a1bf25a36",
+  en: "https://www.canva.com/design/DAG0KYFzO8U/bSYKCXIni9GasnPtYLzXiA/view?utm_content=DAG0KYFzO8U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcc273b6625"
+};
+
 function switchLanguage(lang) {
+  // Aggiorna tutti i testi
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang] && translations[lang][key]) {
       el.textContent = translations[lang][key];
     }
   });
+
+  //  Aggiorna il link del Curriculum
+  const cvA = document.getElementById("curriculum-link");
+  if (cvA && curriculumLinks[lang]) {
+    cvA.href = curriculumLinks[lang];
+  }
 }
+
 
 // Imposta la lingua di default su italiano
 switchLanguage("it");
