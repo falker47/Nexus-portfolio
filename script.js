@@ -119,7 +119,7 @@ const translations = {
 
     // Onepunch-setup
     T_Onepunch: "Onepunch-setup",
-    OnepunchDesc: "WPF GUI in PowerShell to quickly install useful Windows software in one step. Collapsible categories with icons, live search, multi-select, light/dark mode, Install/Download-only badges, non-blocking winget execution, progress tracking, optional WSL and reboot.",
+    OnepunchDesc: "Windows program (WPF GUI) to quickly install the most useful software in one step via winget. Software grouped into icon-labeled categories, live search, optional WSL and reboot.",
     downloadZip: "Download ZIP"
   }
 };
