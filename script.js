@@ -71,7 +71,12 @@ const translations = {
     Ripetizioni: "Il sito web dove presento la mia attività di ripetizioni dove i miei studenti possono prenotare le lezioni di matematica e fisica e consultare il mio materiale didattico.",
     NFT: "White Paper (in italiano) sulla valorizzazione dei dipendenti tramite NFT gamification, adottabile dalle aziende.",
     Carte_S_Umanità: "Versione web tutta italiana del gioco di carte 'Cards Against Humanity', dove i giocatori completano frasi con risposte divertenti o provocatorie.",
-    Chi_lha_detto: "Web-quiz dove dovrai indovinare chi ha detto citazioni famose: crea streak o sblocca livelli a tema, con un breve contesto storico dopo ogni risposta."
+    Chi_lha_detto: "Web-quiz dove dovrai indovinare chi ha detto citazioni famose: crea streak o sblocca livelli a tema, con un breve contesto storico dopo ogni risposta.",
+
+    // Onepunch-setup
+    T_Onepunch: "Onepunch-setup",
+    OnepunchDesc: "Programma Windows (GUI WPF) per installare rapidamente i software più utili in un unico step tramite esecuzione winget. Software suddivisi in categorie con icone, ricerca live, WSL e riavvio opzionale.",
+    downloadZip: "Scarica ZIP"
   },
   en: {
     logoName: "Maurizio Falconi",
@@ -110,7 +115,12 @@ const translations = {
     Ripetizioni: "The website where I showcase my tutoring services, where my students can book math and physics lessons and consult my teaching materials.",
     NFT: "White Paper (in italian) about an employees valoritazion system via NFT gamification, adoptable by companies.",
     Carte_S_Umanità: "Italian web version of the card game 'Cards Against Humanity', where players complete sentences with funny or provocative answers.",
-    Chi_lha_detto: "Italian-made web quiz where you guess who said famous quotes: build streaks or clear themed levels, with a short historical context after each answer."
+    Chi_lha_detto: "Italian-made web quiz where you guess who said famous quotes: build streaks or clear themed levels, with a short historical context after each answer.",
+
+    // Onepunch-setup
+    T_Onepunch: "Onepunch-setup",
+    OnepunchDesc: "WPF GUI in PowerShell to quickly install useful Windows software in one step. Collapsible categories with icons, live search, multi-select, light/dark mode, Install/Download-only badges, non-blocking winget execution, progress tracking, optional WSL and reboot.",
+    downloadZip: "Download ZIP"
   }
 };
 
