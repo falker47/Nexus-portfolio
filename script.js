@@ -76,7 +76,11 @@ const translations = {
     // Onepunch-setup
     T_Onepunch: "Onepunch-setup",
     OnepunchDesc: "Programma Windows (GUI WPF) per installare rapidamente i software più utili in un unico step tramite esecuzione winget. Software suddivisi in categorie con icone, ricerca live, WSL e riavvio opzionale.",
-    downloadZip: "Scarica ZIP"
+    downloadZip: "Scarica ZIP",
+
+    // Easy Contract
+    T_EasyContract: "Easy Contract",
+    EasyContract: "Web app AI su LLM Gemini ingegnerizzato per analizzare e sintetizzare contratti in PDF. Individua automaticamente clausole critiche e costi nascosti, restituendo un punteggio di bontà e consigli pratici per l'utente.",
   },
   en: {
     logoName: "Maurizio Falconi",
@@ -120,7 +124,11 @@ const translations = {
     // Onepunch-setup
     T_Onepunch: "Onepunch-setup",
     OnepunchDesc: "Windows program (WPF GUI) to quickly install the most useful software in one step via winget. Software grouped into icon-labeled categories, live search, optional WSL and reboot.",
-    downloadZip: "Download ZIP"
+    downloadZip: "Download ZIP",
+
+    // Easy Contract
+    T_EasyContract: "Easy Contract",
+    EasyContract: "Web app AI on Gemini LLM fined-tuned to analyze and synthesize contracts in PDF. Automatically identifies critical clauses and hidden costs, returning a security score and practical advice for the user.",
   }
 };
 
@@ -174,7 +182,7 @@ const modalImg = document.getElementById('modal-img');
 const closeBtn = document.querySelector('.cert-modal-close');
 
 document.querySelectorAll('.cert-thumb-link').forEach(link => {
-  link.addEventListener('click', function(e) {
+  link.addEventListener('click', function (e) {
     e.preventDefault();
     modal.style.display = 'block';
     modalImg.src = this.href;
