@@ -44,7 +44,7 @@ const translations = {
     heroSubtitle: "Il punto d'incontro di tutti i miei progetti.",
     heroButton: "Esplora Ora",
     aboutTitle: "Chi sono?",
-    aboutText1: "Potrei dire un Data Analyst, così come un Full-stack Developer. Ma sono semplicemente una persona piena di passioni con una curiosità insaziabile. Mi piace scomporre problemi complessi per trovare soluzioni eleganti, che sia in un’equazione, un algoritmo o attraverso la scrittura.",
+    aboutText1: "Potrei dire un Data Analyst, così come un Full-stack Developer. Ma sono semplicemente una persona piena di passioni con una curiosità insaziabile. Mi piace scomporre problemi complessi per trovare soluzioni eleganti, che sia in un’equazione, un algoritmo o con la scrittura.",
     aboutText2: "Sono due le forze fondamentali che mi muovono: capire il mondo che mi circonda e creare cose che possano (nel loro piccolo) arricchirlo.",
     aboutText3: "Buona navigazione!",
     projectsTitle: "Progetti",
@@ -78,6 +78,10 @@ const translations = {
     T_Onepunch: "Onepunch-setup",
     OnepunchDesc: "Programma Windows (GUI WPF) per installare rapidamente i software più utili in un unico step tramite esecuzione winget. Software suddivisi in categorie con icone, ricerca live, WSL e riavvio opzionale.",
     downloadZip: "Scarica ZIP",
+
+    // Panacea
+    T_Panacea: "Panacea",
+    PanaceaDesc: "Ottimizzatore di sistema Windows per monitorare lo stato e migliorare le prestazioni. Include dashboard in tempo reale, rimozione file inutili in un click, ottimizzazione disco e strumenti di riparazione automatica (SFC/DISM).",
 
     // Easy Contract
     T_EasyContract: "Easy Contract",
@@ -127,6 +131,10 @@ const translations = {
     T_Onepunch: "Onepunch-setup",
     OnepunchDesc: "Windows program (WPF GUI) to quickly install the most useful software in one step via winget. Software grouped into icon-labeled categories, live search, optional WSL and reboot.",
     downloadZip: "Download ZIP",
+
+    // Panacea
+    T_Panacea: "Panacea",
+    PanaceaDesc: "Windows system optimizer to monitor health and boost performance. Features live dashboard, one-click junk removal, disk optimization, and automated system repair tools (SFC/DISM).",
 
     // Easy Contract
     T_EasyContract: "Easy Contract",
