@@ -44,7 +44,7 @@ const translations = {
     heroSubtitle: "Il punto d'incontro di tutti i miei progetti.",
     heroButton: "Esplora Ora",
     aboutTitle: "Chi sono?",
-    aboutText1: "Potrei dire un Data Analyst, così come un Full-stack Developer. Ma sono semplicemente una persona piena di passioni con una curiosità insaziabile. Mi piace scomporre problemi complessi per trovare soluzioni eleganti, che sia in un’equazione, un algoritmo o con la scrittura.",
+    aboutText1: "Potrei dire un Data Analyst, così come un Full-stack Developer. Ma sono semplicemente una persona piena di passioni con una curiosità insaziabile. Mi piace risolvere problemi con soluzioni che siano in un’equazione, un algoritmo o nella semplice scrittura.",
     aboutText2: "Sono due le forze fondamentali che mi muovono: capire il mondo che mi circonda e creare cose che possano (nel loro piccolo) arricchirlo.",
     aboutText3: "Buona navigazione!",
     projectsTitle: "Progetti",
@@ -81,7 +81,7 @@ const translations = {
 
     // Panacea
     T_Panacea: "Panacea",
-    PanaceaDesc: "Ottimizzatore di sistema Windows per monitorare lo stato e migliorare le prestazioni. Include dashboard in tempo reale, rimozione file inutili in un click, ottimizzazione disco e strumenti di riparazione automatica (SFC/DISM).",
+    PanaceaDesc: "Ottimizzatore di sistema Windows per monitorare lo stato e migliorare le prestazioni. Include rimozione file inutili, ottimizzazione disco e strumenti di riparazione automatica (SFC/DISM).",
 
     // Easy Contract
     T_EasyContract: "Easy Contract",
