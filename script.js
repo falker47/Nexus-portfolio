@@ -1,38 +1,10 @@
-// Scroll smooth per i link interni
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetElement = document.querySelector(this.getAttribute('href'));
-    const offset = 100; // Modifica questo valore per regolare l'offset desiderato
-    const elementPosition = targetElement.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  });
-});
+/**
+ * Nexus Portfolio - Main Script
+ * Handles translations, smooth scrolling, dynamic data, and interactions.
+ */
 
-// Smooth scroll e aggiornamento anno (già presenti)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetElement = document.querySelector(this.getAttribute('href'));
-    const offset = 100;
-    const elementPosition = targetElement.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  });
-});
+// --- Configuration & Data ---
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
-});
-
-// Traduzioni
 const translations = {
   it: {
     logoName: "Maurizio Falconi",
@@ -147,8 +119,14 @@ const curriculumLinks = {
   en: "https://www.canva.com/design/DAG0KYFzO8U/bSYKCXIni9GasnPtYLzXiA/view?utm_content=DAG0KYFzO8U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcc273b6625"
 };
 
+// --- Functions ---
+
+/**
+ * Updates the text content of elements based on the selected language.
+ * @param {string} lang - 'it' or 'en'
+ */
 function switchLanguage(lang) {
-  // Aggiorna tutti i testi
+  // Update translation texts
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang] && translations[lang][key]) {
@@ -156,56 +134,91 @@ function switchLanguage(lang) {
     }
   });
 
-  //  Aggiorna il link del Curriculum
+  // Update Curriculum link
   const cvA = document.getElementById("curriculum-link");
   if (cvA && curriculumLinks[lang]) {
     cvA.href = curriculumLinks[lang];
   }
 }
 
+/**
+ * Initializes Smooth Scroll for anchor links.
+ */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
 
-// Imposta la lingua di default su italiano
-switchLanguage("it");
+      if (targetElement) {
+        const offset = 100; // Adjustable offset
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-// Gestione del toggle lingua
-const toggleLang = document.getElementById("toggle-lang");
-toggleLang.addEventListener("change", function () {
-  if (this.checked) {
-    switchLanguage("en");
-  } else {
-    switchLanguage("it");
-  }
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
-});
-
-
-document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-// Lightbox per certificazioni
-const modal = document.getElementById('cert-modal');
-const modalImg = document.getElementById('modal-img');
-const closeBtn = document.querySelector('.cert-modal-close');
-
-document.querySelectorAll('.cert-thumb-link').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    modal.style.display = 'block';
-    modalImg.src = this.href;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    });
   });
-});
+}
 
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
+/**
+ * Initializes the Certification Modal (Lightbox).
+ */
+function initCertModal() {
+  const modal = document.getElementById('cert-modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.querySelector('.cert-modal-close');
 
-// Chiudi cliccando fuori dall'immagine
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
+  if (!modal || !modalImg || !closeBtn) return; // Exit if elements are missing
+
+  // Open modal on click
+  document.querySelectorAll('.cert-thumb-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      modal.style.display = 'block';
+      modalImg.src = this.href;
+    });
+  });
+
+  // Close with X button
+  closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
+  });
+
+  // Close by clicking outside the image
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+}
+
+/**
+ * Main Initialization
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize features
+  initSmoothScroll();
+  initCertModal();
+
+  // Set Current Year in Footer
+  const yearElement = document.getElementById("currentYear");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+  // Set Default Language
+  switchLanguage("it");
+
+  // Handle Language Toggle
+  const toggleLang = document.getElementById("toggle-lang");
+  if (toggleLang) {
+    toggleLang.addEventListener("change", function () {
+      switchLanguage(this.checked ? "en" : "it");
+    });
   }
 });
