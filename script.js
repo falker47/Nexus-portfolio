@@ -147,15 +147,7 @@ const projectsData = [
       { url: "https://github.com/falker47/panacea", textKey: "githubRepo", icon: "fab fa-github" }
     ]
   },
-  {
-    titleKey: "T_Onepunch",
-    descriptionKey: "OnepunchDesc",
-    image: "assets/onepunchsetup.webp",
-    links: [
-      { url: "https://raw.githubusercontent.com/falker47/onepunch-setup/main/onepunchsetup-installer.zip", textKey: "downloadZip", icon: "fas fa-download" },
-      { url: "https://github.com/falker47/onepunch-setup", textKey: "githubRepo", icon: "fab fa-github" }
-    ]
-  },
+
   {
     title: "Chi l'ha detto?",
     descriptionKey: "Chi_lha_detto",
@@ -224,6 +216,15 @@ const projectsData = [
     links: [
       { url: "https://falker47.github.io/Codice-Fiscale/", textKey: "buttonTry", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/Codice-Fiscale", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+  {
+    title: "Crack the Code",
+    descriptionKey: "CracktheCode",
+    image: "assets/crack-the-code.webp",
+    links: [
+      { url: "https://falker47.github.io/Crack-the-Code/", textKey: "buttonTry", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/Crack-the-Code", textKey: "githubRepo", icon: "fab fa-github" }
     ]
   }
 ];
