@@ -54,7 +54,7 @@ const translations = {
     // Panacea
     T_Panacea: "Panacea",
     PanaceaDesc: "Ottimizzatore di sistema Windows per monitorare lo stato e migliorare le prestazioni. Include rimozione file inutili, ottimizzazione disco e strumenti di riparazione automatica (SFC/DISM).",
-
+    downloadExe: "Scarica .exe",
     // Easy Contract
     T_EasyContract: "Easy Contract",
     EasyContract: "Web app AI su LLM Gemini ingegnerizzato per analizzare e sintetizzare contratti in PDF. Individua automaticamente clausole critiche e costi nascosti, restituendo un punteggio di bontà e consigli pratici per l'utente.",
