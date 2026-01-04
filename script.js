@@ -143,7 +143,7 @@ const projectsData = [
     descriptionKey: "PanaceaDesc",
     image: "assets/panacea.webp",
     links: [
-      { url: "https://raw.githubusercontent.com/falker47/panacea/main/dist/Panacea.zip", textKey: "downloadZip", icon: "fas fa-download" },
+      { url: "https://raw.githubusercontent.com/falker47/panacea/main/dist/Panacea.exe", textKey: "downloadZip", icon: "fas fa-download" },
       { url: "https://github.com/falker47/panacea", textKey: "githubRepo", icon: "fab fa-github" }
     ]
   },
