@@ -121,15 +121,6 @@ const curriculumLinks = {
 
 const projectsData = [
   {
-    title: "Data Science Capstone",
-    descriptionKey: "DataScience",
-    image: "assets/SpaceYcapstone.webp",
-    links: [
-      { url: "assets/capstone-summary.pdf", textKey: "exposition", icon: "fas fa-file-pdf" },
-      { url: "https://github.com/falker47/applied-data-science-capstone", textKey: "githubRepo", icon: "fab fa-github" }
-    ]
-  },
-  {
     titleKey: "T_EasyContract",
     descriptionKey: "EasyContract",
     image: "assets/easycontract.webp",
@@ -147,7 +138,6 @@ const projectsData = [
       { url: "https://github.com/falker47/panacea", textKey: "githubRepo", icon: "fab fa-github" }
     ]
   },
-
   {
     title: "Chi l'ha detto?",
     descriptionKey: "Chi_lha_detto",
@@ -155,6 +145,15 @@ const projectsData = [
     links: [
       { url: "https://chi-l-ha-detto.vercel.app/", textKey: "buttonTry", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/chi-l-ha-detto", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+  {
+    titleKey: "T_Onepunch",
+    descriptionKey: "OnepunchDesc",
+    image: "assets/onepunchsetup.webp",
+    links: [
+      { url: "https://raw.githubusercontent.com/falker47/onepunch-setup/main/onepunchsetup-installer.zip", textKey: "downloadZip", icon: "fas fa-download" },
+      { url: "https://github.com/falker47/onepunch-setup", textKey: "githubRepo", icon: "fab fa-github" }
     ]
   },
   {
