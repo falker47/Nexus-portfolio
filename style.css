@@ -643,6 +643,11 @@ footer a:hover {
     overflow: visible;
   }
 
+  /* Hide loop duplicates in grid mode */
+  .swiper-slide-duplicate {
+    display: none !important;
+  }
+
   .certification-list {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr);
@@ -814,10 +819,6 @@ footer a:hover {
     width: 100%;
     justify-content: center;
     margin: 0;
-  }
-
-  .navbar ul li {
-    margin: 0 10px;
   }
 
   /* Se la hero-card ha margini non voluti, puoi forzarla a centrarsi */

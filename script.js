@@ -399,10 +399,11 @@ function renderCertifications() {
   });
 
   // Initialize Swiper (Mobile Only)
-  new Swiper('.cert-swiper', {
-    loop: false, // Must be false to avoid duplicates in grid mode
-    spaceBetween: 30,
-    slidesPerView: 1,
+  const swiper = new Swiper('.cert-swiper', {
+    loop: true, /* Infinite loop as requested */
+    spaceBetween: 20,
+    slidesPerView: 1.5, /* Shows main slide + peeking left/right */
+    centeredSlides: true, /* Centers the active slide */
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
