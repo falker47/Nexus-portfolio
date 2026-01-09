@@ -166,6 +166,7 @@ a {
   background: url('assets/hero/poster.webp') center center / cover no-repeat;
   background-color: #121212;
   /* Fallback color */
+  z-index: 0;
 }
 
 #hero-video {
