@@ -107,8 +107,19 @@
   <section class="certifications" id="certifications">
     <div class="certifications-container">
       <h2 data-i18n="Certifications">Certificazioni</h2>
-      <!-- Certifications are dynamically rendered via JS -->
-      <ul class="certification-list"></ul>
+
+      <!-- Swiper Carousel -->
+      <div class="swiper cert-swiper">
+        <div class="swiper-wrapper certification-list">
+          <!-- Slides are dynamically rendered via JS -->
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
     </div>
   </section>
 
@@ -162,6 +173,8 @@
   </button>
 
   <!-- Link al file JavaScript -->
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 

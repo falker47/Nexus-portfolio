@@ -379,18 +379,53 @@ function renderCertifications() {
   list.innerHTML = '';
 
   certificationsData.forEach(c => {
-    const item = document.createElement('li');
-    item.className = 'certification-item';
-    item.innerHTML = `
-      <a href="${c.image}" class="cert-thumb-link" title="${c.title}">
-        <img src="${c.image}" alt="${c.title}" class="cert-thumb">
-      </a>
-      <div class="cert-info">
-        <h3>${c.title}</h3>
-        <p>${c.issuer}</p>
+    // Determine class based on orientation (some images might be vertical/horizontal)
+    // Defaulting to standard slide
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide certification-slide';
+
+    slide.innerHTML = `
+      <div class="certification-card">
+        <a href="${c.image}" class="cert-thumb-link" title="${c.title}">
+          <img src="${c.image}" alt="${c.title}" class="cert-thumb">
+        </a>
+        <div class="cert-info">
+          <h3>${c.title}</h3>
+          <p>${c.issuer}</p>
+        </div>
       </div>
     `;
-    list.appendChild(item);
+    list.appendChild(slide);
+  });
+
+  // Initialize Swiper
+  new Swiper('.cert-swiper', {
+    loop: true,
+    spaceBetween: 30,
+    slidesPerView: 1,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+      1280: {
+        slidesPerView: 4,
+      }
+    }
   });
 }
 

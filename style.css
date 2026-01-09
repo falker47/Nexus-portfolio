@@ -626,27 +626,17 @@ footer a:hover {
 }
 
 .certification-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  padding: 0;
-  margin: 0;
+  /* Swiper wrapper handling - remove grid */
+  box-sizing: border-box;
 }
 
-@media (max-width: 1200px) {
-  .certification-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.cert-swiper {
+  width: 100%;
+  padding: 20px 0 50px;
+  /* Space for pagination */
 }
 
-@media (max-width: 768px) {
-  .certification-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.certification-item {
+.certification-card {
   background: #1e1e1e;
   border-radius: 10px;
   overflow: hidden;
@@ -654,6 +644,28 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  /* Equal height */
+  transition: transform 0.3s;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(139, 92, 246, 0.4);
+}
+
+/* Swiper Customization */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary) !important;
+}
+
+.swiper-pagination-bullet {
+  background: #bbb !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary) !important;
 }
 
 .cert-thumb {
@@ -1327,5 +1339,40 @@ footer a:hover {
   .about h2.section-title {
     font-size: 3.5rem !important;
     text-align: center !important;
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+
+  /* Widen About Card & Reduce Text */
+  .about-card {
+    padding: 30px 20px !important;
+    width: 95% !important;
+    margin: 0 auto;
+  }
+
+  .about-content p {
+    font-size: 0.95rem !important;
+  }
+
+  .about-quote {
+    font-size: 0.95rem !important;
+    padding: 15px 20px !important;
+  }
+
+  .about-cta {
+    font-size: 1.1rem !important;
+  }
+
+  /* Consistent Section Titles on Mobile */
+  .section-title,
+  .projects h2,
+  .certifications h2,
+  .about h2,
+  .contact h2 {
+    font-size: 2.2rem !important;
+    margin-bottom: 30px !important;
+    text-align: center;
   }
 }
