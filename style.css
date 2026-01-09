@@ -626,7 +626,7 @@ footer a:hover {
 }
 
 .certification-list {
-  /* Swiper wrapper handling - remove grid */
+  /* Swiper wrapper handling */
   box-sizing: border-box;
 }
 
@@ -634,6 +634,38 @@ footer a:hover {
   width: 100%;
   padding: 20px 0 50px;
   /* Space for pagination */
+}
+
+/* Desktop Grid Restoration */
+@media (min-width: 768px) {
+  .cert-swiper {
+    padding: 0;
+    overflow: visible;
+  }
+
+  .certification-list {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns like before */
+    gap: 30px;
+    width: 100% !important;
+    transform: none !important;
+    /* Reset swiper transform */
+  }
+
+  .swiper-slide {
+    width: auto !important;
+    /* Reset swiper widths */
+    height: auto !important;
+    margin-right: 0 !important;
+  }
+
+  /* Hide Swiper controls on desktop */
+  .swiper-pagination,
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
 }
 
 .certification-card {
@@ -891,7 +923,12 @@ footer a:hover {
   background: var(--bg-card) !important;
   border: 1px solid rgba(139, 92, 246, 0.1);
   transition: all 0.4s ease-out !important;
+  /* Keep hover transition */
   position: relative;
+  opacity: 1 !important;
+  /* Force visible */
+  transform: none !important;
+  /* No initial slide */
 }
 
 .project-card:hover {
@@ -1046,28 +1083,16 @@ footer a:hover {
   transform: translateX(-50%) translateY(-8px);
 }
 
-/* ===== SECTION TITLE ANIMATIONS ===== */
-.section-title {
+/* ===== SECTION TITLE ANIMATIONS (Disabled) ===== */
+.section-title,
+.about h2,
+.certifications h2 {
   position: relative;
   display: inline-block;
-}
-
-.animate-title {
-  animation: titleReveal 0.8s ease forwards !important;
-}
-
-@keyframes titleReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-    filter: blur(10px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
 }
 
 /* ===== PROJECT FILTER ===== */
@@ -1080,15 +1105,18 @@ footer a:hover {
 }
 
 .filter-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  border: 1px solid rgba(139, 92, 246, 0.4);
   color: var(--text-muted);
-  padding: 8px 18px;
+  padding: 10px 20px;
+  /* Increased size */
   border-radius: 25px;
-  font-size: 0.85rem;
-  font-weight: 500;
   cursor: pointer;
-  transition: all var(--transition-smooth);
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  /* Slightly larger text */
   display: inline-flex;
   align-items: center;
   gap: 6px;

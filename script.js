@@ -15,7 +15,7 @@ const translations = {
     heroTitle: "Benvenuto in Nexus Portfolio",
     heroSubtitle: "Il punto d'incontro di tutti i miei progetti.",
     heroButton: "Esplora Ora",
-    aboutTitle: "Chi sono?",
+    aboutTitle: "Chi sono",
     aboutText1: "Potrei definirmi un Data Engineer, così come un Full-stack Developer. Ma sono semplicemente una persona piena di passioni con una curiosità insaziabile. Mi piace risolvere problemi con soluzioni che siano in un’equazione, un algoritmo o nella semplice scrittura.",
     aboutText2: "Sono due le forze fondamentali che mi muovono: <br>capire il mondo che mi circonda e creare cose che possano (nel loro piccolo) arricchirlo.",
     aboutText3: "Buona navigazione!",
@@ -398,9 +398,9 @@ function renderCertifications() {
     list.appendChild(slide);
   });
 
-  // Initialize Swiper
+  // Initialize Swiper (Mobile Only)
   new Swiper('.cert-swiper', {
-    loop: true,
+    loop: false, // Must be false to avoid duplicates in grid mode
     spaceBetween: 30,
     slidesPerView: 1,
     autoplay: {
@@ -416,14 +416,10 @@ function renderCertifications() {
       prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-      640: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-      1280: {
-        slidesPerView: 4,
+      // When window width is >= 768px, disable Swiper
+      768: {
+        enabled: false,
+        slidesPerView: 'auto',
       }
     }
   });
@@ -621,21 +617,7 @@ function initProjectFilter() {
  * Section Title Animations
  */
 function initSectionTitleAnimations() {
-  const titles = document.querySelectorAll('.section-title, .about h2, .certifications h2');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-title');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-  titles.forEach(title => {
-    title.style.opacity = '0';
-    observer.observe(title);
-  });
+  // Disabled by user request
 }
 
 /**
@@ -713,57 +695,12 @@ function initBackToTop() {
  * Scroll Animations with Intersection Observer
  */
 function initScrollAnimations() {
-  // Animate project cards on scroll
+  // Animations disabled by user request
   const projectCards = document.querySelectorAll('.project-card');
-  const certItems = document.querySelectorAll('.certification-item');
+  const certItems = document.querySelectorAll('.certification-item'); // Swiper slides now
   const sections = document.querySelectorAll('.about, .projects, .certifications, .contact');
 
-  const observerOptions = {
-    threshold: 0,
-    rootMargin: '0px 0px 50px 0px'
-  };
-
-  const allProjects = Array.from(projectCards);
-
-  const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Calculate global index to apply staggered delay only to initial items
-        const globalIndex = allProjects.indexOf(entry.target);
-
-        // Define how many initial items get staggered animation
-        // Desktop: first 3 (one row) | Mobile: first 1
-        const staggerLimit = window.innerWidth >= 768 ? 3 : 1;
-
-        let delay = 0;
-        if (globalIndex !== -1 && globalIndex < staggerLimit) {
-          delay = globalIndex * 150; // Stagger first row
-        }
-
-        setTimeout(() => {
-          entry.target.classList.add('animate-in');
-        }, delay);
-
-        cardObserver.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  projectCards.forEach(card => cardObserver.observe(card));
-  certItems.forEach(item => cardObserver.observe(item));
-
-  // Fade in sections
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        sectionObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  sections.forEach(section => {
-    section.classList.add('fade-in');
-    sectionObserver.observe(section);
-  });
+  // Ensure everything is visible immediately
+  projectCards.forEach(el => el.style.opacity = '1');
+  sections.forEach(el => el.style.opacity = '1');
 }
