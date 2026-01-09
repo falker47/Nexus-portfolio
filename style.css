@@ -89,46 +89,72 @@ a {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 20px;
-  background: rgba(18, 18, 18, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+  padding: 15px 30px;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
   position: fixed;
-  width: 100%;
   z-index: 1000;
   transition: all var(--transition-base);
 }
 
 .navbar .logo {
-  flex: 0 0 30%;
-  margin-right: 20px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff;
+  flex: 0 0 auto;
+  margin-right: 30px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff, var(--primary-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .navbar ul {
-  flex: 0 0 40%;
+  flex: 1;
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 10px;
-  /* Spaziatura fra i link */
+  gap: 8px;
 }
 
 .navbar ul li {
-  margin: 0 15px;
+  margin: 0 8px;
 }
 
 .navbar ul li a {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .navbar ul li a:hover {
-  color: #681fd5;
+  color: #fff;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.navbar ul li a:hover::after {
+  width: 60%;
 }
 
 /* ===== Hero Section Enhanced ===== */
@@ -650,17 +676,20 @@ footer a:hover {
 
   .certification-list {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    /* 4 columns like before */
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Auto-fit for better width */
+    column-gap: 30px;
+    /* Restored detailed gap */
+    row-gap: 30px;
+    /* Vertical gap */
     width: 100% !important;
     transform: none !important;
     /* Reset swiper transform */
   }
 
   .swiper-slide {
-    width: auto !important;
-    /* Reset swiper widths */
+    width: 100% !important;
+    /* Force fill grid cell */
     height: auto !important;
     margin-right: 0 !important;
   }
@@ -671,6 +700,11 @@ footer a:hover {
   .swiper-button-prev {
     display: none !important;
   }
+}
+
+.certification-card {
+  width: 100%;
+  /* Ensure card fills container/slide */
 }
 
 /* Mobile Swiper Base Styles */
@@ -692,11 +726,19 @@ footer a:hover {
 
 .swiper-slide {
   flex-shrink: 0;
-  width: 70% !important;
-  /* Explicit width for "peek" effect with slidesPerView: auto */
+  width: 100%;
+  /* Default: fill container */
   height: auto;
   position: relative;
   transition-property: transform;
+}
+
+/* Mobile: carousel peek effect */
+@media (max-width: 767px) {
+  .swiper-slide {
+    width: 70% !important;
+    /* Show partial next/prev slides */
+  }
 }
 
 /* Base Card Style */
@@ -798,43 +840,61 @@ footer a:hover {
 
 @media (max-width: 900px) {
 
-  .navbar ul li a {
-    font-size: 0.9rem;
-  }
-
   .navbar {
     flex-direction: column;
-    /* Disponi in colonne: prima il logo, poi il menu */
-    align-items: center;
+    padding: 10px 15px;
+    gap: 8px;
   }
 
   .navbar .logo {
     width: 100%;
     text-align: center;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    justify-content: center;
+  }
+
+  .navbar .logo-img {
+    width: 30px;
+    height: 30px;
   }
 
   .navbar ul {
     flex-direction: row;
-    /* I link rimangono in orizzontale */
+    flex-wrap: wrap;
     width: 100%;
     justify-content: center;
+    gap: 4px;
     margin: 0;
   }
 
-  /* Se la hero-card ha margini non voluti, puoi forzarla a centrarsi */
-  .hero-card {
-    margin: auto;
+  .navbar ul li {
+    margin: 0 2px;
+  }
+
+  .navbar ul li a {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  .navbar ul li a::after {
+    display: none;
+    /* Hide underline animation on mobile */
   }
 
   .language-toggle {
-    margin-top: 15px;
-    margin-bottom: -15px;
+    margin-top: 8px;
+    margin-bottom: 0;
   }
 
-  /* Nascondi la voce "Home" */
+  /* Hide "Home" on mobile */
   .navbar ul li:first-child {
     display: none;
+  }
+
+  .hero-card {
+    margin: auto;
   }
 }
 
