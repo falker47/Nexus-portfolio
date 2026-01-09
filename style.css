@@ -178,7 +178,8 @@ a {
   width: auto;
   height: auto;
   transform: translate(-50%, -50%);
-  z-index: -2;
+  z-index: 1;
+  /* Video sopra lo sfondo */
 }
 
 .hero-overlay {
@@ -189,13 +190,15 @@ a {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   /* Filtro scuro */
-  z-index: -1;
+  z-index: 2;
+  /* Overlay sopra il video */
 }
 
 .hero-content {
   margin-top: 20px;
   position: relative;
-  z-index: 1;
+  z-index: 3;
+  /* Contenuto sopra tutto */
   display: flex;
   flex-direction: column;
   justify-content: center;
