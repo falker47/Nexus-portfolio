@@ -400,10 +400,10 @@ function renderCertifications() {
 
   // Initialize Swiper (Mobile Only)
   const swiper = new Swiper('.cert-swiper', {
-    loop: true, /* Infinite loop as requested */
+    loop: true,
     spaceBetween: 20,
-    slidesPerView: 1.5, /* Shows main slide + peeking left/right */
-    centeredSlides: true, /* Centers the active slide */
+    slidesPerView: 'auto', /* Respect CSS width */
+    centeredSlides: true,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
