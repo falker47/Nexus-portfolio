@@ -23,10 +23,13 @@
 </head>
 
 <body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
-      <img src="assets/falkerlogo.png" alt="Logo" class="logo-img">
+      <img src="assets/branding/falkerlogo.png" alt="Logo" class="logo-img">
       Maurizio Falconi
     </div>
     <ul>
@@ -48,8 +51,8 @@
 
   <!-- Sezione Hero -->
   <section class="hero" id="hero">
-    <video autoplay muted loop id="hero-video" poster="assets/hero-poster.webp">
-      <source src="assets/video.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline preload="auto" id="hero-video" poster="assets/hero/poster.png">
+      <source src="assets/hero/video.mp4" type="video/mp4">
       Il tuo browser non supporta il video.
     </video>
     <div class="hero-overlay"></div>
@@ -64,23 +67,38 @@
 
   <!-- Sezione About Me -->
   <section class="about" id="about">
-    <div class="about-container">
-      <h2 data-i18n="aboutTitle">Chi sono</h2>
-      <p data-i18n="aboutText1">
+    <div class="about-card">
+      <!-- FOTO PROFILO - Decommentare per mostrarla -->
+      <!-- <img src="assets/branding/foto.png" alt="Maurizio Falconi" class="about-photo"> -->
 
-      </p>
-      <p data-i18n="aboutText2">
-        Sono due le forze fondamentali che mi muovono: capire il mondo che mi circonda e creare cose che possano
-        arricchirlo. Nel mio portfolio trovi un po’ di tutto: giochi che sfidano la mente, tool utili ma soprattutto una
-        parte di me.
-      </p>
-      <p data-i18n="aboutText3">Buona navigazione!</p>
+      <h2 class="section-title" data-i18n="aboutTitle">✨ Chi Sono</h2>
+
+      <div class="about-content">
+        <p data-i18n="aboutText1"></p>
+        <p class="about-quote" data-i18n="aboutText2">
+          Sono due le forze fondamentali che mi muovono: <br>capire il mondo che mi circonda e creare cose che possano
+          (nel loro piccolo) arricchirlo.
+        </p>
+        <p class="about-cta" data-i18n="aboutText3">Buona navigazione!</p>
+      </div>
     </div>
   </section>
 
   <!-- Sezione Progetti -->
   <section class="projects" id="projects">
-    <h2 data-i18n="projectsTitle">Progetti</h2>
+    <h2 data-i18n="projectsTitle" class="section-title">Progetti</h2>
+
+    <!-- Project Filter -->
+    <div class="project-filter">
+      <button class="filter-btn active" data-filter="all">✨ Tutti</button>
+      <button class="filter-btn" data-filter="webapp">🌐 Web App</button>
+      <button class="filter-btn" data-filter="game">🎮 Game</button>
+      <button class="filter-btn" data-filter="desktop">💻 Desktop</button>
+      <button class="filter-btn" data-filter="tool">🔧 Tool</button>
+      <button class="filter-btn" data-filter="research">📝 Research</button>
+      <button class="filter-btn" data-filter="finance">💰 Finance</button>
+    </div>
+
     <!-- Projects are dynamically rendered via JS -->
     <div class="project-grid"></div>
   </section>
@@ -110,7 +128,7 @@
         <i class="fas fa-user"></i>
         <span data-i18n="contactCurriculum">Curriculum</span>
       </a> -->
-      
+
       <a class="contact-mail" href="mailto:maurizio.falconi47@gmail.com">
         <i class="fas fa-envelope"></i>
         <span data-i18n="contactMail">Contattami</span>
@@ -137,6 +155,11 @@
       </a>
     </p>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Torna su">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
   <!-- Link al file JavaScript -->
   <script src="script.js"></script>

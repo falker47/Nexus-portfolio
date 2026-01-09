@@ -17,7 +17,7 @@ const translations = {
     heroButton: "Esplora Ora",
     aboutTitle: "Chi sono?",
     aboutText1: "Potrei definirmi un Data Engineer, così come un Full-stack Developer. Ma sono semplicemente una persona piena di passioni con una curiosità insaziabile. Mi piace risolvere problemi con soluzioni che siano in un’equazione, un algoritmo o nella semplice scrittura.",
-    aboutText2: "Sono due le forze fondamentali che mi muovono: capire il mondo che mi circonda e creare cose che possano (nel loro piccolo) arricchirlo.",
+    aboutText2: "Sono due le forze fondamentali che mi muovono: <br>capire il mondo che mi circonda e creare cose che possano (nel loro piccolo) arricchirlo.",
     aboutText3: "Buona navigazione!",
     projectsTitle: "Progetti",
     contactCurriculum: "Curriculum",
@@ -70,7 +70,7 @@ const translations = {
     heroButton: "Explore Now",
     aboutTitle: "About Me",
     aboutText1: "I could call myself a Data Engineer or a Full-Stack Developer, but more simply I’m a curious person with many passions. I enjoy breaking down complex problems to uncover elegant solutions; be it in an equation, an algorithm, or through writing.",
-    aboutText2: "There are two fundamental forces that drive me: understanding the world around me and creating things that can (in their own small way) enrich it.",
+    aboutText2: "There are two fundamental forces that drive me: <br>understanding the world around me and creating things that can (in their own small way) enrich it.",
     aboutText3: "Enjoy your visit!",
     projectsTitle: "Projects",
     contactCurriculum: "Resume",
@@ -123,7 +123,13 @@ const projectsData = [
   {
     titleKey: "T_EasyContract",
     descriptionKey: "EasyContract",
-    image: "assets/easycontract.webp",
+    image: "assets/projects/easycontract.webp",
+    category: "webapp",
+    tags: [
+      { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Applicazione web interattiva" },
+      { text: "Gemini AI", type: "tech", emoji: "", tooltip: "Powered by Google Gemini LLM" },
+      { text: "Legal", type: "desc", emoji: "", tooltip: "Analisi contratti e documenti legali" }
+    ],
     links: [
       { url: "https://easy-contract.netlify.app/", textKey: "buttonTry", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/easy-contract", textKey: "githubRepo", icon: "fab fa-github" }
@@ -132,7 +138,13 @@ const projectsData = [
   {
     titleKey: "T_Panacea",
     descriptionKey: "PanaceaDesc",
-    image: "assets/panacea.webp",
+    image: "assets/projects/panacea.webp",
+    category: "desktop",
+    tags: [
+      { text: "Desktop", type: "desktop", emoji: "💻", tooltip: "Applicazione Windows nativa" },
+      { text: "Python", type: "tech", emoji: "", tooltip: "Sviluppato in Python con tkinter" },
+      { text: "Optimizer", type: "desc", emoji: "", tooltip: "Ottimizzazione e pulizia sistema" }
+    ],
     links: [
       { url: "https://raw.githubusercontent.com/falker47/panacea/main/dist/Panacea.exe", textKey: "downloadExe", icon: "fas fa-download" },
       { url: "https://github.com/falker47/panacea", textKey: "githubRepo", icon: "fab fa-github" }
@@ -141,7 +153,13 @@ const projectsData = [
   {
     title: "Chi l'ha detto?",
     descriptionKey: "Chi_lha_detto",
-    image: "assets/chilhadetto.png",
+    image: "assets/projects/chilhadetto.png",
+    category: "game",
+    tags: [
+      { text: "Game", type: "game", emoji: "🎮", tooltip: "Gioco interattivo" },
+      { text: "React", type: "tech", emoji: "", tooltip: "Frontend React.js" },
+      { text: "Quiz", type: "desc", emoji: "", tooltip: "Indovina chi ha detto la citazione" }
+    ],
     links: [
       { url: "https://chi-l-ha-detto.vercel.app/", textKey: "buttonTry", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/chi-l-ha-detto", textKey: "githubRepo", icon: "fab fa-github" }
@@ -150,7 +168,13 @@ const projectsData = [
   {
     titleKey: "T_Onepunch",
     descriptionKey: "OnepunchDesc",
-    image: "assets/onepunchsetup.webp",
+    image: "assets/projects/onepunchsetup.webp",
+    category: "desktop",
+    tags: [
+      { text: "Desktop", type: "desktop", emoji: "💻", tooltip: "Applicazione Windows nativa" },
+      { text: "C# WPF", type: "tech", emoji: "", tooltip: "Interfaccia WPF + Winget" },
+      { text: "Installer", type: "desc", emoji: "", tooltip: "Installa software in un click" }
+    ],
     links: [
       { url: "https://raw.githubusercontent.com/falker47/onepunch-setup/main/onepunchsetup-installer.zip", textKey: "downloadZip", icon: "fas fa-download" },
       { url: "https://github.com/falker47/onepunch-setup", textKey: "githubRepo", icon: "fab fa-github" }
@@ -159,7 +183,13 @@ const projectsData = [
   {
     titleKey: "T_IbanChecker",
     descriptionKey: "IbanChecker",
-    image: "assets/iban-checker.webp",
+    image: "assets/projects/iban-checker.webp",
+    category: "tool",
+    tags: [
+      { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Strumento di utilità" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Vanilla JavaScript" },
+      { text: "Validation", type: "desc", emoji: "", tooltip: "Verifica e corregge IBAN" }
+    ],
     links: [
       { url: "https://falker47.github.io/IBAN-Checker/", textKey: "buttonTry", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/IBAN-Checker", textKey: "githubRepo", icon: "fab fa-github" }
@@ -168,15 +198,27 @@ const projectsData = [
   {
     titleKey: "T_NFT",
     descriptionKey: "NFT",
-    image: "assets/BLOCKBUSTERS_4_EY.webp",
+    image: "assets/projects/BLOCKBUSTERS_4_EY.webp",
+    category: "research",
+    tags: [
+      { text: "Research", type: "research", emoji: "📝", tooltip: "Paper e ricerca accademica" },
+      { text: "Blockchain", type: "tech", emoji: "", tooltip: "Tecnologia decentralizzata" },
+      { text: "Whitepaper", type: "desc", emoji: "", tooltip: "Documento tecnico completo" }
+    ],
     links: [
-      { url: "assets/BLOCKBUSTERS_4_EY.pdf", textKey: "WP", icon: "fas fa-file-pdf" }
+      { url: "assets/documents/BLOCKBUSTERS_4_EY.pdf", textKey: "WP", icon: "fas fa-file-pdf" }
     ]
   },
   {
     titleKey: "T_Ripetizioni",
     descriptionKey: "Ripetizioni",
-    image: "assets/ripetizioni.webp",
+    image: "assets/projects/ripetizioni.webp",
+    category: "webapp",
+    tags: [
+      { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Sito web responsive" },
+      { text: "HTML/CSS", type: "tech", emoji: "", tooltip: "Frontend puro" },
+      { text: "Education", type: "desc", emoji: "", tooltip: "Servizi di tutoring" }
+    ],
     links: [
       { url: "https://falker47.github.io/mauriziofalconi-ripetizioni/", textKey: "buttonVisitWeb", icon: "fas fa-globe" }
     ]
@@ -184,7 +226,13 @@ const projectsData = [
   {
     title: "Carte senza Umanità",
     descriptionKey: "Carte_S_Umanità",
-    image: "assets/csu_preview.webp",
+    image: "assets/projects/csu_preview.webp",
+    category: "game",
+    tags: [
+      { text: "Game", type: "game", emoji: "🎮", tooltip: "Gioco multiplayer online" },
+      { text: "Node.js", type: "tech", emoji: "", tooltip: "Backend Node + Socket.io" },
+      { text: "Multiplayer", type: "desc", emoji: "", tooltip: "Gioca con gli amici in tempo reale" }
+    ],
     links: [
       { url: "https://carte-senza-umanita.onrender.com/", textKey: "buttonTry", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/Carte-senza-Umanita", textKey: "githubRepo", icon: "fab fa-github" }
@@ -193,7 +241,13 @@ const projectsData = [
   {
     title: "LedgerLite",
     descriptionKey: "LedgerLite",
-    image: "assets/ledgerlite.webp",
+    image: "assets/projects/ledgerlite.webp",
+    category: "finance",
+    tags: [
+      { text: "Finance", type: "finance", emoji: "💰", tooltip: "Gestione finanziaria" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Con LocalStorage" },
+      { text: "Tracker", type: "desc", emoji: "", tooltip: "Traccia crediti e debiti" }
+    ],
     links: [
       { url: "https://falker47.github.io/LedgerLite/", textKey: "buttonTry", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/LedgerLite", textKey: "githubRepo", icon: "fab fa-github" }
@@ -202,7 +256,13 @@ const projectsData = [
   {
     title: "Sommatrix",
     descriptionKey: "Sommatrix",
-    image: "assets/sommatrix.webp",
+    image: "assets/projects/sommatrix.webp",
+    category: "game",
+    tags: [
+      { text: "Game", type: "game", emoji: "🎮", tooltip: "Puzzle matematico" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Logica pura JS" },
+      { text: "Puzzle", type: "desc", emoji: "", tooltip: "Risolvi la griglia numerica" }
+    ],
     links: [
       { url: "https://falker47.github.io/SOMMATRIX/", textKey: "buttonTry", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/SOMMATRIX", textKey: "githubRepo", icon: "fab fa-github" }
@@ -211,7 +271,13 @@ const projectsData = [
   {
     titleKey: "T_CodiceFiscale",
     descriptionKey: "CodiceFiscale",
-    image: "assets/codice-fiscale.webp",
+    image: "assets/projects/codice-fiscale.webp",
+    category: "tool",
+    tags: [
+      { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Utility pratica" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Calcolo lato client" },
+      { text: "Utility", type: "desc", emoji: "", tooltip: "Calcola/decodifica CF italiano" }
+    ],
     links: [
       { url: "https://falker47.github.io/Codice-Fiscale/", textKey: "buttonTry", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/Codice-Fiscale", textKey: "githubRepo", icon: "fab fa-github" }
@@ -220,7 +286,13 @@ const projectsData = [
   {
     title: "Crack the Code",
     descriptionKey: "CracktheCode",
-    image: "assets/crack-the-code.webp",
+    image: "assets/projects/crack-the-code.webp",
+    category: "game",
+    tags: [
+      { text: "Game", type: "game", emoji: "🎮", tooltip: "Gioco di logica" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Puro JavaScript" },
+      { text: "Logic", type: "desc", emoji: "", tooltip: "Decifra il codice segreto" }
+    ],
     links: [
       { url: "https://falker47.github.io/Crack-the-Code/", textKey: "buttonTry", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/Crack-the-Code", textKey: "githubRepo", icon: "fab fa-github" }
@@ -245,24 +317,32 @@ const certificationsData = [
 
 // --- Functions ---
 /**
- * Renders the projects grid.
+ * Renders the projects grid with enhanced features.
  */
 function renderProjects() {
   const grid = document.querySelector('.project-grid');
   if (!grid) return;
   grid.innerHTML = '';
 
-  projectsData.forEach(p => {
+  projectsData.forEach((p, index) => {
     const card = document.createElement('div');
     card.className = 'project-card';
+    card.style.animationDelay = `${index * 0.1}s`;
 
     // Title Logic: use localized key if present, otherwise raw title
     let titleHtml = '';
     if (p.titleKey) {
-      titleHtml = `<h3 data-i18n="${p.titleKey}">${p.titleKey}</h3>`; // Initial placeholder, updated by switchLanguage
+      titleHtml = `<h3 data-i18n="${p.titleKey}">${p.titleKey}</h3>`;
     } else {
       titleHtml = `<h3>${p.title}</h3>`;
     }
+
+    // Tech Tags with category colors and tooltips
+    const tagsHtml = p.tags ? p.tags.map(tag => {
+      const emoji = tag.emoji ? `${tag.emoji} ` : '';
+      const tooltip = tag.tooltip ? `data-tooltip="${tag.tooltip}"` : '';
+      return `<span class="tech-tag ${tag.type}" ${tooltip}>${emoji}${tag.text}</span>`;
+    }).join('') : '';
 
     // Links Logic
     const linksHtml = p.links.map(link => `
@@ -272,10 +352,14 @@ function renderProjects() {
       </a>
     `).join('');
 
+    // Add category data attribute for filtering
+    card.setAttribute('data-category', p.category || '');
+
     card.innerHTML = `
       <img src="${p.image}" alt="${p.title || p.titleKey}">
       <div class="card-content">
         ${titleHtml}
+        ${tagsHtml ? `<div class="tech-tags">${tagsHtml}</div>` : ''}
         <p data-i18n="${p.descriptionKey}">Descrizione...</p>
         <div class="button-row">
           ${linksHtml}
@@ -319,7 +403,7 @@ function switchLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang] && translations[lang][key]) {
-      el.textContent = translations[lang][key];
+      el.innerHTML = translations[lang][key];
     }
   });
 
@@ -398,6 +482,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize features
   initSmoothScroll();
   initCertModal();
+  initScrollAnimations();
+  initScrollProgress();
+  initBackToTop();
+  initTypingEffect();
+  initProjectFilter();
+  initSectionTitleAnimations();
+  initHeroVideo();
 
   // Set Current Year in Footer
   const yearElement = document.getElementById("currentYear");
@@ -416,3 +507,228 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+/**
+ * Hero Video: Smooth Loop & Loading Placeholder
+ */
+function initHeroVideo() {
+  const video = document.getElementById('hero-video');
+  if (!video) return;
+
+  // Start with video hidden (poster visible)
+  video.style.opacity = '0';
+  video.style.transition = 'opacity 0.5s ease';
+
+  // Show video when it's ready to play
+  video.addEventListener('canplaythrough', () => {
+    video.style.opacity = '1';
+  });
+
+  // Fallback: show video after timeout even if not fully loaded
+  setTimeout(() => {
+    if (video.style.opacity === '0') {
+      video.style.opacity = '1';
+    }
+  }, 3000);
+
+  // Smooth loop: fade out near end, fade in at start
+  video.addEventListener('timeupdate', () => {
+    const timeLeft = video.duration - video.currentTime;
+    if (timeLeft < 0.3 && timeLeft > 0) {
+      video.style.opacity = '0.7';
+    }
+  });
+
+  video.addEventListener('seeked', () => {
+    // Only fade back in if we're at the start (looped)
+    if (video.currentTime < 0.5) {
+      setTimeout(() => {
+        video.style.opacity = '1';
+      }, 50);
+    }
+  });
+}
+
+/**
+ * Project Filter by Category
+ */
+function initProjectFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+
+        if (filter === 'all' || category === filter) {
+          card.classList.remove('hidden');
+          // Re-trigger animation
+          card.classList.remove('animate-in');
+          setTimeout(() => card.classList.add('animate-in'), 50);
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+}
+
+/**
+ * Section Title Animations
+ */
+function initSectionTitleAnimations() {
+  const titles = document.querySelectorAll('.section-title, .about h2, .certifications h2');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-title');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  titles.forEach(title => {
+    title.style.opacity = '0';
+    observer.observe(title);
+  });
+}
+
+/**
+ * Typing Effect for Hero Title
+ */
+function initTypingEffect() {
+  const heroTitle = document.querySelector('.hero h1');
+  if (!heroTitle) return;
+
+  const originalText = heroTitle.getAttribute('data-i18n');
+  const lang = document.getElementById('toggle-lang')?.checked ? 'en' : 'it';
+  const text = translations[lang]?.[originalText] || heroTitle.textContent;
+
+  heroTitle.innerHTML = '';
+  heroTitle.style.opacity = '1';
+
+  let i = 0;
+  const cursor = document.createElement('span');
+  cursor.className = 'typing-cursor';
+  heroTitle.appendChild(cursor);
+
+  function type() {
+    if (i < text.length) {
+      heroTitle.insertBefore(document.createTextNode(text.charAt(i)), cursor);
+      i++;
+      setTimeout(type, 50);
+    } else {
+      // Remove cursor after typing complete
+      setTimeout(() => cursor.remove(), 2000);
+    }
+  }
+
+  setTimeout(type, 500);
+}
+
+/**
+ * Scroll Progress Bar
+ */
+function initScrollProgress() {
+  const progressBar = document.querySelector('.scroll-progress');
+  if (!progressBar) return;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    progressBar.style.width = scrollPercent + '%';
+  });
+}
+
+/**
+ * Back to Top Button
+ */
+function initBackToTop() {
+  const backToTop = document.querySelector('.back-to-top');
+  if (!backToTop) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+/**
+ * Scroll Animations with Intersection Observer
+ */
+function initScrollAnimations() {
+  // Animate project cards on scroll
+  const projectCards = document.querySelectorAll('.project-card');
+  const certItems = document.querySelectorAll('.certification-item');
+  const sections = document.querySelectorAll('.about, .projects, .certifications, .contact');
+
+  const observerOptions = {
+    threshold: 0,
+    rootMargin: '0px 0px 50px 0px'
+  };
+
+  const allProjects = Array.from(projectCards);
+
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Calculate global index to apply staggered delay only to initial items
+        const globalIndex = allProjects.indexOf(entry.target);
+
+        // Define how many initial items get staggered animation
+        // Desktop: first 3 (one row) | Mobile: first 1
+        const staggerLimit = window.innerWidth >= 768 ? 3 : 1;
+
+        let delay = 0;
+        if (globalIndex !== -1 && globalIndex < staggerLimit) {
+          delay = globalIndex * 150; // Stagger first row
+        }
+
+        setTimeout(() => {
+          entry.target.classList.add('animate-in');
+        }, delay);
+
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  projectCards.forEach(card => cardObserver.observe(card));
+  certItems.forEach(item => cardObserver.observe(item));
+
+  // Fade in sections
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        sectionObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    section.classList.add('fade-in');
+    sectionObserver.observe(section);
+  });
+}
