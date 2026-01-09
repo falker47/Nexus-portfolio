@@ -668,6 +668,32 @@ footer a:hover {
   }
 }
 
+/* Mobile Swiper Base Styles */
+.cert-swiper {
+  width: 100%;
+  padding: 20px 0 50px;
+  /* Space for pagination */
+  overflow: hidden;
+  /* Ensure content is contained */
+}
+
+.certification-list {
+  /* Swiper wrapper handling */
+  box-sizing: border-box;
+  display: flex;
+  /* Mandatory for Swiper */
+  width: 100%;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  transition-property: transform;
+}
+
+/* Base Card Style */
 .certification-card {
   background: #1e1e1e;
   border-radius: 10px;
@@ -677,7 +703,10 @@ footer a:hover {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  /* Equal height */
+  opacity: 1 !important;
+  /* Force visible */
+  min-height: 200px;
+  /* Safety height */
   transition: transform 0.3s;
 }
 
