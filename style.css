@@ -162,6 +162,10 @@ a {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  /* Poster come sfondo immediato mentre il video carica */
+  background: url('assets/hero/poster.webp') center center / cover no-repeat;
+  background-color: #121212;
+  /* Fallback color */
 }
 
 #hero-video {
