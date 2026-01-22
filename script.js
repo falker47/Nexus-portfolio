@@ -29,6 +29,7 @@ const translations = {
     githubRepo: "Repo GitHub",
     exposition: "Paper",
     WP: "Apri Whitepaper",
+    NexusMods: "Nexus Mods",
 
     T_NFT: "Sistema di valorizzazione NFT",
     T_Ripetizioni: "Sito Ripetizioni",
@@ -58,6 +59,14 @@ const translations = {
     // Easy Contract
     T_EasyContract: "Easy Contract",
     EasyContract: "Web app AI su LLM Gemini ingegnerizzato per analizzare e sintetizzare contratti in PDF. Individua automaticamente clausole critiche e costi nascosti, restituendo un punteggio di bontà e consigli pratici per l'utente.",
+
+    // New Projects
+    T_Kobon: "Kobon Triangle Landscape",
+    KobonDesc: "Analisi delle configurazioni ottimali per N=10, dove il framework algoritmico di supporto ha identificato 11 grafi distinti che replicano l'attuale record di 25 triangoli.",
+    T_ZEROfilez: "ZEROfilez Cloud Decryptor",
+    ZEROfilezDesc: "Piattaforma dalla doppia natura: Cloud sicuro per i propri file criptati e Archivio pubblico per scaricare rapidamente emulatori, APK e utility fondamentali per PC.",
+    T_HLSE: "Hogwarts Legacy Save Editor",
+    HLSEDesc: "Applicazione GUI moderna per modificare e gestire i salvataggi di Hogwarts Legacy. Include funzionalità di backup automatico e un editor integrato facile da usare.",
   },
   en: {
     logoName: "Maurizio Falconi",
@@ -82,6 +91,7 @@ const translations = {
     githubRepo: "GitHub Repo",
     exposition: "Paper",
     WP: "Open Whitepaper",
+    NexusMods: "Nexus Mods",
 
     T_NFT: "NFTs as Valorization System",
     T_Ripetizioni: "Tutoring Website",
@@ -111,6 +121,14 @@ const translations = {
     // Easy Contract
     T_EasyContract: "Easy Contract",
     EasyContract: "Web app AI on Gemini LLM fine-tuned to analyze and synthesize contracts in PDF. Automatically identifies critical clauses and hidden costs, returning a security score and practical advice for the user.",
+
+    // New Projects
+    T_Kobon: "Kobon Triangle Landscape",
+    KobonDesc: "Analysis of optimal configurations for N=10, where the supporting algorithmic framework identified 11 distinct graphs replicating the current record of 25 triangles.",
+    T_ZEROfilez: "ZEROfilez Cloud Decryptor",
+    ZEROfilezDesc: "Dual-nature platform: Secure cloud for personal encrypted files and a Public Repository for quickly downloading emulators, APKs, and essential PC utilities.",
+    T_HLSE: "Hogwarts Legacy Save Editor",
+    HLSEDesc: "Modern GUI application to edit and manage Hogwarts Legacy save files. Features automatic backups and an easy-to-use integrated editor.",
   }
 };
 
@@ -120,6 +138,51 @@ const curriculumLinks = {
 };
 
 const projectsData = [
+  {
+    titleKey: "T_Kobon",
+    descriptionKey: "KobonDesc",
+    image: "assets/projects/kobon.webp",
+    category: "research",
+    tags: [
+      { text: "Research", type: "research", emoji: "📝", tooltip: "Ricerca matematica" },
+      { text: "Python", type: "tech", emoji: "", tooltip: "Algoritmi di ottimizzazione" },
+      { text: "Geometry", type: "desc", emoji: "", tooltip: "Problema geometrico" }
+    ],
+    links: [
+      { url: "assets/documents/Kobon Paper.pdf", textKey: "exposition", icon: "fas fa-file-pdf" },
+      { url: "https://github.com/falker47/Kobon-Triangle-Landscape", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+  {
+    titleKey: "T_ZEROfilez",
+    descriptionKey: "ZEROfilezDesc",
+    image: "assets/projects/zerofilez.webp",
+    category: "webapp",
+    tags: [
+      { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Tool di sicurezza" },
+      { text: "Cryptography", type: "tech", emoji: "", tooltip: "Crittografia client-side" },
+      { text: "Cloud", type: "desc", emoji: "", tooltip: "Gestione file criptati" }
+    ],
+    links: [
+      { url: "https://falker47.github.io/ZEROfilez-Cloud-Decryptor/", textKey: "buttonTry", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/ZEROfilez-Cloud-Decryptor", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+  {
+    titleKey: "T_HLSE",
+    descriptionKey: "HLSEDesc",
+    image: "assets/projects/HLSE.webp",
+    category: "tool",
+    tags: [
+      { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Utility per gaming" },
+      { text: "Python GUI", type: "tech", emoji: "", tooltip: "Interfaccia CustomTkinter" },
+      { text: "Modding", type: "desc", emoji: "", tooltip: "Modifica salvataggi" }
+    ],
+    links: [
+      { url: "https://www.nexusmods.com/hogwartslegacy/mods/2414", textKey: "NexusMods", icon: "fas fa-download" },
+      { url: "https://github.com/falker47/HogwartsLegacy-SaveEditor", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
   {
     titleKey: "T_EasyContract",
     descriptionKey: "EasyContract",
@@ -183,7 +246,7 @@ const projectsData = [
   {
     titleKey: "T_IbanChecker",
     descriptionKey: "IbanChecker",
-    image: "assets/projects/iban-checker.webp",
+    image: "assets/projects/iban-checker.jpg",
     category: "tool",
     tags: [
       { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Strumento di utilità" },
