@@ -1,183 +1,228 @@
 <!DOCTYPE html>
 <html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Portfolio</title>
+    <!-- Favicons -->
+    <link
+      href="https://i.postimg.cc/rmCxjswj/main-falker-logo-gecko-transparent-minimal.png"
+      rel="icon"
+    />
+    <link
+      href="https://i.postimg.cc/rmCxjswj/main-falker-logo-gecko-transparent-minimal.png"
+      rel="apple-touch-icon"
+    />
+    <!-- Anteprima Immagine -->
+    <meta
+      property="og:image"
+      content="https://i.postimg.cc/KY9JyDdC/main-falker-logo-gecko-circle-night-blue-2.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://i.postimg.cc/KY9JyDdC/main-falker-logo-gecko-circle-night-blue-2.png"
+    />
+    <!-- Importazione Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Preload Hero Poster (priorità alta) -->
+    <link
+      rel="preload"
+      href="assets/hero/poster.webp"
+      as="image"
+      fetchpriority="high"
+    />
+    <!-- Link al file CSS -->
+    <link rel="stylesheet" href="style.css?v=1.1" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexus Portfolio</title>
-  <!-- Favicons -->
-  <link href="https://i.postimg.cc/rmCxjswj/main-falker-logo-gecko-transparent-minimal.png" rel="icon">
-  <link href="https://i.postimg.cc/rmCxjswj/main-falker-logo-gecko-transparent-minimal.png" rel="apple-touch-icon">
-  <!-- Anteprima Immagine -->
-  <meta property="og:image" content="https://i.postimg.cc/KY9JyDdC/main-falker-logo-gecko-circle-night-blue-2.png">
-  <meta name="twitter:image" content="https://i.postimg.cc/KY9JyDdC/main-falker-logo-gecko-circle-night-blue-2.png">
-  <!-- Importazione Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Preload Hero Poster (priorità alta) -->
-  <link rel="preload" href="assets/hero/poster.webp" as="image" fetchpriority="high">
-  <!-- Link al file CSS -->
-  <link rel="stylesheet" href="style.css?v=1.1">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
 
-<body>
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress"></div>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="assets/branding/falkerlogo.png" alt="Logo" class="logo-img">
-      Maurizio Falconi
-    </div>
-    <ul>
-      <li><a href="#hero" data-i18n="navHome">Home</a></li>
-      <li><a href="#about" data-i18n="navAbout">Chi sono</a></li>
-      <li><a href="#projects" data-i18n="navProjects">Progetti</a></li>
-      <li><a href="#certifications">Certif.</a></li>
-      <li><a href="#contact" data-i18n="navContact">Contatti</a></li>
-    </ul>
-
-    <!-- Toggle lingua spostato a destra -->
-    <div class="language-toggle">
-      <input type="checkbox" id="toggle-lang">
-      <label for="toggle-lang" class="toggle">
-        <span class="toggle-switch"></span>
-      </label>
-    </div>
-  </nav>
-
-  <!-- Sezione Hero -->
-  <section class="hero" id="hero">
-    <video autoplay muted loop playsinline preload="auto" id="hero-video" poster="assets/hero/poster.webp">
-      <source src="assets/hero/video.webm" type="video/webm">
-      Il tuo browser non supporta il video.
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-card">
-        <h1 data-i18n="heroTitle">Benvenuto in Nexus Portfolio</h1>
-        <p data-i18n="heroSubtitle">Il punto d'incontro di tutti i miei progetti.</p>
-        <a href="#projects" data-i18n="heroButton">Esplora Ora</a>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/branding/falkerlogo.png" alt="Logo" class="logo-img" />
+        Maurizio Falconi
       </div>
-    </div>
-  </section>
+      <ul>
+        <li><a href="#hero" data-i18n="navHome">Home</a></li>
+        <li><a href="#about" data-i18n="navAbout">Chi sono</a></li>
+        <li><a href="#projects" data-i18n="navProjects">Progetti</a></li>
+        <li><a href="#certifications">Certif.</a></li>
+        <li><a href="#contact" data-i18n="navContact">Contatti</a></li>
+      </ul>
 
-  <!-- Sezione About Me -->
-  <section class="about" id="about">
-    <div class="about-card">
-      <!-- FOTO PROFILO - Decommentare per mostrarla -->
-      <!-- <img src="assets/branding/foto.png" alt="Maurizio Falconi" class="about-photo"> -->
-
-      <h2 class="section-title" data-i18n="aboutTitle">Chi sono</h2>
-
-      <div class="about-content">
-        <p data-i18n="aboutText1"></p>
-        <p class="about-quote" data-i18n="aboutText2">
-          Sono due le forze fondamentali che mi muovono: <br>capire il mondo che mi circonda e creare cose che possano
-          (nel loro piccolo) arricchirlo.
-        </p>
-        <p class="about-cta" data-i18n="aboutText3">Buona navigazione!</p>
+      <!-- Toggle lingua spostato a destra -->
+      <div class="language-toggle">
+        <input type="checkbox" id="toggle-lang" />
+        <label for="toggle-lang" class="toggle">
+          <span class="toggle-switch"></span>
+        </label>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Sezione Progetti -->
-  <section class="projects" id="projects">
-    <h2 data-i18n="projectsTitle" class="section-title">Progetti</h2>
-
-    <!-- Project Filter -->
-    <div class="project-filter">
-      <button class="filter-btn active" data-filter="all">✨ Tutti</button>
-      <button class="filter-btn" data-filter="webapp">🌐 Web App</button>
-      <button class="filter-btn" data-filter="game">🎮 Game</button>
-      <button class="filter-btn" data-filter="desktop">💻 Desktop</button>
-      <button class="filter-btn" data-filter="tool">🔧 Tool</button>
-      <button class="filter-btn" data-filter="research">📝 Research</button>
-      <button class="filter-btn" data-filter="finance">💰 Finance</button>
-    </div>
-
-    <!-- Projects are dynamically rendered via JS -->
-    <div class="project-grid"></div>
-  </section>
-
-  <!-- Sezione Certificazioni -->
-  <section class="certifications" id="certifications">
-    <div class="certifications-container">
-      <h2 data-i18n="Certifications">Certificazioni</h2>
-
-      <!-- Swiper Carousel -->
-      <div class="swiper cert-swiper">
-        <div class="swiper-wrapper certification-list">
-          <!-- Slides are dynamically rendered via JS -->
+    <!-- Sezione Hero -->
+    <section class="hero" id="hero">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        id="hero-video"
+        poster="assets/hero/poster.webp"
+      >
+        <source src="assets/hero/video.webm" type="video/webm" />
+        Il tuo browser non supporta il video.
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-card">
+          <h1 data-i18n="heroTitle">Benvenuto in Nexus Portfolio</h1>
+          <p data-i18n="heroSubtitle">
+            Il punto d'incontro di tutti i miei progetti.
+          </p>
+          <a href="#projects" data-i18n="heroButton">Esplora Ora</a>
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Navigation -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <!-- Sezione About Me -->
+    <section class="about" id="about">
+      <div class="about-card">
+        <!-- FOTO PROFILO - Decommentare per mostrarla -->
+        <!-- <img src="assets/branding/foto.png" alt="Maurizio Falconi" class="about-photo"> -->
+
+        <h2 class="section-title" data-i18n="aboutTitle">Chi sono</h2>
+
+        <div class="about-content">
+          <p data-i18n="aboutText1"></p>
+          <p class="about-quote" data-i18n="aboutText2">
+            Sono due le forze fondamentali che mi muovono: <br />capire il mondo
+            che mi circonda e creare cose che possano (nel loro piccolo)
+            arricchirlo.
+          </p>
+          <p class="about-cta" data-i18n="aboutText3">Buona navigazione!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione Progetti -->
+    <section class="projects" id="projects">
+      <h2 data-i18n="projectsTitle" class="section-title">Progetti</h2>
+
+      <!-- Project Filter -->
+      <div class="project-filter">
+        <button class="filter-btn active" data-filter="all">✨ Tutti</button>
+        <button class="filter-btn" data-filter="webapp">🌐 Web App</button>
+        <button class="filter-btn" data-filter="game">🎮 Game</button>
+        <button class="filter-btn" data-filter="desktop">💻 Desktop</button>
+        <button class="filter-btn" data-filter="tool">🔧 Tool</button>
+        <button class="filter-btn" data-filter="research">📝 Research</button>
+        <button class="filter-btn" data-filter="finance">💰 Finance</button>
       </div>
 
+      <!-- Projects are dynamically rendered via JS -->
+      <div class="project-grid"></div>
+    </section>
+
+    <!-- Sezione Certificazioni -->
+    <section class="certifications" id="certifications">
+      <div class="certifications-container">
+        <h2 data-i18n="Certifications">Certificazioni</h2>
+
+        <!-- Swiper Carousel -->
+        <div class="swiper cert-swiper">
+          <div class="swiper-wrapper certification-list">
+            <!-- Slides are dynamically rendered via JS -->
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Navigation -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="cert-modal" class="cert-modal">
+      <span class="cert-modal-close">&times;</span>
+      <img class="cert-modal-content" id="modal-img" />
     </div>
-  </section>
 
-  <!-- Lightbox Modal -->
-  <div id="cert-modal" class="cert-modal">
-    <span class="cert-modal-close">&times;</span>
-    <img class="cert-modal-content" id="modal-img">
-  </div>
-
-  <!-- Sezione Contatti -->
-  <section class="contact" id="contact">
-    <div class="contact-mail-container">
-
-      <!-- <a id="curriculum-link" class="contact-mail"
+    <!-- Sezione Contatti -->
+    <section class="contact" id="contact">
+      <div class="contact-mail-container">
+        <!-- <a id="curriculum-link" class="contact-mail"
         href="https://www.canva.com/design/DAFjFQpJARI/9DIpYyzdr7U8kKaLgAUVaA/view?utm_content=DAFjFQpJARI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1a1bf25a36"
         target="_blank">
         <i class="fas fa-user"></i>
         <span data-i18n="contactCurriculum">Curriculum</span>
       </a> -->
 
-      <a class="contact-mail" href="mailto:maurizio.falconi47@gmail.com">
-        <i class="fas fa-envelope"></i>
-        <span data-i18n="contactMail">Contattami</span>
-      </a>
-    </div>
-    <div class="contact-socials">
-      <a class="contact-social" href="https://www.linkedin.com/in/mauriziofalconi/" target="_blank">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a class="contact-social" href="https://github.com/falker47" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-      <a class="contact-social" href="https://www.letuelezioni.it/insegnanti/maurizio-falconi.htm" target="_blank">
-        <i class="fas fa-chalkboard-teacher"></i>
-      </a>
-    </div>
-  </section>
+        <a class="contact-mail" href="mailto:maurizio.falconi47@gmail.com">
+          <i class="fas fa-envelope"></i>
+          <span data-i18n="contactMail">Contattami</span>
+        </a>
+      </div>
+      <div class="contact-socials">
+        <a
+          class="contact-social"
+          href="https://www.linkedin.com/in/mauriziofalconi/"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a
+          class="contact-social"
+          href="https://github.com/falker47"
+          target="_blank"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          class="contact-social"
+          href="https://www.letuelezioni.it/insegnanti/maurizio-falconi.htm"
+          target="_blank"
+        >
+          <i class="fas fa-chalkboard-teacher"></i>
+        </a>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>
-      <a href="https://falker47.github.io/Nexus-portfolio/">
-        &copy; <span id="currentYear"></span> <span data-i18n="footerName">Maurizio Falconi</span> - Nexus Portfolio
-      </a>
-    </p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <p>
+        <a href="https://falker47.github.io/Nexus-portfolio/">
+          &copy; <span id="currentYear"></span>
+          <span data-i18n="footerName">Maurizio Falconi</span> - Nexus Portfolio
+        </a>
+      </p>
+    </footer>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top" aria-label="Torna su">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Torna su">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
-  <!-- Link al file JavaScript -->
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
-</body>
-
+    <!-- Link al file JavaScript -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/projects-data.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
