@@ -367,7 +367,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollAnimations();
   initScrollProgress();
   initBackToTop();
-  initTypingEffect();
   initProjectFilter();
   initSectionTitleAnimations();
   initHeroVideo();
