@@ -1,9 +1,9 @@
 /* ===== Design System Variables ===== */
 :root {
-  --primary: #8B5CF6;
-  --primary-light: #A78BFA;
-  --primary-dark: #7C3AED;
-  --accent: #EC4899;
+  --primary: #8b5cf6;
+  --primary-light: #a78bfa;
+  --primary-dark: #7c3aed;
+  --accent: #ec4899;
   --bg-dark: #121212;
   --bg-card: #1e1e1e;
   --bg-card-hover: #2a2a2a;
@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.6;
   background: var(--bg-dark);
   color: var(--text-body);
@@ -137,7 +137,7 @@ a {
 }
 
 .navbar ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -163,7 +163,7 @@ a {
   height: 100vh;
   overflow: hidden;
   /* Poster come sfondo immediato mentre il video carica */
-  background: url('assets/hero/poster.webp') center center / cover no-repeat;
+  background: url("assets/hero/poster.webp") center center / cover no-repeat;
   background-color: #121212;
   /* Fallback color */
   z-index: 0;
@@ -270,10 +270,15 @@ a {
 
 /* Animated gradient border */
 .about-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -2px;
-  background: linear-gradient(135deg, var(--primary), var(--accent), var(--primary));
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent),
+    var(--primary)
+  );
   background-size: 200% 200%;
   animation: gradientShift 4s ease infinite;
   border-radius: 22px;
@@ -428,7 +433,9 @@ a {
   font-weight: 600;
   text-decoration: none;
   color: #fff;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .contact-mail i {
@@ -455,7 +462,9 @@ a {
   border-radius: 50%;
   text-decoration: none;
   color: #fff;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
   font-size: 1.8rem;
 }
 
@@ -540,7 +549,7 @@ footer a:hover {
 }
 
 footer a {
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -562,7 +571,6 @@ footer a:hover {
 }
 
 .language-toggle .toggle {
-
   margin-left: auto !important;
   display: inline-block;
   position: relative;
@@ -624,18 +632,18 @@ footer a:hover {
 }
 
 /* Quando è selezionato (lingua EN), pallino si sposta a destra */
-.language-toggle input[type="checkbox"]:checked+.toggle .toggle-switch {
+.language-toggle input[type="checkbox"]:checked + .toggle .toggle-switch {
   transform: translateX(36px);
   /* Adattato alla nuova larghezza */
 }
 
 /* Opacità bandiere (opzionale) */
-.language-toggle input[type="checkbox"]:checked+.toggle::before {
+.language-toggle input[type="checkbox"]:checked + .toggle::before {
   opacity: 0.3;
   /* IT bandiera trasparente */
 }
 
-.language-toggle input[type="checkbox"]:not(:checked)+.toggle::after {
+.language-toggle input[type="checkbox"]:not(:checked) + .toggle::after {
   opacity: 0.3;
   /* UK bandiera trasparente quando non selezionata */
 }
@@ -847,7 +855,6 @@ footer a:hover {
 }
 
 @media (max-width: 900px) {
-
   .navbar {
     flex-direction: column;
     padding: 10px 15px;
@@ -931,12 +938,18 @@ footer a:hover {
 }
 
 .hero-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -3px;
   z-index: -1;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary), var(--accent), var(--primary-light), var(--primary));
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent),
+    var(--primary-light),
+    var(--primary)
+  );
   background-size: 300% 300%;
   animation: gradientBorder 4s ease infinite;
   opacity: 0.8;
@@ -944,7 +957,13 @@ footer a:hover {
 
 /* Hero Title Gradient Text */
 .hero h1 {
-  background: linear-gradient(135deg, var(--text-light), var(--primary-light), var(--accent));
+  color: var(--text-light);
+  background: linear-gradient(
+    135deg,
+    var(--text-light),
+    var(--primary-light),
+    var(--accent)
+  );
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -953,7 +972,6 @@ footer a:hover {
 }
 
 @keyframes gradientText {
-
   0%,
   100% {
     background-position: 0% center;
@@ -965,29 +983,34 @@ footer a:hover {
 }
 
 /* Enhanced Hero CTA Button */
-.hero-card>a {
+.hero-card > a {
   background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
   position: relative;
   overflow: hidden;
   transition: all var(--transition-smooth) !important;
 }
 
-.hero-card>a::before {
-  content: '';
+.hero-card > a::before {
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
-.hero-card>a:hover::before {
+.hero-card > a:hover::before {
   left: 100%;
 }
 
-.hero-card>a:hover {
+.hero-card > a:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
 }
@@ -1004,7 +1027,6 @@ footer a:hover {
 }
 
 @keyframes blink {
-
   0%,
   50% {
     opacity: 1;
@@ -1045,13 +1067,19 @@ footer a:hover {
 .project-card .img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(236, 72, 153, 0.8));
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.8),
+    rgba(236, 72, 153, 0.8)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   opacity: 0;
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out;
 }
 
 .project-card:hover .img-overlay {
@@ -1090,63 +1118,63 @@ footer a:hover {
 /* Category: Web App - Cyan */
 .tech-tag.webapp {
   background: rgba(6, 182, 212, 0.2);
-  color: #22D3EE;
+  color: #22d3ee;
   border: 1px solid rgba(6, 182, 212, 0.4);
 }
 
 /* Category: Game - Red */
 .tech-tag.game {
   background: rgba(239, 68, 68, 0.2);
-  color: #F87171;
+  color: #f87171;
   border: 1px solid rgba(239, 68, 68, 0.4);
 }
 
 /* Category: Desktop - Blue */
 .tech-tag.desktop {
   background: rgba(59, 130, 246, 0.2);
-  color: #60A5FA;
+  color: #60a5fa;
   border: 1px solid rgba(59, 130, 246, 0.4);
 }
 
 /* Category: Tool - Orange */
 .tech-tag.tool {
   background: rgba(249, 115, 22, 0.2);
-  color: #FB923C;
+  color: #fb923c;
   border: 1px solid rgba(249, 115, 22, 0.4);
 }
 
 /* Category: Research - Yellow */
 .tech-tag.research {
   background: rgba(234, 179, 8, 0.2);
-  color: #FACC15;
+  color: #facc15;
   border: 1px solid rgba(234, 179, 8, 0.4);
 }
 
 /* Category: Finance - Green */
 .tech-tag.finance {
   background: rgba(34, 197, 94, 0.2);
-  color: #4ADE80;
+  color: #4ade80;
   border: 1px solid rgba(34, 197, 94, 0.4);
 }
 
 /* Category: AI - Violet */
 .tech-tag.ai {
   background: rgba(139, 92, 246, 0.2);
-  color: #A78BFA;
+  color: #a78bfa;
   border: 1px solid rgba(139, 92, 246, 0.4);
 }
 
 /* Technology tags - inherit category color or use default violet */
 .tech-tag.tech {
   background: rgba(139, 92, 246, 0.15);
-  color: #C4B5FD;
+  color: #c4b5fd;
   border: 1px solid rgba(139, 92, 246, 0.3);
 }
 
 /* Description tags - Light Gray */
 .tech-tag.desc {
   background: rgba(156, 163, 175, 0.2);
-  color: #D1D5DB;
+  color: #d1d5db;
   border: 1px solid rgba(156, 163, 175, 0.4);
 }
 
@@ -1212,7 +1240,7 @@ footer a:hover {
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 0.95rem;
   /* Slightly larger text */
@@ -1304,27 +1332,27 @@ footer a:hover {
 
 /* Filter category colors on active */
 .filter-btn.active[data-filter="webapp"] {
-  background: linear-gradient(135deg, #06B6D4, #0891B2);
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
 }
 
 .filter-btn.active[data-filter="game"] {
-  background: linear-gradient(135deg, #EF4444, #DC2626);
+  background: linear-gradient(135deg, #ef4444, #dc2626);
 }
 
 .filter-btn.active[data-filter="desktop"] {
-  background: linear-gradient(135deg, #3B82F6, #2563EB);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
 }
 
 .filter-btn.active[data-filter="tool"] {
-  background: linear-gradient(135deg, #F97316, #EA580C);
+  background: linear-gradient(135deg, #f97316, #ea580c);
 }
 
 .filter-btn.active[data-filter="research"] {
-  background: linear-gradient(135deg, #EAB308, #CA8A04);
+  background: linear-gradient(135deg, #eab308, #ca8a04);
 }
 
 .filter-btn.active[data-filter="finance"] {
-  background: linear-gradient(135deg, #22C55E, #16A34A);
+  background: linear-gradient(135deg, #22c55e, #16a34a);
 }
 
 /* Hidden project cards when filtered */
@@ -1337,7 +1365,7 @@ footer a:hover {
   position: absolute;
   top: 15px;
   right: -35px;
-  background: linear-gradient(135deg, var(--accent), #F472B6);
+  background: linear-gradient(135deg, var(--accent), #f472b6);
   color: white;
   padding: 5px 40px;
   font-size: 0.75rem;
@@ -1350,14 +1378,22 @@ footer a:hover {
 
 /* Enhanced Card Buttons */
 .project-card .card-content a {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-dark)
+  ) !important;
   transition: all var(--transition-smooth) !important;
   position: relative;
   overflow: hidden;
 }
 
 .project-card .card-content a:hover {
-  background: linear-gradient(135deg, var(--primary-light), var(--primary)) !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--primary)
+  ) !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
@@ -1396,6 +1432,7 @@ footer a:hover {
 .projects h2,
 .about h2,
 .certifications h2 {
+  color: var(--text-light);
   background: linear-gradient(135deg, var(--text-light), var(--primary-light));
   -webkit-background-clip: text;
   background-clip: text;
@@ -1427,7 +1464,11 @@ footer a:hover {
 }
 
 .contact-mail:hover {
-  background: linear-gradient(135deg, var(--primary-light), var(--accent)) !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--accent)
+  ) !important;
   transform: scale(1.05) !important;
   box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
 }
@@ -1460,7 +1501,6 @@ footer a:hover {
 
 /* Increase Section Titles size on Desktop */
 @media (min-width: 768px) {
-
   .projects h2,
   .certifications h2,
   .about h2.section-title {
@@ -1471,7 +1511,6 @@ footer a:hover {
 
 /* Mobile Optimizations */
 @media (max-width: 768px) {
-
   /* Widen About Card & Reduce Text */
   .about-card {
     padding: 30px 20px !important;

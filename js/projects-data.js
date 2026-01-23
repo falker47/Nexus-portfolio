@@ -116,7 +116,7 @@ const projectsMap = {
     "IbanChecker": {
         titleKey: "T_IbanChecker",
         descriptionKey: "IbanChecker",
-        image: "assets/projects/iban-checker.jpg",
+        image: "assets/projects/iban-checker.webp",
         category: "tool",
         tags: [
             { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Strumento di utilità" },
