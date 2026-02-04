@@ -8,6 +8,21 @@
  */
 
 const projectsMap = {
+    "GemDashboard": {
+        titleKey: "T_GemDashboard",
+        descriptionKey: "GemDashboardDesc",
+        image: "assets/projects/gemdashboard.webp",
+        category: "webapp",
+        tags: [
+            { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Dashboard interattiva" },
+            { text: "AI", type: "tech", emoji: "", tooltip: "Gestione Prompt AI" },
+            { text: "Productivity", type: "desc", emoji: "", tooltip: "Ottimizzazione flusso di lavoro" }
+        ],
+        links: [
+            { url: "https://falker47.github.io/GemDashboard/", textKey: "buttonTry", icon: "fas fa-globe" },
+            { url: "https://github.com/falker47/GemDashboard", textKey: "githubRepo", icon: "fab fa-github" }
+        ]
+    },
     "Kobon": {
         titleKey: "T_Kobon",
         descriptionKey: "KobonDesc",
@@ -60,7 +75,7 @@ const projectsMap = {
         category: "webapp",
         tags: [
             { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Applicazione web interattiva" },
-            { text: "Gemini AI", type: "tech", emoji: "", tooltip: "Powered by Google Gemini LLM" },
+            { text: "AI", type: "tech", emoji: "", tooltip: "Powered by Google Gemini LLM" },
             { text: "Legal", type: "desc", emoji: "", tooltip: "Analisi contratti e documenti legali" }
         ],
         links: [
@@ -236,7 +251,8 @@ const projectsMap = {
 
 // Lista Progetti
 const projectsOrder = [
-    "Kobon",
+    "GemDashboard",
+    // "Kobon",
     "EasyContract",
     "Panacea",
     "ZEROfilez",

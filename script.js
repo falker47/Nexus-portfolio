@@ -60,6 +60,10 @@ const translations = {
     T_EasyContract: "Easy Contract",
     EasyContract: "Web app AI su LLM Gemini ingegnerizzato per analizzare e sintetizzare contratti in PDF. Individua automaticamente clausole critiche e costi nascosti, restituendo un punteggio di bontà e consigli pratici per l'utente.",
 
+    // Gem Dashboard
+    T_GemDashboard: "Gem Dashboard",
+    GemDashboardDesc: "Dashboard per gestire e accedere rapidamente ad una collezione di prompt AI e 'Gems' (Chat AI personalizzate). Organizzata in livelli (tiers), con filtri intelligenti e azioni one-click.",
+
     // New Projects
     T_Kobon: "Kobon Triangle Landscape",
     KobonDesc: "Analisi delle configurazioni ottimali per N=10, dove il framework algoritmico di supporto ha identificato 11 grafi distinti che replicano l'attuale record di 25 triangoli.",
@@ -121,6 +125,10 @@ const translations = {
     // Easy Contract
     T_EasyContract: "Easy Contract",
     EasyContract: "Web app AI on Gemini LLM fine-tuned to analyze and synthesize contracts in PDF. Automatically identifies critical clauses and hidden costs, returning a security score and practical advice for the user.",
+
+    // Gem Dashboard
+    T_GemDashboard: "Gem Dashboard",
+    GemDashboardDesc: "Dashboard to manage and quickly access a collection of AI prompts and 'Gems' (Custom AI Chats). Organized in tiers, with smart filtering and one-click actions.",
 
     // Kobon Triangle Landscape
     T_Kobon: "Kobon Triangle Landscape",
