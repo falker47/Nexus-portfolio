@@ -71,6 +71,8 @@ const translations = {
     ZEROfilezDesc: "Piattaforma dalla doppia natura: Cloud sicuro per i propri file criptati e Archivio pubblico per scaricare rapidamente emulatori, APK e utility fondamentali per PC.",
     T_HLSE: "Hogwarts Legacy Save Editor",
     HLSEDesc: "Applicazione GUI moderna per modificare e gestire i salvataggi di Hogwarts Legacy. Include funzionalità di backup automatico e un editor integrato facile da usare.",
+    T_PMD: "PMD Reverse Quiz",
+    PMDDesc: "Ottimizza la tua avventura in Pokémon Mystery Dungeon. Ottieni lo starter che desideri grazie a un algoritmo di reverse-lookup che ti guida nelle risposte del quiz della personalità.",
   },
   en: {
     logoName: "Maurizio Falconi",
@@ -141,6 +143,8 @@ const translations = {
     // Hogwarts Legacy Save Editor
     T_HLSE: "Hogwarts Legacy Save Editor",
     HLSEDesc: "Modern GUI application to edit and manage Hogwarts Legacy save files. Features automatic backups and an easy-to-use integrated editor.",
+    T_PMD: "PMD Reverse Quiz",
+    PMDDesc: "Optimize your Pokémon Mystery Dungeon adventure. Get the starter you want thanks to a reverse-lookup algorithm that guides you through the personality quiz answers.",
   }
 };
 

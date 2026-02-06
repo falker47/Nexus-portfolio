@@ -245,26 +245,43 @@ const projectsMap = {
             { url: "https://falker47.github.io/Crack-the-Code/", textKey: "buttonTry", icon: "fas fa-globe" },
             { url: "https://github.com/falker47/Crack-the-Code", textKey: "githubRepo", icon: "fab fa-github" }
         ]
+    },
+    "PMD": {
+        titleKey: "T_PMD",
+        descriptionKey: "PMDDesc",
+        image: "assets/projects/PMD.webp",
+        category: "webapp",
+        tags: [
+            { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Tool interattivo" },
+            { text: "React + Vite", type: "tech", emoji: "", tooltip: "Frontend moderno e veloce" },
+            { text: "Pokémon", type: "game", emoji: "", tooltip: "Utility per Pokémon MD" }
+        ],
+        links: [
+            { url: "https://pokemonmysterydungeon-reversequiz.netlify.app/", textKey: "buttonTry", icon: "fas fa-globe" },
+            { url: "https://github.com/falker47/PokemonMysteryDungeon-ReverseQuiz", textKey: "githubRepo", icon: "fab fa-github" }
+        ]
     }
 };
 
 
 // Lista Progetti
 const projectsOrder = [
-    "GemDashboard",
-    // "Kobon",
     "EasyContract",
     "Panacea",
-    "ZEROfilez",
     "HLSE",
+    "PMD",
     "ChiLhaDetto",
-    "Onepunch",
-    "IbanChecker",
+    "GemDashboard",
+    "ZEROfilez",
+    "Kobon",
     "CarteSenzaUmanita",
+    "IbanChecker",
+    "Onepunch",
     "NFT",
+    "CrackTheCode",
     "Ripetizioni",
     "LedgerLite",
     "Sommatrix",
-    "CodiceFiscale",
-    "CrackTheCode"
+    "CodiceFiscale"
+
 ];
