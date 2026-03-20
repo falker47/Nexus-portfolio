@@ -1,179 +1,10 @@
 /**
  * Nexus Portfolio - Main Script
- * Handles translations, smooth scrolling, dynamic data, and interactions.
+ * Handles smooth scrolling, dynamic rendering, and interactions.
+ * Data is loaded from js/translations.js, js/certifications-data.js, js/projects-data.js
  */
-
-// --- Configuration & Data ---
-
-const translations = {
-  it: {
-    logoName: "Maurizio Falconi",
-    navHome: "Home",
-    navAbout: "Chi sono",
-    navProjects: "Progetti",
-    navContact: "Contatti",
-    heroTitle: "Benvenuto in Nexus Portfolio",
-    heroSubtitle: "Il punto d'incontro di tutti i miei progetti.",
-    heroButton: "Esplora Ora",
-    aboutTitle: "Chi sono",
-    aboutText1: "Potrei definirmi un Data Engineer, così come un Full-stack Developer. Ma sono semplicemente una persona piena di passioni con una curiosità insaziabile. Mi piace risolvere problemi con soluzioni che siano in un’equazione, un algoritmo o nella semplice scrittura.",
-    aboutText2: "Sono due le forze fondamentali che mi muovono: <br>capire il mondo che mi circonda e creare cose che possano (nel loro piccolo) arricchirlo.",
-    aboutText3: "Buona navigazione!",
-    projectsTitle: "Progetti",
-    contactCurriculum: "Curriculum",
-    contactMail: "Contattami",
-    Certifications: "Certificazioni",
-    footerName: "Maurizio Falconi",
-    buttonVisitWeb: "Sito web",
-    buttonTry: "Provalo!",
-    githubRepo: "Repo GitHub",
-    exposition: "Paper",
-    WP: "Apri Whitepaper",
-    NexusMods: "Nexus Mods",
-
-    T_NFT: "Sistema di valorizzazione NFT",
-    T_Ripetizioni: "Sito Ripetizioni",
-    T_IbanChecker: "Verifica IBAN",
-    T_CodiceFiscale: "Calcolo Codice Fiscale",
-
-    IbanChecker: "Web app che verifica la validità degli IBAN italiani. In caso di IBAN errato, propone correzioni ipotizzando che si abbia inserito male un carattere o se ne siano invertiti due.",
-    Sommatrix: "Puzzle matematico in cui il giocatore seleziona o cancella numeri in una griglia per far combaciare le somme di ogni riga e colonna con i target prestabiliti.",
-    CodiceFiscale: "Web app che calcola il codice fiscale italiano a partire dai dati anagrafici e viceversa, ovvero recuperare dal codice fiscale sesso, data e luogo di nascita.",
-    DataScience: "Progetto che attraverso l’analisi dati in Python e tecniche di machine learning prevede il successo dell’atterraggio di razzi per ottimizzare la stima dei costi e identificare eventuali siti di lancio ottimali.",
-    CracktheCode: "Gioco di logica basato sulle dinamiche di Mastermind e Hit and Blow in cui devi decifrare un codice segreto usando deduzione e feedback progressivi.",
-    LedgerLite: "Questa applicazione ti permette di gestire in modo semplice i tuoi crediti e debiti. In ogni operazione viene specificato il nominativo, l’importo e una descrizione.",
-    Ripetizioni: "Il sito web dove presento la mia attività di ripetizioni, permettendo ai miei studenti di prenotare le lezioni di matematica e fisica e consultare il mio materiale didattico.",
-    NFT: "White Paper (in italiano) sulla valorizzazione dei dipendenti tramite NFT gamification, adottabile dalle aziende.",
-    Carte_S_Umanità: "Versione web tutta italiana del gioco di carte 'Cards Against Humanity', dove i giocatori completano frasi con risposte divertenti o provocatorie.",
-    Chi_lha_detto: "Web-quiz dove dovrai indovinare chi ha detto citazioni famose: crea streak o sblocca livelli a tema, con un breve contesto storico dopo ogni risposta.",
-
-    // Onepunch-setup
-    T_Onepunch: "Onepunch-setup",
-    OnepunchDesc: "Programma Windows (GUI WPF) per installare rapidamente i software più utili in un unico step tramite esecuzione winget. Software suddivisi in categorie con icone, ricerca live, WSL e riavvio opzionale.",
-    downloadZip: "Scarica ZIP",
-
-    // Panacea
-    T_Panacea: "Panacea",
-    PanaceaDesc: "Ottimizzatore di sistema Windows per monitorare lo stato e migliorare le prestazioni. Include rimozione file inutili, ottimizzazione disco e strumenti di riparazione automatica (SFC/DISM).",
-    downloadExe: "Scarica .exe",
-    // Easy Contract
-    T_EasyContract: "Easy Contract",
-    EasyContract: "Web app AI su LLM Gemini ingegnerizzato per analizzare e sintetizzare contratti in PDF. Individua automaticamente clausole critiche e costi nascosti, restituendo un punteggio di bontà e consigli pratici per l'utente.",
-
-    // Gem Dashboard
-    T_GemDashboard: "Gem Dashboard",
-    GemDashboardDesc: "Dashboard per gestire e accedere rapidamente ad una collezione di prompt AI e 'Gems' (Chat AI personalizzate). Organizzata in livelli (tiers), con filtri intelligenti e azioni one-click.",
-
-    // New Projects
-    T_Kobon: "Kobon Triangle Landscape",
-    KobonDesc: "Analisi delle configurazioni ottimali per N=10, dove il framework algoritmico di supporto ha identificato 11 grafi distinti che replicano l'attuale record di 25 triangoli.",
-    T_ZEROfilez: "ZEROfilez Cloud Decryptor",
-    ZEROfilezDesc: "Piattaforma dalla doppia natura: Cloud sicuro per i propri file criptati e Archivio pubblico per scaricare rapidamente emulatori, APK e utility fondamentali per PC.",
-    T_HLSE: "Hogwarts Legacy Save Editor",
-    HLSEDesc: "Applicazione GUI moderna per modificare e gestire i salvataggi di Hogwarts Legacy. Include funzionalità di backup automatico e un editor integrato facile da usare.",
-    T_PMD: "PMD Reverse Quiz",
-    PMDDesc: "Ottimizza la tua avventura in Pokémon Mystery Dungeon. Ottieni lo starter che desideri grazie a un algoritmo di reverse-lookup che ti guida nelle risposte del quiz della personalità.",
-  },
-  en: {
-    logoName: "Maurizio Falconi",
-    navHome: "Home",
-    navAbout: "About Me",
-    navProjects: "Projects",
-    navContact: "Contact",
-    heroTitle: "Welcome to Nexus Portfolio",
-    heroSubtitle: "The meeting point for all my projects.",
-    heroButton: "Explore Now",
-    aboutTitle: "About Me",
-    aboutText1: "I could call myself a Data Engineer or a Full-Stack Developer, but more simply I’m a curious person with many passions. I enjoy breaking down complex problems to uncover elegant solutions; be it in an equation, an algorithm, or through writing.",
-    aboutText2: "There are two fundamental forces that drive me: <br>understanding the world around me and creating things that can (in their own small way) enrich it.",
-    aboutText3: "Enjoy your visit!",
-    projectsTitle: "Projects",
-    contactCurriculum: "Resume",
-    contactMail: "Contact Me",
-    Certifications: "Certifications",
-    footerName: "Maurizio Falconi",
-    buttonVisitWeb: "Website",
-    buttonTry: "Try it!",
-    githubRepo: "GitHub Repo",
-    exposition: "Paper",
-    WP: "Open Whitepaper",
-    NexusMods: "Nexus Mods",
-
-    T_NFT: "NFTs as Valorization System",
-    T_Ripetizioni: "Tutoring Website",
-    T_IbanChecker: "Iban Checker",
-    T_CodiceFiscale: "Tax Code Calculator",
-
-    IbanChecker: "Web app that checks the validity of Italian IBANs. If the IBAN is incorrect, it suggests possible corrections, assuming a character was entered incorrectly or two characters were swapped.",
-    Sommatrix: "Mathematical puzzle where the player selects or removes numbers in a grid to make the sums of each row and column match the predetermined targets.",
-    CodiceFiscale: "Web app that calculates the Italian tax code from personal data and vice versa, i.e., retrieves gender, date, and place of birth from the tax code.",
-    DataScience: "A project that, through data analysis in Python and machine learning techniques, predicts rocket landing success to optimize cost estimation and identify potential optimal launch sites.",
-    CracktheCode: "A logic game inspired by the mechanics of Mastermind and Hit and Blow, where you must decipher a secret code using deduction and progressive feedback.",
-    LedgerLite: "This application allows you to easily manage your credits and debts. Every transaction includes the name, the amount, and a description.",
-    Ripetizioni: "The website where I showcase my tutoring services, where my students can book math and physics lessons and consult my teaching materials.",
-    NFT: "White Paper (in italian) about an employees valorization system via NFT gamification, adoptable by companies.",
-    Carte_S_Umanità: "Italian web version of the card game 'Cards Against Humanity', where players complete sentences with funny or provocative answers.",
-    Chi_lha_detto: "Italian-made web quiz where you guess who said famous quotes: build streaks or clear themed levels, with a short historical context after each answer.",
-
-    // Onepunch-setup
-    T_Onepunch: "Onepunch-setup",
-    OnepunchDesc: "Windows program (WPF GUI) to quickly install the most useful software in one step via winget. Software grouped into icon-labeled categories, live search, optional WSL and reboot.",
-    downloadZip: "Download ZIP",
-
-    // Panacea
-    T_Panacea: "Panacea",
-    PanaceaDesc: "Windows system optimizer to monitor health and boost performance. Features live dashboard, one-click junk removal, disk optimization, and automated system repair tools (SFC/DISM).",
-
-    // Easy Contract
-    T_EasyContract: "Easy Contract",
-    EasyContract: "Web app AI on Gemini LLM fine-tuned to analyze and synthesize contracts in PDF. Automatically identifies critical clauses and hidden costs, returning a security score and practical advice for the user.",
-
-    // Gem Dashboard
-    T_GemDashboard: "Gem Dashboard",
-    GemDashboardDesc: "Dashboard to manage and quickly access a collection of AI prompts and 'Gems' (Custom AI Chats). Organized in tiers, with smart filtering and one-click actions.",
-
-    // Kobon Triangle Landscape
-    T_Kobon: "Kobon Triangle Landscape",
-    KobonDesc: "Analysis of optimal configurations for N=10, where the supporting algorithmic framework identified 11 distinct graphs replicating the current record of 25 triangles.",
-
-    // ZEROfilez Cloud Decryptor
-    T_ZEROfilez: "ZEROfilez Cloud Decryptor",
-    ZEROfilezDesc: "Dual-nature platform: Secure cloud for personal encrypted files and a Public Repository for quickly downloading emulators, APKs, and essential PC utilities.",
-
-    // Hogwarts Legacy Save Editor
-    T_HLSE: "Hogwarts Legacy Save Editor",
-    HLSEDesc: "Modern GUI application to edit and manage Hogwarts Legacy save files. Features automatic backups and an easy-to-use integrated editor.",
-    T_PMD: "PMD Reverse Quiz",
-    PMDDesc: "Optimize your Pokémon Mystery Dungeon adventure. Get the starter you want thanks to a reverse-lookup algorithm that guides you through the personality quiz answers.",
-  }
-};
-
-const curriculumLinks = {
-  it: "https://www.canva.com/design/DAFjFQpJARI/9DIpYyzdr7U8kKaLgAUVaA/view?utm_content=DAFjFQpJARI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1a1bf25a36",
-  en: "https://www.canva.com/design/DAG0KYFzO8U/bSYKCXIni9GasnPtYLzXiA/view?utm_content=DAG0KYFzO8U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcc273b6625"
-};
-
-
-
-const certificationsData = [
-  { title: "AI & Machine Learning Engineering", issuer: "Microsoft – 2025", image: "assets/certifications/Cert Microsoft AI & ML DR1IFS0JOA2H.png" },
-  { title: "Data Science Professional Course", issuer: "IBM - 2023", image: "assets/certifications/Certificate IBM Data Science Coursera UAD9R68X3KPX.png" },
-  { title: "BlockChain Project Lead Specialization", issuer: "MasterZ – 2024", image: "assets/certifications/Masterz-Spec 3300x2550.jpeg" },
-  { title: "BlockChain & Digital Assets Course", issuer: "MasterZ – 2023", image: "assets/certifications/Cert-5-ED-Master-Z-MAURIZIO-FALCONI 3300x2550.png" },
-  { title: "SAS Programming Course", issuer: "SAS – 2024", image: "assets/certifications/Certificate_SAS-1.png" },
-  { title: "Data Structures & Algorithms", issuer: "UC San Diego – 2023", image: "assets/certifications/Certificate-Data-Structures-and-Algorithms.png" },
-  { title: "Financial Technology Specialization", issuer: "Wharton University – 2023", image: "assets/certifications/Certificate-Fintech-Spec-P6-DZAVHWT3-U4.png" },
-  { title: "Cybersecurity Professional Course", issuer: "Google – 2023", image: "assets/certifications/Certificate Google Cybersecurity Coursera 35X5VFX574YU.png" },
-  { title: "French B2.2 Certificate", issuer: "Speexx – 2024", image: "assets/certifications/French-Certif-B2.png" },
-  { title: "Advanced English: C1 Equivalent", issuer: "Irvine University – 2023", image: "assets/certifications/Certificate Advanced English Coursera 7PGZG57X3H9R.png" },
-  { title: "Archaeoastronomy Course", issuer: "Politecnico Milano – 2023", image: "assets/certifications/Coursera archaeoastronomy LMKD4242VB7D.png" },
-  { title: "Fullstack Developer Certification", issuer: "Blazar Group – 2023", image: "assets/certifications/Attestato Blazar Maurizio Falconi 2200x1700.jpg" }
-];
 
 // --- Functions ---
-/**
- * Renders the projects grid with enhanced features.
- */
 /**
  * Renders the projects grid with enhanced features.
  */
@@ -208,7 +39,7 @@ function renderProjects() {
 
     // Links Logic
     const linksHtml = p.links.map(link => `
-      <a href="${link.url}" target="_blank">
+      <a href="${link.url}" target="_blank" rel="noopener noreferrer">
         <span class="button-text" data-i18n="${link.textKey}">link</span>
         <span class="button-icon"><i class="${link.icon}"></i></span>
       </a>
@@ -218,7 +49,7 @@ function renderProjects() {
     card.setAttribute('data-category', p.category || '');
 
     card.innerHTML = `
-      <img src="${p.image}" alt="${p.title || p.titleKey}">
+      <img src="${p.image}" alt="${p.title || p.titleKey}" loading="lazy">
       <div class="card-content">
         ${titleHtml}
         ${tagsHtml ? `<div class="tech-tags">${tagsHtml}</div>` : ''}
@@ -249,7 +80,7 @@ function renderCertifications() {
     slide.innerHTML = `
       <div class="certification-card">
         <a href="${c.image}" class="cert-thumb-link" title="${c.title}">
-          <img src="${c.image}" alt="${c.title}" class="cert-thumb">
+          <img src="${c.image}" alt="${c.title}" class="cert-thumb" loading="lazy">
         </a>
         <div class="cert-info">
           <h3>${c.title}</h3>
@@ -260,32 +91,38 @@ function renderCertifications() {
     list.appendChild(slide);
   });
 
-  // Initialize Swiper (Mobile Only)
-  const swiper = new Swiper('.cert-swiper', {
-    loop: true,
-    spaceBetween: 20,
-    slidesPerView: 'auto', /* Respect CSS width */
-    centeredSlides: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      // When window width is >= 768px, disable Swiper
-      768: {
-        enabled: false,
+  // Initialize Swiper only on mobile
+  const mobileQuery = window.matchMedia('(max-width: 767px)');
+  let swiper = null;
+
+  function initSwiper() {
+    if (mobileQuery.matches && !swiper) {
+      swiper = new Swiper('.cert-swiper', {
+        loop: true,
+        spaceBetween: 20,
         slidesPerView: 'auto',
-      }
+        centeredSlides: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    } else if (!mobileQuery.matches && swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
     }
-  });
+  }
+
+  initSwiper();
+  mobileQuery.addEventListener('change', initSwiper);
 }
 
 /**
@@ -363,6 +200,13 @@ function initCertModal() {
       modal.style.display = 'none';
     }
   });
+
+  // Close with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+      modal.style.display = 'none';
+    }
+  });
 }
 
 /**
@@ -380,7 +224,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollProgress();
   initBackToTop();
   initProjectFilter();
-  initSectionTitleAnimations();
   initHeroVideo();
 
   // Set Current Year in Footer
@@ -408,35 +251,32 @@ function initHeroVideo() {
   const video = document.getElementById('hero-video');
   if (!video) return;
 
-  // Start with video hidden (poster visible)
-  video.style.opacity = '0';
-  video.style.transition = 'opacity 0.5s ease';
+  // Start with video hidden (poster visible via CSS class)
+  video.classList.add('video-loading');
 
   // Show video when it's ready to play
   video.addEventListener('canplaythrough', () => {
-    video.style.opacity = '1';
+    video.classList.remove('video-loading');
+    video.classList.remove('video-fading');
   });
 
   // Fallback: show video after timeout even if not fully loaded
   setTimeout(() => {
-    if (video.style.opacity === '0') {
-      video.style.opacity = '1';
-    }
+    video.classList.remove('video-loading');
   }, 3000);
 
   // Smooth loop: fade out near end, fade in at start
   video.addEventListener('timeupdate', () => {
     const timeLeft = video.duration - video.currentTime;
     if (timeLeft < 0.3 && timeLeft > 0) {
-      video.style.opacity = '0.7';
+      video.classList.add('video-fading');
     }
   });
 
   video.addEventListener('seeked', () => {
-    // Only fade back in if we're at the start (looped)
     if (video.currentTime < 0.5) {
       setTimeout(() => {
-        video.style.opacity = '1';
+        video.classList.remove('video-fading');
       }, 50);
     }
   });
@@ -475,81 +315,47 @@ function initProjectFilter() {
   });
 }
 
-/**
- * Section Title Animations
- */
-function initSectionTitleAnimations() {
-  // Disabled by user request
-}
 
 /**
- * Typing Effect for Hero Title
- */
-function initTypingEffect() {
-  const heroTitle = document.querySelector('.hero h1');
-  if (!heroTitle) return;
-
-  const originalText = heroTitle.getAttribute('data-i18n');
-  const lang = document.getElementById('toggle-lang')?.checked ? 'en' : 'it';
-  const text = translations[lang]?.[originalText] || heroTitle.textContent;
-
-  heroTitle.innerHTML = '';
-  heroTitle.style.opacity = '1';
-
-  let i = 0;
-  const cursor = document.createElement('span');
-  cursor.className = 'typing-cursor';
-  heroTitle.appendChild(cursor);
-
-  function type() {
-    if (i < text.length) {
-      heroTitle.insertBefore(document.createTextNode(text.charAt(i)), cursor);
-      i++;
-      setTimeout(type, 50);
-    } else {
-      // Remove cursor after typing complete
-      setTimeout(() => cursor.remove(), 2000);
-    }
-  }
-
-  setTimeout(type, 500);
-}
-
-/**
- * Scroll Progress Bar
+ * Scroll Progress Bar & Back to Top (unified, throttled with rAF)
  */
 function initScrollProgress() {
   const progressBar = document.querySelector('.scroll-progress');
   if (!progressBar) return;
 
+  let ticking = false;
+
   window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    progressBar.style.width = scrollPercent + '%';
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (scrollTop / docHeight) * 100 + '%';
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 }
 
-/**
- * Back to Top Button
- */
 function initBackToTop() {
   const backToTop = document.querySelector('.back-to-top');
   if (!backToTop) return;
 
+  let ticking = false;
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-      backToTop.classList.add('visible');
-    } else {
-      backToTop.classList.remove('visible');
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        backToTop.classList.toggle('visible', window.scrollY > 500);
+        ticking = false;
+      });
+      ticking = true;
     }
   });
 
   backToTop.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 

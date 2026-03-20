@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus Portfolio</title>
-    <!-- Link al file CSS (Priorità Massima) -->
+    <title>Nexus Portfolio - Maurizio Falconi</title>
+    <meta name="description" content="Portfolio personale di Maurizio Falconi: progetti software, certificazioni e competenze in Data Engineering, Full-Stack Development e AI." />
+    <!-- Link al file CSS -->
     <link rel="stylesheet" href="style.css?v=1.2" />
 
     <!-- Favicons -->
@@ -16,11 +17,19 @@
       href="https://i.postimg.cc/rmCxjswj/main-falker-logo-gecko-transparent-minimal.png"
       rel="apple-touch-icon"
     />
-    <!-- Anteprima Immagine -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nexus Portfolio - Maurizio Falconi" />
+    <meta property="og:description" content="Il punto d'incontro di tutti i miei progetti: software, ricerca, AI e molto altro." />
+    <meta property="og:url" content="https://falker47.github.io/Nexus-portfolio/" />
     <meta
       property="og:image"
       content="https://i.postimg.cc/KY9JyDdC/main-falker-logo-gecko-circle-night-blue-2.png"
     />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nexus Portfolio - Maurizio Falconi" />
+    <meta name="twitter:description" content="Il punto d'incontro di tutti i miei progetti: software, ricerca, AI e molto altro." />
     <meta
       name="twitter:image"
       content="https://i.postimg.cc/KY9JyDdC/main-falker-logo-gecko-circle-night-blue-2.png"
@@ -67,8 +76,8 @@
       </ul>
 
       <!-- Toggle lingua spostato a destra -->
-      <div class="language-toggle">
-        <input type="checkbox" id="toggle-lang" />
+      <div class="language-toggle" role="group" aria-label="Language switch">
+        <input type="checkbox" id="toggle-lang" aria-label="Switch language to English" />
         <label for="toggle-lang" class="toggle">
           <span class="toggle-switch"></span>
         </label>
@@ -160,9 +169,9 @@
     </section>
 
     <!-- Lightbox Modal -->
-    <div id="cert-modal" class="cert-modal">
-      <span class="cert-modal-close">&times;</span>
-      <img class="cert-modal-content" id="modal-img" />
+    <div id="cert-modal" class="cert-modal" role="dialog" aria-modal="true" aria-label="Certificate preview">
+      <span class="cert-modal-close" role="button" aria-label="Close">&times;</span>
+      <img class="cert-modal-content" id="modal-img" alt="Certificate full view" />
     </div>
 
     <!-- Sezione Contatti -->
@@ -185,6 +194,8 @@
           class="contact-social"
           href="https://www.linkedin.com/in/mauriziofalconi/"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
         >
           <i class="fab fa-linkedin-in"></i>
         </a>
@@ -192,6 +203,8 @@
           class="contact-social"
           href="https://github.com/falker47"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
         >
           <i class="fab fa-github"></i>
         </a>
@@ -199,6 +212,8 @@
           class="contact-social"
           href="https://www.letuelezioni.it/insegnanti/maurizio-falconi.htm"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Tutoring"
         >
           <i class="fas fa-chalkboard-teacher"></i>
         </a>
@@ -223,6 +238,8 @@
     <!-- Link al file JavaScript -->
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/certifications-data.js"></script>
     <script src="js/projects-data.js"></script>
     <script src="script.js"></script>
   </body>

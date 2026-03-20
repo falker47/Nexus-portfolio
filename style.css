@@ -179,7 +179,15 @@ a {
   height: auto;
   transform: translate(-50%, -50%);
   z-index: 1;
-  /* Video sopra lo sfondo */
+  transition: opacity 0.5s ease;
+}
+
+#hero-video.video-loading {
+  opacity: 0;
+}
+
+#hero-video.video-fading {
+  opacity: 0.7;
 }
 
 .hero-overlay {
@@ -198,14 +206,12 @@ a {
   margin-top: 20px;
   position: relative;
   z-index: 3;
-  /* Contenuto sopra tutto */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   height: 100%;
-  text-align: center;
   color: #fff;
   padding: 0 20px;
 }
@@ -363,15 +369,23 @@ a {
 }
 
 .project-card {
-  background: #1e1e1e;
+  background: var(--bg-card);
+  border: 1px solid rgba(139, 92, 246, 0.1);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(139, 92, 246, 0.3);
 }
 
 .project-card img {
@@ -491,37 +505,11 @@ footer {
   vertical-align: middle;
 }
 
-footer a:hover {
-  color: #b92dfa;
-  /* Accento arancione ispirato alla palette */
-}
 
-/* Responsive */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
   }
-
-  .navbar {
-    flex-direction: column;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  .navbar ul li {
-    margin: 10px 0;
-  }
-}
-
-/* Uniformare l'altezza delle schede per allineare i bottoni */
-.project-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
 }
 
 .project-card .card-content {
@@ -667,15 +655,10 @@ footer a:hover {
   color: #fff;
 }
 
-.certification-list {
-  /* Swiper wrapper handling */
-  box-sizing: border-box;
-}
-
 .cert-swiper {
   width: 100%;
   padding: 20px 0 50px;
-  /* Space for pagination */
+  overflow: hidden;
 }
 
 /* Desktop Grid Restoration */
@@ -718,25 +701,10 @@ footer a:hover {
   }
 }
 
-.certification-card {
-  width: 100%;
-  /* Ensure card fills container/slide */
-}
-
-/* Mobile Swiper Base Styles */
-.cert-swiper {
-  width: 100%;
-  padding: 20px 0 50px;
-  /* Space for pagination */
-  overflow: hidden;
-  /* Ensure content is contained */
-}
 
 .certification-list {
-  /* Swiper wrapper handling */
   box-sizing: border-box;
   display: flex;
-  /* Mandatory for Swiper */
   width: 100%;
 }
 
@@ -1015,48 +983,8 @@ footer a:hover {
   box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
 }
 
-/* Typing Cursor Animation */
-.typing-cursor {
-  display: inline-block;
-  width: 3px;
-  height: 1em;
-  background: var(--primary-light);
-  margin-left: 5px;
-  animation: blink 0.8s infinite;
-  vertical-align: text-bottom;
-}
-
-@keyframes blink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-
-  51%,
-  100% {
-    opacity: 0;
-  }
-}
 
 /* ===== ENHANCED PROJECT CARDS ===== */
-
-.project-card {
-  background: var(--bg-card) !important;
-  border: 1px solid rgba(139, 92, 246, 0.1);
-  transition: all 0.4s ease-out !important;
-  /* Keep hover transition */
-  position: relative;
-  opacity: 1 !important;
-  /* Force visible */
-  transform: none !important;
-  /* No initial slide */
-}
-
-.project-card:hover {
-  transform: translateY(-10px) !important;
-  box-shadow: var(--shadow-lg) !important;
-  border-color: rgba(139, 92, 246, 0.3);
-}
 
 /* Image Container with Overlay */
 .project-card .img-container {
@@ -1075,7 +1003,6 @@ footer a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
   opacity: 0;
   transition:
     opacity 0.4s ease-out,
@@ -1210,17 +1137,6 @@ footer a:hover {
   transform: translateX(-50%) translateY(-8px);
 }
 
-/* ===== SECTION TITLE ANIMATIONS (Disabled) ===== */
-.section-title,
-.about h2,
-.certifications h2 {
-  position: relative;
-  display: inline-block;
-  opacity: 1 !important;
-  transform: none !important;
-  filter: none !important;
-  animation: none !important;
-}
 
 /* ===== PROJECT FILTER ===== */
 .project-filter {
@@ -1360,22 +1276,6 @@ footer a:hover {
   display: none !important;
 }
 
-/* Featured Ribbon */
-.featured-ribbon {
-  position: absolute;
-  top: 15px;
-  right: -35px;
-  background: linear-gradient(135deg, var(--accent), #f472b6);
-  color: white;
-  padding: 5px 40px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  transform: rotate(45deg);
-  box-shadow: 0 2px 10px rgba(236, 72, 153, 0.4);
-  z-index: 10;
-}
-
 /* Enhanced Card Buttons */
 .project-card .card-content a {
   background: linear-gradient(
@@ -1400,23 +1300,6 @@ footer a:hover {
 
 /* ===== SCROLL ANIMATIONS ===== */
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger Animation for Cards */
-.project-card {
-  opacity: 0;
-  transform: translateY(40px);
-}
-
 .project-card.animate-in {
   animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
@@ -1437,19 +1320,6 @@ footer a:hover {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/* ===== ENHANCED CERTIFICATIONS ===== */
-
-.certification-item {
-  transition: all var(--transition-smooth);
-  border: 1px solid rgba(139, 92, 246, 0.1);
-}
-
-.certification-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
-  border-color: rgba(212, 175, 55, 0.3);
 }
 
 .cert-thumb:hover {
