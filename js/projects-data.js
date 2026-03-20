@@ -94,7 +94,7 @@ const projectsMap = {
             { text: "Optimizer", type: "desc", emoji: "", tooltip: "Ottimizzazione e pulizia sistema" }
         ],
         links: [
-            { url: "https://raw.githubusercontent.com/falker47/panacea/main/dist/Panacea.exe", textKey: "downloadExe", icon: "fas fa-download" },
+            { url: "https://github.com/falker47/panacea/releases/latest/download/Panacea.exe", textKey: "downloadExe", icon: "fas fa-download" },
             { url: "https://github.com/falker47/panacea", textKey: "githubRepo", icon: "fab fa-github" }
         ]
     },
