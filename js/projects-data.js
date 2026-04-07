@@ -231,6 +231,21 @@ const projectsMap = {
             { url: "https://github.com/falker47/Codice-Fiscale", textKey: "githubRepo", icon: "fab fa-github" }
         ]
     },
+    "Undercover": {
+        title: "Undercover",
+        descriptionKey: "UndercoverDesc",
+        image: "assets/projects/undercover.webp",
+        category: "game",
+        tags: [
+            { text: "Game", type: "game", emoji: "🎮", tooltip: "Gioco di deduzione sociale" },
+            { text: "React + TS", type: "tech", emoji: "", tooltip: "React 19, TypeScript, Zustand" },
+            { text: "Party", type: "desc", emoji: "", tooltip: "3-12 giocatori, singolo dispositivo" }
+        ],
+        links: [
+            { url: "https://undercover-thegame.netlify.app/", textKey: "buttonTry", icon: "fas fa-globe" },
+            { url: "https://github.com/falker47/Undercover", textKey: "githubRepo", icon: "fab fa-github" }
+        ]
+    },
     "CrackTheCode": {
         title: "Crack the Code",
         descriptionKey: "CracktheCode",
@@ -271,6 +286,7 @@ const projectsOrder = [
     "HLSE",
     "PMD",
     "ChiLhaDetto",
+    "Undercover",
     "GemDashboard",
     "ZEROfilez",
     "Kobon",
