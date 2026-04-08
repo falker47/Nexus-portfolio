@@ -657,6 +657,7 @@ footer a:hover {
 
 .cert-swiper {
   width: 100%;
+  min-width: 0;
   padding: 20px 0 50px;
   overflow: hidden;
 }
@@ -747,10 +748,44 @@ footer a:hover {
   box-shadow: 0 8px 16px rgba(139, 92, 246, 0.4);
 }
 
-/* Swiper Customization */
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--primary) !important;
+/* Custom Carousel Navigation */
+.cert-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cert-nav {
+  background: none;
+  border: 2px solid rgba(139, 92, 246, 0.6);
+  color: #fff;
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  line-height: 1;
+}
+
+.cert-nav:hover,
+.cert-nav:active {
+  background: rgba(139, 92, 246, 0.7);
+  border-color: rgba(139, 92, 246, 1);
+}
+
+@media (min-width: 768px) {
+  .cert-carousel-wrapper {
+    display: block;
+  }
+
+  .cert-nav {
+    display: none;
+  }
 }
 
 .swiper-pagination-bullet {

@@ -102,19 +102,16 @@ function renderCertifications() {
         spaceBetween: 20,
         slidesPerView: 'auto',
         centeredSlides: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
+        freeMode: true,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
         },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
       });
+
+      // Custom navigation buttons
+      document.querySelector('.cert-nav-prev').addEventListener('click', () => swiper.slidePrev());
+      document.querySelector('.cert-nav-next').addEventListener('click', () => swiper.slideNext());
     } else if (!mobileQuery.matches && swiper) {
       swiper.destroy(true, true);
       swiper = null;
