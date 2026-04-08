@@ -43,7 +43,7 @@ const translations = {
     NFT: "White Paper (in italiano) sulla valorizzazione dei dipendenti tramite NFT gamification, adottabile dalle aziende.",
     Carte_S_Umanità: "Versione web tutta italiana del gioco di carte 'Cards Against Humanity', dove i giocatori completano frasi con risposte divertenti o provocatorie.",
     Chi_lha_detto: "Web-quiz dove dovrai indovinare chi ha detto citazioni famose: crea streak o sblocca livelli a tema, con un breve contesto storico dopo ogni risposta.",
-    UndercoverDesc: "Party game di deduzione per 3-12 giocatori su un singolo dispositivo. Civili, Infiltrati e Mr. White: ognuno dà indizi sulla propria parola segreta, ma non tutti ne hanno una uguale e qualcuno non ne ha affatto.",
+    CamaleonteDesc: "Party game di deduzione per 3-12 giocatori su un singolo dispositivo. Civili, Talpa e Camaleonte: ognuno dà indizi sulla propria parola segreta, ma non tutti ne hanno una uguale e qualcuno non ne ha affatto.",
 
     T_Onepunch: "Onepunch-setup",
     OnepunchDesc: "Programma Windows (GUI WPF) per installare rapidamente i software più utili in un unico step tramite esecuzione winget. Software suddivisi in categorie con icone, ricerca live, WSL e riavvio opzionale.",
@@ -108,7 +108,7 @@ const translations = {
     NFT: "White Paper (in italian) about an employees valorization system via NFT gamification, adoptable by companies.",
     Carte_S_Umanità: "Italian web version of the card game 'Cards Against Humanity', where players complete sentences with funny or provocative answers.",
     Chi_lha_detto: "Italian-made web quiz where you guess who said famous quotes: build streaks or clear themed levels, with a short historical context after each answer.",
-    UndercoverDesc: "Deduction party game for 3-12 players on a single device. Civilians, Undercover agents and Mr. White: everyone gives clues about their secret word, but not all share the same one and someone has none at all.",
+    CamaleonteDesc: "Deduction party game for 3-12 players on a single device. Civilians, Mole and Chameleon: everyone gives clues about their secret word, but not all share the same one and someone has none at all.",
 
     T_Onepunch: "Onepunch-setup",
     OnepunchDesc: "Windows program (WPF GUI) to quickly install the most useful software in one step via winget. Software grouped into icon-labeled categories, live search, optional WSL and reboot.",

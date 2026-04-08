@@ -231,10 +231,10 @@ const projectsMap = {
             { url: "https://github.com/falker47/Codice-Fiscale", textKey: "githubRepo", icon: "fab fa-github" }
         ]
     },
-    "Undercover": {
-        title: "Undercover",
-        descriptionKey: "UndercoverDesc",
-        image: "assets/projects/undercover.webp",
+    "Camaleonte": {
+        title: "Camaleonte",
+        descriptionKey: "CamaleonteDesc",
+        image: "assets/projects/camaleonte-3-2-ratio.webp",
         category: "game",
         tags: [
             { text: "Game", type: "game", emoji: "🎮", tooltip: "Gioco di deduzione sociale" },
@@ -242,8 +242,8 @@ const projectsMap = {
             { text: "Party", type: "desc", emoji: "", tooltip: "3-12 giocatori, singolo dispositivo" }
         ],
         links: [
-            { url: "https://undercover-thegame.netlify.app/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/Undercover", textKey: "githubRepo", icon: "fab fa-github" }
+            { url: "https://camaleonte.netlify.app/", textKey: "buttonTry", icon: "fas fa-globe" },
+            { url: "https://github.com/falker47/Camaleonte", textKey: "githubRepo", icon: "fab fa-github" }
         ]
     },
     "CrackTheCode": {
@@ -286,7 +286,7 @@ const projectsOrder = [
     "HLSE",
     "PMD",
     "ChiLhaDetto",
-    "Undercover",
+    "Camaleonte",
     "GemDashboard",
     "ZEROfilez",
     "Kobon",
