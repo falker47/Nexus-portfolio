@@ -13,7 +13,7 @@ const translations = {
     heroSubtitle: "Il punto d'incontro di tutti i miei progetti.",
     heroButton: "Esplora Ora",
     aboutTitle: "Chi sono",
-    aboutText1: "Potrei definirmi un Data Engineer, così come un Full-stack Developer. Ma sono semplicemente una persona piena di passioni con una curiosità insaziabile. Mi piace risolvere problemi con soluzioni che siano in un'equazione, un algoritmo o nella semplice scrittura.",
+    aboutText1: "Potrei definirmi un Data Engineer, così come uno sviluppatore full-stack. Ma sono semplicemente una persona piena di passioni con una curiosità insaziabile. Mi piace risolvere problemi con soluzioni che siano in un'equazione, un algoritmo o nella semplice scrittura.",
     aboutText2: "Sono due le forze fondamentali che mi muovono: <br>capire il mondo che mi circonda e creare cose che possano (nel loro piccolo) arricchirlo.",
     aboutText3: "Buona navigazione!",
     projectsTitle: "Progetti",
@@ -65,8 +65,8 @@ const translations = {
     ZEROfilezDesc: "Piattaforma dalla doppia natura: Cloud sicuro per i propri file criptati e Archivio pubblico per scaricare rapidamente emulatori, APK e utility fondamentali per PC.",
     T_HLSE: "Hogwarts Legacy Save Editor",
     HLSEDesc: "Applicazione GUI moderna per modificare e gestire i salvataggi di Hogwarts Legacy. Include funzionalità di backup automatico e un editor integrato facile da usare.",
-    T_PMD: "PMD Reverse Quiz",
-    PMDDesc: "Ottimizza la tua avventura in Pokémon Mystery Dungeon. Ottieni lo starter che desideri grazie a un algoritmo di reverse-lookup che ti guida nelle risposte del quiz della personalità.",
+    T_PMD: "PMD Reverse Quiz & Save Editor",
+    PMDDesc: "Ottimizza la tua avventura in Pokémon Mystery Dungeon. Ottieni lo starter che desideri grazie a un algoritmo di reverse-lookup per il quiz della personalità e modifica i tuoi salvataggi con l'editor integrato.",
   },
   en: {
     logoName: "Maurizio Falconi",
@@ -131,8 +131,8 @@ const translations = {
 
     T_HLSE: "Hogwarts Legacy Save Editor",
     HLSEDesc: "Modern GUI application to edit and manage Hogwarts Legacy save files. Features automatic backups and an easy-to-use integrated editor.",
-    T_PMD: "PMD Reverse Quiz",
-    PMDDesc: "Optimize your Pokémon Mystery Dungeon adventure. Get the starter you want thanks to a reverse-lookup algorithm that guides you through the personality quiz answers.",
+    T_PMD: "PMD Reverse Quiz & Save Editor",
+    PMDDesc: "Optimize your Pokémon Mystery Dungeon adventure. Get the starter you want thanks to a reverse-lookup algorithm for the personality quiz and modify your save files with the built-in editor.",
   }
 };
 
