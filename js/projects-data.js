@@ -243,6 +243,7 @@ const projectsMap = {
         ],
         links: [
             { url: "https://camaleonte.netlify.app/", textKey: "buttonTry", icon: "fas fa-globe" },
+            { url: "https://play.google.com/store/apps/details?id=com.falker.camaleonte", textKey: "playStore", icon: "fab fa-google-play" },
             { url: "https://github.com/falker47/Camaleonte", textKey: "githubRepo", icon: "fab fa-github" }
         ]
     },
@@ -286,8 +287,8 @@ const projectsOrder = [
     "HLSE",
     "ZEROfilez",
     "Kobon",
-    "CarteSenzaUmanita",
     "Camaleonte",
+    "CarteSenzaUmanita",
     "IbanChecker",
     "ChiLhaDetto",
     "PMD",
