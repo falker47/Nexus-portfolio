@@ -33,6 +33,7 @@ const translations = {
     T_Ripetizioni: "Sito Ripetizioni",
     T_IbanChecker: "Verifica IBAN",
     T_CodiceFiscale: "Calcolo Codice Fiscale",
+    T_Ringmin: "Ringmin: L'Orizzonte dei Cerchi Fluttuanti",
 
     IbanChecker: "Web app che verifica la validità degli IBAN italiani. In caso di IBAN errato, propone correzioni ipotizzando che si abbia inserito male un carattere o se ne siano invertiti due.",
     Sommatrix: "Puzzle matematico in cui il giocatore seleziona o cancella numeri in una griglia per far combaciare le somme di ogni riga e colonna con i target prestabiliti.",
@@ -42,6 +43,7 @@ const translations = {
     LedgerLite: "Questa applicazione ti permette di gestire in modo semplice i tuoi crediti e debiti. In ogni operazione viene specificato il nominativo, l'importo e una descrizione.",
     Ripetizioni: "Il sito web dove presento la mia attività di ripetizioni, permettendo ai miei studenti di prenotare le lezioni di matematica e fisica e consultare il mio materiale didattico.",
     NFT: "White Paper (in italiano) sulla valorizzazione dei dipendenti tramite NFT gamification, adottabile dalle aziende.",
+    RingminDesc: "Ricerca in cui ho scoperto e dimostrato la struttura geometrica che minimizza un anello di cerchi tangenti: introducendo il fenomeno dei 'cerchi fluttuanti' e certificando matematicamente gli ottimi globali fino a n = 14.",
     Carte_S_Umanità: "Versione web tutta italiana del gioco di carte 'Cards Against Humanity', dove i giocatori completano frasi con risposte divertenti o provocatorie.",
     Chi_lha_detto: "Web-quiz dove dovrai indovinare chi ha detto citazioni famose: crea streak o sblocca livelli a tema, con un breve contesto storico dopo ogni risposta.",
     CamaleonteDesc: "Party game di deduzione per 3-12 giocatori su un singolo dispositivo. Civili, Talpa e Camaleonte: ognuno dà indizi sulla propria parola segreta, ma non tutti ne hanno una uguale e qualcuno non ne ha affatto.",
@@ -99,6 +101,7 @@ const translations = {
     T_Ripetizioni: "Tutoring Website",
     T_IbanChecker: "Iban Checker",
     T_CodiceFiscale: "Tax Code Calculator",
+    T_Ringmin: "Ringmin: Floating Circle Horizons",
 
     IbanChecker: "Web app that checks the validity of Italian IBANs. If the IBAN is incorrect, it suggests possible corrections, assuming a character was entered incorrectly or two characters were swapped.",
     Sommatrix: "Mathematical puzzle where the player selects or removes numbers in a grid to make the sums of each row and column match the predetermined targets.",
@@ -108,6 +111,7 @@ const translations = {
     LedgerLite: "This application allows you to easily manage your credits and debts. Every transaction includes the name, the amount, and a description.",
     Ripetizioni: "The website where I showcase my tutoring services, where my students can book math and physics lessons and consult my teaching materials.",
     NFT: "White Paper (in italian) about an employees valorization system via NFT gamification, adoptable by companies.",
+    RingminDesc: "Research in which I discovered and proved the geometric structure that minimizes a ring of tangent circles: introducing the 'floating circles' phenomenon and mathematically certifying global optima up to n = 14.",
     Carte_S_Umanità: "Italian web version of the card game 'Cards Against Humanity', where players complete sentences with funny or provocative answers.",
     Chi_lha_detto: "Italian-made web quiz where you guess who said famous quotes: build streaks or clear themed levels, with a short historical context after each answer.",
     CamaleonteDesc: "Deduction party game for 3-12 players on a single device. Civilians, Mole and Chameleon: everyone gives clues about their secret word, but not all share the same one and someone has none at all.",

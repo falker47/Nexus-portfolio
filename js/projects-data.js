@@ -38,6 +38,21 @@ const projectsMap = {
             { url: "https://github.com/falker47/Kobon-N10-Landscape", textKey: "githubRepo", icon: "fab fa-github" }
         ]
     },
+    "Ringmin": {
+        titleKey: "T_Ringmin",
+        descriptionKey: "RingminDesc",
+        image: "assets/projects/ringmin.webp",
+        category: "research",
+        tags: [
+            { text: "Research", type: "research", emoji: "", tooltip: "Problema geometrico certificato" },
+            { text: "Python", type: "tech", emoji: "", tooltip: "Solver e verifier" },
+            { text: "Geometry", type: "desc", emoji: "", tooltip: "Optimum globali verificati" }
+        ],
+        links: [
+            { url: "assets/documents/ringmin_paper.pdf", textKey: "exposition", icon: "fas fa-file-pdf" },
+            { url: "https://github.com/falker47/ringmin", textKey: "githubRepo", icon: "fab fa-github" }
+        ]
+    },
     "ZEROfilez": {
         titleKey: "T_ZEROfilez",
         descriptionKey: "ZEROfilezDesc",
@@ -281,6 +296,7 @@ const projectsMap = {
 
 // Lista Progetti
 const projectsOrder = [
+    "Ringmin",
     "EasyContract",
     "Panacea",
     "HLSE",
