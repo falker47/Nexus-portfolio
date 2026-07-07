@@ -33,7 +33,7 @@ const translations = {
     T_Ripetizioni: "Sito Ripetizioni",
     T_IbanChecker: "Verifica IBAN",
     T_CodiceFiscale: "Calcolo Codice Fiscale",
-    T_Ringmin: "Ringmin: L'Orizzonte dei Cerchi Fluttuanti",
+    T_Ringmin: "Ringmin: L'Orizzonte dei Cerchi Flottanti",
 
     IbanChecker: "Web app che verifica la validità degli IBAN italiani. In caso di IBAN errato, propone correzioni ipotizzando che si abbia inserito male un carattere o se ne siano invertiti due.",
     Sommatrix: "Puzzle matematico in cui il giocatore seleziona o cancella numeri in una griglia per far combaciare le somme di ogni riga e colonna con i target prestabiliti.",
@@ -43,7 +43,7 @@ const translations = {
     LedgerLite: "Questa applicazione ti permette di gestire in modo semplice i tuoi crediti e debiti. In ogni operazione viene specificato il nominativo, l'importo e una descrizione.",
     Ripetizioni: "Il sito web dove presento la mia attività di ripetizioni, permettendo ai miei studenti di prenotare le lezioni di matematica e fisica e consultare il mio materiale didattico.",
     NFT: "White Paper (in italiano) sulla valorizzazione dei dipendenti tramite NFT gamification, adottabile dalle aziende.",
-    RingminDesc: "Ricerca in cui ho scoperto e dimostrato la struttura geometrica che minimizza un anello di cerchi tangenti: introducendo il fenomeno dei 'cerchi fluttuanti' e certificando matematicamente gli ottimi globali fino a n = 14.",
+    RingminDesc: "Ricerca in cui ho scoperto e dimostrato la struttura geometrica che minimizza un anello di cerchi tangenti: introducendo il fenomeno dei 'cerchi flottanti' e certificando matematicamente gli ottimi globali fino a n = 14.",
     Carte_S_Umanità: "Versione web tutta italiana del gioco di carte 'Cards Against Humanity', dove i giocatori completano frasi con risposte divertenti o provocatorie.",
     Chi_lha_detto: "Web-quiz dove dovrai indovinare chi ha detto citazioni famose: crea streak o sblocca livelli a tema, con un breve contesto storico dopo ogni risposta.",
     CamaleonteDesc: "Party game di deduzione per 3-12 giocatori su un singolo dispositivo. Civili, Talpa e Camaleonte: ognuno dà indizi sulla propria parola segreta, ma non tutti ne hanno una uguale e qualcuno non ne ha affatto.",
