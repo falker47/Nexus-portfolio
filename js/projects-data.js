@@ -201,21 +201,6 @@ const projectsMap = {
             { url: "https://github.com/falker47/Carte-senza-Umanita", textKey: "githubRepo", icon: "fab fa-github" }
         ]
     },
-    "LedgerLite": {
-        title: "LedgerLite",
-        descriptionKey: "LedgerLite",
-        image: "assets/projects/ledgerlite.webp",
-        category: "finance",
-        tags: [
-            { text: "Finance", type: "finance", emoji: "💰", tooltip: "Gestione finanziaria" },
-            { text: "JavaScript", type: "tech", emoji: "", tooltip: "Con LocalStorage" },
-            { text: "Tracker", type: "desc", emoji: "", tooltip: "Traccia crediti e debiti" }
-        ],
-        links: [
-            { url: "https://falker47.github.io/LedgerLite/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/LedgerLite", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
     "Sommatrix": {
         title: "Sommatrix",
         descriptionKey: "Sommatrix",
