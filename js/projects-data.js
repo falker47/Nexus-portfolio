@@ -48,7 +48,7 @@ const projectsMap = {
       { text: "RAG", type: "desc", emoji: "", tooltip: "Generation-aware Pokémon knowledge retrieval" }
     ],
     links: [
-      { url: "https://profgecko.com", textKey: "liveDemo", icon: "fas fa-globe" }
+      { url: "https://profgecko.vercel.app/", textKey: "liveDemo", icon: "fas fa-globe" }
     ]
   },
 
@@ -79,7 +79,7 @@ const projectsMap = {
       { text: "PWA", type: "desc", emoji: "", tooltip: "Offline-capable progressive web app" }
     ],
     links: [
-      { url: "https://falker47.github.io/camaleonte/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://camaleonte.netlify.app/", textKey: "liveDemo", icon: "fas fa-globe" },
       { url: "https://play.google.com/store/apps/details?id=com.falker.camaleonte", textKey: "playStore", icon: "fab fa-google-play" },
       { url: "https://github.com/falker47/camaleonte", textKey: "githubRepo", icon: "fab fa-github" }
     ]
@@ -116,34 +116,19 @@ const projectsMap = {
     ]
   },
 
-  "PMDSaveEditor": {
-    title: "PMD Save Editor",
-    descriptionKey: "PMDSaveEditorDesc",
-    icon: "💾",
-    category: "gaming",
-    tags: [
-      { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Pokémon Mystery Dungeon save utility" },
-      { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "Modern web refactor" },
-      { text: "Pokémon", type: "game", emoji: "", tooltip: "Rescue Team and Explorers support" }
-    ],
-    links: [
-      { url: "https://github.com/falker47/PokemonMysteryDungeon-SavEditor", textKey: "githubRepo", icon: "fab fa-github" }
-    ]
-  },
-
-  "PMDReverseQuiz": {
-    title: "PMD Reverse Quiz",
-    descriptionKey: "PMDReverseQuizDesc",
+  "PMDTools": {
+    title: "Pokémon Mystery Dungeon Tools",
+    descriptionKey: "PMDToolsDesc",
     image: "assets/projects/PMD.webp",
     category: "gaming",
     tags: [
-      { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Personality-quiz answer guide" },
-      { text: "React + Vite", type: "tech", emoji: "", tooltip: "Bilingual browser application" },
-      { text: "Pokémon", type: "game", emoji: "", tooltip: "Classic Mystery Dungeon games" }
+      { text: "Tooling", type: "tool", emoji: "🔧", tooltip: "Two focused utilities for classic Pokémon Mystery Dungeon games" },
+      { text: "React", type: "tech", emoji: "", tooltip: "Modern browser-based interfaces" },
+      { text: "Pokémon", type: "game", emoji: "", tooltip: "Rescue Team and Explorers series" }
     ],
     links: [
-      { url: "https://pokemonmysterydungeon-reversequiz.netlify.app/", textKey: "liveDemo", icon: "fas fa-globe" },
-      { url: "https://github.com/falker47/PokemonMysteryDungeon-ReverseQuiz", textKey: "githubRepo", icon: "fab fa-github" }
+      { url: "https://github.com/falker47/PokemonMysteryDungeon-SavEditor", textKey: "saveEditor", icon: "fab fa-github" },
+      { url: "https://pokemonmysterydungeon-reversequiz.netlify.app/", textKey: "reverseQuiz", icon: "fas fa-globe" }
     ]
   },
 
@@ -214,14 +199,13 @@ const projectsMap = {
 
 const projectsOrder = [
   "Ringmin",
-  "RingminSquared",
+  // "RingminSquared", // Hidden until Power-Ringmin is ready for public showcase.
   "ProfGecko",
   "ChiLhaDetto",
   "Camaleonte",
   "DiarioDiBordo",
   "HLSE",
-  "PMDSaveEditor",
-  "PMDReverseQuiz",
+  "PMDTools",
   "ZEROfilez",
   "IbanChecker",
   "CrackTheCode",

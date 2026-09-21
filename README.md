@@ -21,13 +21,13 @@ Historical, archived, dormant, private, or low-signal repositories are intention
 
 Current highlights include:
 
-- Ringmin and Power-Ringmin
+- Ringmin
 - Prof. Gecko
 - Chi l'ha detto?
 - Camaleonte
 - Diario di Bordo
 - Hogwarts Legacy Save Editor
-- PMD Save Editor and PMD Reverse Quiz
+- Pokémon Mystery Dungeon Tools (Save Editor + Reverse Quiz)
 - ZEROfilez
 - IBAN Checker
 - Crack the Code
