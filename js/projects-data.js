@@ -1,286 +1,229 @@
 /**
- * Projects Data
- * 
- * projectsMap: Contains all the details for each project, keyed by a unique ID.
- * projectsOrder: Defines the order in which projects are displayed.
- * 
- * To reorder projects, simply rearrange the strings in the projectsOrder array.
+ * Curated project data for Nexus Portfolio.
+ *
+ * Nexus is intentionally selective: it is a public portfolio hub, not a mirror
+ * of every repository in the GitHub account.
  */
 
 const projectsMap = {
-    "Kobon": {
-        titleKey: "T_Kobon",
-        descriptionKey: "KobonDesc",
-        image: "assets/projects/kobon.webp",
-        category: "research",
-        tags: [
-            { text: "Research", type: "research", emoji: "📝", tooltip: "Ricerca matematica" },
-            { text: "Python", type: "tech", emoji: "", tooltip: "Algoritmi di ottimizzazione" },
-            { text: "Geometry", type: "desc", emoji: "", tooltip: "Problema geometrico" }
-        ],
-        links: [
-            { url: "assets/documents/Kobon Paper.pdf", textKey: "exposition", icon: "fas fa-file-pdf" },
-            { url: "https://github.com/falker47/Kobon-N10-Landscape", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "Ringmin": {
-        titleKey: "T_Ringmin",
-        descriptionKey: "RingminDesc",
-        image: "assets/projects/ringmin.webp",
-        category: "research",
-        tags: [
-            { text: "Research", type: "research", emoji: "", tooltip: "Problema geometrico certificato" },
-            { text: "Python", type: "tech", emoji: "", tooltip: "Solver e verifier" },
-            { text: "Geometry", type: "desc", emoji: "", tooltip: "Optimum globali verificati" }
-        ],
-        links: [
-            { url: "assets/documents/ringmin_paper.pdf", textKey: "exposition", icon: "fas fa-file-pdf" },
-            { url: "https://github.com/falker47/ringmin", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "ZEROfilez": {
-        titleKey: "T_ZEROfilez",
-        descriptionKey: "ZEROfilezDesc",
-        image: "assets/projects/zerofilez.webp",
-        category: "webapp",
-        tags: [
-            { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Tool di sicurezza" },
-            { text: "Cryptography", type: "tech", emoji: "", tooltip: "Crittografia client-side" },
-            { text: "Cloud", type: "desc", emoji: "", tooltip: "Gestione file criptati" }
-        ],
-        links: [
-            { url: "https://falker47.github.io/ZEROfilez/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/ZEROfilez", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "HLSE": {
-        titleKey: "T_HLSE",
-        descriptionKey: "HLSEDesc",
-        image: "assets/projects/HLSE.webp",
-        category: "tool",
-        tags: [
-            { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Utility per gaming" },
-            { text: "Python GUI", type: "tech", emoji: "", tooltip: "Interfaccia CustomTkinter" },
-            { text: "Modding", type: "desc", emoji: "", tooltip: "Modifica salvataggi" }
-        ],
-        links: [
-            { url: "https://www.nexusmods.com/hogwartslegacy/mods/2414", textKey: "NexusMods", icon: "fas fa-download" },
-            { url: "https://github.com/falker47/HogwartsLegacy-SaveEditor", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "EasyContract": {
-        titleKey: "T_EasyContract",
-        descriptionKey: "EasyContract",
-        image: "assets/projects/easycontract.webp",
-        category: "webapp",
-        tags: [
-            { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Applicazione web interattiva" },
-            { text: "AI", type: "tech", emoji: "", tooltip: "Powered by Google Gemini LLM" },
-            { text: "Legal", type: "desc", emoji: "", tooltip: "Analisi contratti e documenti legali" }
-        ],
-        links: [
-            { url: "https://easy-contract.netlify.app/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/easy-contract", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "Panacea": {
-        titleKey: "T_Panacea",
-        descriptionKey: "PanaceaDesc",
-        image: "assets/projects/panacea.webp",
-        category: "desktop",
-        tags: [
-            { text: "Desktop", type: "desktop", emoji: "💻", tooltip: "Applicazione Windows nativa" },
-            { text: "Python", type: "tech", emoji: "", tooltip: "Sviluppato in Python con tkinter" },
-            { text: "Optimizer", type: "desc", emoji: "", tooltip: "Ottimizzazione e pulizia sistema" }
-        ],
-        links: [
-            { url: "https://github.com/falker47/panacea/releases/latest/download/Panacea.exe", textKey: "downloadExe", icon: "fas fa-download" },
-            { url: "https://github.com/falker47/panacea", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "ChiLhaDetto": {
-        title: "Chi l'ha detto?",
-        descriptionKey: "Chi_lha_detto",
-        image: "assets/projects/chilhadetto.png",
-        category: "game",
-        tags: [
-            { text: "Game", type: "game", emoji: "🎮", tooltip: "Gioco interattivo" },
-            { text: "React", type: "tech", emoji: "", tooltip: "Frontend React.js" },
-            { text: "Quiz", type: "desc", emoji: "", tooltip: "Indovina chi ha detto la citazione" }
-        ],
-        links: [
-            { url: "https://chi-l-ha-detto.vercel.app/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/chi-l-ha-detto", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "Onepunch": {
-        titleKey: "T_Onepunch",
-        descriptionKey: "OnepunchDesc",
-        image: "assets/projects/onepunchsetup.webp",
-        category: "desktop",
-        tags: [
-            { text: "Desktop", type: "desktop", emoji: "💻", tooltip: "Applicazione Windows nativa" },
-            { text: "C# WPF", type: "tech", emoji: "", tooltip: "Interfaccia WPF + Winget" },
-            { text: "Installer", type: "desc", emoji: "", tooltip: "Installa software in un click" }
-        ],
-        links: [
-            { url: "https://raw.githubusercontent.com/falker47/onepunch-setup/main/onepunchsetup-installer.zip", textKey: "downloadZip", icon: "fas fa-download" },
-            { url: "https://github.com/falker47/onepunch-setup", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "IbanChecker": {
-        titleKey: "T_IbanChecker",
-        descriptionKey: "IbanChecker",
-        image: "assets/projects/iban-checker.webp",
-        category: "tool",
-        tags: [
-            { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Strumento di utilità" },
-            { text: "JavaScript", type: "tech", emoji: "", tooltip: "Vanilla JavaScript" },
-            { text: "Validation", type: "desc", emoji: "", tooltip: "Verifica e corregge IBAN" }
-        ],
-        links: [
-            { url: "https://falker47.github.io/IBAN-Checker/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/IBAN-Checker", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "NFT": {
-        titleKey: "T_NFT",
-        descriptionKey: "NFT",
-        image: "assets/projects/BLOCKBUSTERS_4_EY.webp",
-        category: "research",
-        tags: [
-            { text: "Research", type: "research", emoji: "📝", tooltip: "Paper e ricerca accademica" },
-            { text: "Blockchain", type: "tech", emoji: "", tooltip: "Tecnologia decentralizzata" },
-            { text: "Whitepaper", type: "desc", emoji: "", tooltip: "Documento tecnico completo" }
-        ],
-        links: [
-            { url: "assets/documents/BLOCKBUSTERS_4_EY.pdf", textKey: "WP", icon: "fas fa-file-pdf" }
-        ]
-    },
-    "Ripetizioni": {
-        titleKey: "T_Ripetizioni",
-        descriptionKey: "Ripetizioni",
-        image: "assets/projects/ripetizioni.webp",
-        category: "webapp",
-        tags: [
-            { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Sito web responsive" },
-            { text: "HTML/CSS", type: "tech", emoji: "", tooltip: "Frontend puro" },
-            { text: "Education", type: "desc", emoji: "", tooltip: "Servizi di tutoring" }
-        ],
-        links: [
-            { url: "https://falker47.github.io/mauriziofalconi-ripetizioni/", textKey: "buttonVisitWeb", icon: "fas fa-globe" }
-        ]
-    },
-    "CarteSenzaUmanita": {
-        title: "Carte senza Umanità",
-        descriptionKey: "Carte_S_Umanità",
-        image: "assets/projects/csu_preview.webp",
-        category: "game",
-        tags: [
-            { text: "Game", type: "game", emoji: "🎮", tooltip: "Gioco multiplayer online" },
-            { text: "Node.js", type: "tech", emoji: "", tooltip: "Backend Node + Socket.io" },
-            { text: "Multiplayer", type: "desc", emoji: "", tooltip: "Gioca con gli amici in tempo reale" }
-        ],
-        links: [
-            { url: "https://carte-senza-umanita.onrender.com/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/Carte-senza-Umanita", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "Sommatrix": {
-        title: "Sommatrix",
-        descriptionKey: "Sommatrix",
-        image: "assets/projects/sommatrix.webp",
-        category: "game",
-        tags: [
-            { text: "Game", type: "game", emoji: "🎮", tooltip: "Puzzle matematico" },
-            { text: "JavaScript", type: "tech", emoji: "", tooltip: "Logica pura JS" },
-            { text: "Puzzle", type: "desc", emoji: "", tooltip: "Risolvi la griglia numerica" }
-        ],
-        links: [
-            { url: "https://falker47.github.io/SOMMATRIX/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/SOMMATRIX", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "CodiceFiscale": {
-        titleKey: "T_CodiceFiscale",
-        descriptionKey: "CodiceFiscale",
-        image: "assets/projects/codice-fiscale.webp",
-        category: "tool",
-        tags: [
-            { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Utility pratica" },
-            { text: "JavaScript", type: "tech", emoji: "", tooltip: "Calcolo lato client" },
-            { text: "Utility", type: "desc", emoji: "", tooltip: "Calcola/decodifica CF italiano" }
-        ],
-        links: [
-            { url: "https://falker47.github.io/Codice-Fiscale/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/Codice-Fiscale", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "Camaleonte": {
-        title: "Camaleonte",
-        descriptionKey: "CamaleonteDesc",
-        image: "assets/projects/camaleonte-3-2-ratio.webp",
-        category: "game",
-        tags: [
-            { text: "Game", type: "game", emoji: "🎮", tooltip: "Gioco di deduzione sociale" },
-            { text: "React + TS", type: "tech", emoji: "", tooltip: "React 19, TypeScript, Zustand" },
-            { text: "Party", type: "desc", emoji: "", tooltip: "3-12 giocatori, singolo dispositivo" }
-        ],
-        links: [
-            { url: "https://camaleonte.netlify.app/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://play.google.com/store/apps/details?id=com.falker.camaleonte", textKey: "playStore", icon: "fab fa-google-play" }
-        ]
-    },
-    "CrackTheCode": {
-        title: "Crack the Code",
-        descriptionKey: "CracktheCode",
-        image: "assets/projects/crack-the-code.webp",
-        category: "game",
-        tags: [
-            { text: "Game", type: "game", emoji: "🎮", tooltip: "Gioco di logica" },
-            { text: "JavaScript", type: "tech", emoji: "", tooltip: "Puro JavaScript" },
-            { text: "Logic", type: "desc", emoji: "", tooltip: "Decifra il codice segreto" }
-        ],
-        links: [
-            { url: "https://falker47.github.io/Crack-the-Code/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/Crack-the-Code", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    },
-    "PMD": {
-        titleKey: "T_PMD",
-        descriptionKey: "PMDDesc",
-        image: "assets/projects/PMD.webp",
-        category: "webapp",
-        tags: [
-            { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Tool interattivo" },
-            { text: "React + Vite", type: "tech", emoji: "", tooltip: "Frontend moderno e veloce" },
-            { text: "Pokémon", type: "game", emoji: "", tooltip: "Utility per Pokémon MD" }
-        ],
-        links: [
-            { url: "https://pokemonmysterydungeon-reversequiz.netlify.app/", textKey: "buttonTry", icon: "fas fa-globe" },
-            { url: "https://github.com/falker47/PokemonMysteryDungeon-ReverseQuiz", textKey: "githubRepo", icon: "fab fa-github" }
-        ]
-    }
+  "Ringmin": {
+    title: "Ringmin",
+    descriptionKey: "RingminDesc",
+    image: "assets/projects/ringmin.webp",
+    category: "research",
+    tags: [
+      { text: "Research", type: "research", emoji: "📝", tooltip: "Certified computational geometry" },
+      { text: "Python", type: "tech", emoji: "", tooltip: "Exact solver and independent verifier" },
+      { text: "Geometry", type: "desc", emoji: "", tooltip: "Global optima certified for finite cases" }
+    ],
+    links: [
+      { url: "https://arxiv.org/abs/2607.28654", textKey: "paper", icon: "fas fa-file-lines" },
+      { url: "https://github.com/falker47/ringmin", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "RingminSquared": {
+    title: "Power-Ringmin",
+    descriptionKey: "RingminSquaredDesc",
+    icon: "x²",
+    category: "research",
+    tags: [
+      { text: "Research", type: "research", emoji: "📝", tooltip: "Quadratic-radii extension of the central-circle problem" },
+      { text: "Python", type: "tech", emoji: "", tooltip: "Exact fixed-order feasibility and certificates" },
+      { text: "Optimization", type: "desc", emoji: "", tooltip: "Finite certified results with explicit limitations" }
+    ],
+    links: [
+      { url: "https://github.com/falker47/ringmin-squared", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "ProfGecko": {
+    title: "Prof. Gecko",
+    descriptionKey: "ProfGeckoDesc",
+    icon: "🦎",
+    category: "product",
+    tags: [
+      { text: "AI Product", type: "webapp", emoji: "🤖", tooltip: "Public product with private source code" },
+      { text: "Next.js + FastAPI", type: "tech", emoji: "", tooltip: "Full-stack web architecture" },
+      { text: "RAG", type: "desc", emoji: "", tooltip: "Generation-aware Pokémon knowledge retrieval" }
+    ],
+    links: [
+      { url: "https://profgecko.com", textKey: "liveDemo", icon: "fas fa-globe" }
+    ]
+  },
+
+  "ChiLhaDetto": {
+    title: "Chi l'ha detto?",
+    descriptionKey: "ChiLhaDettoDesc",
+    image: "assets/projects/chilhadetto.png",
+    category: "product",
+    tags: [
+      { text: "Product", type: "webapp", emoji: "🌐", tooltip: "Deployed interactive web product" },
+      { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "Vite frontend" },
+      { text: "Neon + Vercel", type: "desc", emoji: "", tooltip: "Serverless leaderboard and PostgreSQL" }
+    ],
+    links: [
+      { url: "https://chi-l-ha-detto.vercel.app/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/chi-l-ha-detto", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "Camaleonte": {
+    title: "Camaleonte",
+    descriptionKey: "CamaleonteDesc",
+    image: "assets/projects/camaleonte-3-2-ratio.webp",
+    category: "product",
+    tags: [
+      { text: "Product", type: "webapp", emoji: "📱", tooltip: "Installable single-device party game" },
+      { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "React 19, Vite and Zustand" },
+      { text: "PWA", type: "desc", emoji: "", tooltip: "Offline-capable progressive web app" }
+    ],
+    links: [
+      { url: "https://falker47.github.io/camaleonte/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://play.google.com/store/apps/details?id=com.falker.camaleonte", textKey: "playStore", icon: "fab fa-google-play" },
+      { url: "https://github.com/falker47/camaleonte", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "DiarioDiBordo": {
+    title: "Diario di Bordo",
+    descriptionKey: "DiarioDiBordoDesc",
+    icon: "📖",
+    category: "product",
+    tags: [
+      { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Mobile-first application for an educational community" },
+      { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "Vite frontend" },
+      { text: "Supabase", type: "desc", emoji: "", tooltip: "PostgreSQL, Auth, RLS and Edge Functions" }
+    ],
+    links: [
+      { url: "https://github.com/falker47/Diario-di-Bordo", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "HLSE": {
+    title: "Hogwarts Legacy Save Editor",
+    descriptionKey: "HLSEDesc",
+    image: "assets/projects/HLSE.webp",
+    category: "gaming",
+    tags: [
+      { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Gaming utility for save management" },
+      { text: "Python GUI", type: "tech", emoji: "", tooltip: "CustomTkinter and pywebview" },
+      { text: "Modding", type: "desc", emoji: "", tooltip: "Integrated save-editing workflow" }
+    ],
+    links: [
+      { url: "https://www.nexusmods.com/hogwartslegacy/mods/2414", textKey: "nexusMods", icon: "fas fa-download" },
+      { url: "https://github.com/falker47/HogwartsLegacy-SaveEditor", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "PMDSaveEditor": {
+    title: "PMD Save Editor",
+    descriptionKey: "PMDSaveEditorDesc",
+    icon: "💾",
+    category: "gaming",
+    tags: [
+      { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Pokémon Mystery Dungeon save utility" },
+      { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "Modern web refactor" },
+      { text: "Pokémon", type: "game", emoji: "", tooltip: "Rescue Team and Explorers support" }
+    ],
+    links: [
+      { url: "https://github.com/falker47/PokemonMysteryDungeon-SavEditor", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "PMDReverseQuiz": {
+    title: "PMD Reverse Quiz",
+    descriptionKey: "PMDReverseQuizDesc",
+    image: "assets/projects/PMD.webp",
+    category: "gaming",
+    tags: [
+      { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Personality-quiz answer guide" },
+      { text: "React + Vite", type: "tech", emoji: "", tooltip: "Bilingual browser application" },
+      { text: "Pokémon", type: "game", emoji: "", tooltip: "Classic Mystery Dungeon games" }
+    ],
+    links: [
+      { url: "https://pokemonmysterydungeon-reversequiz.netlify.app/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/PokemonMysteryDungeon-ReverseQuiz", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "ZEROfilez": {
+    title: "ZEROfilez",
+    descriptionKey: "ZEROfilezDesc",
+    image: "assets/projects/zerofilez.webp",
+    category: "gaming",
+    tags: [
+      { text: "Tooling", type: "tool", emoji: "🧰", tooltip: "Public software/archive utility plus private-vault frontend" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Client-side application" },
+      { text: "Web Crypto", type: "desc", emoji: "", tooltip: "AES-256-GCM + HKDF-SHA256" }
+    ],
+    links: [
+      { url: "https://falker47.github.io/ZEROfilez/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/ZEROfilez", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "IbanChecker": {
+    title: "IBAN Checker",
+    descriptionKey: "IbanCheckerDesc",
+    image: "assets/projects/iban-checker.webp",
+    category: "utility",
+    tags: [
+      { text: "Utility", type: "tool", emoji: "🔧", tooltip: "Focused browser utility" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "ES modules with Vitest coverage" },
+      { text: "Validation", type: "desc", emoji: "", tooltip: "Italian IBAN validation and typo correction" }
+    ],
+    links: [
+      { url: "https://falker47.github.io/IBAN-Checker/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/IBAN-Checker", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "CrackTheCode": {
+    title: "Crack the Code",
+    descriptionKey: "CrackTheCodeDesc",
+    image: "assets/projects/crack-the-code.webp",
+    category: "utility",
+    tags: [
+      { text: "Game", type: "game", emoji: "🎮", tooltip: "Single-player logic game" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Zero runtime dependencies" },
+      { text: "Logic", type: "desc", emoji: "", tooltip: "Mastermind-inspired deduction" }
+    ],
+    links: [
+      { url: "https://falker47.github.io/Crack-the-Code/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/Crack-the-Code", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "Sommatrix": {
+    title: "SOMMATRIX",
+    descriptionKey: "SommatrixDesc",
+    image: "assets/projects/sommatrix.webp",
+    category: "utility",
+    tags: [
+      { text: "Game", type: "game", emoji: "🎮", tooltip: "Mathematical browser puzzle" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Vanilla JavaScript with Node tests" },
+      { text: "Solver", type: "desc", emoji: "", tooltip: "Generated boards accepted only with one global solution" }
+    ],
+    links: [
+      { url: "https://falker47.github.io/SOMMATRIX/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/SOMMATRIX", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  }
 };
 
-
-// Lista Progetti
 const projectsOrder = [
-    "Ringmin",
-    "EasyContract",
-    "Panacea",
-    "HLSE",
-    "ZEROfilez",
-    "Kobon",
-    "Camaleonte",
-    "CarteSenzaUmanita",
-    "IbanChecker",
-    "ChiLhaDetto",
-    "PMD",
-    "NFT",
-    "CrackTheCode",
-    "Ripetizioni",
-    "Sommatrix",
-    "CodiceFiscale"
-
+  "Ringmin",
+  "RingminSquared",
+  "ProfGecko",
+  "ChiLhaDetto",
+  "Camaleonte",
+  "DiarioDiBordo",
+  "HLSE",
+  "PMDSaveEditor",
+  "PMDReverseQuiz",
+  "ZEROfilez",
+  "IbanChecker",
+  "CrackTheCode",
+  "Sommatrix"
 ];
