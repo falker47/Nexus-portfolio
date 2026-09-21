@@ -19,19 +19,19 @@ Historical, archived, dormant, private, or low-signal repositories are intention
 
 ## Selected projects
 
-Current highlights include:
+Current highlights include, ordered roughly by portfolio impact:
 
-- Ringmin
 - Prof. Gecko
-- Chi l'ha detto?
+- Ringmin
 - Camaleonte
+- Chi l'ha detto?
 - Diario di Bordo
 - Hogwarts Legacy Save Editor
-- Pokémon Mystery Dungeon Tools (Save Editor + Reverse Quiz)
 - ZEROfilez
+- Pokémon Mystery Dungeon Tools (Save Editor + Reverse Quiz)
 - IBAN Checker
-- Crack the Code
 - SOMMATRIX
+- Crack the Code
 
 Prof. Gecko is represented through its public product; its source repository remains private.
 
