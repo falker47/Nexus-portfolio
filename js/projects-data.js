@@ -88,7 +88,7 @@ const projectsMap = {
   "DiarioDiBordo": {
     title: "Diario di Bordo",
     descriptionKey: "DiarioDiBordoDesc",
-    image: "assets/projects/diario-di-bordo.webp",
+    image: "assets/projects/diario-di-bordo-v2.webp",
     category: "product",
     tags: [
       { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Mobile-first application for an educational community" },
