@@ -40,7 +40,7 @@ const projectsMap = {
   "ProfGecko": {
     title: "Prof. Gecko",
     descriptionKey: "ProfGeckoDesc",
-    icon: "🦎",
+    image: "assets/projects/prof-gecko.jpg",
     category: "product",
     tags: [
       { text: "AI Product", type: "webapp", emoji: "🤖", tooltip: "Public product with private source code" },
@@ -198,16 +198,15 @@ const projectsMap = {
 };
 
 const projectsOrder = [
-  "Ringmin",
-  // "RingminSquared", // Hidden until Power-Ringmin is ready for public showcase.
   "ProfGecko",
-  "ChiLhaDetto",
+  "Ringmin",
   "Camaleonte",
+  "ChiLhaDetto",
   "DiarioDiBordo",
   "HLSE",
-  "PMDTools",
   "ZEROfilez",
+  "PMDTools",
   "IbanChecker",
-  "CrackTheCode",
-  "Sommatrix"
+  "Sommatrix",
+  "CrackTheCode"
 ];
