@@ -48,8 +48,12 @@ function renderProjects() {
     // Add category data attribute for filtering
     card.setAttribute('data-category', p.category || '');
 
+    const imageHtml = p.image
+      ? `<img src="${p.image}" alt="${p.title || 'Project'}" loading="lazy">`
+      : `<div class="project-image-fallback" role="img" aria-label="${p.title || 'Project'}">${p.icon || '◆'}</div>`;
+
     card.innerHTML = `
-      <img src="${p.image}" alt="${p.title || p.titleKey}" loading="lazy">
+      ${imageHtml}
       <div class="card-content">
         ${titleHtml}
         ${tagsHtml ? `<div class="tech-tags">${tagsHtml}</div>` : ''}
@@ -135,11 +139,6 @@ function switchLanguage(lang) {
     }
   });
 
-  // Update Curriculum link
-  const cvA = document.getElementById("curriculum-link");
-  if (cvA && curriculumLinks[lang]) {
-    cvA.href = curriculumLinks[lang];
-  }
 }
 
 /**
