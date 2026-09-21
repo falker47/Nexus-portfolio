@@ -88,7 +88,7 @@ const projectsMap = {
   "DiarioDiBordo": {
     title: "Diario di Bordo",
     descriptionKey: "DiarioDiBordoDesc",
-    icon: "📖",
+    image: "assets/projects/diario-di-bordo.webp",
     category: "product",
     tags: [
       { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Mobile-first application for an educational community" },
@@ -96,6 +96,7 @@ const projectsMap = {
       { text: "Supabase", type: "desc", emoji: "", tooltip: "PostgreSQL, Auth, RLS and Edge Functions" }
     ],
     links: [
+      { url: "https://diariodibordo.netlify.app/", textKey: "liveDemo", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/Diario-di-Bordo", textKey: "githubRepo", icon: "fab fa-github" }
     ]
   },
