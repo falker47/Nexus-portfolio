@@ -1,48 +1,80 @@
-# 🌐 Nexus Portfolio
+# Nexus Portfolio
 
-A modern, responsive personal portfolio website showcasing projects, certifications, and professional links.
+Nexus is my public portfolio hub: a **curated selection**, not a mirror of every repository in my GitHub account.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+## Live site
 
-## ✨ Features
+https://falker47.github.io/Nexus-portfolio/
 
-- **🌍 Bilingual Support** – Full Italian/English toggle for all content
-- **🎬 Hero Video Section** – Eye-catching animated video background
-- **📂 Dynamic Projects Grid** – Showcases web apps, tools, and games
-- **🏆 Certifications Gallery** – Interactive lightbox for certificates
-- **📱 Fully Responsive** – Optimized for desktop, tablet, and mobile
-- **🎨 Modern UI** – Glassmorphism effects, smooth scrolling, and elegant animations
+## Portfolio structure
 
-## 🚀 Live Demo
+The project selection is organized around four themes:
 
-🔗 **[Visit Nexus Portfolio](https://falker47.github.io/Nexus-portfolio/)**
+- **Research** — computational geometry and certified algorithmic results.
+- **Products** — deployed applications with a clear user-facing purpose.
+- **Gaming / Tooling** — save editors, fan utilities, and practical software tooling.
+- **Utilities / Games** — smaller projects kept only when they have a focused scope and a solid verification story.
 
-## 📁 Project Structure
+Historical, archived, dormant, private, or low-signal repositories are intentionally omitted.
 
+## Selected projects
+
+Current highlights include:
+
+- Ringmin and Power-Ringmin
+- Prof. Gecko
+- Chi l'ha detto?
+- Camaleonte
+- Diario di Bordo
+- Hogwarts Legacy Save Editor
+- PMD Save Editor and PMD Reverse Quiz
+- ZEROfilez
+- IBAN Checker
+- Crack the Code
+- SOMMATRIX
+
+Prof. Gecko is represented through its public product; its source repository remains private.
+
+## Site features
+
+- Italian / English content toggle
+- curated project filters
+- responsive project cards
+- certifications gallery with lightbox
+- responsive layout for desktop and mobile
+- static deployment through GitHub Pages
+
+## Tech stack
+
+- HTML5
+- CSS3
+- vanilla JavaScript
+- Font Awesome
+- Google Fonts
+- Swiper for the mobile certifications carousel
+
+## Structure
+
+```text
+.
+├── index.html
+├── style.css
+├── script.js
+├── js/
+│   ├── projects-data.js
+│   ├── translations.js
+│   └── certifications-data.js
+└── assets/
+    ├── branding/
+    ├── certifications/
+    ├── documents/
+    ├── hero/
+    └── projects/
 ```
-Nexus/
-├── index.html      # Main HTML structure
-├── style.css       # Complete styling with responsive design
-├── script.js       # Translations, dynamic rendering, interactions
-└── assets/         # Images, videos, certifications, and logos
-```
 
-## 🛠️ Technologies
+## Contact
 
-- **HTML5** – Semantic, accessible markup
-- **CSS3** – Custom properties, flexbox, grid, animations
-- **JavaScript** – Vanilla JS for translations and dynamic content
-- **Font Awesome** – Icon library
-- **Google Fonts** – Poppins typography
+- LinkedIn: https://www.linkedin.com/in/mauriziofalconi/
+- GitHub: https://github.com/falker47
 
-## 📬 Contact
-
-- 📧 Email: maurizio.falconi47@gmail.com
-- 💼 [LinkedIn](https://www.linkedin.com/in/mauriziofalconi/)
-- 🐙 [GitHub](https://github.com/falker47)
-
----
-
-© 2026 Maurizio Falconi – falker47
+© 2026 Maurizio Falconi
