@@ -35,7 +35,7 @@ const translations = {
     paperII: "Paper II",
     nexusMods: "Nexus Mods",
 
-    RingminDesc: "Programma di ricerca in geometria computazionale sul problema del cerchio centrale minimo, sviluppato in due lavori complementari: il primo collega il problema a una struttura TSP anti-Monge e certifica gli ottimi globali per n = 3…14; il secondo stabilisce il limite asintotico globale e una caratterizzazione effettiva della costante C_*.",
+    RingminDesc: "Programma di ricerca in geometria computazionale sul problema del cerchio centrale minimo, sviluppato in due lavori complementari: il primo collega il problema a una struttura TSP anti-Monge e certifica gli ottimi globali per n = 3…14; il secondo stabilisce il limite asintotico globale e una caratterizzazione effettiva della costante limite.",
     RingminSquaredDesc: "Estensione indipendente del problema Ringmin ai raggi quadratici 1²,…,n². Contiene una formulazione esatta a vincoli di differenza e risultati finiti certificati per n = 3…6, senza rivendicare una costante asintotica globale esatta.",
     ProfGeckoDesc: "Knowledge hub Pokémon bilingue che combina un chatbot RAG generation-aware con Pokédex, Data Hub, Team Builder e strumenti di confronto. Costruito con Next.js e FastAPI, recupera il contesto da circa 83 mila documenti per fornire risposte coerenti con giochi e generazioni diverse.",
     ChiLhaDettoDesc: "Quiz storico in cui riconoscere l'autore di citazioni famose e scoprirne il contesto reale dopo ogni risposta. Include modalità di gioco dedicate, streak e classifica globale, con frontend React/TypeScript e leaderboard serverless su Vercel e Neon.",
@@ -81,7 +81,7 @@ const translations = {
     paperII: "Paper II",
     nexusMods: "Nexus Mods",
 
-    RingminDesc: "Computational-geometry research program on the minimum central-circle problem, developed in two complementary papers: the first connects the problem to an anti-Monge TSP structure and certifies global optima for n = 3…14; the second establishes the global asymptotic limit and an effective characterization of the constant C_*.",
+    RingminDesc: "Computational-geometry research program on the minimum central-circle problem, developed in two complementary papers: the first connects the problem to an anti-Monge TSP structure and certifies global optima for n = 3…14; the second establishes the global asymptotic limit and an effective characterization of its limiting constant.",
     RingminSquaredDesc: "Independent extension of Ringmin to quadratic radii 1²,…,n². It contains an exact difference-constraint formulation and certified finite results for n = 3…6, without claiming an exact global asymptotic constant.",
     ProfGeckoDesc: "Bilingual Pokémon knowledge hub combining a generation-aware RAG chatbot with a Pokédex, Data Hub, Team Builder, and comparison tools. Built with Next.js and FastAPI, it retrieves context from roughly 83k documents to provide answers consistent with different games and generations.",
     ChiLhaDettoDesc: "Historical quiz where players identify the authors of famous quotes and discover their real context after each answer. It includes dedicated game modes, streaks, and a global leaderboard, with a React/TypeScript frontend and a serverless leaderboard on Vercel and Neon.",
