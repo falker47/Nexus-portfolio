@@ -12,12 +12,13 @@ const projectsMap = {
     image: "assets/projects/ringmin.webp",
     category: "research",
     tags: [
-      { text: "Research", type: "research", emoji: "📝", tooltip: "Certified computational geometry" },
+      { text: "Research", type: "research", emoji: "📝", tooltip: "Two-paper computational-geometry research program" },
       { text: "Python", type: "tech", emoji: "", tooltip: "Exact solver and independent verifier" },
-      { text: "Geometry", type: "desc", emoji: "", tooltip: "Global optima certified for finite cases" }
+      { text: "Finite + asymptotic", type: "desc", emoji: "", tooltip: "Certified finite optima and global asymptotic theory" }
     ],
     links: [
-      { url: "https://arxiv.org/abs/2607.28654", textKey: "paper", icon: "fas fa-file-lines" },
+      { url: "https://arxiv.org/abs/2607.28654", textKey: "paperI", icon: "fas fa-file-lines" },
+      { url: "https://arxiv.org/abs/2609.13630", textKey: "paperII", icon: "fas fa-file-lines" },
       { url: "https://github.com/falker47/ringmin", textKey: "githubRepo", icon: "fab fa-github" }
     ]
   },
