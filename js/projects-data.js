@@ -80,7 +80,7 @@ const projectsMap = {
       { text: "PWA", type: "desc", emoji: "", tooltip: "Offline-capable progressive web app" }
     ],
     links: [
-      { url: "https://camaleonte.netlify.app/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://falker47.github.io/camaleonte/", textKey: "liveDemo", icon: "fas fa-globe" },
       { url: "https://play.google.com/store/apps/details?id=com.falker.camaleonte", textKey: "playStore", icon: "fab fa-google-play" },
       { url: "https://github.com/falker47/camaleonte", textKey: "githubRepo", icon: "fab fa-github" }
     ]
