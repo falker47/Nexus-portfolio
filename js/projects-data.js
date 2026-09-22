@@ -44,7 +44,7 @@ const projectsMap = {
     image: "assets/projects/prof-gecko.jpg",
     category: "product",
     tags: [
-      { text: "AI Product", type: "webapp", emoji: "🤖", tooltip: "Public product with private source code" },
+      { text: "Product", type: "product", emoji: "🌐", tooltip: "Public product with private source code" },
       { text: "Next.js + FastAPI", type: "tech", emoji: "", tooltip: "Full-stack web architecture" },
       { text: "RAG", type: "desc", emoji: "", tooltip: "Generation-aware Pokémon knowledge retrieval" }
     ],
@@ -59,7 +59,7 @@ const projectsMap = {
     image: "assets/projects/chilhadetto.png",
     category: "product",
     tags: [
-      { text: "Product", type: "webapp", emoji: "🌐", tooltip: "Deployed interactive web product" },
+      { text: "Product", type: "product", emoji: "🌐", tooltip: "Deployed interactive web product" },
       { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "Vite frontend" },
       { text: "Neon + Vercel", type: "desc", emoji: "", tooltip: "Serverless leaderboard and PostgreSQL" }
     ],
@@ -75,7 +75,7 @@ const projectsMap = {
     image: "assets/projects/camaleonte-3-2-ratio.webp",
     category: "product",
     tags: [
-      { text: "Product", type: "webapp", emoji: "📱", tooltip: "Installable single-device party game" },
+      { text: "Product", type: "product", emoji: "🌐", tooltip: "Installable single-device party game" },
       { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "React 19, Vite and Zustand" },
       { text: "PWA", type: "desc", emoji: "", tooltip: "Offline-capable progressive web app" }
     ],
@@ -92,7 +92,7 @@ const projectsMap = {
     image: "assets/projects/diario-di-bordo-preview.webp",
     category: "product",
     tags: [
-      { text: "Web App", type: "webapp", emoji: "🌐", tooltip: "Mobile-first application for an educational community" },
+      { text: "Product", type: "product", emoji: "🌐", tooltip: "Mobile-first application for an educational community" },
       { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "Vite frontend" },
       { text: "Supabase", type: "desc", emoji: "", tooltip: "PostgreSQL, Auth, RLS and Edge Functions" }
     ],
@@ -108,7 +108,7 @@ const projectsMap = {
     image: "assets/projects/HLSE.webp",
     category: "utility",
     tags: [
-      { text: "Utility", type: "utility", emoji: "🔧", tooltip: "Gaming utility for save management" },
+      { text: "Utility", type: "utility", emoji: "🛠️", tooltip: "Gaming utility for save management" },
       { text: "Python GUI", type: "tech", emoji: "", tooltip: "CustomTkinter and pywebview" },
       { text: "Modding", type: "desc", emoji: "", tooltip: "Integrated save-editing workflow" }
     ],
@@ -124,7 +124,7 @@ const projectsMap = {
     image: "assets/projects/PMD.webp",
     category: "utility",
     tags: [
-      { text: "Utility", type: "utility", emoji: "🔧", tooltip: "Two focused utilities for classic Pokémon Mystery Dungeon games" },
+      { text: "Utility", type: "utility", emoji: "🛠️", tooltip: "Two focused utilities for classic Pokémon Mystery Dungeon games" },
       { text: "React", type: "tech", emoji: "", tooltip: "Modern browser-based interfaces" },
       { text: "Pokémon", type: "game", emoji: "", tooltip: "Rescue Team and Explorers series" }
     ],
@@ -140,7 +140,7 @@ const projectsMap = {
     image: "assets/projects/zerofilez.webp",
     category: "utility",
     tags: [
-      { text: "Utility", type: "utility", emoji: "🧰", tooltip: "Public software/archive utility plus private-vault frontend" },
+      { text: "Utility", type: "utility", emoji: "🛠️", tooltip: "Public software/archive utility plus private-vault frontend" },
       { text: "JavaScript", type: "tech", emoji: "", tooltip: "Client-side application" },
       { text: "Web Crypto", type: "desc", emoji: "", tooltip: "AES-256-GCM + HKDF-SHA256" }
     ],
@@ -156,7 +156,7 @@ const projectsMap = {
     image: "assets/projects/iban-checker.webp",
     category: "utility",
     tags: [
-      { text: "Utility", type: "utility", emoji: "🔧", tooltip: "Focused browser utility" },
+      { text: "Utility", type: "utility", emoji: "🛠️", tooltip: "Focused browser utility" },
       { text: "JavaScript", type: "tech", emoji: "", tooltip: "ES modules with Vitest coverage" },
       { text: "Validation", type: "desc", emoji: "", tooltip: "Italian IBAN validation and typo correction" }
     ],
