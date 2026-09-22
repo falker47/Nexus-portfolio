@@ -22,13 +22,20 @@ function renderProjects() {
     card.className = 'project-card';
     card.style.animationDelay = `${index * 0.1}s`;
 
-    // Title Logic: use localized key if present, otherwise raw title
-    let titleHtml = '';
-    if (p.titleKey) {
-      titleHtml = `<h3 data-i18n="${p.titleKey}">${p.titleKey}</h3>`;
-    } else {
-      titleHtml = `<h3>${p.title}</h3>`;
-    }
+    // Title doubles as the lightweight primary entry point for the project.
+    const primaryUrl = p.links?.[0]?.url || null;
+    const titleContent = p.titleKey
+      ? `<span data-i18n="${p.titleKey}">${p.titleKey}</span>`
+      : p.title;
+
+    const titleHtml = primaryUrl
+      ? `<h3>
+          <a class="project-title-link" href="${primaryUrl}" target="_blank" rel="noopener noreferrer">
+            <span>${titleContent}</span>
+            <span class="project-title-arrow" aria-hidden="true">↗</span>
+          </a>
+        </h3>`
+      : `<h3>${titleContent}</h3>`;
 
     // Tech Tags with category colors and tooltips
     const tagsHtml = p.tags ? p.tags.map(tag => {
@@ -37,13 +44,26 @@ function renderProjects() {
       return `<span class="tech-tag ${tag.type}" ${tooltip}>${emoji}${tag.text}</span>`;
     }).join('') : '';
 
-    // Links Logic
-    const linksHtml = p.links.map(link => `
-      <a href="${link.url}" target="_blank" rel="noopener noreferrer">
-        <span class="button-text" data-i18n="${link.textKey}">link</span>
-        <span class="button-icon"><i class="${link.icon}"></i></span>
-      </a>
-    `).join('');
+    // Compact action hierarchy: live demos are primary, GitHub is icon-only,
+    // and supporting destinations stay as lightweight secondary actions.
+    const linksHtml = p.links.map(link => {
+      const isPrimary = link.textKey === 'liveDemo';
+      const isGithub = link.textKey === 'githubRepo';
+      const actionClasses = [
+        'project-action',
+        isPrimary ? 'project-action-primary' : 'project-action-secondary',
+        isGithub ? 'project-action-icon' : ''
+      ].filter(Boolean).join(' ');
+
+      const title = isGithub ? ' title="GitHub" aria-label="GitHub"' : '';
+
+      return `
+        <a class="${actionClasses}" href="${link.url}" target="_blank" rel="noopener noreferrer"${title}>
+          <span class="button-text" data-i18n="${link.textKey}">link</span>
+          <span class="button-icon" aria-hidden="true"><i class="${link.icon}"></i></span>
+        </a>
+      `;
+    }).join('');
 
     // Add category data attribute for filtering
     card.setAttribute('data-category', p.category || '');
