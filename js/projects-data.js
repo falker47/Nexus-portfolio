@@ -106,9 +106,9 @@ const projectsMap = {
     title: "Hogwarts Legacy Save Editor",
     descriptionKey: "HLSEDesc",
     image: "assets/projects/HLSE.webp",
-    category: "gaming",
+    category: "utility",
     tags: [
-      { text: "Tool", type: "tool", emoji: "🔧", tooltip: "Gaming utility for save management" },
+      { text: "Utility", type: "utility", emoji: "🔧", tooltip: "Gaming utility for save management" },
       { text: "Python GUI", type: "tech", emoji: "", tooltip: "CustomTkinter and pywebview" },
       { text: "Modding", type: "desc", emoji: "", tooltip: "Integrated save-editing workflow" }
     ],
@@ -122,9 +122,9 @@ const projectsMap = {
     title: "Pokémon Mystery Dungeon Tools",
     descriptionKey: "PMDToolsDesc",
     image: "assets/projects/PMD.webp",
-    category: "gaming",
+    category: "utility",
     tags: [
-      { text: "Tooling", type: "tool", emoji: "🔧", tooltip: "Two focused utilities for classic Pokémon Mystery Dungeon games" },
+      { text: "Utility", type: "utility", emoji: "🔧", tooltip: "Two focused utilities for classic Pokémon Mystery Dungeon games" },
       { text: "React", type: "tech", emoji: "", tooltip: "Modern browser-based interfaces" },
       { text: "Pokémon", type: "game", emoji: "", tooltip: "Rescue Team and Explorers series" }
     ],
@@ -138,9 +138,9 @@ const projectsMap = {
     title: "ZEROfilez",
     descriptionKey: "ZEROfilezDesc",
     image: "assets/projects/zerofilez.webp",
-    category: "gaming",
+    category: "utility",
     tags: [
-      { text: "Tooling", type: "tool", emoji: "🧰", tooltip: "Public software/archive utility plus private-vault frontend" },
+      { text: "Utility", type: "utility", emoji: "🧰", tooltip: "Public software/archive utility plus private-vault frontend" },
       { text: "JavaScript", type: "tech", emoji: "", tooltip: "Client-side application" },
       { text: "Web Crypto", type: "desc", emoji: "", tooltip: "AES-256-GCM + HKDF-SHA256" }
     ],
@@ -156,7 +156,7 @@ const projectsMap = {
     image: "assets/projects/iban-checker.webp",
     category: "utility",
     tags: [
-      { text: "Utility", type: "tool", emoji: "🔧", tooltip: "Focused browser utility" },
+      { text: "Utility", type: "utility", emoji: "🔧", tooltip: "Focused browser utility" },
       { text: "JavaScript", type: "tech", emoji: "", tooltip: "ES modules with Vitest coverage" },
       { text: "Validation", type: "desc", emoji: "", tooltip: "Italian IBAN validation and typo correction" }
     ],
@@ -170,7 +170,7 @@ const projectsMap = {
     title: "Crack the Code",
     descriptionKey: "CrackTheCodeDesc",
     image: "assets/projects/crack-the-code.webp",
-    category: "utility",
+    category: "game",
     tags: [
       { text: "Game", type: "game", emoji: "🎮", tooltip: "Single-player logic game" },
       { text: "JavaScript", type: "tech", emoji: "", tooltip: "Zero runtime dependencies" },
@@ -186,7 +186,7 @@ const projectsMap = {
     title: "SOMMATRIX",
     descriptionKey: "SommatrixDesc",
     image: "assets/projects/sommatrix.webp",
-    category: "utility",
+    category: "game",
     tags: [
       { text: "Game", type: "game", emoji: "🎮", tooltip: "Mathematical browser puzzle" },
       { text: "JavaScript", type: "tech", emoji: "", tooltip: "Vanilla JavaScript with Node tests" },
