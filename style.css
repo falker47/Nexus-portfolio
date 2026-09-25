@@ -2239,3 +2239,180 @@ footer {
     font-size: 0.72rem;
   }
 }
+
+
+/* ===== INTRO CORRECTIVE PASS — UNIFIED HERO + ABOUT =====
+   Screenshot-driven correction: remove the broken gradient-text rendering and
+   make the desktop first screen one coherent two-panel composition. */
+
+.intro {
+  min-height: 0;
+  padding-top: 68px;
+}
+
+.intro .hero-content {
+  width: min(100%, calc(var(--content-max) + (var(--section-space-x) * 2)));
+  min-height: 0;
+  height: auto;
+  margin: 0 auto;
+  padding: 48px var(--section-space-x) 52px;
+}
+
+.intro-grid {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.intro .hero-card,
+.intro .about-panel {
+  width: 100%;
+  max-width: none;
+  min-height: 360px;
+  margin: 0;
+  padding: 30px 32px;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: var(--radius-lg);
+  background: rgba(15, 15, 18, 0.78) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-lg);
+}
+
+.intro .hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+/* Solid text is intentional: background-clip:text rendered as a full gradient
+   rectangle in real browsers captured during QA. */
+.intro .hero-card h1 {
+  margin: 0 0 16px;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: var(--text-light) !important;
+  color: var(--text-light) !important;
+  animation: none !important;
+}
+
+.intro .hero-card .hero-subtitle {
+  margin-bottom: 22px;
+}
+
+.intro .about-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.intro .about-kicker {
+  margin: 0;
+  color: var(--primary-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.intro .about-copy {
+  display: grid;
+  gap: 13px;
+}
+
+.intro .about-copy p {
+  margin: 0;
+  color: var(--text-body);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.intro .about-copy p + p {
+  color: var(--text-muted);
+}
+
+.intro .about-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 0;
+}
+
+.intro .about-focus span {
+  min-height: 29px;
+  padding: 5px 9px;
+  font-size: 0.72rem;
+}
+
+/* The old standalone About section no longer exists. */
+.about {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .intro {
+    padding-top: 58px;
+  }
+
+  .intro .hero-content {
+    padding: 26px 16px 30px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .intro .hero-card,
+  .intro .about-panel {
+    min-height: 0;
+    padding: 22px 20px;
+    border-radius: 16px;
+  }
+
+  .intro .hero-card {
+    justify-content: flex-start;
+  }
+
+  .intro .about-panel {
+    gap: 15px;
+  }
+
+  .intro .about-copy {
+    gap: 11px;
+  }
+
+  .intro .about-copy p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 420px) {
+  .intro .hero-content {
+    padding: 20px 12px 24px;
+  }
+
+  .intro-grid {
+    gap: 12px;
+  }
+
+  .intro .hero-card,
+  .intro .about-panel {
+    padding: 20px 17px;
+  }
+
+  .intro .about-focus span {
+    font-size: 0.69rem;
+  }
+}
