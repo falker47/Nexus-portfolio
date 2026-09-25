@@ -2794,3 +2794,39 @@ footer {
   }
 }
 
+/* ===== HERO CTA LAYOUT — SHARED LOWER ROW =====
+   Desktop keeps the approved copy/typography while placing description and CTA
+   on one lower band. Mobile/tablet retain the existing stacked flow. */
+@media (min-width: 901px) {
+  .intro .hero-card-slim {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) max-content;
+    grid-template-areas:
+      "kicker kicker"
+      "title title"
+      "description cta";
+    column-gap: 28px;
+    align-items: end;
+  }
+
+  .intro .hero-card-slim .hero-kicker {
+    grid-area: kicker;
+  }
+
+  .intro .hero-card-slim h1 {
+    grid-area: title;
+  }
+
+  .intro .hero-description {
+    grid-area: description;
+    min-width: 0;
+  }
+
+  .intro .hero-card-slim .hero-cta {
+    grid-area: cta;
+    justify-self: end;
+    align-self: end;
+    margin: 0;
+  }
+}
+
