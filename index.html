@@ -9,7 +9,7 @@
     <title>Nexus Portfolio - Maurizio Falconi</title>
     <meta name="description" content="Portfolio di Maurizio Falconi: Data Engineering, Applied AI & Automation, algoritmi, ricerca computazionale e prodotti software." />
     <!-- Link al file CSS -->
-    <link rel="stylesheet" href="style.css?v=20260922-1732" />
+    <link rel="stylesheet" href="style.css?v=20260925-1940" />
 
     <!-- Favicons -->
     <link
@@ -65,25 +65,39 @@
     <div class="scroll-progress"></div>
 
     <!-- Navbar -->
-    <nav class="navbar">
-      <div class="logo">
-        <img src="assets/branding/falkerlogo.png" alt="Logo" class="logo-img" />
-        Maurizio Falconi
-      </div>
-      <ul>
+    <nav class="navbar" aria-label="Navigazione principale">
+      <a class="logo" href="#hero" aria-label="Maurizio Falconi — Home">
+        <img src="assets/branding/falkerlogo.png" alt="" class="logo-img" />
+        <span>Maurizio Falconi</span>
+      </a>
+
+      <ul class="nav-links" id="primary-nav">
         <li><a href="#hero" data-i18n="navHome">Home</a></li>
         <li><a href="#about" data-i18n="navAbout">Chi sono</a></li>
         <li><a href="#projects" data-i18n="navProjects">Progetti</a></li>
-        <li><a href="#certifications">Certif.</a></li>
+        <li><a href="#certifications" data-i18n="navCertifications">Certificazioni</a></li>
         <li><a href="#contact" data-i18n="navContact">Contatti</a></li>
       </ul>
 
-      <!-- Toggle lingua spostato a destra -->
-      <div class="language-toggle" role="group" aria-label="Language switch">
-        <input type="checkbox" id="toggle-lang" aria-label="Switch language to English" />
-        <label for="toggle-lang" class="toggle">
-          <span class="toggle-switch"></span>
-        </label>
+      <div class="nav-actions">
+        <div class="language-toggle" role="group" aria-label="Language switch">
+          <input type="checkbox" id="toggle-lang" aria-label="Switch language to English" />
+          <label for="toggle-lang" class="toggle">
+            <span class="toggle-switch"></span>
+          </label>
+        </div>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Apri menu"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
 
@@ -104,11 +118,12 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="hero-card">
-          <h1 data-i18n="heroTitle">Benvenuto in Nexus Portfolio</h1>
-          <p data-i18n="heroSubtitle">
-            Il punto d'incontro di tutti i miei progetti.
+          <p class="hero-kicker" data-i18n="heroKicker">Nexus Portfolio</p>
+          <h1 data-i18n="heroTitle">Data Engineer · Applied AI & Automation</h1>
+          <p class="hero-subtitle" data-i18n="heroSubtitle">
+            Algoritmi, ricerca computazionale e prodotti software in una selezione curata di progetti utili, verificabili e riproducibili.
           </p>
-          <a href="#projects" data-i18n="heroButton">Esplora Ora</a>
+          <a href="#projects" data-i18n="heroButton">Esplora i progetti</a>
         </div>
       </div>
     </section>
@@ -232,9 +247,9 @@
     <!-- Link al file JavaScript -->
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/translations.js?v=20260922-1732"></script>
+    <script src="js/translations.js?v=20260925-1940"></script>
     <script src="js/certifications-data.js?v=20260922-1732"></script>
     <script src="js/projects-data.js?v=20260922-1732"></script>
-    <script src="script.js?v=20260922-1732"></script>
+    <script src="script.js?v=20260925-1940"></script>
   </body>
 </html>
