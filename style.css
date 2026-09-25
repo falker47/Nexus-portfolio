@@ -2094,3 +2094,148 @@ footer {
     padding: 22px 18px;
   }
 }
+
+
+/* ===== VISUAL REDESIGN STEP 4 — COMPACT ABOUT ===== */
+.about {
+  padding-top: 46px;
+  padding-bottom: 46px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(139, 92, 246, 0.09), transparent 34%),
+    linear-gradient(180deg, #0d0d11 0%, #131217 100%);
+}
+
+.about-panel {
+  width: min(100%, var(--content-max));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.45fr);
+  grid-template-areas:
+    "heading copy"
+    "focus focus";
+  gap: 24px 54px;
+  align-items: start;
+  padding: 30px 34px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: rgba(24, 24, 29, 0.72);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-heading {
+  grid-area: heading;
+}
+
+.about-kicker {
+  margin-bottom: 10px;
+  color: var(--primary-light);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-panel .section-title {
+  max-width: 410px;
+  margin: 0 !important;
+  text-align: left !important;
+  font-size: clamp(1.8rem, 3vw, 2.35rem) !important;
+  line-height: 1.14;
+  letter-spacing: -0.035em;
+}
+
+.about-copy {
+  grid-area: copy;
+  display: grid;
+  gap: 14px;
+  align-self: center;
+}
+
+.about-copy p {
+  margin: 0;
+  color: var(--text-body);
+  font-size: 0.97rem;
+  line-height: 1.72;
+}
+
+.about-copy p + p {
+  color: var(--text-muted);
+}
+
+.about-focus {
+  grid-area: focus;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.about-focus span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 10px;
+  border: 1px solid rgba(167, 139, 250, 0.22);
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.07);
+  color: #d9d1f0;
+  font-size: 0.76rem;
+  line-height: 1.2;
+}
+
+/* Neutralize legacy About decoration now that the section is editorial. */
+.about-card,
+.about-card::before,
+.about-quote,
+.about-cta {
+  animation: none;
+}
+
+@media (max-width: 900px) {
+  .about {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .about-panel {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "copy"
+      "focus";
+    gap: 20px;
+    padding: 24px 22px;
+  }
+
+  .about-panel .section-title {
+    max-width: 640px;
+  }
+
+  .about-copy {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-panel {
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .about-panel .section-title {
+    font-size: 1.85rem !important;
+  }
+
+  .about-copy p {
+    font-size: 0.92rem;
+    line-height: 1.62;
+  }
+
+  .about-focus {
+    gap: 6px;
+  }
+
+  .about-focus span {
+    font-size: 0.72rem;
+  }
+}
