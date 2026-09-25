@@ -11,7 +11,7 @@ const translations = {
     navContact: "Contatti",
     heroKicker: "Nexus Portfolio",
     heroTitle: "Trasformo problemi complessi o ripetitivi in sistemi utili, verificabili e riproducibili.",
-    heroFocus: "Data Engineering · Applied AI & Automation · Algorithms · Computational Research",
+    heroFocus: "Ingegneria dei dati · AI applicata e automazione · Algoritmi · Ricerca computazionale",
     heroButton: "Esplora i progetti",
     projectsTitle: "Progetti selezionati",
     contactMail: "Contattami",
