@@ -2416,3 +2416,96 @@ footer {
     font-size: 0.69rem;
   }
 }
+
+
+/* ===== INTRO SLIM PASS — GITHUB-LEANING IDENTITY ===== */
+.intro .hero-content {
+  padding-top: 38px;
+  padding-bottom: 42px;
+}
+
+.intro-grid {
+  display: block;
+}
+
+.intro .hero-card-slim {
+  width: 100%;
+  min-height: 0;
+  max-width: none;
+  padding: 28px 32px 30px;
+  display: block;
+  text-align: left;
+}
+
+.intro .hero-card-slim h1 {
+  max-width: 1120px;
+  margin: 0 0 14px;
+  font-size: clamp(2.1rem, 3.5vw, 3.15rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: var(--text-light) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+.hero-focus-line {
+  margin: 0 0 22px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.intro .hero-card-slim > a {
+  display: inline-flex;
+  width: auto;
+}
+
+/* Legacy About content is removed from markup; keep hidden as a hard guard. */
+.about,
+.intro .about-panel {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .intro .hero-content {
+    padding-top: 22px;
+    padding-bottom: 26px;
+  }
+
+  .intro .hero-card-slim {
+    padding: 22px 20px 24px;
+  }
+
+  .intro .hero-card-slim h1 {
+    max-width: 100%;
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+    line-height: 1.08;
+    margin-bottom: 13px;
+  }
+
+  .hero-focus-line {
+    margin-bottom: 20px;
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 420px) {
+  .intro .hero-content {
+    padding: 16px 12px 22px;
+  }
+
+  .intro .hero-card-slim {
+    padding: 19px 17px 21px;
+  }
+
+  .intro .hero-card-slim h1 {
+    font-size: clamp(1.75rem, 8.5vw, 2.15rem);
+  }
+
+  .hero-focus-line {
+    font-size: 0.78rem;
+  }
+}
