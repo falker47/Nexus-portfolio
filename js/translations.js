@@ -54,7 +54,7 @@ const translations = {
     navCertifications: "Certifications",
     navContact: "Contact",
     heroKicker: "Data Engineering · Applied AI & Automation · Algorithms · Computational Research",
-    heroTitle: "If it doesn't exist yet, I build it.",
+    heroTitle: "If it doesn't exist yet, I'll build it.",
     heroDescriptionLead: "I learn the technologies I need to build what I wish existed.",
     heroDescriptionTail: "Sometimes it's something useful, much more often something fun.",
     heroButton: "Explore projects",
