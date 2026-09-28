@@ -4,6 +4,29 @@
  * Data is loaded from js/translations.js, js/certifications-data.js, js/projects-data.js
  */
 
+const LANGUAGE_STORAGE_KEY = 'nexus-language';
+
+function getPreferredLanguage() {
+  try {
+    const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (storedLanguage === 'it' || storedLanguage === 'en') {
+      return storedLanguage;
+    }
+  } catch (error) {
+    // Storage can be unavailable in restricted browsing contexts.
+  }
+
+  return 'it';
+}
+
+function persistLanguage(lang) {
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+  } catch (error) {
+    // The language still works for the current page when storage is unavailable.
+  }
+}
+
 // --- Functions ---
 /**
  * Renders the projects grid with enhanced features.
@@ -152,14 +175,26 @@ function renderCertifications() {
  * @param {string} lang - 'it' or 'en'
  */
 function switchLanguage(lang) {
-  // Update translation texts
+  if (!translations[lang]) return;
+
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
-    if (translations[lang] && translations[lang][key]) {
+    if (translations[lang][key]) {
       el.innerHTML = translations[lang][key];
     }
   });
 
+  document.documentElement.lang = lang;
+  persistLanguage(lang);
+
+  const toggleLang = document.getElementById("toggle-lang");
+  if (toggleLang) {
+    toggleLang.checked = lang === "en";
+    toggleLang.setAttribute(
+      "aria-label",
+      lang === "en" ? "Passa all’italiano" : "Switch language to English"
+    );
+  }
 }
 
 /**
@@ -251,8 +286,8 @@ document.addEventListener("DOMContentLoaded", function () {
     yearElement.textContent = new Date().getFullYear();
   }
 
-  // Set Default Language (also triggers first translation update for dynamic content)
-  switchLanguage("it");
+  // Restore the selected language across portfolio pages.
+  switchLanguage(getPreferredLanguage());
 
   // Handle Language Toggle
   const toggleLang = document.getElementById("toggle-lang");
