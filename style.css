@@ -1486,7 +1486,7 @@ footer a:hover {
 }
 
 .project-grid {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 360px));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 360px));
   justify-content: center;
   align-items: stretch;
   gap: 24px;
@@ -2009,10 +2009,10 @@ footer {
   .navbar .nav-links {
     position: absolute;
     top: calc(100% + 8px);
-    left: 12px;
+    left: auto;
     right: 12px;
     display: none;
-    width: auto;
+    width: min(240px, calc(100vw - 24px));
     padding: 8px;
     flex-direction: column;
     align-items: stretch;

@@ -43,7 +43,7 @@ const translations = {
     PMDToolsDesc: "Due utility per i Pokémon Mystery Dungeon classici: un save editor per Rescue Team ed Explorers e una guida bilingue ai quiz della personalità per orientare le risposte verso lo starter desiderato.",
     ZEROfilezDesc: "Utility client-side a doppio uso: archivio pubblico di strumenti e frontend per pacchetti cifrati. Pacchetto e chiave sono elaborati nel browser, senza backend di upload.",
     IbanCheckerDesc: "Validatore client-side per IBAN italiani: controlla struttura, Mod.97, CIN e ABI/CAB e, quando trova un errore, propone correzioni plausibili per refusi o caratteri invertiti.",
-    CrackTheCodeDesc: "Puzzle browser single-player ispirato a Mastermind, con partita libera e campagna da nove livelli. Il Codemaster è un’interfaccia narrativa, non un servizio AI.",
+    CrackTheCodeDesc: "Puzzle browser single-player ispirato a Mastermind, con partita libera e campagna da nove livelli.",
     SommatrixDesc: "Puzzle matematico: seleziona i numeri della griglia per raggiungere i target di righe e colonne. Ogni schema è verificato prima della partita per accettare solo puzzle con un’unica soluzione globale."
   },
 
@@ -87,7 +87,7 @@ const translations = {
     PMDToolsDesc: "Two tools for classic Pokémon Mystery Dungeon games: a save editor for Rescue Team and Explorers, plus a bilingual personality-quiz guide for steering answers toward a desired starter.",
     ZEROfilezDesc: "Dual-purpose client-side utility: a public tools archive and a frontend for encrypted packages. Package and key processing stays in the browser, with no upload backend.",
     IbanCheckerDesc: "Client-side validator for Italian IBANs that checks structure, Mod 97, CIN, and ABI/CAB codes, then suggests plausible fixes for typos or swapped characters.",
-    CrackTheCodeDesc: "Single-player browser puzzle inspired by Mastermind, with free play and a nine-level campaign. The Codemaster is a narrative interface, not an AI service.",
+    CrackTheCodeDesc: "Single-player browser puzzle inspired by Mastermind, with free play and a nine-level campaign.",
     SommatrixDesc: "Mathematical grid puzzle: select numbers to match each row and column target. Every board is verified before play so only puzzles with exactly one global solution are shown."
   }
 };
