@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +9,8 @@
       content="Research and publications by Maurizio Falconi, including the Ringmin computational-geometry program, two arXiv papers, certified finite optima and global asymptotic theory."
     />
     <link rel="canonical" href="https://falker47.github.io/Nexus-portfolio/research.html" />
-    <link rel="stylesheet" href="style.css?v=20260928-seo" />
-    <link rel="stylesheet" href="research.css?v=20260928-seo" />
+    <link rel="stylesheet" href="style.css?v=20260928-research-restyle" />
+    <link rel="stylesheet" href="research.css?v=20260928-research-restyle" />
     <link
       href="https://i.postimg.cc/rmCxjswj/main-falker-logo-gecko-transparent-minimal.png"
       rel="icon"
@@ -105,121 +105,158 @@
     </script>
   </head>
   <body class="research-page">
-    <header class="research-nav">
-      <a class="research-brand" href="index.html" aria-label="Maurizio Falconi — Nexus Portfolio">
-        <img src="assets/branding/falkerlogo.png" alt="" />
+    <nav class="navbar" aria-label="Navigazione principale">
+      <a class="logo" href="index.html#hero" aria-label="Maurizio Falconi — Home">
+        <img src="assets/branding/falkerlogo.png" alt="" class="logo-img" />
         <span>Maurizio Falconi</span>
       </a>
-      <nav aria-label="Research navigation">
-        <a href="index.html">Portfolio</a>
-        <a href="https://github.com/falker47" rel="me">GitHub</a>
-      </nav>
-    </header>
+
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="index.html#hero" data-i18n="navHome">Home</a></li>
+        <li><a href="index.html#projects" data-i18n="navProjects">Progetti</a></li>
+        <li><a href="research.html" data-i18n="navResearch" aria-current="page">Ricerca</a></li>
+        <li><a href="index.html#certifications" data-i18n="navCertifications">Certificazioni</a></li>
+        <li><a href="index.html#contact" data-i18n="navContact">Contatti</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="language-toggle" role="group" aria-label="Language switch">
+          <input type="checkbox" id="toggle-lang" aria-label="Switch language to English" />
+          <label for="toggle-lang" class="toggle">
+            <span class="toggle-switch"></span>
+          </label>
+        </div>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Apri menu"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
 
     <main class="research-main">
-      <section class="research-hero">
-        <p class="research-kicker">Computational Research · Algorithms · Reproducibility</p>
-        <h1>Research & Publications</h1>
-        <p>
-          I work on computational geometry and verifiable optimization problems. My current
-          research program, <strong>Ringmin</strong>, studies the minimum central-circle problem:
-          arranging circles of radii 1,2,...,n around a central circle while minimizing its radius.
+      <section class="research-intro" aria-labelledby="research-title">
+        <p class="research-kicker" data-i18n="researchKicker">
+          Ricerca computazionale · Algoritmi · Riproducibilità
+        </p>
+        <h1 id="research-title" data-i18n="researchTitle">Ricerca e pubblicazioni</h1>
+        <p data-i18n="researchIntro">
+          Lavoro su problemi di geometria computazionale e ottimizzazione verificabile. Il mio
+          attuale programma di ricerca, Ringmin, studia il problema del cerchio centrale minimo:
+          disporre cerchi di raggi 1,2,...,n attorno a un cerchio centrale minimizzandone il raggio.
         </p>
       </section>
 
-      <section class="publication-list" aria-labelledby="publications-title">
-        <div class="section-heading">
-          <p>Ringmin research program</p>
-          <h2 id="publications-title">Publications</h2>
+      <section class="research-program" aria-labelledby="ringmin-title">
+        <div class="research-program-heading">
+          <h2 id="ringmin-title" data-i18n="researchProgramTitle">
+            Ringmin — Programma di ricerca
+          </h2>
+          <p data-i18n="researchProgramIntro">
+            Due lavori complementari affrontano rispettivamente il regime finito certificato e la
+            teoria asintotica globale.
+          </p>
         </div>
 
-        <article class="publication-card">
-          <div class="publication-meta">
-            <span>Paper I</span>
-            <span>arXiv:2607.28654</span>
-            <span>2026</span>
-          </div>
-          <h3>
-            <a href="https://arxiv.org/abs/2607.28654">
-              Arranging circles of radii 1,2,...,n around a central circle: a Supnick TSP and certified finite optima
+        <div class="publication-grid">
+          <article class="publication-card">
+            <p class="publication-bibliography">Paper I · 2026 · arXiv:2607.28654</p>
+            <h3>
+              <a href="https://arxiv.org/abs/2607.28654">
+                Arranging circles of radii 1,2,...,n around a central circle: a Supnick TSP and certified finite optima
+              </a>
+            </h3>
+            <p data-i18n="researchPaper1Description">
+              Il lavoro sui casi finiti riduce il problema del lower bound sull’ordinamento della
+              catena a un TSP fisso di tipo Supnick/anti-Monge ed è accompagnato da certificati
+              espliciti e da un verificatore indipendente. Il repository certifica ottimi globali
+              per n = 3,...,14; per n maggiori gli ottimi candidati restano euristici.
+            </p>
+            <a class="research-action" href="https://arxiv.org/abs/2607.28654" data-i18n="researchReadArxiv">
+              Leggi su arXiv →
             </a>
-          </h3>
-          <p>
-            The finite paper reduces the chain-ordering lower-bound problem to a fixed
-            Supnick/anti-Monge TSP and is accompanied by explicit certificate artifacts and an
-            independent verifier. The repository certifies global optima for n = 3,...,14;
-            larger-n candidate optima remain heuristic.
-          </p>
-          <div class="publication-links">
-            <a href="https://arxiv.org/abs/2607.28654">Read on arXiv →</a>
-            <a href="https://github.com/falker47/ringmin">Code & certificates →</a>
-          </div>
-        </article>
+          </article>
 
-        <article class="publication-card">
-          <div class="publication-meta">
-            <span>Paper II</span>
-            <span>arXiv:2609.13630</span>
-            <span>2026</span>
-          </div>
-          <h3>
-            <a href="https://arxiv.org/abs/2609.13630">
-              Minimum central circles: an effective characterization of the global asymptotic constant
+          <article class="publication-card">
+            <p class="publication-bibliography">Paper II · 2026 · arXiv:2609.13630</p>
+            <h3>
+              <a href="https://arxiv.org/abs/2609.13630">
+                Minimum central circles: an effective characterization of the global asymptotic constant
+              </a>
+            </h3>
+            <p data-i18n="researchPaper2Description">
+              Il seguito asintotico dimostra R*(n) = C* n² + o(n²) e caratterizza C* tramite
+              programmi lineari finiti su parole bilanciate, con un bound d’errore rigoroso che
+              tende a zero al crescere dei parametri finiti. Restano aperti una forma chiusa
+              elementare e un algoritmo di valutazione efficiente.
+            </p>
+            <a class="research-action" href="https://arxiv.org/abs/2609.13630" data-i18n="researchReadArxiv">
+              Leggi su arXiv →
             </a>
-          </h3>
-          <p>
-            The asymptotic sequel proves R*(n) = C* n² + o(n²) and characterizes C* through
-            finite balanced-word linear programs with a rigorous error bound that vanishes as
-            the finite parameters grow. An elementary closed form and an efficient evaluation
-            algorithm remain open.
-          </p>
-          <div class="publication-links">
-            <a href="https://arxiv.org/abs/2609.13630">Read on arXiv →</a>
-            <a href="https://github.com/falker47/ringmin">Research repository →</a>
-          </div>
-        </article>
+          </article>
+        </div>
       </section>
 
-      <section class="research-resources" aria-labelledby="resources-title">
-        <div class="section-heading">
-          <p>Reproducibility</p>
-          <h2 id="resources-title">Research resources</h2>
+      <section class="research-band research-reproducibility" aria-labelledby="reproducibility-title">
+        <div class="research-band-heading">
+          <h2 id="reproducibility-title" data-i18n="researchReproTitle">Riproducibilità</h2>
+          <p data-i18n="researchReproIntro">
+            Il programma è accompagnato da codice, verificatore indipendente, certificati e un
+            archivio software citabile.
+          </p>
         </div>
-        <div class="resource-grid">
-          <a class="resource-card" href="https://github.com/falker47/ringmin">
+
+        <div class="research-resource-links">
+          <a href="https://github.com/falker47/ringmin">
             <span>GitHub</span>
-            <strong>Ringmin repository</strong>
-            <small>Solver, independent verifier, certificate artifacts and publication sources.</small>
+            <strong data-i18n="researchRepoTitle">Repository Ringmin</strong>
+            <small data-i18n="researchRepoDescription">
+              Solver, verificatore indipendente, certificati e sorgenti delle pubblicazioni.
+            </small>
           </a>
-          <a class="resource-card" href="https://doi.org/10.5281/zenodo.22849826">
+          <a href="https://doi.org/10.5281/zenodo.22849826">
             <span>Zenodo</span>
-            <strong>Software archive</strong>
-            <small>DOI for release v1.1.0-dcg-presubmission of the Ringmin software and artifacts.</small>
+            <strong data-i18n="researchZenodoTitle">Archivio software</strong>
+            <small data-i18n="researchZenodoDescription">
+              DOI della release v1.1.0-dcg-presubmission del software e degli artefatti Ringmin.
+            </small>
           </a>
         </div>
       </section>
 
-      <section class="research-author" aria-labelledby="author-title">
-        <p class="research-kicker">Author</p>
-        <h2 id="author-title">Maurizio Falconi</h2>
-        <p>
-          Data Engineer working across applied AI, automation, algorithms and computational
-          research. This page is the canonical publication index for the research presented in
-          Nexus Portfolio.
-        </p>
-        <div class="publication-links">
-          <a href="https://orcid.org/0009-0005-3162-3651" rel="me">ORCID →</a>
-          <a href="https://scholar.google.com/citations?user=5xHRNvoAAAAJ" rel="me">Google Scholar →</a>
-          <a href="https://github.com/falker47" rel="me">GitHub →</a>
-          <a href="https://www.linkedin.com/in/mauriziofalconi/" rel="me">LinkedIn →</a>
-          <a href="index.html">Nexus Portfolio →</a>
+      <section class="research-identity" aria-labelledby="identity-title">
+        <div>
+          <h2 id="identity-title" data-i18n="researchIdentityTitle">Identità di ricerca</h2>
+          <p data-i18n="researchIdentityText">
+            Profili pubblici persistenti per pubblicazioni, codice e attività professionale.
+          </p>
+        </div>
+        <div class="identity-links">
+          <a href="https://orcid.org/0009-0005-3162-3651" rel="me">ORCID</a>
+          <a href="https://scholar.google.com/citations?user=5xHRNvoAAAAJ" rel="me">Google Scholar</a>
+          <a href="https://github.com/falker47" rel="me">GitHub</a>
+          <a href="https://www.linkedin.com/in/mauriziofalconi/" rel="me">LinkedIn</a>
         </div>
       </section>
     </main>
 
-    <footer class="research-footer">
-      <a href="index.html">← Back to Nexus Portfolio</a>
-      <span>© 2026 Maurizio Falconi</span>
+    <footer>
+      <p>
+        <a href="https://falker47.github.io/Nexus-portfolio/">
+          &copy; <span id="currentYear"></span>
+          <span data-i18n="footerName">Maurizio Falconi</span> - Nexus Portfolio
+        </a>
+      </p>
     </footer>
+
+    <script src="js/translations.js?v=20260928-research-restyle"></script>
+    <script src="script.js?v=20260928-research-restyle"></script>
   </body>
 </html>
