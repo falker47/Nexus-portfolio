@@ -489,6 +489,7 @@ a {
 
 .contact-socials {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
@@ -2848,3 +2849,16 @@ footer {
   }
 }
 
+
+
+/* ===== CONTACT IDENTITY LINKS ===== */
+@media (max-width: 520px) {
+  .contact-socials {
+    gap: 12px;
+  }
+
+  .contact-social {
+    padding: 13px;
+    font-size: 1.55rem;
+  }
+}
