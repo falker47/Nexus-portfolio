@@ -120,6 +120,7 @@ const projectsMap = {
 
   "PMDTools": {
     title: "Pokémon Mystery Dungeon Tools",
+    titleClass: "project-title-compact",
     descriptionKey: "PMDToolsDesc",
     image: "assets/projects/PMD.webp",
     category: "utility",
