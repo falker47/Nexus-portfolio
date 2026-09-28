@@ -27,15 +27,16 @@ function renderProjects() {
     const titleContent = p.titleKey
       ? `<span data-i18n="${p.titleKey}">${p.titleKey}</span>`
       : p.title;
+    const titleClass = p.titleClass ? ` class="${p.titleClass}"` : '';
 
     const titleHtml = primaryUrl
-      ? `<h3>
+      ? `<h3${titleClass}>
           <a class="project-title-link" href="${primaryUrl}" target="_blank" rel="noopener noreferrer">
             <span>${titleContent}</span>
             <span class="project-title-arrow" aria-hidden="true">↗</span>
           </a>
         </h3>`
-      : `<h3>${titleContent}</h3>`;
+      : `<h3${titleClass}>${titleContent}</h3>`;
 
     // Tech Tags with category colors and tooltips
     const tagsHtml = p.tags ? p.tags.map(tag => {
