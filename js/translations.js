@@ -36,9 +36,9 @@ const translations = {
 
     researchKicker: "Algoritmi · Geometria computazionale · Riproducibilità",
     researchTitle: "Ricerca e pubblicazioni",
-    researchIntro: "Ringmin studia il problema del cerchio centrale minimo: disporre cerchi di raggi 1,2,...,n attorno a un cerchio centrale minimizzandone il raggio. Il lavoro combina ottimizzazione combinatoria, certificazione computazionale e analisi asintotica.",
+    researchIntro: "Qui raccolgo le mie pubblicazioni, organizzate per tema e area di ricerca.",
     researchProgramTitle: "Ringmin",
-    researchProgramIntro: "Due paper complementari: risultati finiti certificati e teoria asintotica globale.",
+    researchProgramIntro: "Ringmin studia il problema del cerchio centrale minimo. I due paper affrontano rispettivamente i casi finiti certificati e la teoria asintotica globale.",
     researchPaper1Description: "Riduce il problema di ordinamento a un TSP Supnick/anti-Monge; certificati espliciti e un verificatore indipendente rendono i risultati riproducibili. Per n maggiori i candidati restano euristici.",
     researchPaper2Description: "Caratterizza C* tramite programmi lineari finiti su parole bilanciate con un bound d’errore rigoroso che tende a zero. Restano aperti una forma chiusa elementare e un algoritmo di valutazione efficiente.",
     researchReadArxiv: "Apri su arXiv",
@@ -48,8 +48,6 @@ const translations = {
     researchRepoDescription: "Codice, verificatore e certificati.",
     researchZenodoTitle: "Zenodo",
     researchZenodoDescription: "Release software citabile con DOI.",
-    researchStatPapers: "paper",
-    researchStatCertified: "ottimi certificati",
     researchPaper1Highlight: "Ottimi globali certificati per n = 3,…,14.",
     researchPaper2Highlight: "Limite globale: R*(n) = C* n² + o(n²).",
 
@@ -100,9 +98,9 @@ const translations = {
 
     researchKicker: "Algorithms · Computational Geometry · Reproducibility",
     researchTitle: "Research & Publications",
-    researchIntro: "Ringmin studies the minimum central-circle problem: arranging circles of radii 1,2,...,n around a central circle while minimizing its radius. The work combines combinatorial optimization, computational certification and asymptotic analysis.",
+    researchIntro: "A collection of my publications, organized by topic and research area.",
     researchProgramTitle: "Ringmin",
-    researchProgramIntro: "Two complementary papers: certified finite results and global asymptotic theory.",
+    researchProgramIntro: "Ringmin studies the minimum central-circle problem. The two papers address certified finite cases and the global asymptotic theory, respectively.",
     researchPaper1Description: "Reduces the ordering problem to a Supnick/anti-Monge TSP; explicit certificates and an independent verifier make the results reproducible. Larger-n candidate optima remain heuristic.",
     researchPaper2Description: "Characterizes C* through finite balanced-word linear programs with a rigorous error bound that vanishes. An elementary closed form and an efficient evaluation algorithm remain open.",
     researchReadArxiv: "Open on arXiv",
@@ -112,8 +110,6 @@ const translations = {
     researchRepoDescription: "Code, verifier and certificates.",
     researchZenodoTitle: "Zenodo",
     researchZenodoDescription: "Citable software release with DOI.",
-    researchStatPapers: "papers",
-    researchStatCertified: "certified optima",
     researchPaper1Highlight: "Certified global optima for n = 3,…,14.",
     researchPaper2Highlight: "Global limit: R*(n) = C* n² + o(n²).",
 
