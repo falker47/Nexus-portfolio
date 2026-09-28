@@ -33,18 +33,18 @@ const translations = {
     paperII: "Paper II",
     nexusMods: "Nexus Mods",
 
-    RingminDesc: "Programma di ricerca in geometria computazionale sul problema del cerchio centrale minimo, sviluppato in due lavori complementari: il primo collega il problema a una struttura TSP anti-Monge e certifica gli ottimi globali per n = 3…14; il secondo stabilisce il limite asintotico globale e una caratterizzazione effettiva della costante limite.",
+    RingminDesc: "Ricerca sul cerchio centrale minimo. Il primo paper usa un TSP anti-Monge e certifica gli ottimi globali per n = 3…14; il secondo stabilisce il limite asintotico globale.",
     RingminSquaredDesc: "Estensione indipendente del problema Ringmin ai raggi quadratici 1²,…,n². Contiene una formulazione esatta a vincoli di differenza e risultati finiti certificati per n = 3…6, senza rivendicare una costante asintotica globale esatta.",
-    ProfGeckoDesc: "Knowledge hub Pokémon bilingue che combina un chatbot RAG generation-aware con Pokédex, Data Hub, Team Builder e strumenti di confronto. Costruito con Next.js e FastAPI, recupera il contesto da circa 83 mila documenti per fornire risposte coerenti con giochi e generazioni diverse.",
-    ChiLhaDettoDesc: "Quiz storico in cui riconoscere l'autore di citazioni famose e scoprirne il contesto reale dopo ogni risposta. Include modalità di gioco dedicate, streak e classifica globale, con frontend React/TypeScript e leaderboard serverless su Vercel e Neon.",
-    CamaleonteDesc: "Party game di deduzione per 3–12 giocatori su un singolo dispositivo. È una PWA React/TypeScript pensata per funzionare anche offline, con ruoli speciali, punteggio persistente e distribuzione anche su Play Store.",
-    DiarioDiBordoDesc: "Piattaforma mobile-first per digitalizzare il diario quotidiano di una comunità educativa: consultazione pubblica, pubblicazione di contributi multimediali e aree dedicate a educatori e amministratori. Basata su React/TypeScript e Supabase, con permessi gestiti tramite RLS ed Edge Functions.",
-    HLSEDesc: "Applicazione Windows che riunisce in un'unica interfaccia la gestione e la modifica dei salvataggi di Hogwarts Legacy. Rileva automaticamente i save, integra l'editor nel workflow e crea backup prima delle modifiche per rendere il processo più rapido e sicuro.",
-    PMDToolsDesc: "Due strumenti dedicati ai Pokémon Mystery Dungeon classici: un save editor per Rescue Team ed Explorers e una guida bilingue ai quiz della personalità che aiuta a orientare le risposte verso lo starter desiderato. Due approcci diversi allo stesso obiettivo: avere più controllo sulla propria avventura.",
-    ZEROfilezDesc: "Utility client-side a doppio uso: archivio pubblico di strumenti e frontend per gestire pacchetti personali cifrati. La parte privata usa Web Crypto con AES-256-GCM e HKDF-SHA256 senza inviare chiavi o contenuti in chiaro a un backend del progetto.",
-    IbanCheckerDesc: "Validatore client-side per IBAN italiani con controllo in tempo reale di struttura, Mod.97, CIN e codici ABI/CAB. Quando rileva un IBAN errato, cerca anche correzioni plausibili per singoli caratteri sbagliati o invertiti.",
-    CrackTheCodeDesc: "Puzzle browser single-player ispirato a Mastermind, con partita libera e campagna da nove livelli. Il Codemaster è un'interfaccia narrativa, non un servizio AI; dati e script sono verificati in CI.",
-    SommatrixDesc: "Puzzle matematico in cui selezionare i numeri corretti di una griglia per raggiungere i target di ogni riga e colonna. Ogni schema viene generato e verificato automaticamente prima della partita, così da mostrare soltanto puzzle con una soluzione globale unica."
+    ProfGeckoDesc: "Hub Pokémon bilingue con chatbot RAG che distingue giochi e generazioni, affiancato da Pokédex, Team Builder e strumenti di confronto. Recupera il contesto da circa 83 mila documenti.",
+    ChiLhaDettoDesc: "Quiz storico: riconosci l’autore di una citazione e ne scopri il contesto reale dopo la risposta. Modalità dedicate, streak e classifica globale completano il gioco.",
+    CamaleonteDesc: "Party game di deduzione per 3–12 giocatori su un solo dispositivo, giocabile anche offline. Ruoli speciali e punteggio persistente; disponibile come PWA e su Play Store.",
+    DiarioDiBordoDesc: "Piattaforma mobile-first per il diario quotidiano di una comunità educativa: contenuti pubblici e contributi multimediali, con aree separate per educatori e amministratori.",
+    HLSEDesc: "App Windows per gestire e modificare i salvataggi di Hogwarts Legacy in un unico flusso. Rileva automaticamente i save e crea backup prima delle modifiche.",
+    PMDToolsDesc: "Due utility per i Pokémon Mystery Dungeon classici: un save editor per Rescue Team ed Explorers e una guida bilingue ai quiz della personalità per orientare le risposte verso lo starter desiderato.",
+    ZEROfilezDesc: "Utility client-side a doppio uso: archivio pubblico di strumenti e frontend per pacchetti cifrati. Pacchetto e chiave sono elaborati nel browser, senza backend di upload.",
+    IbanCheckerDesc: "Validatore client-side per IBAN italiani: controlla struttura, Mod.97, CIN e ABI/CAB e, quando trova un errore, propone correzioni plausibili per refusi o caratteri invertiti.",
+    CrackTheCodeDesc: "Puzzle browser single-player ispirato a Mastermind, con partita libera e campagna da nove livelli. Il Codemaster è un’interfaccia narrativa, non un servizio AI.",
+    SommatrixDesc: "Puzzle matematico: seleziona i numeri della griglia per raggiungere i target di righe e colonne. Ogni schema è verificato prima della partita per accettare solo puzzle con un’unica soluzione globale."
   },
 
   en: {
@@ -77,17 +77,17 @@ const translations = {
     paperII: "Paper II",
     nexusMods: "Nexus Mods",
 
-    RingminDesc: "Computational-geometry research program on the minimum central-circle problem, developed in two complementary papers: the first connects the problem to an anti-Monge TSP structure and certifies global optima for n = 3…14; the second establishes the global asymptotic limit and an effective characterization of its limiting constant.",
+    RingminDesc: "Research on the minimum central-circle problem. Paper I uses an anti-Monge TSP and certifies global optima for n = 3…14; Paper II establishes the global asymptotic limit.",
     RingminSquaredDesc: "Independent extension of Ringmin to quadratic radii 1²,…,n². It contains an exact difference-constraint formulation and certified finite results for n = 3…6, without claiming an exact global asymptotic constant.",
-    ProfGeckoDesc: "Bilingual Pokémon knowledge hub combining a generation-aware RAG chatbot with a Pokédex, Data Hub, Team Builder, and comparison tools. Built with Next.js and FastAPI, it retrieves context from roughly 83k documents to provide answers consistent with different games and generations.",
-    ChiLhaDettoDesc: "Historical quiz where players identify the authors of famous quotes and discover their real context after each answer. It includes dedicated game modes, streaks, and a global leaderboard, with a React/TypeScript frontend and a serverless leaderboard on Vercel and Neon.",
-    CamaleonteDesc: "Single-device deduction party game for 3–12 players. It is a React/TypeScript PWA designed to work offline, with special roles, persistent scoring, and Play Store distribution.",
-    DiarioDiBordoDesc: "Mobile-first platform for digitizing the daily journal of an educational community, with public browsing, multimedia contributions, and dedicated areas for educators and administrators. Built with React/TypeScript and Supabase, with permissions enforced through RLS and Edge Functions.",
-    HLSEDesc: "Windows application that brings Hogwarts Legacy save management and editing into a single interface. It automatically detects save files, integrates the editor into the workflow, and creates backups before changes to make the process faster and safer.",
-    PMDToolsDesc: "Two tools for classic Pokémon Mystery Dungeon games: a save editor for Rescue Team and Explorers, and a bilingual personality-quiz guide that helps steer answers toward a desired starter. Two different approaches to the same goal: giving players more control over their adventure.",
-    ZEROfilezDesc: "Dual-purpose client-side utility: a public tools archive and a frontend for personal encrypted packages. Its private-vault flow uses Web Crypto with AES-256-GCM and HKDF-SHA256 without sending keys or plaintext content to a project backend.",
-    IbanCheckerDesc: "Client-side validator for Italian IBANs with real-time checks for structure, Mod.97, CIN, and ABI/CAB codes. When an IBAN is invalid, it also looks for plausible corrections involving a mistyped character or two swapped characters.",
-    CrackTheCodeDesc: "Single-player browser puzzle inspired by Mastermind, with free play and a nine-level campaign. The Codemaster is a narrative interface rather than an AI service; project data and scripts are checked in CI.",
-    SommatrixDesc: "Mathematical grid puzzle where players select the right numbers to match the target sums for every row and column. Each board is generated and automatically verified before play, so only puzzles with exactly one global solution are shown."
+    ProfGeckoDesc: "Bilingual Pokémon hub with a game- and generation-aware RAG chatbot, plus a Pokédex, Team Builder, and comparison tools. It retrieves context from roughly 83k documents.",
+    ChiLhaDettoDesc: "Historical quiz: identify who said a famous quote, then discover its real context after answering. Dedicated modes, streaks, and a global leaderboard round out the game.",
+    CamaleonteDesc: "Single-device deduction party game for 3–12 players, built to work offline. Special roles and persistent scoring, available as a PWA and on the Play Store.",
+    DiarioDiBordoDesc: "Mobile-first platform for an educational community’s daily journal, with public content, multimedia contributions, and separate areas for educators and administrators.",
+    HLSEDesc: "Windows app for managing and editing Hogwarts Legacy saves in one workflow. It detects save files automatically and creates backups before changes.",
+    PMDToolsDesc: "Two tools for classic Pokémon Mystery Dungeon games: a save editor for Rescue Team and Explorers, plus a bilingual personality-quiz guide for steering answers toward a desired starter.",
+    ZEROfilezDesc: "Dual-purpose client-side utility: a public tools archive and a frontend for encrypted packages. Package and key processing stays in the browser, with no upload backend.",
+    IbanCheckerDesc: "Client-side validator for Italian IBANs that checks structure, Mod 97, CIN, and ABI/CAB codes, then suggests plausible fixes for typos or swapped characters.",
+    CrackTheCodeDesc: "Single-player browser puzzle inspired by Mastermind, with free play and a nine-level campaign. The Codemaster is a narrative interface, not an AI service.",
+    SommatrixDesc: "Mathematical grid puzzle: select numbers to match each row and column target. Every board is verified before play so only puzzles with exactly one global solution are shown."
   }
 };
