@@ -255,6 +255,7 @@
       color:var(--muted);
       font-size:.81rem
     }
+    .panel-note strong{color:var(--text)}
     .actions{display:grid;gap:7px}
     .action{
       min-height:48px;
@@ -307,20 +308,6 @@
       font-size:.78rem
     }
     .after strong{color:var(--text)}
-    .account{
-      display:flex;
-      align-items:flex-start;
-      gap:8px;
-      margin:11px 0 0;
-      padding:8px 10px;
-      border:1px solid rgba(73,199,187,.24);
-      border-radius:10px;
-      background:rgba(73,199,187,.06);
-      color:var(--muted);
-      font-size:.75rem
-    }
-    .account svg{width:15px;height:15px;flex:none;margin-top:1px;color:var(--accent)}
-    .account strong{color:var(--text)}
     .commitment{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -450,7 +437,7 @@
 
         <div class="panels">
           <section class="panel returning" data-i18n-aria="returningAria" aria-label="Percorso per tester già esistenti">
-            <p class="panel-note" data-i18n="returningNote">Se sei già nel gruppo tester, salta l'iscrizione.</p>
+            <p class="panel-note" data-i18n="returningNote">Grazie per essere già un tester. Ti basta aderire al test e installare Social Viewer.</p>
             <div class="actions">
               <a class="action" href="https://play.google.com/apps/testing/io.github.falker47.socialviewer">
                 <span class="step">1</span>
@@ -467,7 +454,7 @@
           </section>
 
           <section class="panel first-time" data-i18n-aria="firstAria" aria-label="Percorso per nuovi tester">
-            <p class="panel-note" data-i18n="firstNote">Prima entra nel gruppo, poi abilita il test e installa l'app.</p>
+            <p class="panel-note" data-i18n-html="firstNote">Prima entra nel gruppo, poi abilita il test e installa l'app.<br><strong>Assicurati di usare la stessa email Google (Gmail) che usi nel Play Store.</strong></p>
             <div class="actions">
               <a class="action" href="https://groups.google.com/g/camaleonte-testing">
                 <span class="step">1</span>
@@ -490,13 +477,6 @@
         </div>
       </div>
 
-      <p class="account">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
-          <path d="M12 10.5V16M12 7.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
-        <span data-i18n-html="account"><strong>Importante:</strong> nel gruppo usa la stessa email dell'account Google selezionato nel Play Store, anche se la tua email principale è un'altra.</span>
-      </p>
     </div>
 
     <section class="commitment" data-i18n-aria="requirementsAria" aria-label="Requisiti del test">
@@ -539,14 +519,13 @@
         choosePath: "Scegli il percorso",
         returningAria: "Percorso per tester già esistenti",
         firstAria: "Percorso per nuovi tester",
-        returningNote: "Se sei già nel gruppo tester, salta l'iscrizione.",
-        firstNote: "Prima entra nel gruppo, poi abilita il test e installa l'app.",
+        returningNote: "Grazie per essere già un tester. Ti basta aderire al test e installare Social Viewer.",
+        firstNote: "Prima entra nel gruppo, poi abilita il test e installa l'app.<br><strong>Assicurati di usare la stessa email Google (Gmail) che usi nel Play Store.</strong>",
         joinGroup: "Unisciti al gruppo",
         joinTest: "Aderisci al test",
         install: "Installa Social Viewer",
         returningAfter: "Su Google Play tocca <strong>“Diventa tester”</strong>, poi torna qui e installa l'app.",
         firstAfter: "Dopo <strong>“Diventa tester”</strong>, torna qui e usa il pulsante Installa.",
-        account: "<strong>Importante:</strong> nel gruppo usa la stessa email dell'account Google selezionato nel Play Store, anche se la tua email principale è un'altra.",
         requirementsAria: "Requisiti del test",
         daysTitle: "14 giorni consecutivi",
         daysBody: "resta nel gruppo + test",
@@ -569,14 +548,13 @@
         choosePath: "Choose your path",
         returningAria: "Path for existing testers",
         firstAria: "Path for first-time testers",
-        returningNote: "If you're already in the tester group, skip group enrollment.",
-        firstNote: "Join the group first, then opt in to the test and install the app.",
+        returningNote: "Thanks for already being a tester. Just join the test and install Social Viewer.",
+        firstNote: "Join the group first, then opt in to the test and install the app.<br><strong>Make sure you use the same Google email (Gmail) you use in the Play Store.</strong>",
         joinGroup: "Join the tester group",
         joinTest: "Join the test",
         install: "Install Social Viewer",
         returningAfter: "On Google Play tap <strong>“Become a tester”</strong>, then come back here and install the app.",
         firstAfter: "After <strong>“Become a tester”</strong>, come back here and use the Install button.",
-        account: "<strong>Important:</strong> in the tester group, use the same email as the Google account selected in the Play Store, even if your main email is different.",
         requirementsAria: "Test requirements",
         daysTitle: "14 consecutive days",
         daysBody: "stay in the group + test",
