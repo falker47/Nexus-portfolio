@@ -148,15 +148,20 @@
       padding:14px 16px 0;
       background:var(--panel)
     }
-    .preview{
-      display:block;
+    .preview-frame{
       width:100%;
       aspect-ratio:3.06 / 1;
-      object-fit:cover;
-      object-position:center;
+      overflow:hidden;
       border:1px solid var(--line);
       border-radius:14px;
       box-shadow:0 10px 28px rgba(0,0,0,.18)
+    }
+    .preview{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center
     }
     .path{padding:16px 16px 16px}
     .route-kicker{
@@ -391,14 +396,16 @@
     </header>
 
     <div class="preview-wrap" aria-hidden="true">
-      <img
-        class="preview"
-        src="assets/socialviewer/testers-preview.webp"
-        width="640"
-        height="313"
-        alt=""
-        decoding="async"
-      >
+      <div class="preview-frame">
+        <img
+          class="preview"
+          src="assets/socialviewer/testers-preview.webp"
+          width="640"
+          height="313"
+          alt=""
+          decoding="async"
+        >
+      </div>
     </div>
 
     <div class="path">
