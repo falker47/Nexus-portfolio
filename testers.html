@@ -34,6 +34,7 @@
       line-height:1.35
     }
     a{color:inherit}
+    button{font:inherit}
     main{
       width:min(calc(100% - 24px),680px);
       min-height:100dvh;
@@ -42,18 +43,48 @@
       display:flex;
       flex-direction:column
     }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin:0 2px 10px
+    }
     .brand{
       width:max-content;
       display:inline-flex;
       align-items:center;
       gap:9px;
-      margin:0 0 10px 2px;
       color:var(--text);
       text-decoration:none;
       font-size:.92rem;
       font-weight:800
     }
     .brand img{width:30px;height:30px;object-fit:contain}
+    .language-switch{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:3px;
+      padding:3px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:#121917
+    }
+    .language-switch button{
+      min-width:38px;
+      min-height:30px;
+      border:0;
+      border-radius:7px;
+      background:transparent;
+      color:var(--muted);
+      cursor:pointer;
+      font-size:.72rem;
+      font-weight:900
+    }
+    .language-switch button[aria-pressed="true"]{
+      background:var(--panel-2);
+      color:var(--accent-strong)
+    }
     .shell{
       overflow:hidden;
       border:1px solid var(--line);
@@ -112,14 +143,25 @@
       font-size:.93rem
     }
     .lead strong{color:var(--text)}
-    .path{
-      padding:14px 16px 16px
+    .path{padding:14px 16px 16px}
+    .route-kicker{
+      margin:0 0 3px;
+      color:var(--accent);
+      font-size:.68rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase
     }
     .question{
-      margin:0 0 9px;
+      margin:0;
       color:var(--text);
-      font-size:.86rem;
-      font-weight:800
+      font-size:1rem;
+      font-weight:900
+    }
+    .question-help{
+      margin:3px 0 10px;
+      color:var(--muted);
+      font-size:.76rem
     }
     .path-input{
       position:absolute;
@@ -133,25 +175,27 @@
     .tabs{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:6px;
-      padding:5px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#121917
+      gap:8px
     }
     .tab{
-      min-height:42px;
+      min-height:54px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:8px 10px;
-      border-radius:10px;
-      color:var(--muted);
+      padding:9px 11px;
+      border:1px solid rgba(73,199,187,.3);
+      border-radius:13px;
+      background:#121917;
+      color:var(--text);
       cursor:pointer;
       text-align:center;
-      font-size:.86rem;
-      font-weight:800;
+      font-size:.88rem;
+      font-weight:900;
       transition:.16s ease
+    }
+    .tab:hover{
+      border-color:rgba(73,199,187,.65);
+      background:rgba(73,199,187,.06)
     }
     #returning:focus-visible ~ .tabs label[for="returning"],
     #first-time:focus-visible ~ .tabs label[for="first-time"]{
@@ -160,9 +204,10 @@
     }
     #returning:checked ~ .tabs label[for="returning"],
     #first-time:checked ~ .tabs label[for="first-time"]{
-      background:var(--panel-2);
-      color:var(--text);
-      box-shadow:inset 0 0 0 1px rgba(73,199,187,.28)
+      border-color:var(--accent);
+      background:rgba(73,199,187,.14);
+      color:var(--accent-strong);
+      box-shadow:inset 0 0 0 1px rgba(73,199,187,.2)
     }
     .panels{margin-top:10px}
     .panel{display:none}
@@ -173,10 +218,7 @@
       color:var(--muted);
       font-size:.81rem
     }
-    .actions{
-      display:grid;
-      gap:7px
-    }
+    .actions{display:grid;gap:7px}
     .action{
       min-height:48px;
       display:flex;
@@ -296,17 +338,23 @@
       main{width:min(calc(100% - 16px),680px)}
       .hero{padding:15px 14px 13px}
       .path{padding:12px 13px 14px}
-      .tab{font-size:.79rem}
+      .tab{font-size:.8rem}
       .fact strong,.fact a{font-size:.72rem}
     }
   </style>
 </head>
 <body>
 <main>
-  <a class="brand" href="https://falker47.github.io/Nexus-portfolio/">
-    <img src="assets/branding/falkerlogo.png" alt="">
-    <span>Falker Studio</span>
-  </a>
+  <div class="topbar">
+    <a class="brand" href="https://falker47.github.io/Nexus-portfolio/">
+      <img src="assets/branding/falkerlogo.png" alt="">
+      <span>Falker Studio</span>
+    </a>
+    <div class="language-switch" aria-label="Lingua / Language">
+      <button type="button" data-language="it" aria-pressed="true">IT</button>
+      <button type="button" data-language="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
 
   <section class="shell" aria-labelledby="page-title">
     <header class="hero">
@@ -315,61 +363,63 @@
           <p class="eyebrow">Falker Studio Testers</p>
           <h1 id="page-title">Social Viewer</h1>
         </div>
-        <span class="status">Test attivo</span>
+        <span class="status" data-i18n="status">Test attivo</span>
       </div>
-      <p class="lead"><strong>2 tocchi</strong> se sei già tester. <strong>3</strong> se è la prima volta.</p>
+      <p class="lead" data-i18n-html="lead"><strong>2 tocchi</strong> se sei già tester. <strong>3</strong> se è la prima volta.</p>
     </header>
 
     <div class="path">
-      <p class="question">Hai già testato una mia app?</p>
+      <p class="route-kicker" data-i18n="routeKicker">1 · Scegli il tuo percorso</p>
+      <p class="question" data-i18n="question">Hai già testato una mia app?</p>
+      <p class="question-help" data-i18n="questionHelp">Tocca una delle due opzioni per vedere solo i passaggi che ti servono.</p>
 
       <div class="path-picker">
-        <input class="path-input" type="radio" name="tester-path" id="returning" checked>
+        <input class="path-input" type="radio" name="tester-path" id="returning">
         <input class="path-input" type="radio" name="tester-path" id="first-time">
 
-        <div class="tabs" aria-label="Scegli il percorso">
-          <label class="tab" for="returning">Sì, già tester</label>
-          <label class="tab" for="first-time">È la prima volta</label>
+        <div class="tabs" data-i18n-aria="choosePath" aria-label="Scegli il percorso">
+          <label class="tab" for="returning" data-i18n="returningTab">Sono già tester</label>
+          <label class="tab" for="first-time" data-i18n="firstTab">È la prima volta</label>
         </div>
 
         <div class="panels">
-          <section class="panel returning" aria-label="Percorso per tester già esistenti">
-            <p class="panel-note">Se sei già nel gruppo tester, salta l'iscrizione.</p>
+          <section class="panel returning" data-i18n-aria="returningAria" aria-label="Percorso per tester già esistenti">
+            <p class="panel-note" data-i18n="returningNote">Se sei già nel gruppo tester, salta l'iscrizione.</p>
             <div class="actions">
               <a class="action" href="https://play.google.com/apps/testing/io.github.falker47.socialviewer">
                 <span class="step">1</span>
-                <span>Aderisci al test</span>
+                <span data-i18n="joinTest">Aderisci al test</span>
                 <span class="arrow" aria-hidden="true">↗</span>
               </a>
               <a class="action install" href="https://play.google.com/store/apps/details?id=io.github.falker47.socialviewer">
                 <span class="step">2</span>
-                <span>Installa Social Viewer</span>
+                <span data-i18n="install">Installa Social Viewer</span>
                 <span class="arrow" aria-hidden="true">↗</span>
               </a>
             </div>
-            <p class="after">Su Google Play tocca <strong>“Diventa tester”</strong>, poi torna qui e installa l'app.</p>
+            <p class="after" data-i18n-html="returningAfter">Su Google Play tocca <strong>“Diventa tester”</strong>, poi torna qui e installa l'app.</p>
           </section>
 
-          <section class="panel first-time" aria-label="Percorso per nuovi tester">
-            <p class="panel-note">Prima entra nel gruppo, poi abilita il test e installa l'app.</p>
+          <section class="panel first-time" data-i18n-aria="firstAria" aria-label="Percorso per nuovi tester">
+            <p class="panel-note" data-i18n="firstNote">Prima entra nel gruppo, poi abilita il test e installa l'app.</p>
             <div class="actions">
               <a class="action" href="https://groups.google.com/g/camaleonte-testing">
                 <span class="step">1</span>
-                <span>Unisciti al gruppo</span>
+                <span data-i18n="joinGroup">Unisciti al gruppo</span>
                 <span class="arrow" aria-hidden="true">↗</span>
               </a>
               <a class="action" href="https://play.google.com/apps/testing/io.github.falker47.socialviewer">
                 <span class="step">2</span>
-                <span>Aderisci al test</span>
+                <span data-i18n="joinTest">Aderisci al test</span>
                 <span class="arrow" aria-hidden="true">↗</span>
               </a>
               <a class="action install" href="https://play.google.com/store/apps/details?id=io.github.falker47.socialviewer">
                 <span class="step">3</span>
-                <span>Installa Social Viewer</span>
+                <span data-i18n="install">Installa Social Viewer</span>
                 <span class="arrow" aria-hidden="true">↗</span>
               </a>
             </div>
-            <p class="after">Dopo <strong>“Diventa tester”</strong>, torna qui e usa il pulsante Installa.</p>
+            <p class="after" data-i18n-html="firstAfter">Dopo <strong>“Diventa tester”</strong>, torna qui e usa il pulsante Installa.</p>
           </section>
         </div>
       </div>
@@ -378,31 +428,133 @@
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm7 6a7 7 0 0 0-14 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         </svg>
-        Usa lo stesso account Google su Groups e Play.
+        <span data-i18n="account">Usa lo stesso account Google su Groups e Play.</span>
       </p>
     </div>
 
-    <section class="commitment" aria-label="Requisiti del test">
+    <section class="commitment" data-i18n-aria="requirementsAria" aria-label="Requisiti del test">
       <div class="fact">
-        <strong>14 giorni consecutivi</strong>
-        <span>resta nel gruppo + test</span>
+        <strong data-i18n="daysTitle">14 giorni consecutivi</strong>
+        <span data-i18n="daysBody">resta nel gruppo + test</span>
       </div>
       <div class="fact">
-        <strong>Apri e usa l'app</strong>
-        <span>durante il periodo</span>
+        <strong data-i18n="useTitle">Apri e usa l'app</strong>
+        <span data-i18n="useBody">durante il periodo</span>
       </div>
       <div class="fact">
-        <a href="mailto:falker.dev@gmail.com">Segnala problemi</a>
-        <span>feedback via email</span>
+        <a href="mailto:falker.dev@gmail.com" data-i18n="reportTitle">Segnala problemi</a>
+        <span data-i18n="reportBody">feedback via email</span>
       </div>
     </section>
   </section>
 
   <footer>
     © 2026 Falker Studio ·
-    <a href="https://falker47.github.io/Nexus-portfolio/">Portfolio</a> ·
+    <a href="https://falker47.github.io/Nexus-portfolio/" data-i18n="portfolio">Portfolio</a> ·
     <a href="socialviewer-privacy.html">Privacy</a>
   </footer>
 </main>
+
+<script>
+  (() => {
+    const copy = {
+      it: {
+        description: "Partecipa al closed test di Social Viewer in pochi passaggi.",
+        status: "Test attivo",
+        lead: "<strong>2 tocchi</strong> se sei già tester. <strong>3</strong> se è la prima volta.",
+        routeKicker: "1 · Scegli il tuo percorso",
+        question: "Hai già testato una mia app?",
+        questionHelp: "Tocca una delle due opzioni per vedere solo i passaggi che ti servono.",
+        returningTab: "Sono già tester",
+        firstTab: "È la prima volta",
+        choosePath: "Scegli il percorso",
+        returningAria: "Percorso per tester già esistenti",
+        firstAria: "Percorso per nuovi tester",
+        returningNote: "Se sei già nel gruppo tester, salta l'iscrizione.",
+        firstNote: "Prima entra nel gruppo, poi abilita il test e installa l'app.",
+        joinGroup: "Unisciti al gruppo",
+        joinTest: "Aderisci al test",
+        install: "Installa Social Viewer",
+        returningAfter: "Su Google Play tocca <strong>“Diventa tester”</strong>, poi torna qui e installa l'app.",
+        firstAfter: "Dopo <strong>“Diventa tester”</strong>, torna qui e usa il pulsante Installa.",
+        account: "Usa lo stesso account Google su Groups e Play.",
+        requirementsAria: "Requisiti del test",
+        daysTitle: "14 giorni consecutivi",
+        daysBody: "resta nel gruppo + test",
+        useTitle: "Apri e usa l'app",
+        useBody: "durante il periodo",
+        reportTitle: "Segnala problemi",
+        reportBody: "feedback via email",
+        portfolio: "Portfolio"
+      },
+      en: {
+        description: "Join the Social Viewer closed test in just a few steps.",
+        status: "Test active",
+        lead: "<strong>2 taps</strong> if you already test my apps. <strong>3</strong> if this is your first time.",
+        routeKicker: "1 · Choose your path",
+        question: "Have you tested one of my apps before?",
+        questionHelp: "Tap one option to see only the steps you need.",
+        returningTab: "I'm already a tester",
+        firstTab: "It's my first time",
+        choosePath: "Choose your path",
+        returningAria: "Path for existing testers",
+        firstAria: "Path for first-time testers",
+        returningNote: "If you're already in the tester group, skip group enrollment.",
+        firstNote: "Join the group first, then opt in to the test and install the app.",
+        joinGroup: "Join the tester group",
+        joinTest: "Join the test",
+        install: "Install Social Viewer",
+        returningAfter: "On Google Play tap <strong>“Become a tester”</strong>, then come back here and install the app.",
+        firstAfter: "After <strong>“Become a tester”</strong>, come back here and use the Install button.",
+        account: "Use the same Google account for Groups and Play.",
+        requirementsAria: "Test requirements",
+        daysTitle: "14 consecutive days",
+        daysBody: "stay in the group + test",
+        useTitle: "Open and use the app",
+        useBody: "during the test period",
+        reportTitle: "Report issues",
+        reportBody: "feedback by email",
+        portfolio: "Portfolio"
+      }
+    };
+
+    const buttons = [...document.querySelectorAll("[data-language]")];
+    const description = document.querySelector('meta[name="description"]');
+
+    const setLanguage = (language) => {
+      const lang = language === "en" ? "en" : "it";
+      const strings = copy[lang];
+
+      document.documentElement.lang = lang;
+      description.setAttribute("content", strings.description);
+
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        node.textContent = strings[node.dataset.i18n];
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach((node) => {
+        node.innerHTML = strings[node.dataset.i18nHtml];
+      });
+
+      document.querySelectorAll("[data-i18n-aria]").forEach((node) => {
+        node.setAttribute("aria-label", strings[node.dataset.i18nAria]);
+      });
+
+      buttons.forEach((button) => {
+        button.setAttribute("aria-pressed", button.dataset.language === lang ? "true" : "false");
+      });
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.language));
+    });
+
+    setLanguage(
+      navigator.language && navigator.language.toLowerCase().startsWith("it")
+        ? "it"
+        : "en"
+    );
+  })();
+</script>
 </body>
 </html>
