@@ -41,8 +41,7 @@
       margin:auto;
       padding:14px 0 16px;
       display:flex;
-      flex-direction:column;
-      justify-content:center
+      flex-direction:column
     }
     .topbar{
       display:flex;
@@ -62,31 +61,49 @@
       font-weight:800
     }
     .brand img{width:30px;height:30px;object-fit:contain}
+    .language-control{
+      display:flex;
+      align-items:center;
+      gap:7px
+    }
+    .language-label{
+      color:var(--muted);
+      font-size:.72rem;
+      font-weight:800
+    }
     .language-switch{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:3px;
       padding:3px;
-      border:1px solid var(--line);
-      border-radius:10px;
+      border:1px solid rgba(73,199,187,.38);
+      border-radius:11px;
       background:#121917
     }
     .language-switch button{
-      min-width:38px;
-      min-height:30px;
+      min-width:52px;
+      min-height:34px;
       border:0;
-      border-radius:7px;
+      border-radius:8px;
       background:transparent;
       color:var(--muted);
       cursor:pointer;
-      font-size:.72rem;
+      font-size:.78rem;
       font-weight:900
     }
     .language-switch button[aria-pressed="true"]{
       background:var(--panel-2);
-      color:var(--accent-strong)
+      color:var(--accent-strong);
+      box-shadow:inset 0 0 0 1px rgba(73,199,187,.24)
+    }
+    .stage{
+      flex:1;
+      display:flex;
+      align-items:center;
+      padding:10px 0
     }
     .shell{
+      width:100%;
       overflow:hidden;
       border:1px solid var(--line);
       border-radius:20px;
@@ -377,13 +394,17 @@
       <img src="assets/branding/falkerlogo.png" alt="">
       <span>Falker Studio</span>
     </a>
-    <div class="language-switch" aria-label="Lingua / Language">
-      <button type="button" data-language="it" aria-pressed="true">IT</button>
-      <button type="button" data-language="en" aria-pressed="false">EN</button>
+    <div class="language-control">
+      <span class="language-label" data-i18n="languageLabel">Lingua</span>
+      <div class="language-switch" aria-label="Lingua / Language">
+        <button type="button" data-language="it" aria-pressed="true" aria-label="Italiano">🇮🇹 IT</button>
+        <button type="button" data-language="en" aria-pressed="false" aria-label="English">🇬🇧 EN</button>
+      </div>
     </div>
   </div>
 
-  <section class="shell" aria-labelledby="page-title">
+  <div class="stage">
+    <section class="shell" aria-labelledby="page-title">
     <header class="hero">
       <div class="hero-top">
         <div>
@@ -486,7 +507,8 @@
         <span data-i18n="reportBody">feedback via email</span>
       </div>
     </section>
-  </section>
+    </section>
+  </div>
 
   <footer>
     © 2026 Falker Studio ·
@@ -500,6 +522,7 @@
     const copy = {
       it: {
         description: "Partecipa al closed test di Social Viewer in pochi passaggi.",
+        languageLabel: "Lingua",
         status: "Test attivo",
         lead: "<strong>2 tocchi</strong> se sei già tester. <strong>3</strong> se è la prima volta.",
         routeKicker: "1 · Scegli il tuo percorso",
@@ -529,6 +552,7 @@
       },
       en: {
         description: "Join the Social Viewer closed test in just a few steps.",
+        languageLabel: "Language",
         status: "Test active",
         lead: "<strong>2 taps</strong> if you already test my apps. <strong>3</strong> if this is your first time.",
         routeKicker: "1 · Choose your path",
