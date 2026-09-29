@@ -309,13 +309,18 @@
     .after strong{color:var(--text)}
     .account{
       display:flex;
-      align-items:center;
-      gap:7px;
+      align-items:flex-start;
+      gap:8px;
       margin:11px 0 0;
+      padding:8px 10px;
+      border:1px solid rgba(73,199,187,.24);
+      border-radius:10px;
+      background:rgba(73,199,187,.06);
       color:var(--muted);
-      font-size:.76rem
+      font-size:.75rem
     }
-    .account svg{width:15px;height:15px;flex:none;color:var(--accent)}
+    .account svg{width:15px;height:15px;flex:none;margin-top:1px;color:var(--accent)}
+    .account strong{color:var(--text)}
     .commitment{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -487,9 +492,10 @@
 
       <p class="account">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm7 6a7 7 0 0 0-14 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 10.5V16M12 7.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         </svg>
-        <span data-i18n="account">Usa lo stesso account Google su Groups e Play.</span>
+        <span data-i18n-html="account"><strong>Importante:</strong> nel gruppo usa la stessa email dell'account Google selezionato nel Play Store, anche se la tua email principale è un'altra.</span>
       </p>
     </div>
 
@@ -540,7 +546,7 @@
         install: "Installa Social Viewer",
         returningAfter: "Su Google Play tocca <strong>“Diventa tester”</strong>, poi torna qui e installa l'app.",
         firstAfter: "Dopo <strong>“Diventa tester”</strong>, torna qui e usa il pulsante Installa.",
-        account: "Usa lo stesso account Google su Groups e Play.",
+        account: "<strong>Importante:</strong> nel gruppo usa la stessa email dell'account Google selezionato nel Play Store, anche se la tua email principale è un'altra.",
         requirementsAria: "Requisiti del test",
         daysTitle: "14 giorni consecutivi",
         daysBody: "resta nel gruppo + test",
@@ -570,7 +576,7 @@
         install: "Install Social Viewer",
         returningAfter: "On Google Play tap <strong>“Become a tester”</strong>, then come back here and install the app.",
         firstAfter: "After <strong>“Become a tester”</strong>, come back here and use the Install button.",
-        account: "Use the same Google account for Groups and Play.",
+        account: "<strong>Important:</strong> in the tester group, use the same email as the Google account selected in the Play Store, even if your main email is different.",
         requirementsAria: "Test requirements",
         daysTitle: "14 consecutive days",
         daysBody: "stay in the group + test",
