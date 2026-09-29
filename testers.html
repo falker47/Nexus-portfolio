@@ -18,7 +18,7 @@
     h1{margin:0;font-size:clamp(2.1rem,8vw,3.5rem);line-height:1.05}h2{margin:0 0 4px}p{color:var(--muted)}
     .notice{margin-top:18px;padding:14px 16px;border-radius:15px;border:1px solid rgba(73,199,187,.35);background:rgba(73,199,187,.08);color:var(--text);font-weight:700}
     .card{margin-top:22px;padding:20px}.status{display:inline-block;margin-bottom:14px;padding:6px 10px;border-radius:999px;background:rgba(73,199,187,.1);color:var(--accent);font-size:.85rem;font-weight:800}
-    .quick{margin-top:18px;padding:17px;border:1px solid rgba(73,199,187,.38);border-radius:17px;background:rgba(73,199,187,.07)}.quick h3{margin:0 0 6px}.quick p{margin:0 0 12px}
+    .quick{margin-top:18px;padding:17px;border:1px solid rgba(73,199,187,.38);border-radius:17px;background:rgba(73,199,187,.07)}.quick h3{margin:0 0 6px}.quick p{margin:0 0 12px}.quick-actions{display:flex;gap:10px;flex-wrap:wrap}.quick-actions .btn{flex:1 1 220px}
     .divider{display:flex;align-items:center;gap:12px;margin:22px 0 8px;color:var(--muted);font-size:.9rem;font-weight:800}.divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--line)}
     .first-time-copy{margin:0 0 12px;text-align:center;color:var(--muted)}
     .steps{display:grid;gap:12px;margin-top:0}.step{padding:16px;border:1px solid var(--line);border-radius:17px;background:#202a27}.step h3{margin:0 0 6px}.step p{margin:0 0 12px}
@@ -46,8 +46,11 @@
 
     <div class="quick">
       <h3>Hai già testato una mia app?</h3>
-      <p>Se sei già nel gruppo tester usato per le mie app precedenti, non devi iscriverti di nuovo. Vai direttamente alla pagina del test di Social Viewer.</p>
-      <a class="btn" href="https://play.google.com/apps/testing/io.github.falker47.socialviewer">Vai al test di Social Viewer</a>
+      <p>Se sei già nel gruppo tester, salta l'iscrizione. Prima aderisci al test di Social Viewer; quando Google Play ti conferma come tester, torna qui e installa l'app. Se avevi già aderito anche a questo test, puoi andare direttamente all'installazione.</p>
+      <div class="quick-actions">
+        <a class="btn" href="https://play.google.com/apps/testing/io.github.falker47.socialviewer">1. Aderisci al test</a>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=io.github.falker47.socialviewer">2. Installa Social Viewer</a>
+      </div>
     </div>
 
     <div class="divider"><span>È la prima volta?</span></div>
@@ -62,14 +65,14 @@
 
       <article class="step">
         <h3>2. Aderisci al test</h3>
-        <p>Dopo l'iscrizione al gruppo, apri la pagina ufficiale del test Social Viewer e seleziona “Diventa tester”.</p>
+        <p>Dopo l'iscrizione al gruppo, apri la pagina ufficiale del test Social Viewer e seleziona “Diventa tester”. Quando Google Play conferma l'adesione, torna qui e passa allo step 3.</p>
         <a class="btn" href="https://play.google.com/apps/testing/io.github.falker47.socialviewer">Partecipa al test</a>
       </article>
 
       <article class="step">
         <h3>3. Installa Social Viewer</h3>
-        <p>Dopo la conferma dell'adesione, apri la pagina dell'app su Google Play e installala.</p>
-        <a class="btn alt" href="https://play.google.com/store/apps/details?id=io.github.falker47.socialviewer">Apri Google Play</a>
+        <p>Dopo la conferma dell'adesione, usa questo link diretto alla pagina dell'app su Google Play e installala.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=io.github.falker47.socialviewer">Installa Social Viewer</a>
       </article>
     </div>
 
