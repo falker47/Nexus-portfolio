@@ -6,8 +6,9 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>Nexus Portfolio - Maurizio Falconi</title>
-    <meta name="description" content="Portfolio di Maurizio Falconi: Data Engineering, Applied AI & Automation, algoritmi, ricerca computazionale e prodotti software." />
+    <title>Nexus Portfolio - Maurizio Falconi (falker47)</title>
+    <meta name="description" content="Nexus Portfolio di Maurizio Falconi, conosciuto online come falker47: Data Engineering, Applied AI & Automation, algoritmi, ricerca computazionale e prodotti software." />
+    <meta name="author" content="Maurizio Falconi (falker47)" />
     <link rel="canonical" href="https://falker47.github.io/Nexus-portfolio/" />
     <meta name="google-site-verification" content="ZOWij9OnT_HZBDPG4FcCeEwF5m7MvFjqJuK53YtkCWw" />
     <!-- Link al file CSS -->
@@ -24,7 +25,8 @@
     />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Nexus Portfolio - Maurizio Falconi" />
+    <meta property="og:site_name" content="Nexus Portfolio" />
+    <meta property="og:title" content="Nexus Portfolio - Maurizio Falconi (falker47)" />
     <meta property="og:description" content="Una selezione curata di progetti tra Data Engineering, Applied AI & Automation, algoritmi, ricerca computazionale e software." />
     <meta property="og:url" content="https://falker47.github.io/Nexus-portfolio/" />
     <meta
@@ -33,7 +35,7 @@
     />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Nexus Portfolio - Maurizio Falconi" />
+    <meta name="twitter:title" content="Nexus Portfolio - Maurizio Falconi (falker47)" />
     <meta name="twitter:description" content="Una selezione curata di progetti tra Data Engineering, Applied AI & Automation, algoritmi, ricerca computazionale e software." />
     <meta
       name="twitter:image"
@@ -51,11 +53,15 @@
           "@type": "Person",
           "@id": "https://falker47.github.io/Nexus-portfolio/#person",
           "name": "Maurizio Falconi",
+          "alternateName": "falker47",
           "url": "https://falker47.github.io/Nexus-portfolio/",
+          "image": "https://falker47.github.io/Nexus-portfolio/assets/profile/maurizio-falconi-falker47.webp",
           "jobTitle": "Data Engineer",
+          "description": "Maurizio Falconi, known online as falker47, is a Data Engineer focused on Applied AI, automation, algorithms and computational research.",
           "sameAs": [
             "https://github.com/falker47",
             "https://www.linkedin.com/in/mauriziofalconi/",
+            "https://www.instagram.com/falker47/",
             "https://orcid.org/0009-0005-3162-3651",
             "https://scholar.google.com/citations?user=5xHRNvoAAAAJ"
           ],
@@ -89,6 +95,71 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <style>
+      .hero-identity-row {
+        grid-area: identity;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 18px;
+      }
+
+      .hero-identity-row img {
+        width: 72px;
+        height: 72px;
+        flex: 0 0 72px;
+        object-fit: cover;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+      }
+
+      .hero-identity-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        line-height: 1.25;
+      }
+
+      .hero-identity-copy strong {
+        color: var(--text-light);
+        font-size: 0.98rem;
+        font-weight: 600;
+      }
+
+      .hero-identity-copy span {
+        color: var(--text-muted);
+        font-size: 0.78rem;
+      }
+
+      @media (min-width: 901px) {
+        .intro .hero-card-slim {
+          grid-template-areas:
+            "identity identity"
+            "kicker kicker"
+            "title title"
+            "description cta";
+        }
+      }
+
+      @media (max-width: 520px) {
+        .hero-identity-row {
+          margin-bottom: 15px;
+        }
+
+        .hero-identity-row img {
+          width: 60px;
+          height: 60px;
+          flex-basis: 60px;
+          border-radius: 15px;
+        }
+
+        .hero-identity-copy strong {
+          font-size: 0.92rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -150,6 +221,20 @@
 
       <div class="hero-content">
         <div class="hero-card hero-card-slim">
+          <div class="hero-identity-row">
+            <img
+              src="assets/profile/maurizio-falconi-falker47.webp"
+              alt="Maurizio Falconi (falker47)"
+              width="72"
+              height="72"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <div class="hero-identity-copy">
+              <strong>Maurizio Falconi</strong>
+              <span>@falker47</span>
+            </div>
+          </div>
           <p class="hero-kicker" data-i18n="heroKicker">
             Ingegneria dei dati · Automazione e AI applicata · Algoritmi · Ricerca computazionale
           </p>

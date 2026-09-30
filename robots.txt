@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://falker47.github.io/Nexus-portfolio/sitemap.xml
