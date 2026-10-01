@@ -747,26 +747,27 @@ footer a:hover {
   line-height: 1.35;
 }
 
-/* Fade-reveal affordance: the compact view visually continues beneath a
-   soft veil, with the expansion action floating over the lower card edge. */
+/* Fade-reveal affordance: compact sections dissolve into a deeper veil,
+   while the expand control reads as part of the fade rather than a separate pill. */
 .section-toggle-wrap {
   --fade-surface: 15, 16, 20;
   position: relative;
   z-index: 4;
   isolation: isolate;
   display: flex;
-  min-height: 110px;
-  margin-top: -58px;
-  padding: 58px 0 4px;
+  min-height: 142px;
+  margin-top: -82px;
+  padding: 82px 0 6px;
   align-items: flex-end;
   justify-content: center;
   pointer-events: none;
   background: linear-gradient(
     to bottom,
     rgba(var(--fade-surface), 0) 0%,
-    rgba(var(--fade-surface), 0.42) 32%,
-    rgba(var(--fade-surface), 0.82) 58%,
-    rgba(var(--fade-surface), 0.97) 78%,
+    rgba(var(--fade-surface), 0.16) 18%,
+    rgba(var(--fade-surface), 0.54) 38%,
+    rgba(var(--fade-surface), 0.86) 58%,
+    rgba(var(--fade-surface), 0.98) 76%,
     rgba(var(--fade-surface), 1) 100%
   );
   transition:
@@ -792,18 +793,36 @@ footer a:hover {
   content: "";
   position: absolute;
   z-index: 0;
-  left: 9%;
-  right: 9%;
-  top: 30px;
-  height: 44px;
+  left: 2%;
+  right: 2%;
+  top: 24px;
+  height: 82px;
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
-    rgba(0, 0, 0, 0.34) 0%,
-    rgba(0, 0, 0, 0.18) 38%,
-    rgba(0, 0, 0, 0) 74%
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(0, 0, 0, 0.42) 28%,
+    rgba(0, 0, 0, 0.18) 52%,
+    rgba(0, 0, 0, 0) 78%
   );
-  filter: blur(10px);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.section-toggle-wrap.is-collapsed::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 54%;
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--fade-surface), 0),
+    rgba(var(--fade-surface), 0.46) 44%,
+    rgba(var(--fade-surface), 0.92) 100%
+  );
   pointer-events: none;
 }
 
@@ -822,70 +841,103 @@ footer a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 11px;
-  min-height: 44px;
-  padding: 9px 11px 9px 17px;
-  border: 1px solid rgba(96, 165, 250, 0.42);
-  border-radius: 999px;
-  background: rgba(18, 24, 35, 0.9);
-  color: var(--text-light);
+  gap: 8px;
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(247, 248, 252, 0.88);
   font: inherit;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 500;
   cursor: pointer;
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  box-shadow:
-    0 10px 28px rgba(0, 0, 0, 0.34),
-    0 0 24px rgba(59, 130, 246, 0.1);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.72);
   transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .section-toggle:hover {
-  background: rgba(24, 32, 46, 0.95);
-  border-color: rgba(96, 165, 250, 0.72);
+  background: transparent;
+  color: #fff;
   transform: translateY(-1px);
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.38),
-    0 0 28px rgba(59, 130, 246, 0.16);
+  box-shadow: none;
+}
+
+.section-toggle-label {
+  position: relative;
+}
+
+.section-toggle-label::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -3px;
+  height: 1px;
+  background: rgba(147, 197, 253, 0.82);
+  transition:
+    left 0.2s ease,
+    right 0.2s ease;
+}
+
+.section-toggle:hover .section-toggle-label::after {
+  left: 0;
+  right: 0;
+}
+
+.section-toggle-wrap.is-collapsed .section-toggle {
+  flex-direction: column;
+  gap: 2px;
+  min-height: 50px;
+  padding: 6px 18px 2px;
 }
 
 .section-toggle-wrap.is-expanded .section-toggle {
-  background: rgba(59, 130, 246, 0.07);
-  box-shadow: none;
+  color: var(--text-muted);
+  text-shadow: none;
+}
+
+.section-toggle-wrap.is-expanded .section-toggle:hover {
+  color: var(--primary-light);
 }
 
 .section-toggle:focus-visible {
   outline: 2px solid var(--primary-light);
-  outline-offset: 3px;
+  outline-offset: 4px;
+  border-radius: 8px;
 }
 
 .section-toggle i {
-  width: 25px;
-  height: 25px;
-  display: inline-grid;
-  place-items: center;
+  width: auto;
+  height: auto;
+  display: inline-block;
   flex: 0 0 auto;
-  border-radius: 50%;
-  background: rgba(96, 165, 250, 0.12);
+  border-radius: 0;
+  background: transparent;
   color: var(--primary-light);
-  font-size: 0.7rem;
+  font-size: 0.74rem;
+  line-height: 1;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.72));
   transition:
     transform 0.25s ease,
-    background 0.2s ease;
+    color 0.2s ease;
 }
 
 .section-toggle-wrap.is-collapsed .section-toggle i {
+  margin-top: 2px;
   animation: reveal-arrow-nudge 1.9s ease-in-out infinite;
 }
 
 .section-toggle.is-expanded i {
   transform: rotate(180deg);
   animation: none;
+  filter: none;
 }
 
 @keyframes reveal-arrow-nudge {
@@ -895,7 +947,7 @@ footer a:hover {
   }
 
   50% {
-    transform: translateY(2px);
+    transform: translateY(3px);
   }
 }
 
@@ -941,15 +993,17 @@ footer a:hover {
   }
 
   .section-toggle-wrap {
-    min-height: 96px;
-    margin-top: -50px;
-    padding: 50px 0 2px;
+    min-height: 118px;
+    margin-top: -68px;
+    padding: 68px 0 3px;
   }
 
   .section-toggle-wrap.is-collapsed::before {
-    left: 4%;
-    right: 4%;
-    top: 26px;
+    left: -4%;
+    right: -4%;
+    top: 20px;
+    height: 70px;
+    filter: blur(16px);
   }
 
   .section-toggle-wrap.is-expanded {
@@ -959,15 +1013,18 @@ footer a:hover {
   }
 
   .section-toggle {
-    min-height: 42px;
-    padding: 8px 10px 8px 15px;
-    font-size: 0.8rem;
+    min-height: 40px;
+    padding: 7px 10px;
+    font-size: 0.79rem;
+  }
+
+  .section-toggle-wrap.is-collapsed .section-toggle {
+    min-height: 46px;
+    padding: 5px 12px 1px;
   }
 
   .section-toggle i {
-    width: 24px;
-    height: 24px;
-    font-size: 0.66rem;
+    font-size: 0.68rem;
   }
 }
 
