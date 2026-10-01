@@ -87,7 +87,7 @@ a {
   right: 30px;
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: linear-gradient(135deg, #294a78, #355f8f);
   border: none;
   border-radius: 50%;
   color: white;
@@ -109,7 +109,7 @@ a {
 
 .back-to-top:hover {
   transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 12px 34px rgba(53, 95, 143, 0.38);
 }
 
 /* ===== Navbar with Glassmorphism ===== */
@@ -456,7 +456,8 @@ a {
   align-items: center;
   gap: 10px;
   margin: 5px;
-  background: #2563eb;
+  background: linear-gradient(135deg, #294a78, #355f8f);
+  border: 1px solid rgba(147, 197, 253, 0.16);
   padding: 20px 30px;
   border-radius: 40px;
   font-size: 1.1rem;
@@ -473,8 +474,43 @@ a {
 }
 
 .contact-mail:hover {
-  background: rgb(96, 165, 250);
+  background: linear-gradient(135deg, #355f8f, #4778a7);
   transform: scale(1.03);
+}
+
+.contact-recommendations-container {
+  display: flex;
+  justify-content: center;
+  margin: -12px 0 24px;
+}
+
+.contact-recommendations {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid rgba(147, 197, 253, 0.18);
+  border-radius: 999px;
+  background: rgba(53, 95, 143, 0.16);
+  color: #dbeafe;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-recommendations i {
+  color: #93b7dc;
+  font-size: 0.9rem;
+}
+
+.contact-recommendations:hover {
+  transform: translateY(-1px);
+  border-color: rgba(147, 197, 253, 0.32);
+  background: rgba(53, 95, 143, 0.24);
 }
 
 .contact-socials {
