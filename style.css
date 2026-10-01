@@ -1934,11 +1934,12 @@ footer {
 .intro .hero-post {
   display: grid;
   grid-template-columns: 140px minmax(0, 1fr);
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   column-gap: 24px;
-  row-gap: 8px;
+  row-gap: 10px;
   min-height: 140px;
   align-items: start;
+  align-content: center;
 }
 
 .intro .hero-profile-photo {
@@ -1978,14 +1979,14 @@ footer {
 .intro .hero-quote {
   grid-column: 2;
   grid-row: 2;
-  align-self: end;
+  align-self: start;
   margin: 0;
   padding: 0;
   border: 0;
 }
 
 .intro .hero-quote h1 {
-  max-width: 24ch;
+  max-width: none;
   margin: 0;
   color: var(--text-light) !important;
   background: none !important;
@@ -1994,39 +1995,24 @@ footer {
   background-clip: border-box !important;
   -webkit-text-fill-color: currentColor !important;
   animation: none !important;
-  font-size: clamp(1.95rem, 2.9vw, 2.65rem);
+  font-size: clamp(1.55rem, 2vw, 1.85rem);
   font-style: italic;
   font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: -0.035em;
-  overflow-wrap: anywhere;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
 }
 
-.intro .hero-focus-list {
-  width: 100%;
-  margin: 28px auto 24px;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  list-style: none;
-}
-
-.intro .hero-focus-list li {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 5px 11px;
-  border: 1px solid rgba(167, 139, 250, 0.24);
-  border-radius: 999px;
-  background: rgba(139, 92, 246, 0.08);
-  color: #d9d1f0;
-  font-size: 0.73rem;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
+.intro .hero-kicker {
+  max-width: none;
+  margin: 26px 0 23px !important;
+  color: var(--primary-light) !important;
+  font-size: clamp(0.65rem, 0.72vw, 0.73rem) !important;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.135em;
   text-align: center;
+  white-space: normal;
 }
 
 .intro .hero-lower-row {
@@ -2217,14 +2203,23 @@ footer {
     border-radius: 21px;
   }
 
-  .intro .hero-quote h1 {
-    max-width: 25ch;
-    font-size: clamp(1.75rem, 4.8vw, 2.2rem);
-    line-height: 1.15;
+  .intro .hero-post {
+    align-content: center;
   }
 
-  .intro .hero-focus-list {
-    margin: 24px auto 22px;
+  .intro .hero-quote h1 {
+    max-width: none;
+    font-size: clamp(1.45rem, 3.6vw, 1.72rem);
+    line-height: 1.16;
+    white-space: normal;
+  }
+
+  .intro .hero-quote-tail {
+    display: block;
+  }
+
+  .intro .hero-kicker {
+    margin: 24px 0 22px !important;
   }
 
   .intro .hero-lower-row {
@@ -2268,17 +2263,13 @@ footer {
 
   .intro .hero-quote h1 {
     max-width: none;
-    font-size: clamp(1.55rem, 5.8vw, 1.9rem);
+    font-size: clamp(1.4rem, 4.8vw, 1.62rem);
   }
 
-  .intro .hero-focus-list {
-    margin: 22px auto 20px;
-    gap: 7px;
-  }
-
-  .intro .hero-focus-list li {
-    padding: 5px 10px;
-    font-size: 0.69rem;
+  .intro .hero-kicker {
+    margin: 22px 0 20px !important;
+    font-size: 0.63rem !important;
+    letter-spacing: 0.11em;
   }
 
   .intro .hero-lower-row {
@@ -2341,21 +2332,20 @@ footer {
   }
 
   .intro .hero-quote h1 {
-    font-size: clamp(1.45rem, 7vw, 1.78rem);
-    line-height: 1.17;
-    letter-spacing: -0.03em;
-    overflow-wrap: normal;
+    font-size: clamp(1.38rem, 6.6vw, 1.65rem);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    white-space: normal;
   }
 
-  .intro .hero-focus-list {
-    margin: 20px auto 18px;
-    gap: 6px;
+  .intro .hero-quote-tail {
+    display: inline;
   }
 
-  .intro .hero-focus-list li {
-    min-height: 28px;
-    padding: 5px 9px;
-    font-size: 0.67rem;
+  .intro .hero-kicker {
+    margin: 20px 0 18px !important;
+    font-size: 0.61rem !important;
+    letter-spacing: 0.095em;
   }
 
   .intro .hero-description {
