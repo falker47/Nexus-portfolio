@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://falker47.github.io/Nexus-portfolio/" />
     <meta name="google-site-verification" content="ZOWij9OnT_HZBDPG4FcCeEwF5m7MvFjqJuK53YtkCWw" />
     <!-- Link al file CSS -->
-    <link rel="stylesheet" href="style.css?v=20261001-quote-hero-v1" />
+    <link rel="stylesheet" href="style.css?v=20261001-hero-refactor-v2" />
 
     <!-- Favicons -->
     <link
@@ -156,31 +156,34 @@
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <div class="hero-card hero-card-slim hero-quote-card">
-          <div class="hero-post-header">
+        <div class="hero-card hero-quote-card">
+          <div class="hero-post">
             <img
+              class="hero-profile-photo"
               src="assets/profile/maurizio-falconi-falker47.webp"
               alt="Maurizio Falconi (falker47)"
-              width="84"
-              height="84"
+              width="140"
+              height="140"
               fetchpriority="high"
               decoding="async"
             />
+
             <div class="hero-identity-copy">
               <strong>Maurizio Falconi</strong>
               <span>@falker47</span>
             </div>
+
+            <blockquote class="hero-quote">
+              <h1>“If it doesn't exist yet, I'm gonna build it.”</h1>
+            </blockquote>
           </div>
 
-          <blockquote class="hero-quote">
-            <h1 data-i18n="heroTitle">If it doesn't exist yet, I'm gonna build it.</h1>
-          </blockquote>
-
-          <div class="hero-quote-divider" aria-hidden="true"></div>
-
-          <p class="hero-kicker" data-i18n="heroKicker">
-            Ingegneria dei dati · Automazione e AI applicata · Algoritmi · Ricerca computazionale
-          </p>
+          <ul class="hero-focus-list">
+            <li data-i18n="heroFocusData">Ingegneria dei dati</li>
+            <li data-i18n="heroFocusAI">Automazione e AI applicata</li>
+            <li data-i18n="heroFocusAlgorithms">Algoritmi</li>
+            <li data-i18n="heroFocusResearch">Ricerca computazionale</li>
+          </ul>
 
           <div class="hero-lower-row">
             <p class="hero-description">
@@ -316,7 +319,7 @@
     <!-- Link al file JavaScript -->
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/translations.js?v=20261001-quote-hero-v1"></script>
+    <script src="js/translations.js?v=20261001-hero-refactor-v2"></script>
     <script src="js/certifications-data.js?v=20260922-1732"></script>
     <script src="js/projects-data.js?v=20260922-1732"></script>
     <script src="script.js?v=20260928-research-v2"></script>
