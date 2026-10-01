@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://falker47.github.io/Nexus-portfolio/" />
     <meta name="google-site-verification" content="ZOWij9OnT_HZBDPG4FcCeEwF5m7MvFjqJuK53YtkCWw" />
     <!-- Link al file CSS -->
-    <link rel="stylesheet" href="style.css?v=20261001-mobile-hero-v2" />
+    <link rel="stylesheet" href="style.css?v=20261001-language-pills-v1" />
 
     <!-- Favicons -->
     <link
@@ -118,11 +118,27 @@
       </ul>
 
       <div class="nav-actions">
-        <div class="language-toggle" role="group" aria-label="Language switch">
-          <input type="checkbox" id="toggle-lang" aria-label="Switch language to English" />
-          <label for="toggle-lang" class="toggle">
-            <span class="toggle-switch"></span>
-          </label>
+        <div class="language-toggle" role="group" aria-label="Language selection">
+          <button
+            class="lang-option"
+            type="button"
+            data-lang="it"
+            aria-label="Italiano"
+            aria-pressed="true"
+            title="Italiano"
+          >
+            <span class="lang-flag lang-flag--it" aria-hidden="true"></span>
+          </button>
+          <button
+            class="lang-option"
+            type="button"
+            data-lang="en"
+            aria-label="English"
+            aria-pressed="false"
+            title="English"
+          >
+            <span class="lang-flag lang-flag--en" aria-hidden="true"></span>
+          </button>
         </div>
 
         <button
@@ -320,6 +336,6 @@
     <script src="js/translations.js?v=20261001-hero-split-v8"></script>
     <script src="js/certifications-data.js?v=20260922-1732"></script>
     <script src="js/projects-data.js?v=20260922-1732"></script>
-    <script src="script.js?v=20260928-research-v2"></script>
+    <script src="script.js?v=20261001-language-pills-v1"></script>
   </body>
 </html>
