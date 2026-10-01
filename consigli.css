@@ -63,44 +63,48 @@
 
 .recommendations-list {
   display: grid;
-  gap: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
 }
 
 .recommendation-card {
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.6fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  border-radius: 18px;
   background: rgba(23, 26, 33, 0.82);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .recommendation-visual {
-  min-height: 380px;
+  min-height: 112px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 34px;
-  border-right: 1px solid var(--border-subtle);
+  justify-content: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
   background:
-    radial-gradient(circle at 50% 44%, rgba(96, 165, 250, 0.17), transparent 43%),
-    linear-gradient(145deg, rgba(59, 130, 246, 0.08), rgba(16, 26, 107, 0.2));
+    radial-gradient(circle at 15% 50%, rgba(96, 165, 250, 0.14), transparent 38%),
+    linear-gradient(145deg, rgba(59, 130, 246, 0.06), rgba(16, 26, 107, 0.15));
 }
 
 .recommendation-visual-icon {
-  width: 124px;
-  height: 124px;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(96, 165, 250, 0.27);
-  border-radius: 32px;
-  background: rgba(15, 16, 20, 0.55);
-  color: var(--primary-light);
-  font-size: 3.4rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(96, 165, 250, 0.24);
+  border-radius: 16px;
+  background: rgba(15, 16, 20, 0.5);
+  color: #7da9d2;
+  font-size: 1.55rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
 }
 
 .recommendation-category {
@@ -116,13 +120,13 @@
 .recommendation-content {
   display: flex;
   flex-direction: column;
-  padding: clamp(28px, 4vw, 46px);
+  padding: 22px 22px 20px;
 }
 
 .recommendation-content h2 {
-  margin: 8px 0 14px;
+  margin: 6px 0 10px;
   color: var(--text-light);
-  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  font-size: clamp(1.28rem, 2vw, 1.62rem);
   line-height: 1.16;
   letter-spacing: -0.035em;
 }
@@ -130,15 +134,15 @@
 .recommendation-summary {
   max-width: 760px;
   color: var(--text-body);
-  font-size: 0.98rem;
-  line-height: 1.7;
+  font-size: 0.88rem;
+  line-height: 1.6;
 }
 
 .recommendation-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 22px 0;
+  margin: 16px 0;
 }
 
 .recommendation-tags span {
@@ -151,7 +155,7 @@
 }
 
 .recommendation-note {
-  padding: 18px 20px;
+  padding: 14px 16px;
   border-left: 2px solid rgba(96, 165, 250, 0.55);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   background: rgba(255, 255, 255, 0.025);
@@ -166,13 +170,13 @@
 
 .recommendation-note p {
   color: var(--text-muted);
-  font-size: 0.86rem;
-  line-height: 1.62;
+  font-size: 0.8rem;
+  line-height: 1.55;
 }
 
 .recommendation-actions {
   margin-top: auto;
-  padding-top: 26px;
+  padding-top: 18px;
 }
 
 .recommendation-cta {
@@ -214,8 +218,8 @@
   display: grid;
   grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.4fr);
   gap: 42px;
-  align-items: start;
-  margin-top: 28px;
+  align-items: center;
+  margin-top: 24px;
   padding: 28px 30px;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
@@ -245,14 +249,18 @@
     padding-top: 96px;
   }
 
-  .recommendation-card {
-    grid-template-columns: 1fr;
+  .recommendations-list {
+    gap: 14px;
   }
 
-  .recommendation-visual {
-    min-height: 230px;
-    border-right: 0;
-    border-bottom: 1px solid var(--border-subtle);
+  .recommendation-content {
+    padding: 20px 18px 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  .recommendations-list {
+    grid-template-columns: 1fr;
   }
 
   .recommendations-principles {
@@ -291,16 +299,16 @@
   }
 
   .recommendation-visual {
-    min-height: 184px;
-    gap: 15px;
-    padding: 24px;
+    min-height: 92px;
+    gap: 12px;
+    padding: 14px 16px;
   }
 
   .recommendation-visual-icon {
-    width: 92px;
-    height: 92px;
-    border-radius: 24px;
-    font-size: 2.55rem;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    font-size: 1.4rem;
   }
 
   .recommendation-content {
