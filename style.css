@@ -747,28 +747,97 @@ footer a:hover {
   line-height: 1.35;
 }
 
+/* Fade-reveal affordance: the compact view visually continues beneath a
+   soft veil, with the expansion action floating over the lower card edge. */
 .section-toggle-wrap {
+  --fade-surface: 15, 16, 20;
+  position: relative;
+  z-index: 4;
+  isolation: isolate;
   display: flex;
+  min-height: 110px;
+  margin-top: -58px;
+  padding: 58px 0 4px;
+  align-items: flex-end;
   justify-content: center;
-  margin-top: 28px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--fade-surface), 0) 0%,
+    rgba(var(--fade-surface), 0.42) 32%,
+    rgba(var(--fade-surface), 0.82) 58%,
+    rgba(var(--fade-surface), 0.97) 78%,
+    rgba(var(--fade-surface), 1) 100%
+  );
+  transition:
+    margin-top 0.28s ease,
+    min-height 0.28s ease,
+    padding 0.28s ease,
+    background 0.28s ease;
+}
+
+.project-toggle-wrap {
+  --fade-surface: 15, 16, 20;
+}
+
+.certification-toggle-wrap {
+  --fade-surface: 21, 26, 36;
+}
+
+.section-toggle-wrap[hidden] {
+  display: none !important;
+}
+
+.section-toggle-wrap.is-collapsed::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 9%;
+  right: 9%;
+  top: 30px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.34) 0%,
+    rgba(0, 0, 0, 0.18) 38%,
+    rgba(0, 0, 0, 0) 74%
+  );
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.section-toggle-wrap.is-expanded {
+  min-height: 0;
+  margin-top: 24px;
+  padding: 0;
+  pointer-events: auto;
+  background: transparent;
 }
 
 .section-toggle {
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 11px;
   min-height: 44px;
-  padding: 10px 18px;
-  border: 1px solid rgba(96, 165, 250, 0.45);
+  padding: 9px 11px 9px 17px;
+  border: 1px solid rgba(96, 165, 250, 0.42);
   border-radius: 999px;
-  background: rgba(59, 130, 246, 0.08);
+  background: rgba(18, 24, 35, 0.9);
   color: var(--text-light);
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.34),
+    0 0 24px rgba(59, 130, 246, 0.1);
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
@@ -777,10 +846,17 @@ footer a:hover {
 }
 
 .section-toggle:hover {
-  background: rgba(59, 130, 246, 0.16);
-  border-color: rgba(96, 165, 250, 0.75);
+  background: rgba(24, 32, 46, 0.95);
+  border-color: rgba(96, 165, 250, 0.72);
   transform: translateY(-1px);
-  box-shadow: 0 10px 28px rgba(59, 130, 246, 0.14);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.38),
+    0 0 28px rgba(59, 130, 246, 0.16);
+}
+
+.section-toggle-wrap.is-expanded .section-toggle {
+  background: rgba(59, 130, 246, 0.07);
+  box-shadow: none;
 }
 
 .section-toggle:focus-visible {
@@ -789,12 +865,44 @@ footer a:hover {
 }
 
 .section-toggle i {
-  font-size: 0.78rem;
-  transition: transform 0.25s ease;
+  width: 25px;
+  height: 25px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.12);
+  color: var(--primary-light);
+  font-size: 0.7rem;
+  transition:
+    transform 0.25s ease,
+    background 0.2s ease;
+}
+
+.section-toggle-wrap.is-collapsed .section-toggle i {
+  animation: reveal-arrow-nudge 1.9s ease-in-out infinite;
 }
 
 .section-toggle.is-expanded i {
   transform: rotate(180deg);
+  animation: none;
+}
+
+@keyframes reveal-arrow-nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-toggle-wrap.is-collapsed .section-toggle i {
+    animation: none;
+  }
 }
 
 @media (max-width: 899px) {
@@ -833,13 +941,33 @@ footer a:hover {
   }
 
   .section-toggle-wrap {
-    margin-top: 22px;
+    min-height: 96px;
+    margin-top: -50px;
+    padding: 50px 0 2px;
+  }
+
+  .section-toggle-wrap.is-collapsed::before {
+    left: 4%;
+    right: 4%;
+    top: 26px;
+  }
+
+  .section-toggle-wrap.is-expanded {
+    min-height: 0;
+    margin-top: 20px;
+    padding: 0;
   }
 
   .section-toggle {
     min-height: 42px;
-    padding: 9px 15px;
-    font-size: 0.82rem;
+    padding: 8px 10px 8px 15px;
+    font-size: 0.8rem;
+  }
+
+  .section-toggle i {
+    width: 24px;
+    height: 24px;
+    font-size: 0.66rem;
   }
 }
 
