@@ -147,11 +147,17 @@ function updateSectionToggle(button, expanded, collapsedKey, expandedKey) {
   if (!button) return;
 
   const label = button.querySelector('.section-toggle-label');
+  const wrapper = button.closest('.section-toggle-wrap');
   const key = expanded ? expandedKey : collapsedKey;
   const lang = document.documentElement.lang || getPreferredLanguage();
 
   button.classList.toggle('is-expanded', expanded);
   button.setAttribute('aria-expanded', String(expanded));
+
+  if (wrapper) {
+    wrapper.classList.toggle('is-expanded', expanded);
+    wrapper.classList.toggle('is-collapsed', !expanded);
+  }
 
   if (label) {
     label.dataset.i18n = key;
@@ -164,6 +170,7 @@ function updateSectionToggle(button, expanded, collapsedKey, expandedKey) {
  */
 function initCertificationToggle() {
   const toggle = document.getElementById('certifications-toggle');
+  const toggleWrap = toggle?.closest('.section-toggle-wrap');
   const items = Array.from(document.querySelectorAll('.certification-item'));
 
   if (!toggle || !items.length) return;
@@ -176,7 +183,10 @@ function initCertificationToggle() {
       item.classList.toggle('is-collapsed', !expanded && index >= previewCount);
     });
 
-    toggle.hidden = items.length <= previewCount;
+    const canExpand = items.length > previewCount;
+    toggle.hidden = !canExpand;
+    if (toggleWrap) toggleWrap.hidden = !canExpand;
+
     updateSectionToggle(
       toggle,
       expanded,
@@ -364,6 +374,7 @@ function initProjectFilter() {
   const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
   const projectCards = Array.from(document.querySelectorAll('.project-card'));
   const toggle = document.getElementById('projects-toggle');
+  const toggleWrap = toggle?.closest('.section-toggle-wrap');
 
   if (!filterBtns.length || !projectCards.length) return;
 
@@ -391,6 +402,7 @@ function initProjectFilter() {
     if (toggle) {
       const canExpand = activeFilter === 'all' && projectCards.length > previewLimit;
       toggle.hidden = !canExpand;
+      if (toggleWrap) toggleWrap.hidden = !canExpand;
       updateSectionToggle(toggle, expanded, 'showAllProjects', 'showLessProjects');
     }
   };
