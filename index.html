@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://falker47.github.io/Nexus-portfolio/" />
     <meta name="google-site-verification" content="ZOWij9OnT_HZBDPG4FcCeEwF5m7MvFjqJuK53YtkCWw" />
     <!-- Link al file CSS -->
-    <link rel="stylesheet" href="style.css?v=20260928-research-v2" />
+    <link rel="stylesheet" href="style.css?v=20261001-quote-hero-v1" />
 
     <!-- Favicons -->
     <link
@@ -96,70 +96,6 @@
       referrerpolicy="no-referrer"
     />
 
-    <style>
-      .hero-identity-row {
-        grid-area: identity;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin: 0 0 18px;
-      }
-
-      .hero-identity-row img {
-        width: 72px;
-        height: 72px;
-        flex: 0 0 72px;
-        object-fit: cover;
-        border-radius: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
-      }
-
-      .hero-identity-copy {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        line-height: 1.25;
-      }
-
-      .hero-identity-copy strong {
-        color: var(--text-light);
-        font-size: 0.98rem;
-        font-weight: 600;
-      }
-
-      .hero-identity-copy span {
-        color: var(--text-muted);
-        font-size: 0.78rem;
-      }
-
-      @media (min-width: 901px) {
-        .intro .hero-card-slim {
-          grid-template-areas:
-            "identity identity"
-            "kicker kicker"
-            "title title"
-            "description cta";
-        }
-      }
-
-      @media (max-width: 520px) {
-        .hero-identity-row {
-          margin-bottom: 15px;
-        }
-
-        .hero-identity-row img {
-          width: 60px;
-          height: 60px;
-          flex-basis: 60px;
-          border-radius: 15px;
-        }
-
-        .hero-identity-copy strong {
-          font-size: 0.92rem;
-        }
-      }
-    </style>
   </head>
 
   <body>
@@ -220,13 +156,13 @@
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <div class="hero-card hero-card-slim">
-          <div class="hero-identity-row">
+        <div class="hero-card hero-card-slim hero-quote-card">
+          <div class="hero-post-header">
             <img
               src="assets/profile/maurizio-falconi-falker47.webp"
               alt="Maurizio Falconi (falker47)"
-              width="72"
-              height="72"
+              width="84"
+              height="84"
               fetchpriority="high"
               decoding="async"
             />
@@ -235,19 +171,28 @@
               <span>@falker47</span>
             </div>
           </div>
+
+          <blockquote class="hero-quote">
+            <h1 data-i18n="heroTitle">If it doesn't exist yet, I'm gonna build it.</h1>
+          </blockquote>
+
+          <div class="hero-quote-divider" aria-hidden="true"></div>
+
           <p class="hero-kicker" data-i18n="heroKicker">
             Ingegneria dei dati · Automazione e AI applicata · Algoritmi · Ricerca computazionale
           </p>
-          <h1 data-i18n="heroTitle">Se ancora non esiste, allora lo costruisco.</h1>
-          <p class="hero-description">
-            <span data-i18n="heroDescriptionLead">
-              Imparo le tecnologie che servono a costruire ciò che vorrei esistesse.
-            </span>
-            <span data-i18n="heroDescriptionTail">
-              A volte è qualcosa di utile, molto più spesso qualcosa di divertente.
-            </span>
-          </p>
-          <a class="hero-cta" href="#projects" data-i18n="heroButton">Esplora i progetti</a>
+
+          <div class="hero-lower-row">
+            <p class="hero-description">
+              <span data-i18n="heroDescriptionLead">
+                Imparo le tecnologie che servono a costruire ciò che vorrei esistesse.
+              </span>
+              <span data-i18n="heroDescriptionTail">
+                A volte è qualcosa di utile, molto più spesso qualcosa di divertente.
+              </span>
+            </p>
+            <a class="hero-cta" href="#projects" data-i18n="heroButton">Esplora i progetti</a>
+          </div>
         </div>
       </div>
     </section>
@@ -371,7 +316,7 @@
     <!-- Link al file JavaScript -->
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/translations.js?v=20260928-research-v2"></script>
+    <script src="js/translations.js?v=20261001-quote-hero-v1"></script>
     <script src="js/certifications-data.js?v=20260922-1732"></script>
     <script src="js/projects-data.js?v=20260922-1732"></script>
     <script src="script.js?v=20260928-research-v2"></script>

@@ -2862,3 +2862,241 @@ footer {
     font-size: 1.55rem;
   }
 }
+
+
+/* ===== HERO QUOTE CARD — PERSONAL POST COMPOSITION =====
+   Identity + quote form one editorial unit; professional focus and CTA follow below. */
+.intro .hero-card-slim.hero-quote-card {
+  width: min(100%, 980px);
+  max-width: 980px;
+  padding: 32px 38px 30px;
+  display: block;
+  text-align: left;
+  border-color: rgba(139, 92, 246, 0.34);
+  background:
+    linear-gradient(145deg, rgba(20, 19, 25, 0.9), rgba(14, 14, 18, 0.84)) !important;
+  box-shadow:
+    0 20px 54px rgba(0, 0, 0, 0.32),
+    0 0 30px rgba(139, 92, 246, 0.07);
+}
+
+.hero-post-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 22px;
+}
+
+.hero-post-header img {
+  width: 84px;
+  height: 84px;
+  flex: 0 0 84px;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+}
+
+.hero-identity-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.25;
+}
+
+.hero-identity-copy strong {
+  color: var(--text-light);
+  font-size: 1.03rem;
+  font-weight: 600;
+}
+
+.hero-identity-copy span {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.hero-quote {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 22px;
+  border: 0;
+}
+
+.hero-quote::before {
+  content: "“";
+  position: absolute;
+  top: -12px;
+  left: -3px;
+  color: rgba(167, 139, 250, 0.7);
+  font-size: 3.3rem;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.intro .hero-card-slim.hero-quote-card .hero-quote h1 {
+  margin: 0;
+  max-width: 860px;
+  color: var(--text-light) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  font-size: clamp(2rem, 2.8vw, 2.65rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.hero-quote-divider {
+  width: 100%;
+  height: 1px;
+  margin: 25px 0 19px;
+  background: linear-gradient(
+    90deg,
+    rgba(167, 139, 250, 0.45),
+    rgba(167, 139, 250, 0.08) 68%,
+    transparent
+  );
+}
+
+.intro .hero-card-slim.hero-quote-card .hero-kicker {
+  max-width: none;
+  margin: 0 0 18px !important;
+  color: var(--primary-light) !important;
+  font-size: clamp(0.65rem, 0.72vw, 0.73rem) !important;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.135em;
+  white-space: normal;
+}
+
+.hero-lower-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 28px;
+  align-items: end;
+}
+
+.intro .hero-card-slim.hero-quote-card .hero-description {
+  min-width: 0;
+  max-width: 700px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--text-muted);
+  font-size: clamp(0.86rem, 0.92vw, 0.95rem);
+  line-height: 1.58;
+}
+
+.intro .hero-card-slim.hero-quote-card .hero-cta {
+  justify-self: end;
+  align-self: end;
+  margin: 0;
+  padding: 9px 14px;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .intro .hero-card-slim.hero-quote-card {
+    width: 100%;
+    max-width: 760px;
+    padding: 27px 25px 24px;
+  }
+
+  .hero-post-header {
+    margin-bottom: 19px;
+  }
+
+  .hero-post-header img {
+    width: 76px;
+    height: 76px;
+    flex-basis: 76px;
+    border-radius: 18px;
+  }
+
+  .intro .hero-card-slim.hero-quote-card .hero-quote h1 {
+    font-size: clamp(1.75rem, 5.8vw, 2.2rem);
+    line-height: 1.16;
+  }
+
+  .hero-quote-divider {
+    margin: 22px 0 17px;
+  }
+
+  .hero-lower-row {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro .hero-card-slim.hero-quote-card {
+    padding: 22px 18px 20px;
+  }
+
+  .hero-post-header {
+    gap: 12px;
+    margin-bottom: 17px;
+  }
+
+  .hero-post-header img {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+    border-radius: 16px;
+  }
+
+  .hero-identity-copy strong {
+    font-size: 0.94rem;
+  }
+
+  .hero-identity-copy span {
+    font-size: 0.75rem;
+  }
+
+  .hero-quote {
+    padding-left: 17px;
+  }
+
+  .hero-quote::before {
+    top: -8px;
+    left: -2px;
+    font-size: 2.65rem;
+  }
+
+  .intro .hero-card-slim.hero-quote-card .hero-quote h1 {
+    font-size: clamp(1.55rem, 7vw, 1.9rem);
+    line-height: 1.18;
+  }
+
+  .hero-quote-divider {
+    margin: 19px 0 15px;
+  }
+
+  .intro .hero-card-slim.hero-quote-card .hero-kicker {
+    margin-bottom: 15px !important;
+    font-size: 0.61rem !important;
+    letter-spacing: 0.105em;
+  }
+
+  .hero-lower-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .intro .hero-card-slim.hero-quote-card .hero-description {
+    font-size: 0.81rem;
+    line-height: 1.56;
+  }
+
+  .intro .hero-card-slim.hero-quote-card .hero-cta {
+    align-self: flex-end;
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+}
