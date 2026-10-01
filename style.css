@@ -2007,14 +2007,14 @@ footer {
 
 .intro .hero-kicker {
   max-width: none;
-  margin: 26px 0 23px !important;
+  margin: 26px 0 24px !important;
   color: var(--primary-light) !important;
-  font-size: clamp(0.65rem, 0.72vw, 0.73rem) !important;
+  font-size: clamp(0.66rem, 0.74vw, 0.74rem) !important;
   font-weight: 600;
-  line-height: 1.45;
-  letter-spacing: 0.135em;
+  line-height: 1.35;
+  letter-spacing: 0.14em;
   text-align: center;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .intro .hero-lower-row {
@@ -2216,12 +2216,11 @@ footer {
     white-space: normal;
   }
 
-  .intro .hero-quote-tail {
-    display: block;
-  }
-
   .intro .hero-kicker {
-    margin: 24px 0 22px !important;
+    margin: 24px 0 20px !important;
+    font-size: 0.67rem !important;
+    line-height: 1.5;
+    white-space: normal;
   }
 
   .intro .hero-lower-row {
@@ -2269,9 +2268,11 @@ footer {
   }
 
   .intro .hero-kicker {
-    margin: 22px 0 20px !important;
-    font-size: 0.63rem !important;
-    letter-spacing: 0.11em;
+    margin: 20px 0 18px !important;
+    font-size: 0.67rem !important;
+    line-height: 1.5;
+    letter-spacing: 0.14em;
+    white-space: normal;
   }
 
   .intro .hero-lower-row {
@@ -2342,14 +2343,12 @@ footer {
     white-space: normal;
   }
 
-  .intro .hero-quote-tail {
-    display: inline;
-  }
-
   .intro .hero-kicker {
-    margin: 20px 0 18px !important;
-    font-size: 0.61rem !important;
-    letter-spacing: 0.095em;
+    margin: 18px 0 17px !important;
+    font-size: 0.62rem !important;
+    line-height: 1.5;
+    letter-spacing: 0.11em;
+    white-space: normal;
   }
 
   .intro .hero-description {
