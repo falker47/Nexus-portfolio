@@ -356,10 +356,11 @@ a {
   margin-top: 20px !important;
 }
 
-/* Contact section (keep original) */
+/* Contact section: return to the darker alternating surface after Certifications. */
 .contact {
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #191919, rgb(17, 28, 51));
+  padding: 30px 20px 44px;
+  background: linear-gradient(180deg, #0f1014 0%, #111722 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.035);
   color: #ddd;
   text-align: center;
 }
@@ -448,7 +449,7 @@ a {
 .contact-mail-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
 }
 
 .contact-mail {
@@ -481,7 +482,7 @@ a {
 .contact-recommendations-container {
   display: flex;
   justify-content: center;
-  margin: -12px 0 24px;
+  margin: 18px 0 0;
 }
 
 .contact-recommendations {
@@ -681,7 +682,7 @@ footer a:hover {
 
 /* Sezione Certificazioni */
 .certifications {
-  padding: 48px 20px 56px;
+  padding: 48px 20px 20px;
   background: linear-gradient(180deg, var(--bg-elevated), #151a24);
   color: #ddd;
   text-align: center;
@@ -1002,7 +1003,7 @@ footer a:hover {
 
 @media (max-width: 480px) {
   .certifications {
-    padding: 44px 16px 52px;
+    padding: 44px 16px 20px;
   }
 
   .certification-list {
@@ -2715,6 +2716,18 @@ footer {
 
 /* ===== CONTACT IDENTITY LINKS ===== */
 @media (max-width: 520px) {
+  .contact {
+    padding: 26px 16px 38px;
+  }
+
+  .contact-mail-container {
+    margin-bottom: 16px;
+  }
+
+  .contact-recommendations-container {
+    margin-top: 16px;
+  }
+
   .contact-socials {
     gap: 12px;
   }
