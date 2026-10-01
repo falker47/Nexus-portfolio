@@ -187,14 +187,10 @@ function switchLanguage(lang) {
   document.documentElement.lang = lang;
   persistLanguage(lang);
 
-  const toggleLang = document.getElementById("toggle-lang");
-  if (toggleLang) {
-    toggleLang.checked = lang === "en";
-    toggleLang.setAttribute(
-      "aria-label",
-      lang === "en" ? "Passa all’italiano" : "Switch language to English"
-    );
-  }
+  document.querySelectorAll(".lang-option").forEach(button => {
+    const isActive = button.dataset.lang === lang;
+    button.setAttribute("aria-pressed", String(isActive));
+  });
 }
 
 /**
@@ -289,13 +285,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Restore the selected language across portfolio pages.
   switchLanguage(getPreferredLanguage());
 
-  // Handle Language Toggle
-  const toggleLang = document.getElementById("toggle-lang");
-  if (toggleLang) {
-    toggleLang.addEventListener("change", function () {
-      switchLanguage(this.checked ? "en" : "it");
+  // Handle language selector
+  document.querySelectorAll(".lang-option").forEach(button => {
+    button.addEventListener("click", function () {
+      switchLanguage(this.dataset.lang);
     });
-  }
+  });
 });
 
 /**
