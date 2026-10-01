@@ -1962,6 +1962,7 @@ footer {
   gap: 1px;
   min-width: 0;
   line-height: 1.25;
+  transform: translateY(7px);
 }
 
 .intro .hero-identity-copy strong {
@@ -1983,6 +1984,7 @@ footer {
   margin: 0;
   padding: 0;
   border: 0;
+  transform: translateY(-3px);
 }
 
 .intro .hero-quote h1 {
@@ -2323,10 +2325,12 @@ footer {
   .intro .hero-identity-copy {
     grid-row: 1;
     align-self: center;
+    transform: none;
   }
 
   .intro .hero-quote {
     grid-column: 1 / -1;
+    transform: none;
     grid-row: 2;
     align-self: start;
   }
