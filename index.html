@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://falker47.github.io/Nexus-portfolio/" />
     <meta name="google-site-verification" content="ZOWij9OnT_HZBDPG4FcCeEwF5m7MvFjqJuK53YtkCWw" />
     <!-- Link al file CSS -->
-    <link rel="stylesheet" href="style.css?v=20261001-language-pills-v1" />
+    <link rel="stylesheet" href="style.css?v=20261001-compact-sections-v1" />
 
     <!-- Favicons -->
     <link
@@ -228,7 +228,20 @@
       </div>
 
       <!-- Projects are dynamically rendered via JS -->
-      <div class="project-grid"></div>
+      <div class="project-grid" id="project-grid"></div>
+
+      <div class="section-toggle-wrap project-toggle-wrap">
+        <button
+          class="section-toggle"
+          id="projects-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="project-grid"
+        >
+          <span class="section-toggle-label" data-i18n="showAllProjects">Esplora tutti i progetti</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+      </div>
     </section>
 
     <!-- Sezione Certificazioni -->
@@ -236,16 +249,21 @@
       <div class="certifications-container">
         <h2 data-i18n="Certifications">Certificazioni</h2>
 
-        <!-- Swiper Carousel -->
-        <div class="cert-carousel-wrapper">
-          <button class="cert-nav cert-nav-prev" aria-label="Previous">&#10094;</button>
-          <div class="swiper cert-swiper">
-            <div class="swiper-wrapper certification-list">
-              <!-- Slides are dynamically rendered via JS -->
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-          <button class="cert-nav cert-nav-next" aria-label="Next">&#10095;</button>
+        <div class="certification-list" id="certification-list">
+          <!-- Certifications are dynamically rendered via JS -->
+        </div>
+
+        <div class="section-toggle-wrap certification-toggle-wrap">
+          <button
+            class="section-toggle"
+            id="certifications-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="certification-list"
+          >
+            <span class="section-toggle-label" data-i18n="showAllCertifications">Mostra tutte le certificazioni</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -331,11 +349,9 @@
     </button>
 
     <!-- Link al file JavaScript -->
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/translations.js?v=20261001-hero-split-v8"></script>
+    <script src="js/translations.js?v=20261001-compact-sections-v1"></script>
     <script src="js/certifications-data.js?v=20260922-1732"></script>
     <script src="js/projects-data.js?v=20260922-1732"></script>
-    <script src="script.js?v=20261001-language-pills-v1"></script>
+    <script src="script.js?v=20261001-compact-sections-v1"></script>
   </body>
 </html>
