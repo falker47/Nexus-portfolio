@@ -10,7 +10,7 @@
     />
     <meta name="author" content="Maurizio Falconi (falker47)" />
     <link rel="canonical" href="https://falker47.github.io/Nexus-portfolio/research.html" />
-    <link rel="stylesheet" href="style.css?v=20261001-blue-brand-v1" />
+    <link rel="stylesheet" href="style.css?v=20261001-language-pills-v1" />
     <link rel="stylesheet" href="research.css?v=20261001-blue-brand-v1" />
     <link
       href="https://i.postimg.cc/rmCxjswj/main-falker-logo-gecko-transparent-minimal.png"
@@ -132,11 +132,27 @@
       </ul>
 
       <div class="nav-actions">
-        <div class="language-toggle" role="group" aria-label="Language switch">
-          <input type="checkbox" id="toggle-lang" aria-label="Switch language to English" />
-          <label for="toggle-lang" class="toggle">
-            <span class="toggle-switch"></span>
-          </label>
+        <div class="language-toggle" role="group" aria-label="Language selection">
+          <button
+            class="lang-option"
+            type="button"
+            data-lang="it"
+            aria-label="Italiano"
+            aria-pressed="true"
+            title="Italiano"
+          >
+            <span class="lang-flag lang-flag--it" aria-hidden="true"></span>
+          </button>
+          <button
+            class="lang-option"
+            type="button"
+            data-lang="en"
+            aria-label="English"
+            aria-pressed="false"
+            title="English"
+          >
+            <span class="lang-flag lang-flag--en" aria-hidden="true"></span>
+          </button>
         </div>
 
         <button
@@ -286,6 +302,6 @@
     </footer>
 
     <script src="js/translations.js?v=20260928-research-v3"></script>
-    <script src="script.js?v=20260928-research-v2"></script>
+    <script src="script.js?v=20261001-language-pills-v1"></script>
   </body>
 </html>
