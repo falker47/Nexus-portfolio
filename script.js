@@ -367,25 +367,43 @@ function initHeroVideo() {
 
 /**
  * Project filtering plus compact default view.
- * "All" shows a responsive curated preview (2 / 4 / 6 cards); explicit
- * category filters show every matching project.
+ * The compact "All" view always shows exactly two visual rows, based on the
+ * grid's actual rendered column count. This keeps the preview aligned with CSS
+ * even when viewport width, browser zoom, OS scaling or container width make
+ * the grid reflow differently from nominal device breakpoints.
  */
 function initProjectFilter() {
   const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
+  const grid = document.getElementById('project-grid');
   const projectCards = Array.from(document.querySelectorAll('.project-card'));
   const toggle = document.getElementById('projects-toggle');
   const toggleWrap = toggle?.closest('.section-toggle-wrap');
 
-  if (!filterBtns.length || !projectCards.length) return;
+  if (!grid || !filterBtns.length || !projectCards.length) return;
 
   let activeFilter = 'all';
   let expanded = false;
   let resizeFrame = null;
 
+  const getRenderedColumnCount = () => {
+    // Measure with all cards participating in layout. The read/write sequence
+    // completes in one frame, so the temporary visibility change is not painted.
+    projectCards.forEach(card => card.classList.remove('hidden'));
+
+    const firstTop = projectCards[0].offsetTop;
+    let columns = 0;
+
+    for (const card of projectCards) {
+      if (card.offsetTop !== firstTop) break;
+      columns += 1;
+    }
+
+    return Math.max(1, columns);
+  };
+
   const getPreviewLimit = () => {
-    if (window.innerWidth < 768) return 2;
-    if (window.innerWidth <= 1100) return 4;
-    return 6;
+    const columns = getRenderedColumnCount();
+    return Math.min(projectCards.length, columns * 2);
   };
 
   const update = () => {
@@ -407,6 +425,15 @@ function initProjectFilter() {
     }
   };
 
+  const scheduleUpdate = () => {
+    if (resizeFrame) cancelAnimationFrame(resizeFrame);
+
+    resizeFrame = requestAnimationFrame(() => {
+      update();
+      resizeFrame = null;
+    });
+  };
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
@@ -423,13 +450,12 @@ function initProjectFilter() {
     });
   }
 
-  window.addEventListener('resize', () => {
-    if (resizeFrame) cancelAnimationFrame(resizeFrame);
-    resizeFrame = requestAnimationFrame(() => {
-      update();
-      resizeFrame = null;
-    });
-  });
+  if ('ResizeObserver' in window) {
+    const gridResizeObserver = new ResizeObserver(scheduleUpdate);
+    gridResizeObserver.observe(grid);
+  } else {
+    window.addEventListener('resize', scheduleUpdate);
+  }
 
   update();
 }
