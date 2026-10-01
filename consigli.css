@@ -287,25 +287,6 @@
     font-size: 0.88rem;
     line-height: 1.62;
   }
-
-  .recommendation-tags {
-    margin: 18px 0;
-    gap: 6px;
-  }
-
-  .recommendation-tags span {
-    padding: 5px 8px;
-    font-size: 0.69rem;
-  }
-
-  .recommendation-note {
-    padding: 15px 16px;
-  }
-
-  .recommendation-note p {
-    font-size: 0.8rem;
-  }
-
   .recommendation-cta {
     width: 100%;
     min-height: 48px;
