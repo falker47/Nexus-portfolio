@@ -2009,12 +2009,13 @@ footer {
   max-width: none;
   margin: 26px 0 24px !important;
   color: var(--primary-light) !important;
-  font-size: clamp(0.66rem, 0.74vw, 0.74rem) !important;
+  font-size: clamp(0.65rem, 0.72vw, 0.73rem) !important;
   font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: 0.14em;
+  line-height: 1.45;
+  letter-spacing: 0.135em;
   text-align: center;
-  white-space: nowrap;
+  text-transform: uppercase;
+  white-space: normal;
 }
 
 .intro .hero-lower-row {
@@ -2220,6 +2221,7 @@ footer {
     margin: 24px 0 20px !important;
     font-size: 0.67rem !important;
     line-height: 1.5;
+    letter-spacing: 0.135em;
     white-space: normal;
   }
 
@@ -2269,9 +2271,9 @@ footer {
 
   .intro .hero-kicker {
     margin: 20px 0 18px !important;
-    font-size: 0.67rem !important;
+    font-size: 0.65rem !important;
     line-height: 1.5;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.125em;
     white-space: normal;
   }
 
@@ -2345,9 +2347,9 @@ footer {
 
   .intro .hero-kicker {
     margin: 18px 0 17px !important;
-    font-size: 0.62rem !important;
+    font-size: 0.61rem !important;
     line-height: 1.5;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.105em;
     white-space: normal;
   }
 
