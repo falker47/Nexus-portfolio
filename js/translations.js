@@ -11,7 +11,7 @@ const translations = {
     navCertifications: "Certificazioni",
     navContact: "Contatti",
     heroKicker: "Ingegneria dei dati · Automazione e AI applicata · Algoritmi · Ricerca computazionale",
-    heroTitle: "“Se ancora non esiste,<br>allora lo costruisco.”",
+    heroTitle: "“Se ancora non esiste,<br>allora devo costruirlo.”",
     heroDescriptionLead: "Imparo le tecnologie che servono a costruire ciò che vorrei esistesse.",
     heroDescriptionTail: "A volte è qualcosa di utile, molto più spesso qualcosa di divertente.",
     projectsTitle: "Progetti selezionati",
