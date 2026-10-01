@@ -472,7 +472,6 @@ function initBackToTop() {
 function initScrollAnimations() {
   // Animations disabled by user request
   const projectCards = document.querySelectorAll('.project-card');
-  const certItems = document.querySelectorAll('.certification-item'); // Swiper slides now
   const sections = document.querySelectorAll('.about, .projects, .certifications, .contact');
 
   // Ensure everything is visible immediately
