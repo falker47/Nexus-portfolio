@@ -569,93 +569,78 @@ footer a:hover {
   /* Hover: blu */
 }
 
+
+/* ===== Language selector ===== */
 .language-toggle {
-  flex: 0 0 30% !important;
-  margin-left: 20px;
-  /* Distanza dal menu se serve */
-  justify-content: flex-end;
+  flex: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 !important;
 }
 
-.language-toggle input[type="checkbox"] {
-  display: none;
-}
-
-.language-toggle .toggle {
-  margin-left: auto !important;
-  display: inline-block;
-  position: relative;
-  width: 70px;
-  /* Aumentato da 60px a 70px */
-  height: 34px;
-  /* Aumentato da 30px a 34px */
-  background: #444;
-  border-radius: 34px;
+.lang-option {
+  width: 34px;
+  height: 30px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.035);
+  opacity: 0.58;
   cursor: pointer;
+  transition:
+    opacity var(--transition-base),
+    border-color var(--transition-base),
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
 }
 
-/* Pallino bianco */
-.language-toggle .toggle-switch {
-  position: absolute;
-  z-index: 0;
-  /* Metti il pallino sotto la bandiera */
-  top: 3px;
-  left: 3px;
-  width: 28px;
-  /* Larghezza pallino */
-  height: 28px;
-  /* Altezza pallino */
-  background: #fff;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
+.lang-option:hover {
+  opacity: 0.9;
+  border-color: rgba(96, 165, 250, 0.3);
+  background: rgba(59, 130, 246, 0.07);
 }
 
-/* Bandiera IT a sinistra */
-.language-toggle .toggle::before {
-  z-index: 1;
-  /* Metti il pallino sotto la bandiera */
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 6px;
-  /* Più spazio dal bordo sinistro */
-  transform: translateY(-50%);
-  width: 22px;
-  height: 15px;
-  background: url("https://flagcdn.com/h20/it.png") no-repeat center/cover;
-  border: 1px solid #fff;
+.lang-option[aria-pressed="true"] {
+  opacity: 1;
+  border-color: rgba(96, 165, 250, 0.7);
+  background: rgba(59, 130, 246, 0.12);
+  box-shadow:
+    inset 0 0 0 1px rgba(96, 165, 250, 0.08),
+    0 0 14px rgba(59, 130, 246, 0.09);
+}
+
+.lang-option:active {
+  transform: scale(0.96);
+}
+
+.lang-option:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+.lang-flag {
+  width: 20px;
+  height: 14px;
+  display: block;
   border-radius: 2px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22);
 }
 
-/* Bandiera UK a destra */
-.language-toggle .toggle::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 6px;
-  /* Più spazio dal bordo destro */
-  transform: translateY(-50%);
-  width: 22px;
-  height: 15px;
-  background: url("https://flagcdn.com/h20/gb.png") no-repeat center/cover;
-  border: 1px solid #fff;
-  border-radius: 2px;
+.lang-flag--it {
+  background-image: url("https://flagcdn.com/h20/it.png");
 }
 
-/* Quando è selezionato (lingua EN), pallino si sposta a destra */
-.language-toggle input[type="checkbox"]:checked + .toggle .toggle-switch {
-  transform: translateX(36px);
-  /* Adattato alla nuova larghezza */
-}
-
-/* Opacità bandiere (opzionale) */
-.language-toggle input[type="checkbox"]:checked + .toggle::before {
-  opacity: 0.3;
-  /* IT bandiera trasparente */
-}
-
-.language-toggle input[type="checkbox"]:not(:checked) + .toggle::after {
-  opacity: 0.3;
-  /* UK bandiera trasparente quando non selezionata */
+.lang-flag--en {
+  background-image: url("https://flagcdn.com/h20/gb.png");
 }
 
 /* Sezione Certificazioni */
@@ -1807,36 +1792,6 @@ footer {
   gap: 10px;
 }
 
-.language-toggle {
-  flex: none !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 !important;
-}
-
-.language-toggle .toggle {
-  width: 58px;
-  height: 30px;
-  margin: 0 !important;
-}
-
-.language-toggle .toggle-switch {
-  top: 3px;
-  left: 3px;
-  width: 24px;
-  height: 24px;
-}
-
-.language-toggle .toggle::before,
-.language-toggle .toggle::after {
-  width: 18px;
-  height: 12px;
-}
-
-.language-toggle input[type="checkbox"]:checked + .toggle .toggle-switch {
-  transform: translateX(28px);
-}
 
 .nav-toggle {
   display: none;
@@ -2080,27 +2035,18 @@ footer {
   }
 
   .language-toggle {
-    margin: 0 !important;
+    gap: 5px;
   }
 
-  .language-toggle .toggle {
-    width: 52px;
-    height: 28px;
+  .lang-option {
+    width: 31px;
+    height: 27px;
+    border-radius: 8px;
   }
 
-  .language-toggle .toggle-switch {
-    width: 22px;
-    height: 22px;
-  }
-
-  .language-toggle .toggle::before,
-  .language-toggle .toggle::after {
-    width: 16px;
-    height: 11px;
-  }
-
-  .language-toggle input[type="checkbox"]:checked + .toggle .toggle-switch {
-    transform: translateX(24px);
+  .lang-flag {
+    width: 18px;
+    height: 12px;
   }
 
   .nav-toggle {
