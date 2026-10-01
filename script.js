@@ -112,20 +112,19 @@ function renderProjects() {
 }
 
 /**
- * Renders the certifications list.
+ * Renders certifications as a compact responsive grid.
+ * The first four stay visible by default; the rest are revealed on demand.
  */
 function renderCertifications() {
   const list = document.querySelector('.certification-list');
   if (!list) return;
   list.innerHTML = '';
 
-  certificationsData.forEach(c => {
-    // Determine class based on orientation (some images might be vertical/horizontal)
-    // Defaulting to standard slide
-    const slide = document.createElement('div');
-    slide.className = 'swiper-slide certification-slide';
+  certificationsData.forEach((c, index) => {
+    const item = document.createElement('article');
+    item.className = `certification-item${index >= 4 ? ' is-collapsed' : ''}`;
 
-    slide.innerHTML = `
+    item.innerHTML = `
       <div class="certification-card">
         <a href="${c.image}" class="cert-thumb-link" title="${c.title}">
           <img src="${c.image}" alt="${c.title}" class="cert-thumb" loading="lazy">
@@ -136,38 +135,62 @@ function renderCertifications() {
         </div>
       </div>
     `;
-    list.appendChild(slide);
+    list.appendChild(item);
+  });
+}
+
+/**
+ * Keeps reusable expand/collapse controls synchronized with their copy,
+ * icon state and accessibility attributes.
+ */
+function updateSectionToggle(button, expanded, collapsedKey, expandedKey) {
+  if (!button) return;
+
+  const label = button.querySelector('.section-toggle-label');
+  const key = expanded ? expandedKey : collapsedKey;
+  const lang = document.documentElement.lang || getPreferredLanguage();
+
+  button.classList.toggle('is-expanded', expanded);
+  button.setAttribute('aria-expanded', String(expanded));
+
+  if (label) {
+    label.dataset.i18n = key;
+    label.textContent = translations[lang]?.[key] || label.textContent;
+  }
+}
+
+/**
+ * Expands/collapses the certification grid.
+ */
+function initCertificationToggle() {
+  const toggle = document.getElementById('certifications-toggle');
+  const items = Array.from(document.querySelectorAll('.certification-item'));
+
+  if (!toggle || !items.length) return;
+
+  const previewCount = 4;
+  let expanded = false;
+
+  const update = () => {
+    items.forEach((item, index) => {
+      item.classList.toggle('is-collapsed', !expanded && index >= previewCount);
+    });
+
+    toggle.hidden = items.length <= previewCount;
+    updateSectionToggle(
+      toggle,
+      expanded,
+      'showAllCertifications',
+      'showLessCertifications'
+    );
+  };
+
+  toggle.addEventListener('click', () => {
+    expanded = !expanded;
+    update();
   });
 
-  // Initialize Swiper only on mobile
-  const mobileQuery = window.matchMedia('(max-width: 767px)');
-  let swiper = null;
-
-  function initSwiper() {
-    if (mobileQuery.matches && !swiper) {
-      swiper = new Swiper('.cert-swiper', {
-        loop: true,
-        spaceBetween: 20,
-        slidesPerView: 'auto',
-        centeredSlides: true,
-        freeMode: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      });
-
-      // Custom navigation buttons
-      document.querySelector('.cert-nav-prev').addEventListener('click', () => swiper.slidePrev());
-      document.querySelector('.cert-nav-next').addEventListener('click', () => swiper.slideNext());
-    } else if (!mobileQuery.matches && swiper) {
-      swiper.destroy(true, true);
-      swiper = null;
-    }
-  }
-
-  initSwiper();
-  mobileQuery.addEventListener('change', initSwiper);
+  update();
 }
 
 /**
@@ -268,6 +291,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize features
   initSmoothScroll();
+  initCertificationToggle();
   initCertModal();
   initScrollAnimations();
   initScrollProgress();
@@ -332,36 +356,70 @@ function initHeroVideo() {
 }
 
 /**
- * Project Filter by Category
+ * Project filtering plus compact default view.
+ * "All" shows a responsive curated preview (2 / 4 / 6 cards); explicit
+ * category filters show every matching project.
  */
 function initProjectFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
+  const projectCards = Array.from(document.querySelectorAll('.project-card'));
+  const toggle = document.getElementById('projects-toggle');
 
-  if (!filterBtns.length) return;
+  if (!filterBtns.length || !projectCards.length) return;
+
+  let activeFilter = 'all';
+  let expanded = false;
+  let resizeFrame = null;
+
+  const getPreviewLimit = () => {
+    if (window.innerWidth < 768) return 2;
+    if (window.innerWidth <= 1100) return 4;
+    return 6;
+  };
+
+  const update = () => {
+    const previewLimit = getPreviewLimit();
+
+    projectCards.forEach((card, index) => {
+      const category = card.getAttribute('data-category');
+      const matchesFilter = activeFilter === 'all' || category === activeFilter;
+      const withinPreview = expanded || activeFilter !== 'all' || index < previewLimit;
+
+      card.classList.toggle('hidden', !(matchesFilter && withinPreview));
+    });
+
+    if (toggle) {
+      const canExpand = activeFilter === 'all' && projectCards.length > previewLimit;
+      toggle.hidden = !canExpand;
+      updateSectionToggle(toggle, expanded, 'showAllProjects', 'showLessProjects');
+    }
+  };
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Update active state
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-
-      projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-
-        if (filter === 'all' || category === filter) {
-          card.classList.remove('hidden');
-          // Re-trigger animation
-          card.classList.remove('animate-in');
-          setTimeout(() => card.classList.add('animate-in'), 50);
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+      activeFilter = btn.getAttribute('data-filter') || 'all';
+      update();
     });
   });
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      expanded = !expanded;
+      update();
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    if (resizeFrame) cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(() => {
+      update();
+      resizeFrame = null;
+    });
+  });
+
+  update();
 }
 
 
