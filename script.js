@@ -166,17 +166,140 @@ function updateSectionToggle(button, expanded, collapsedKey, expandedKey) {
 }
 
 /**
+ * Animates reveal/collapse by transitioning the grid's measured height.
+ * Newly revealed cards also fade/slide into place. Reduced-motion users
+ * get the same state change without motion.
+ */
+async function animateSectionItems(container, items, expanding, hiddenClass) {
+  const targets = items.filter(Boolean);
+  const setHidden = (hidden) => {
+    targets.forEach(item => item.classList.toggle(hiddenClass, hidden));
+  };
+
+  if (!container || !targets.length) {
+    setHidden(!expanding);
+    return;
+  }
+
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || typeof container.animate !== 'function') {
+    setHidden(!expanding);
+    return;
+  }
+
+  const startHeight = container.getBoundingClientRect().height;
+
+  // Measure the final layout synchronously, then restore the current state
+  // before the browser has a chance to paint.
+  setHidden(!expanding);
+  const endHeight = container.getBoundingClientRect().height;
+  setHidden(expanding);
+
+  if (Math.abs(endHeight - startHeight) < 1) {
+    setHidden(!expanding);
+    return;
+  }
+
+  container.style.height = `${startHeight}px`;
+  container.style.overflow = 'hidden';
+  container.style.willChange = 'height';
+
+  let heightAnimation = null;
+  let itemAnimations = [];
+
+  try {
+    if (expanding) {
+      setHidden(false);
+
+      itemAnimations = targets.map((item, index) =>
+        item.animate(
+          [
+            { opacity: 0, transform: 'translateY(-10px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ],
+          {
+            duration: 300,
+            delay: 70 + Math.min(index, 6) * 24,
+            easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+            fill: 'both'
+          }
+        )
+      );
+
+      heightAnimation = container.animate(
+        [
+          { height: `${startHeight}px` },
+          { height: `${endHeight}px` }
+        ],
+        {
+          duration: 460,
+          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          fill: 'forwards'
+        }
+      );
+
+      await heightAnimation.finished.catch(() => {});
+      setHidden(false);
+    } else {
+      itemAnimations = targets.map((item, index) =>
+        item.animate(
+          [
+            { opacity: 1, transform: 'translateY(0)' },
+            { opacity: 0, transform: 'translateY(-7px)' }
+          ],
+          {
+            duration: 150,
+            delay: Math.min(index, 4) * 12,
+            easing: 'ease-out',
+            fill: 'forwards'
+          }
+        )
+      );
+
+      await Promise.all(itemAnimations.map(animation => animation.finished.catch(() => {})));
+      setHidden(true);
+
+      heightAnimation = container.animate(
+        [
+          { height: `${startHeight}px` },
+          { height: `${endHeight}px` }
+        ],
+        {
+          duration: 340,
+          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          fill: 'forwards'
+        }
+      );
+
+      await heightAnimation.finished.catch(() => {});
+      setHidden(true);
+    }
+  } finally {
+    itemAnimations.forEach(animation => animation.cancel());
+    if (heightAnimation) heightAnimation.cancel();
+
+    container.style.removeProperty('height');
+    container.style.removeProperty('overflow');
+    container.style.removeProperty('will-change');
+
+    setHidden(!expanding);
+  }
+}
+
+/**
  * Expands/collapses the certification grid.
  */
 function initCertificationToggle() {
   const toggle = document.getElementById('certifications-toggle');
   const toggleWrap = toggle?.closest('.section-toggle-wrap');
+  const list = document.getElementById('certification-list');
   const items = Array.from(document.querySelectorAll('.certification-item'));
 
-  if (!toggle || !items.length) return;
+  if (!toggle || !list || !items.length) return;
 
   const previewCount = 4;
   let expanded = false;
+  let isAnimating = false;
 
   const update = () => {
     items.forEach((item, index) => {
@@ -195,9 +318,32 @@ function initCertificationToggle() {
     );
   };
 
-  toggle.addEventListener('click', () => {
+  toggle.addEventListener('click', async () => {
+    if (isAnimating) return;
+
+    const affectedItems = items.slice(previewCount);
     expanded = !expanded;
-    update();
+    isAnimating = true;
+
+    // Rotate/update the affordance immediately, while the content moves.
+    updateSectionToggle(
+      toggle,
+      expanded,
+      'showAllCertifications',
+      'showLessCertifications'
+    );
+
+    try {
+      await animateSectionItems(
+        list,
+        affectedItems,
+        expanded,
+        'is-collapsed'
+      );
+    } finally {
+      isAnimating = false;
+      update();
+    }
   });
 
   update();
@@ -384,10 +530,11 @@ function initProjectFilter() {
   let activeFilter = 'all';
   let expanded = false;
   let resizeFrame = null;
+  let isToggleAnimating = false;
 
   const getRenderedColumnCount = () => {
-    // Measure with all cards participating in layout. The read/write sequence
-    // completes in one frame, so the temporary visibility change is not painted.
+    // Measure all cards without changing their visible state on the next paint.
+    const hiddenState = projectCards.map(card => card.classList.contains('hidden'));
     projectCards.forEach(card => card.classList.remove('hidden'));
 
     const firstTop = projectCards[0].offsetTop;
@@ -397,6 +544,10 @@ function initProjectFilter() {
       if (card.offsetTop !== firstTop) break;
       columns += 1;
     }
+
+    projectCards.forEach((card, index) => {
+      card.classList.toggle('hidden', hiddenState[index]);
+    });
 
     return Math.max(1, columns);
   };
@@ -426,6 +577,7 @@ function initProjectFilter() {
   };
 
   const scheduleUpdate = () => {
+    if (isToggleAnimating) return;
     if (resizeFrame) cancelAnimationFrame(resizeFrame);
 
     resizeFrame = requestAnimationFrame(() => {
@@ -436,6 +588,8 @@ function initProjectFilter() {
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      if (isToggleAnimating) return;
+
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeFilter = btn.getAttribute('data-filter') || 'all';
@@ -444,9 +598,30 @@ function initProjectFilter() {
   });
 
   if (toggle) {
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', async () => {
+      if (isToggleAnimating || activeFilter !== 'all') return;
+
+      const previewLimit = getPreviewLimit();
+      const affectedItems = projectCards.slice(previewLimit);
+      if (!affectedItems.length) return;
+
       expanded = !expanded;
-      update();
+      isToggleAnimating = true;
+
+      // The arrow reacts immediately; the grid then grows/shrinks underneath it.
+      updateSectionToggle(toggle, expanded, 'showAllProjects', 'showLessProjects');
+
+      try {
+        await animateSectionItems(
+          grid,
+          affectedItems,
+          expanded,
+          'hidden'
+        );
+      } finally {
+        isToggleAnimating = false;
+        update();
+      }
     });
   }
 
