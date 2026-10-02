@@ -682,7 +682,7 @@ footer a:hover {
 
 /* Sezione Certificazioni */
 .certifications {
-  padding: 48px 20px 20px;
+  padding: 48px 20px 36px;
   background: linear-gradient(180deg, var(--bg-elevated), #151a24);
   color: #ddd;
   text-align: center;
@@ -784,17 +784,17 @@ footer a:hover {
   line-height: 1.35;
 }
 
-/* Boundary reveal V3: the fade is anchored to the actual section boundary.
-   The control floats across that boundary, biased slightly toward the section it expands. */
+/* Boundary reveal V4: restore the original lightweight control language,
+   but anchor both the shadow and the control to the real section boundary. */
 .projects,
 .certifications {
   position: relative;
 }
 
 .section-toggle-wrap {
-  --boundary-shadow: 0, 0, 0;
   position: absolute;
   z-index: 8;
+  isolation: isolate;
   left: 0;
   right: 0;
   bottom: 0;
@@ -806,8 +806,7 @@ footer a:hover {
   display: none !important;
 }
 
-/* The shadow starts exactly at the background transition and fades upward.
-   Use viewport width so the section boundary reads as one continuous edge. */
+/* The veil is darkest exactly at the background transition and dissolves upward. */
 .section-toggle-wrap::before {
   content: "";
   position: absolute;
@@ -819,80 +818,115 @@ footer a:hover {
   transform: translateX(-50%);
   background: linear-gradient(
     to top,
-    rgba(var(--boundary-shadow), 0.58) 0%,
-    rgba(var(--boundary-shadow), 0.34) 28%,
-    rgba(var(--boundary-shadow), 0.15) 56%,
-    rgba(var(--boundary-shadow), 0) 100%
+    rgba(0, 0, 0, 0.58) 0%,
+    rgba(0, 0, 0, 0.42) 24%,
+    rgba(0, 0, 0, 0.20) 52%,
+    rgba(0, 0, 0, 0.07) 72%,
+    rgba(0, 0, 0, 0) 100%
   );
   pointer-events: none;
+  transition: opacity 0.25s ease;
 }
 
-/* A very subtle edge makes the change of surface intentional without
-   turning it into a hard divider. */
+/* Reintroduce the softer, original-style central shadow without detaching it
+   from the seam: the radial origin is the section boundary itself. */
 .section-toggle-wrap::after {
   content: "";
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   left: 50%;
-  bottom: 0;
-  width: 100vw;
-  height: 1px;
+  bottom: -2px;
+  width: min(92vw, 560px);
+  height: 76px;
   transform: translateX(-50%);
-  background: rgba(147, 197, 253, 0.08);
+  background: radial-gradient(
+    ellipse at center bottom,
+    rgba(0, 0, 0, 0.58) 0%,
+    rgba(0, 0, 0, 0.40) 30%,
+    rgba(0, 0, 0, 0.18) 56%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  filter: blur(10px);
   pointer-events: none;
+  transition: opacity 0.25s ease;
 }
 
+.section-toggle-wrap.is-expanded::before,
+.section-toggle-wrap.is-expanded::after {
+  opacity: 0.62;
+}
+
+/* Keep the control visually close to the pre-chat version:
+   no pill, no border, no filled background. It floats just above the seam. */
 .section-toggle {
   position: absolute;
   z-index: 2;
   left: 50%;
-  bottom: -8px;
+  bottom: -15px;
   transform: translateX(-50%);
   pointer-events: auto;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  min-height: 44px;
-  padding: 9px 16px;
-  border: 1px solid rgba(147, 197, 253, 0.28);
-  border-radius: 999px;
-  background: #121722;
-  color: #e8eef8;
+  gap: 2px;
+  min-height: 50px;
+  padding: 6px 18px 2px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(247, 248, 252, 0.9);
   font: inherit;
   font-size: 0.86rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.15;
   white-space: nowrap;
   cursor: pointer;
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  box-shadow: none;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.78);
   transition:
     color 0.2s ease,
-    border-color 0.2s ease,
-    background 0.2s ease,
-    box-shadow 0.2s ease,
+    opacity 0.2s ease,
     transform 0.2s ease;
 }
 
 .section-toggle:hover {
-  border-color: rgba(147, 197, 253, 0.48);
-  background: #172033;
+  background: transparent;
   color: #fff;
-  box-shadow:
-    0 10px 24px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(59, 130, 246, 0.06);
   transform: translateX(-50%) translateY(-1px);
+  box-shadow: none;
 }
 
 .section-toggle:active {
-  transform: translateX(-50%) scale(0.98);
+  transform: translateX(-50%) translateY(1px);
+}
+
+.section-toggle-label {
+  position: relative;
+}
+
+.section-toggle-label::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -3px;
+  height: 1px;
+  background: rgba(147, 197, 253, 0.82);
+  transition:
+    left 0.2s ease,
+    right 0.2s ease;
+}
+
+.section-toggle:hover .section-toggle-label::after {
+  left: 0;
+  right: 0;
 }
 
 .section-toggle:focus-visible {
   outline: 2px solid var(--primary-light);
-  outline-offset: 3px;
+  outline-offset: 4px;
+  border-radius: 8px;
 }
 
 .section-toggle i {
@@ -900,28 +934,47 @@ footer a:hover {
   height: auto;
   display: inline-block;
   flex: 0 0 auto;
+  margin-top: 2px;
   color: var(--primary-light);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   line-height: 1;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.76));
+  animation: reveal-arrow-nudge 1.9s ease-in-out infinite;
   transition:
     transform 0.25s ease,
     color 0.2s ease;
 }
 
+.section-toggle.is-expanded {
+  color: var(--text-muted);
+  text-shadow: none;
+}
+
 .section-toggle.is-expanded i {
   transform: rotate(180deg);
+  animation: none;
+  filter: none;
 }
 
-.section-toggle-wrap.is-expanded .section-toggle {
-  border-color: rgba(147, 197, 253, 0.18);
-  background: #111722;
-  color: var(--text-muted);
-  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.28);
-}
-
-.section-toggle-wrap.is-expanded .section-toggle:hover {
-  border-color: rgba(147, 197, 253, 0.34);
+.section-toggle.is-expanded:hover {
   color: var(--primary-light);
+}
+
+@keyframes reveal-arrow-nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-toggle i {
+    animation: none;
+  }
 }
 
 @media (max-width: 899px) {
@@ -933,7 +986,7 @@ footer a:hover {
 
 @media (max-width: 480px) {
   .certifications {
-    padding: 44px 16px 20px;
+    padding: 44px 16px 32px;
   }
 
   .certification-list {
@@ -963,12 +1016,17 @@ footer a:hover {
     height: 74px;
   }
 
+  .section-toggle-wrap::after {
+    width: min(96vw, 500px);
+    height: 66px;
+    filter: blur(9px);
+  }
+
   .section-toggle {
-    bottom: -7px;
-    min-height: 42px;
-    padding: 8px 15px;
-    gap: 8px;
-    font-size: 0.82rem;
+    bottom: -16px;
+    min-height: 48px;
+    padding: 5px 14px 1px;
+    font-size: 0.84rem;
   }
 
   .section-toggle i {
@@ -1601,7 +1659,7 @@ footer a:hover {
    and stable sizing when filters leave only one or two results. */
 .projects {
   max-width: 1240px;
-  padding: 48px 20px 30px;
+  padding: 48px 20px 42px;
 }
 
 .project-grid {
@@ -1789,7 +1847,7 @@ footer a:hover {
 
 @media (max-width: 767px) {
   .projects {
-    padding: 44px 16px 22px;
+    padding: 44px 16px 32px;
   }
 
   .project-grid {
