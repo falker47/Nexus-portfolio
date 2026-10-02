@@ -784,27 +784,26 @@ footer a:hover {
   line-height: 1.35;
 }
 
-/* Fade-reveal affordance: compact sections dissolve into a deeper veil,
-   while the expand control reads as part of the fade rather than a separate pill. */
+/* Section reveal dock V2: a short fade hints at hidden content,
+   while the control itself remains clearly visible and secondary to the cards. */
 .section-toggle-wrap {
   --fade-surface: 15, 16, 20;
   position: relative;
   z-index: 4;
   isolation: isolate;
   display: flex;
-  min-height: 142px;
-  margin-top: -82px;
-  padding: 82px 0 6px;
+  min-height: 96px;
+  margin-top: -44px;
+  padding: 44px 0 4px;
   align-items: flex-end;
   justify-content: center;
   pointer-events: none;
   background: linear-gradient(
     to bottom,
     rgba(var(--fade-surface), 0) 0%,
-    rgba(var(--fade-surface), 0.16) 18%,
-    rgba(var(--fade-surface), 0.54) 38%,
-    rgba(var(--fade-surface), 0.86) 58%,
-    rgba(var(--fade-surface), 0.98) 76%,
+    rgba(var(--fade-surface), 0.1) 30%,
+    rgba(var(--fade-surface), 0.58) 64%,
+    rgba(var(--fade-surface), 0.92) 84%,
     rgba(var(--fade-surface), 1) 100%
   );
   transition:
@@ -826,46 +825,9 @@ footer a:hover {
   display: none !important;
 }
 
-.section-toggle-wrap.is-collapsed::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  left: 2%;
-  right: 2%;
-  top: 24px;
-  height: 82px;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 0, 0, 0.62) 0%,
-    rgba(0, 0, 0, 0.42) 28%,
-    rgba(0, 0, 0, 0.18) 52%,
-    rgba(0, 0, 0, 0) 78%
-  );
-  filter: blur(18px);
-  pointer-events: none;
-}
-
-.section-toggle-wrap.is-collapsed::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 54%;
-  background: linear-gradient(
-    to bottom,
-    rgba(var(--fade-surface), 0),
-    rgba(var(--fade-surface), 0.46) 44%,
-    rgba(var(--fade-surface), 0.92) 100%
-  );
-  pointer-events: none;
-}
-
 .section-toggle-wrap.is-expanded {
   min-height: 0;
-  margin-top: 24px;
+  margin-top: 20px;
   padding: 0;
   pointer-events: auto;
   background: transparent;
@@ -878,76 +840,52 @@ footer a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  min-height: 42px;
-  padding: 8px 12px;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  color: rgba(247, 248, 252, 0.88);
+  gap: 10px;
+  min-height: 46px;
+  padding: 10px 18px;
+  border: 1px solid rgba(147, 197, 253, 0.24);
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.11);
+  color: #e8eef8;
   font: inherit;
-  font-size: 0.86rem;
+  font-size: 0.9rem;
   font-weight: 500;
+  line-height: 1;
   cursor: pointer;
   box-shadow: none;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.72);
   transition:
     color 0.2s ease,
-    opacity 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
     transform 0.2s ease;
 }
 
 .section-toggle:hover {
-  background: transparent;
+  border-color: rgba(147, 197, 253, 0.42);
+  background: rgba(59, 130, 246, 0.18);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: none;
 }
 
-.section-toggle-label {
-  position: relative;
-}
-
-.section-toggle-label::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  bottom: -3px;
-  height: 1px;
-  background: rgba(147, 197, 253, 0.82);
-  transition:
-    left 0.2s ease,
-    right 0.2s ease;
-}
-
-.section-toggle:hover .section-toggle-label::after {
-  left: 0;
-  right: 0;
-}
-
-.section-toggle-wrap.is-collapsed .section-toggle {
-  flex-direction: column;
-  gap: 2px;
-  min-height: 50px;
-  padding: 6px 18px 2px;
+.section-toggle:active {
+  transform: scale(0.98);
 }
 
 .section-toggle-wrap.is-expanded .section-toggle {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.025);
   color: var(--text-muted);
-  text-shadow: none;
 }
 
 .section-toggle-wrap.is-expanded .section-toggle:hover {
+  border-color: rgba(147, 197, 253, 0.26);
+  background: rgba(59, 130, 246, 0.08);
   color: var(--primary-light);
 }
 
 .section-toggle:focus-visible {
   outline: 2px solid var(--primary-light);
-  outline-offset: 4px;
-  border-radius: 8px;
+  outline-offset: 3px;
 }
 
 .section-toggle i {
@@ -955,43 +893,16 @@ footer a:hover {
   height: auto;
   display: inline-block;
   flex: 0 0 auto;
-  border-radius: 0;
-  background: transparent;
   color: var(--primary-light);
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   line-height: 1;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.72));
   transition:
     transform 0.25s ease,
     color 0.2s ease;
 }
 
-.section-toggle-wrap.is-collapsed .section-toggle i {
-  margin-top: 2px;
-  animation: reveal-arrow-nudge 1.9s ease-in-out infinite;
-}
-
 .section-toggle.is-expanded i {
   transform: rotate(180deg);
-  animation: none;
-  filter: none;
-}
-
-@keyframes reveal-arrow-nudge {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(3px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .section-toggle-wrap.is-collapsed .section-toggle i {
-    animation: none;
-  }
 }
 
 @media (max-width: 899px) {
@@ -1030,38 +941,26 @@ footer a:hover {
   }
 
   .section-toggle-wrap {
-    min-height: 118px;
-    margin-top: -68px;
-    padding: 68px 0 3px;
-  }
-
-  .section-toggle-wrap.is-collapsed::before {
-    left: -4%;
-    right: -4%;
-    top: 20px;
-    height: 70px;
-    filter: blur(16px);
+    min-height: 80px;
+    margin-top: -34px;
+    padding: 34px 0 2px;
   }
 
   .section-toggle-wrap.is-expanded {
     min-height: 0;
-    margin-top: 20px;
+    margin-top: 18px;
     padding: 0;
   }
 
   .section-toggle {
-    min-height: 40px;
-    padding: 7px 10px;
-    font-size: 0.79rem;
-  }
-
-  .section-toggle-wrap.is-collapsed .section-toggle {
-    min-height: 46px;
-    padding: 5px 12px 1px;
+    min-height: 44px;
+    padding: 9px 16px;
+    gap: 9px;
+    font-size: 0.86rem;
   }
 
   .section-toggle i {
-    font-size: 0.68rem;
+    font-size: 0.72rem;
   }
 }
 
@@ -1878,7 +1777,7 @@ footer a:hover {
 
 @media (max-width: 767px) {
   .projects {
-    padding: 44px 16px 56px;
+    padding: 44px 16px 34px;
   }
 
   .project-grid {
