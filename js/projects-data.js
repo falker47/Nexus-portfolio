@@ -197,19 +197,121 @@ const projectsMap = {
       { url: "https://falker47.github.io/SOMMATRIX/", textKey: "liveDemo", icon: "fas fa-globe" },
       { url: "https://github.com/falker47/SOMMATRIX", textKey: "githubRepo", icon: "fab fa-github" }
     ]
+  },
+
+  "SocialViewer": {
+    title: "Social Viewer",
+    descriptionKey: "SocialViewerDesc",
+    image: "assets/socialviewer/testers-preview.webp",
+    category: "product",
+    tags: [
+      { text: "Android", type: "product", emoji: "📱", tooltip: "Native Android application" },
+      { text: "Kotlin + Compose", type: "tech", emoji: "", tooltip: "Jetpack Compose UI" },
+      { text: "Privacy-first", type: "desc", emoji: "", tooltip: "No account, history, analytics or project backend" }
+    ],
+    links: [
+      { url: "testers.html", textKey: "joinTest", icon: "fab fa-google-play" },
+      { url: "https://github.com/falker47/SocialViewer", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "EasyContract": {
+    title: "Easy Contract",
+    descriptionKey: "EasyContractDesc",
+    image: "assets/projects/easycontract.webp",
+    category: "product",
+    tags: [
+      { text: "Product", type: "product", emoji: "🌐", tooltip: "Serverless document-reading aid" },
+      { text: "Google GenAI", type: "tech", emoji: "", tooltip: "Gemini document analysis" },
+      { text: "Netlify Functions", type: "desc", emoji: "", tooltip: "Validated serverless request boundary" }
+    ],
+    links: [
+      { url: "https://easy-contract.netlify.app/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/easy-contract", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "CarteSenzaUmanita": {
+    title: "Carte senza Umanità",
+    descriptionKey: "CarteSenzaUmanitaDesc",
+    image: "assets/projects/csu_preview.webp",
+    category: "game",
+    tags: [
+      { text: "Game", type: "game", emoji: "🎮", tooltip: "Real-time multiplayer party game" },
+      { text: "React + Node.js", type: "tech", emoji: "", tooltip: "Vite client and Express server" },
+      { text: "Socket.io", type: "desc", emoji: "", tooltip: "Rooms, rounds and reconnection in real time" }
+    ],
+    links: [
+      { url: "https://carte-senza-umanita.onrender.com/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/Carte-senza-Umanita", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "OurSoundtrack": {
+    title: "Our Soundtrack",
+    descriptionKey: "OurSoundtrackDesc",
+    image: "assets/projects/our-soundtrack.jpg",
+    category: "product",
+    tags: [
+      { text: "PWA", type: "product", emoji: "🎵", tooltip: "Installable personal music player" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Vanilla JavaScript media player" },
+      { text: "Offline", type: "desc", emoji: "", tooltip: "Opt-in media caching and offline seeking" }
+    ],
+    links: [
+      { url: "https://falker47.github.io/our-soundtrack/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/our-soundtrack", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "Panacea": {
+    title: "Panacea",
+    descriptionKey: "PanaceaDesc",
+    image: "assets/projects/panacea.webp",
+    category: "utility",
+    tags: [
+      { text: "Utility", type: "utility", emoji: "🛠️", tooltip: "Windows maintenance application" },
+      { text: "Python", type: "tech", emoji: "", tooltip: "CustomTkinter desktop application" },
+      { text: "Windows", type: "desc", emoji: "", tooltip: "Native maintenance and repair commands" }
+    ],
+    links: [
+      { url: "https://github.com/falker47/Panacea", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
+  },
+
+  "CodiceFiscale": {
+    title: "Codice Fiscale",
+    descriptionKey: "CodiceFiscaleDesc",
+    image: "assets/projects/codice-fiscale.webp",
+    category: "utility",
+    tags: [
+      { text: "Utility", type: "utility", emoji: "🛠️", tooltip: "Italian fiscal-code calculator and decoder" },
+      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Client-side ES modules" },
+      { text: "Validation", type: "desc", emoji: "", tooltip: "Formal checks, omocodia and Belfiore codes" }
+    ],
+    links: [
+      { url: "https://falker47.github.io/Codice-Fiscale/", textKey: "liveDemo", icon: "fas fa-globe" },
+      { url: "https://github.com/falker47/Codice-Fiscale", textKey: "githubRepo", icon: "fab fa-github" }
+    ]
   }
+
 };
 
 const projectsOrder = [
   "ProfGecko",
   "Ringmin",
   "Camaleonte",
+  "SocialViewer",
   "ChiLhaDetto",
   "DiarioDiBordo",
+  "EasyContract",
   "HLSE",
   "ZEROfilez",
   "PMDTools",
+  "CarteSenzaUmanita",
+  "OurSoundtrack",
+  "Panacea",
   "IbanChecker",
+  "CodiceFiscale",
   "Sommatrix",
   "CrackTheCode"
 ];

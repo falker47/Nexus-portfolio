@@ -55,6 +55,7 @@ const translations = {
     showAllCertifications: "Altre certificazioni",
     showLessCertifications: "Riduci",
     liveDemo: "Apri",
+    joinTest: "Prova l'app",
     playStore: "Play Store",
     githubRepo: "Repo GitHub",
     saveEditor: "Save Editor",
@@ -92,7 +93,13 @@ const translations = {
     ZEROfilezDesc: "Utility client-side a doppio uso: archivio pubblico di strumenti e frontend per pacchetti cifrati. Pacchetto e chiave sono elaborati nel browser, senza backend di upload.",
     IbanCheckerDesc: "Validatore client-side per IBAN italiani: controlla struttura, Mod.97, CIN e ABI/CAB e, quando trova un errore, propone correzioni plausibili per refusi o caratteri invertiti.",
     CrackTheCodeDesc: "Puzzle browser single-player ispirato a Mastermind, con partita libera e campagna da nove livelli.",
-    SommatrixDesc: "Puzzle matematico: seleziona i numeri della griglia per raggiungere i target di righe e colonne. Ogni schema è verificato prima della partita per accettare solo puzzle con un’unica soluzione globale."
+    SommatrixDesc: "Puzzle matematico: seleziona i numeri della griglia per raggiungere i target di righe e colonne. Ogni schema è verificato prima della partita per accettare solo puzzle con un’unica soluzione globale.",
+    SocialViewerDesc: "App Android per aprire singoli link pubblici di TikTok, Instagram, Threads, YouTube, Reddit, Pinterest, X e Bluesky senza account Social Viewer, cronologia, analytics o backend del progetto.",
+    EasyContractDesc: "Web app serverless che trasforma PDF o immagini di contratti in un supporto di lettura strutturato con Gemini, con validazione lato backend e confini espliciti rispetto alla consulenza legale.",
+    CarteSenzaUmanitaDesc: "Party game multiplayer in tempo reale con stanze, giudice a rotazione, punteggio e riconnessione, costruito con React, Node.js e Socket.io.",
+    OurSoundtrackDesc: "PWA musicale personale da 20 brani con artwork, testi e video, più download offline opzionale, ripresa dei download e seeking sui media già memorizzati.",
+    PanaceaDesc: "Utility Windows in Python che raccoglie monitoraggio, pulizia, riparazione e controlli prestazioni usando strumenti nativi di sistema, con build PyInstaller e CI su Windows.",
+    CodiceFiscaleDesc: "Calcolatore e decoder client-side del Codice Fiscale italiano con controlli formali, omocodia, codici Belfiore e gestione delle località omonime."
   },
 
   en: {
@@ -147,6 +154,7 @@ const translations = {
     showAllCertifications: "More certifications",
     showLessCertifications: "Collapse",
     liveDemo: "Open",
+    joinTest: "Test the app",
     playStore: "Play Store",
     githubRepo: "GitHub Repo",
     saveEditor: "Save Editor",
@@ -184,6 +192,12 @@ const translations = {
     ZEROfilezDesc: "Dual-purpose client-side utility: a public tools archive and a frontend for encrypted packages. Package and key processing stays in the browser, with no upload backend.",
     IbanCheckerDesc: "Client-side validator for Italian IBANs that checks structure, Mod 97, CIN, and ABI/CAB codes, then suggests plausible fixes for typos or swapped characters.",
     CrackTheCodeDesc: "Single-player browser puzzle inspired by Mastermind, with free play and a nine-level campaign.",
-    SommatrixDesc: "Mathematical grid puzzle: select numbers to match each row and column target. Every board is verified before play so only puzzles with exactly one global solution are shown."
+    SommatrixDesc: "Mathematical grid puzzle: select numbers to match each row and column target. Every board is verified before play so only puzzles with exactly one global solution are shown.",
+    SocialViewerDesc: "Android app for opening single public TikTok, Instagram, Threads, YouTube, Reddit, Pinterest, X, and Bluesky links without a Social Viewer account, viewing history, analytics, or project backend.",
+    EasyContractDesc: "Serverless web app that turns contract PDFs or images into a structured Gemini-assisted reading aid, with backend validation and explicit boundaries around legal advice.",
+    CarteSenzaUmanitaDesc: "Real-time multiplayer party game with rooms, rotating judge, scoring, and reconnection, built with React, Node.js, and Socket.io.",
+    OurSoundtrackDesc: "Personal 20-track music PWA with artwork, lyrics, and video, plus opt-in offline downloads, resumable caching, and seeking across stored media.",
+    PanaceaDesc: "Python Windows utility combining monitoring, cleanup, repair, and performance controls through native system tools, with PyInstaller packaging and Windows CI.",
+    CodiceFiscaleDesc: "Client-side Italian fiscal-code calculator and decoder with formal validation, omocodia support, Belfiore codes, and duplicate-place disambiguation."
   }
 };
