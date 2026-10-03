@@ -42,9 +42,9 @@ const projectsMap = {
     title: "Prof. Gecko",
     descriptionKey: "ProfGeckoDesc",
     image: "assets/projects/prof-gecko.jpg",
-    category: "product",
+    category: "app",
     tags: [
-      { text: "Product", type: "product", emoji: "🌐", tooltip: "Public product with private source code" },
+      { text: "App", type: "app", emoji: "💻", tooltip: "Public application with private source code" },
       { text: "Next.js + FastAPI", type: "tech", emoji: "", tooltip: "Full-stack web architecture" },
       { text: "RAG", type: "desc", emoji: "", tooltip: "Generation-aware Pokémon knowledge retrieval" }
     ],
@@ -57,9 +57,9 @@ const projectsMap = {
     title: "Chi l'ha detto?",
     descriptionKey: "ChiLhaDettoDesc",
     image: "assets/projects/chilhadetto.png",
-    category: "product",
+    category: "game",
     tags: [
-      { text: "Product", type: "product", emoji: "🌐", tooltip: "Deployed interactive web product" },
+      { text: "Game", type: "game", emoji: "🎮", tooltip: "Deployed interactive web game" },
       { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "Vite frontend" },
       { text: "Neon + Vercel", type: "desc", emoji: "", tooltip: "Serverless leaderboard and PostgreSQL" }
     ],
@@ -73,9 +73,9 @@ const projectsMap = {
     title: "Camaleonte",
     descriptionKey: "CamaleonteDesc",
     image: "assets/projects/camaleonte-3-2-ratio.webp",
-    category: "product",
+    category: "game",
     tags: [
-      { text: "Product", type: "product", emoji: "🌐", tooltip: "Installable single-device party game" },
+      { text: "Game", type: "game", emoji: "🎮", tooltip: "Installable single-device party game" },
       { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "React 19, Vite and Zustand" },
       { text: "PWA", type: "desc", emoji: "", tooltip: "Offline-capable progressive web app" }
     ],
@@ -90,9 +90,9 @@ const projectsMap = {
     title: "Diario di Bordo",
     descriptionKey: "DiarioDiBordoDesc",
     image: "assets/projects/diario-di-bordo-preview.webp",
-    category: "product",
+    category: "app",
     tags: [
-      { text: "Product", type: "product", emoji: "🌐", tooltip: "Mobile-first application for an educational community" },
+      { text: "App", type: "app", emoji: "💻", tooltip: "Mobile-first application for an educational community" },
       { text: "React + TypeScript", type: "tech", emoji: "", tooltip: "Vite frontend" },
       { text: "Supabase", type: "desc", emoji: "", tooltip: "PostgreSQL, Auth, RLS and Edge Functions" }
     ],
@@ -203,9 +203,9 @@ const projectsMap = {
     title: "Social Viewer",
     descriptionKey: "SocialViewerDesc",
     image: "assets/socialviewer/testers-preview.webp",
-    category: "product",
+    category: "app",
     tags: [
-      { text: "Android", type: "product", emoji: "📱", tooltip: "Native Android application" },
+      { text: "Android", type: "app", emoji: "📱", tooltip: "Native Android application" },
       { text: "Kotlin + Compose", type: "tech", emoji: "", tooltip: "Jetpack Compose UI" },
       { text: "Privacy-first", type: "desc", emoji: "", tooltip: "No account, history, analytics or project backend" }
     ],
@@ -219,9 +219,9 @@ const projectsMap = {
     title: "Easy Contract",
     descriptionKey: "EasyContractDesc",
     image: "assets/projects/easycontract.webp",
-    category: "product",
+    category: "app",
     tags: [
-      { text: "Product", type: "product", emoji: "🌐", tooltip: "Serverless document-reading aid" },
+      { text: "App", type: "app", emoji: "💻", tooltip: "Serverless document-reading aid" },
       { text: "Google GenAI", type: "tech", emoji: "", tooltip: "Gemini document analysis" },
       { text: "Netlify Functions", type: "desc", emoji: "", tooltip: "Validated serverless request boundary" }
     ],
