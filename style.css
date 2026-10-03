@@ -2228,6 +2228,75 @@ footer {
   white-space: normal;
 }
 
+/* Desktop: keep the hero as a compact introduction rather than a full-screen
+   destination, so the Projects section is already visible in the first viewport. */
+@media (min-width: 901px) {
+  .intro {
+    min-height: clamp(430px, 50vh, 500px);
+  }
+
+  .intro .hero-content {
+    min-height: calc(clamp(430px, 50vh, 500px) - 68px);
+    padding: 22px var(--section-space-x) 24px;
+  }
+
+  .intro .hero-card {
+    width: min(100%, 1020px);
+    max-width: 1020px;
+    padding: 24px 32px 20px;
+  }
+
+  .intro .hero-main {
+    gap: clamp(24px, 3vw, 38px);
+  }
+
+  .intro .hero-post {
+    grid-template-columns: 116px minmax(0, 1fr);
+    min-height: 116px;
+    column-gap: 18px;
+    row-gap: 8px;
+  }
+
+  .intro .hero-profile-photo {
+    width: 116px;
+    height: 116px;
+    border-radius: 20px;
+  }
+
+  .intro .hero-identity-copy {
+    transform: translateY(5px);
+  }
+
+  .intro .hero-identity-copy strong {
+    font-size: 1rem;
+  }
+
+  .intro .hero-identity-copy span {
+    font-size: 0.78rem;
+  }
+
+  .intro .hero-quote h1 {
+    font-size: clamp(1.14rem, 1.35vw, 1.34rem);
+  }
+
+  .intro .hero-divider {
+    height: 132px;
+  }
+
+  .intro .hero-description {
+    max-width: 400px;
+    gap: 8px;
+    font-size: clamp(0.84rem, 0.85vw, 0.92rem);
+    line-height: 1.6;
+  }
+
+  .intro .hero-kicker {
+    margin-top: 19px !important;
+    font-size: clamp(0.61rem, 0.64vw, 0.68rem) !important;
+    letter-spacing: 0.125em;
+  }
+}
+
 /* Mobile: one compact top bar; navigation opens below only on demand. */
 @media (max-width: 900px) {
   .navbar {
