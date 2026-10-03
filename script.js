@@ -6,6 +6,15 @@
 
 const LANGUAGE_STORAGE_KEY = 'nexus-language';
 
+function detectBrowserLanguage() {
+  const preferredLanguage =
+    (navigator.languages && navigator.languages[0]) ||
+    navigator.language ||
+    'en';
+
+  return String(preferredLanguage).toLowerCase().startsWith('it') ? 'it' : 'en';
+}
+
 function getPreferredLanguage() {
   try {
     const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
@@ -16,7 +25,7 @@ function getPreferredLanguage() {
     // Storage can be unavailable in restricted browsing contexts.
   }
 
-  return 'it';
+  return detectBrowserLanguage();
 }
 
 function persistLanguage(lang) {
@@ -471,6 +480,16 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       switchLanguage(this.dataset.lang);
     });
+  });
+
+  // Keep Root and Nexus language state synchronized across open tabs.
+  window.addEventListener("storage", (event) => {
+    if (
+      event.key === LANGUAGE_STORAGE_KEY &&
+      (event.newValue === "it" || event.newValue === "en")
+    ) {
+      switchLanguage(event.newValue);
+    }
   });
 });
 
