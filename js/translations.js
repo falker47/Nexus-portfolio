@@ -97,7 +97,6 @@ const translations = {
     SocialViewerDesc: "App Android per aprire singoli link pubblici di TikTok, Instagram, Threads, YouTube, Reddit, Pinterest, X e Bluesky senza account Social Viewer, cronologia, analytics o backend del progetto.",
     EasyContractDesc: "Web app serverless che trasforma PDF o immagini di contratti in un supporto di lettura strutturato con Gemini, con validazione lato backend e confini espliciti rispetto alla consulenza legale.",
     CarteSenzaUmanitaDesc: "Party game multiplayer in tempo reale con stanze, giudice a rotazione, punteggio e riconnessione, costruito con React, Node.js e Socket.io.",
-    OurSoundtrackDesc: "PWA musicale personale da 20 brani con artwork, testi e video, più download offline opzionale, ripresa dei download e seeking sui media già memorizzati.",
     PanaceaDesc: "Utility Windows in Python che raccoglie monitoraggio, pulizia, riparazione e controlli prestazioni usando strumenti nativi di sistema, con build PyInstaller e CI su Windows.",
     CodiceFiscaleDesc: "Calcolatore e decoder client-side del Codice Fiscale italiano con controlli formali, omocodia, codici Belfiore e gestione delle località omonime."
   },
@@ -196,7 +195,6 @@ const translations = {
     SocialViewerDesc: "Android app for opening single public TikTok, Instagram, Threads, YouTube, Reddit, Pinterest, X, and Bluesky links without a Social Viewer account, viewing history, analytics, or project backend.",
     EasyContractDesc: "Serverless web app that turns contract PDFs or images into a structured Gemini-assisted reading aid, with backend validation and explicit boundaries around legal advice.",
     CarteSenzaUmanitaDesc: "Real-time multiplayer party game with rooms, rotating judge, scoring, and reconnection, built with React, Node.js, and Socket.io.",
-    OurSoundtrackDesc: "Personal 20-track music PWA with artwork, lyrics, and video, plus opt-in offline downloads, resumable caching, and seeking across stored media.",
     PanaceaDesc: "Python Windows utility combining monitoring, cleanup, repair, and performance controls through native system tools, with PyInstaller packaging and Windows CI.",
     CodiceFiscaleDesc: "Client-side Italian fiscal-code calculator and decoder with formal validation, omocodia support, Belfiore codes, and duplicate-place disambiguation."
   }
