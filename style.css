@@ -2927,8 +2927,8 @@ footer.site-footer {
   .project-card .card-content > p {
     margin-bottom: 10px;
     -webkit-line-clamp: 3;
-    font-size: 0.8rem;
-    line-height: 1.45;
+    font-size: 0.74rem;
+    line-height: 1.42;
   }
 
   .button-row {
