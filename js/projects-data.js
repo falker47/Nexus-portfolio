@@ -247,22 +247,6 @@ const projectsMap = {
     ]
   },
 
-  "OurSoundtrack": {
-    title: "Our Soundtrack",
-    descriptionKey: "OurSoundtrackDesc",
-    image: "assets/projects/our-soundtrack.jpg",
-    category: "product",
-    tags: [
-      { text: "PWA", type: "product", emoji: "🎵", tooltip: "Installable personal music player" },
-      { text: "JavaScript", type: "tech", emoji: "", tooltip: "Vanilla JavaScript media player" },
-      { text: "Offline", type: "desc", emoji: "", tooltip: "Opt-in media caching and offline seeking" }
-    ],
-    links: [
-      { url: "https://falker47.github.io/our-soundtrack/", textKey: "liveDemo", icon: "fas fa-globe" },
-      { url: "https://github.com/falker47/our-soundtrack", textKey: "githubRepo", icon: "fab fa-github" }
-    ]
-  },
-
   "Panacea": {
     title: "Panacea",
     descriptionKey: "PanaceaDesc",
@@ -308,7 +292,6 @@ const projectsOrder = [
   "ZEROfilez",
   "PMDTools",
   "CarteSenzaUmanita",
-  "OurSoundtrack",
   "Panacea",
   "IbanChecker",
   "CodiceFiscale",
