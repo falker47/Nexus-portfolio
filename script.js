@@ -552,15 +552,28 @@ function initProjectFilter() {
   let resizeFrame = null;
   let isToggleAnimating = false;
 
-  const getRenderedColumnCount = () => {
-    // Measure all cards without changing their visible state on the next paint.
-    const hiddenState = projectCards.map(card => card.classList.contains('hidden'));
-    projectCards.forEach(card => card.classList.remove('hidden'));
+  const getMatchingCards = () =>
+    projectCards.filter(card => {
+      const category = card.getAttribute('data-category');
+      return activeFilter === 'all' || category === activeFilter;
+    });
 
-    const firstTop = projectCards[0].offsetTop;
+  const getRenderedColumnCount = (matchingCards) => {
+    if (!matchingCards.length) return 1;
+
+    // Measure the active category with every matching card temporarily visible.
+    // This preserves the real responsive grid geometry without coupling the
+    // preview limit to the previous filter's hidden state.
+    const hiddenState = projectCards.map(card => card.classList.contains('hidden'));
+
+    projectCards.forEach(card => {
+      card.classList.toggle('hidden', !matchingCards.includes(card));
+    });
+
+    const firstTop = matchingCards[0].offsetTop;
     let columns = 0;
 
-    for (const card of projectCards) {
+    for (const card of matchingCards) {
       if (card.offsetTop !== firstTop) break;
       columns += 1;
     }
@@ -572,28 +585,38 @@ function initProjectFilter() {
     return Math.max(1, columns);
   };
 
-  const getPreviewLimit = () => {
-    const columns = getRenderedColumnCount();
+  const getPreviewLimit = (matchingCards) => {
+    const columns = getRenderedColumnCount(matchingCards);
     const previewRows = window.innerWidth <= 767 ? 2 : 1;
-    return Math.min(projectCards.length, columns * previewRows);
+    return Math.min(matchingCards.length, columns * previewRows);
   };
 
   const update = () => {
-    const previewLimit = getPreviewLimit();
+    const matchingCards = getMatchingCards();
+    const previewLimit = getPreviewLimit(matchingCards);
+    const matchingIndex = new Map(
+      matchingCards.map((card, index) => [card, index])
+    );
 
-    projectCards.forEach((card, index) => {
-      const category = card.getAttribute('data-category');
-      const matchesFilter = activeFilter === 'all' || category === activeFilter;
-      const withinPreview = expanded || activeFilter !== 'all' || index < previewLimit;
+    projectCards.forEach(card => {
+      const rank = matchingIndex.get(card);
+      const matchesFilter = rank !== undefined;
+      const withinPreview = expanded || (matchesFilter && rank < previewLimit);
 
       card.classList.toggle('hidden', !(matchesFilter && withinPreview));
     });
 
     if (toggle) {
-      const canExpand = activeFilter === 'all' && projectCards.length > previewLimit;
+      const canExpand = matchingCards.length > previewLimit;
       toggle.hidden = !canExpand;
       if (toggleWrap) toggleWrap.hidden = !canExpand;
-      updateSectionToggle(toggle, expanded, 'showAllProjects', 'showLessProjects');
+
+      updateSectionToggle(
+        toggle,
+        expanded,
+        'showAllProjects',
+        'showLessProjects'
+      );
     }
   };
 
@@ -614,23 +637,32 @@ function initProjectFilter() {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeFilter = btn.getAttribute('data-filter') || 'all';
+
+      // Every category starts compact, with its own responsive top-N preview.
+      expanded = false;
       update();
     });
   });
 
   if (toggle) {
     toggle.addEventListener('click', async () => {
-      if (isToggleAnimating || activeFilter !== 'all') return;
+      if (isToggleAnimating) return;
 
-      const previewLimit = getPreviewLimit();
-      const affectedItems = projectCards.slice(previewLimit);
+      const matchingCards = getMatchingCards();
+      const previewLimit = getPreviewLimit(matchingCards);
+      const affectedItems = matchingCards.slice(previewLimit);
+
       if (!affectedItems.length) return;
 
       expanded = !expanded;
       isToggleAnimating = true;
 
-      // The arrow reacts immediately; the grid then grows/shrinks underneath it.
-      updateSectionToggle(toggle, expanded, 'showAllProjects', 'showLessProjects');
+      updateSectionToggle(
+        toggle,
+        expanded,
+        'showAllProjects',
+        'showLessProjects'
+      );
 
       try {
         await animateSectionItems(
