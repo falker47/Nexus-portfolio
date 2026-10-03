@@ -682,7 +682,7 @@ footer a:hover {
 
 /* Sezione Certificazioni */
 .certifications {
-  padding: 48px 20px 48px;
+  padding: 48px 20px 68px;
   background: linear-gradient(180deg, var(--bg-elevated), #151a24);
   color: #ddd;
   text-align: center;
@@ -773,7 +773,7 @@ footer a:hover {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  font-size: 1rem;
+  font-size: 1.12rem;
   line-height: 1.35;
 }
 
@@ -869,8 +869,8 @@ footer a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  min-height: 50px;
+  gap: 5px;
+  min-height: 52px;
   padding: 5px 18px 1px;
   border: 0;
   border-radius: 0;
@@ -930,8 +930,8 @@ footer a:hover {
 }
 
 .section-toggle i {
-  width: 24px;
-  height: 18px;
+  width: 28px;
+  height: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -940,7 +940,7 @@ footer a:hover {
   color: var(--primary-light);
   font-size: 1rem;
   line-height: 1;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.76));
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.82));
   animation: reveal-arrow-nudge 1.9s ease-in-out infinite;
   transition:
     transform 0.25s ease,
@@ -988,7 +988,7 @@ footer a:hover {
 
 @media (max-width: 480px) {
   .certifications {
-    padding: 44px 16px 48px;
+    padding: 44px 16px 68px;
   }
 
   .certification-list {
@@ -1026,15 +1026,15 @@ footer a:hover {
 
   .section-toggle {
     bottom: -10px;
-    min-height: 50px;
+    min-height: 52px;
     padding: 5px 14px 1px;
     font-size: 0.78rem;
   }
 
   .section-toggle i {
-    width: 26px;
-    height: 20px;
-    font-size: 1.05rem;
+    width: 29px;
+    height: 22px;
+    font-size: 1.16rem;
   }
 }
 
@@ -1663,7 +1663,7 @@ footer a:hover {
    and stable sizing when filters leave only one or two results. */
 .projects {
   max-width: 1240px;
-  padding: 48px 20px 42px;
+  padding: 48px 20px 64px;
 }
 
 .project-grid {
