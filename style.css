@@ -2915,20 +2915,21 @@ footer.site-footer {
   }
 
   .tech-tags {
-    gap: 5px;
-    margin-bottom: 8px;
+    gap: 4px;
+    margin-bottom: 6px;
   }
 
   .tech-tag {
-    padding: 2px 7px;
-    font-size: 0.68rem;
+    padding: 1px 6px;
+    font-size: 0.62rem;
+    line-height: 1.25;
   }
 
   .project-card .card-content > p {
     margin-bottom: 10px;
-    -webkit-line-clamp: 3;
-    font-size: 0.74rem;
-    line-height: 1.42;
+    -webkit-line-clamp: 4;
+    font-size: 0.72rem;
+    line-height: 1.38;
   }
 
   .button-row {
