@@ -1696,6 +1696,12 @@ footer a:hover {
   object-position: center;
 }
 
+/* Social Viewer artwork is composed left-heavy: preserve the logo by cropping
+   a little more from the right side instead of the left. */
+.project-card img[src="assets/socialviewer/testers-preview.webp"] {
+  object-position: 38% center;
+}
+
 .project-card .card-content {
   padding: 18px 20px 20px;
   justify-content: flex-start;
