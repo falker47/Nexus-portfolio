@@ -1684,21 +1684,29 @@ footer a:hover {
   transform: translateY(-4px);
 }
 
-.project-card img,
+.project-media,
 .project-image-fallback {
   width: 100%;
   aspect-ratio: 16 / 9;
+  flex: 0 0 auto;
 }
 
-.project-card img {
-  height: auto;
+.project-media {
+  overflow: hidden;
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
   object-fit: cover;
   object-position: center;
 }
 
-/* Social Viewer is wider than the 16:9 card frame. Keep the complete left edge
-   (logo/text) visible and place the necessary crop entirely on the right. */
-.project-card[data-project="SocialViewer"] img {
+/* Social Viewer is wider than the standard 16:9 media frame. Preserve the
+   complete logo + catchphrase on the left; crop only the non-essential right. */
+.project-card[data-project="SocialViewer"] .project-media img {
   object-position: left center;
 }
 
