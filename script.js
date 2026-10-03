@@ -513,10 +513,10 @@ function initHeroVideo() {
 
 /**
  * Project filtering plus compact default view.
- * The compact "All" view always shows exactly two visual rows, based on the
- * grid's actual rendered column count. This keeps the preview aligned with CSS
- * even when viewport width, browser zoom, OS scaling or container width make
- * the grid reflow differently from nominal device breakpoints.
+ * The compact "All" view shows one visual row from tablet/desktop widths up,
+ * while mobile keeps two cards visible. The limit uses the grid's actual
+ * rendered column count so browser zoom, OS scaling and container width stay
+ * aligned with the CSS reflow.
  */
 function initProjectFilter() {
   const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
@@ -554,7 +554,8 @@ function initProjectFilter() {
 
   const getPreviewLimit = () => {
     const columns = getRenderedColumnCount();
-    return Math.min(projectCards.length, columns * 2);
+    const previewRows = window.innerWidth <= 767 ? 2 : 1;
+    return Math.min(projectCards.length, columns * previewRows);
   };
 
   const update = () => {
