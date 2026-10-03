@@ -94,7 +94,7 @@ function renderProjects() {
     card.setAttribute('data-project', projectId);
 
     const imageHtml = p.image
-      ? `<img src="${p.image}" alt="${p.title || 'Project'}" loading="lazy">`
+      ? `<div class="project-media"><img src="${p.image}" alt="${p.title || 'Project'}" loading="lazy"></div>`
       : `<div class="project-image-fallback" role="img" aria-label="${p.title || 'Project'}">${p.icon || '◆'}</div>`;
 
     card.innerHTML = `
