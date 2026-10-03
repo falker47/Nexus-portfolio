@@ -1293,7 +1293,8 @@ footer a:hover {
   gap: 4px;
 }
 
-/* Category: Product - Cyan */
+/* Category: App - Cyan */
+.tech-tag.app,
 .tech-tag.product,
 .tech-tag.webapp {
   background: rgba(6, 182, 212, 0.2);
@@ -1432,7 +1433,7 @@ footer a:hover {
 }
 
 /* Category Border Colors for Buttons */
-.filter-btn[data-filter="product"] {
+.filter-btn[data-filter="app"] {
   border-color: rgba(6, 182, 212, 0.55);
 }
 
@@ -1455,7 +1456,7 @@ footer a:hover {
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
 
-.filter-btn[data-filter="product"]:hover {
+.filter-btn[data-filter="app"]:hover {
   background: rgba(6, 182, 212, 0.15);
   border-color: rgba(6, 182, 212, 0.85);
   box-shadow: 0 0 10px rgba(6, 182, 212, 0.28);
@@ -1480,7 +1481,7 @@ footer a:hover {
 }
 
 /* Filter category colors on active */
-.filter-btn.active[data-filter="product"] {
+.filter-btn.active[data-filter="app"] {
   background: linear-gradient(135deg, #06b6d4, #0891b2);
   box-shadow: 0 4px 15px rgba(6, 182, 212, 0.25);
 }
@@ -2773,4 +2774,26 @@ footer.site-footer {
   }
 }
 
+/* ===== PROJECT FILTER HIERARCHY + TITLE CLIP FIX ===== */
+.projects .section-title {
+  line-height: 1.18 !important;
+  padding-bottom: 0.1em;
+  overflow: visible;
+}
+
+/* Keep the cyan application family distinct from utilities and games. */
+.filter-btn[data-filter="app"] {
+  border-color: rgba(6, 182, 212, 0.55);
+}
+
+.filter-btn[data-filter="app"]:hover {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.85);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.28);
+}
+
+.filter-btn.active[data-filter="app"] {
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.25);
+}
 
