@@ -2731,28 +2731,36 @@ footer.site-footer {
   padding: 10px clamp(16px, 3vw, 24px);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 18px;
+  justify-content: center;
   background: #0b0b0e;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   color: var(--text-muted);
   font-size: 0.72rem;
   line-height: 1.2;
-  text-align: left;
+  text-align: center;
 }
 
-.site-footer .footer-identity {
+.site-footer p {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.site-footer a {
   color: var(--text-muted);
   font-weight: 500;
   transition: color var(--transition-base);
 }
 
-.site-footer .footer-identity:hover {
+.site-footer a:hover {
   color: var(--text-light);
 }
 
-.site-footer .footer-year {
-  flex: 0 0 auto;
+.site-footer #currentYear {
+  margin-left: 0.34em;
   color: rgba(169, 178, 192, 0.78);
   font-variant-numeric: tabular-nums;
 }
@@ -2761,8 +2769,8 @@ footer.site-footer {
   footer.site-footer {
     min-height: 38px;
     padding: 9px 14px;
-    gap: 12px;
     font-size: 0.66rem;
   }
 }
+
 
