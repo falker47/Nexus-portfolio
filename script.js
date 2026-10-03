@@ -89,8 +89,9 @@ function renderProjects() {
       `;
     }).join('');
 
-    // Add category data attribute for filtering
+    // Add stable metadata attributes for filtering and project-specific styling.
     card.setAttribute('data-category', p.category || '');
+    card.setAttribute('data-project', projectId);
 
     const imageHtml = p.image
       ? `<img src="${p.image}" alt="${p.title || 'Project'}" loading="lazy">`
