@@ -94,11 +94,11 @@ const translations = {
     IbanCheckerDesc: "Validatore client-side per IBAN italiani: controlla struttura, Mod.97, CIN e ABI/CAB e, quando trova un errore, propone correzioni plausibili per refusi o caratteri invertiti.",
     CrackTheCodeDesc: "Puzzle browser single-player ispirato a Mastermind, con partita libera e campagna da nove livelli.",
     SommatrixDesc: "Puzzle matematico: seleziona i numeri della griglia per raggiungere i target di righe e colonne. Ogni schema è verificato prima della partita per accettare solo puzzle con un’unica soluzione globale.",
-    SocialViewerDesc: "App Android per aprire singoli link pubblici di TikTok, Instagram, Threads, YouTube, Reddit, Pinterest, X e Bluesky senza account Social Viewer, cronologia, analytics o backend del progetto.",
-    EasyContractDesc: "Web app serverless che trasforma PDF o immagini di contratti in un supporto di lettura strutturato con Gemini, con validazione lato backend e confini espliciti rispetto alla consulenza legale.",
-    CarteSenzaUmanitaDesc: "Party game multiplayer in tempo reale con stanze, giudice a rotazione, punteggio e riconnessione, costruito con React, Node.js e Socket.io.",
-    PanaceaDesc: "Utility Windows in Python che raccoglie monitoraggio, pulizia, riparazione e controlli prestazioni usando strumenti nativi di sistema, con build PyInstaller e CI su Windows.",
-    CodiceFiscaleDesc: "Calcolatore e decoder client-side del Codice Fiscale italiano con controlli formali, omocodia, codici Belfiore e gestione delle località omonime."
+    SocialViewerDesc: "Vedi il contenuto, non il feed. Apre i singoli link pubblici che ti arrivano da social diversi in un’interfaccia essenziale, senza trasformarsi in un altro social da scorrere.",
+    EasyContractDesc: "Legge contratti PDF o immagini per portare in superficie clausole, costi, scadenze e condizioni che meritano attenzione prima di firmare, distinguendo ciò che il documento dice da calcoli e incertezze.",
+    CarteSenzaUmanitaDesc: "Versione italiana non ufficiale di Cards Against Humanity pensata per giocare online in multiplayer, con un mazzo italiano selezionato e curato e partite gestite in tempo reale.",
+    PanaceaDesc: "Riunisce in un’unica interfaccia gli strumenti nativi di Windows per pulizia, riparazione e manutenzione, senza sostituirli con un motore proprietario. Il protocollo Resurrection li orchestra in una procedura completa per i PC più in difficoltà.",
+    CodiceFiscaleDesc: "Genera, valida e decodifica il Codice Fiscale gestendo omocodia e codici Belfiore; quando il secolo è ambiguo, il decoder lo esplicita invece di inventare un anno di nascita."
   },
 
   en: {
@@ -192,10 +192,10 @@ const translations = {
     IbanCheckerDesc: "Client-side validator for Italian IBANs that checks structure, Mod 97, CIN, and ABI/CAB codes, then suggests plausible fixes for typos or swapped characters.",
     CrackTheCodeDesc: "Single-player browser puzzle inspired by Mastermind, with free play and a nine-level campaign.",
     SommatrixDesc: "Mathematical grid puzzle: select numbers to match each row and column target. Every board is verified before play so only puzzles with exactly one global solution are shown.",
-    SocialViewerDesc: "Android app for opening single public TikTok, Instagram, Threads, YouTube, Reddit, Pinterest, X, and Bluesky links without a Social Viewer account, viewing history, analytics, or project backend.",
-    EasyContractDesc: "Serverless web app that turns contract PDFs or images into a structured Gemini-assisted reading aid, with backend validation and explicit boundaries around legal advice.",
-    CarteSenzaUmanitaDesc: "Real-time multiplayer party game with rooms, rotating judge, scoring, and reconnection, built with React, Node.js, and Socket.io.",
-    PanaceaDesc: "Python Windows utility combining monitoring, cleanup, repair, and performance controls through native system tools, with PyInstaller packaging and Windows CI.",
-    CodiceFiscaleDesc: "Client-side Italian fiscal-code calculator and decoder with formal validation, omocodia support, Belfiore codes, and duplicate-place disambiguation."
+    SocialViewerDesc: "See the content, not the feed. Social Viewer opens individual public links shared with you across different platforms in a clean, focused interface, without turning into another social app to scroll.",
+    EasyContractDesc: "Reads contract PDFs or page images to surface clauses, costs, deadlines, and terms worth checking before you sign, separating what the document actually says from calculations and uncertainty.",
+    CarteSenzaUmanitaDesc: "Unofficial Italian adaptation of Cards Against Humanity built for online multiplayer, with a curated Italian deck and real-time game management.",
+    PanaceaDesc: "Brings Windows’ native cleanup, repair, and maintenance tools into one interface instead of replacing them with a proprietary system engine. Its Resurrection protocol orchestrates them into a full maintenance workflow for PCs that need deeper intervention.",
+    CodiceFiscaleDesc: "Generates, validates, and decodes Italian fiscal codes with omocodia and Belfiore-code handling; when the century is ambiguous, the decoder says so instead of inventing a birth year."
   }
 };
