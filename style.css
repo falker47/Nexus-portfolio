@@ -2228,6 +2228,25 @@ footer {
   white-space: normal;
 }
 
+.intro .hero-research {
+  margin: 7px 0 0;
+  color: var(--text-muted);
+  font-size: clamp(0.68rem, 0.72vw, 0.76rem);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.intro .hero-research a {
+  color: var(--primary-light);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.intro .hero-research a:hover,
+.intro .hero-research a:focus-visible {
+  text-decoration: underline;
+}
+
 /* Desktop: keep the hero as a compact introduction rather than a full-screen
    destination, so the Projects section is already visible in the first viewport. */
 @media (min-width: 901px) {
