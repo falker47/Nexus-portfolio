@@ -55,7 +55,11 @@ function renderProjects() {
     card.style.animationDelay = `${index * 0.1}s`;
 
     // Title doubles as the lightweight primary entry point for the project.
-    const primaryUrl = p.links?.[0]?.url || null;
+    // A dedicated internal detail page can override the first outbound action.
+    const primaryUrl = p.detailUrl || p.links?.[0]?.url || null;
+    const primaryLinkAttrs = primaryUrl && /^https?:\/\//.test(primaryUrl)
+      ? ' target="_blank" rel="noopener noreferrer"'
+      : '';
     const titleContent = p.titleKey
       ? `<span data-i18n="${p.titleKey}">${p.titleKey}</span>`
       : p.title;
@@ -63,7 +67,7 @@ function renderProjects() {
 
     const titleHtml = primaryUrl
       ? `<h3${titleClass}>
-          <a class="project-title-link" href="${primaryUrl}" target="_blank" rel="noopener noreferrer">
+          <a class="project-title-link" href="${primaryUrl}"${primaryLinkAttrs}>
             <span>${titleContent}</span>
             <span class="project-title-arrow" aria-hidden="true">↗</span>
           </a>
