@@ -281,8 +281,8 @@ const projectsMap = {
 };
 
 const projectsOrder = [
-  "ProfGecko",
   "Ringmin",
+  "ProfGecko",
   "Camaleonte",
   "SocialViewer",
   "ChiLhaDetto",
