@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://falker47.github.io/Nexus-portfolio/</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <image:image>
       <image:loc>https://falker47.github.io/Nexus-portfolio/assets/profile/maurizio-falconi-falker47.webp</image:loc>
       <image:title>Maurizio Falconi (falker47)</image:title>
@@ -11,6 +11,10 @@
   <url>
     <loc>https://falker47.github.io/Nexus-portfolio/research.html</loc>
     <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://falker47.github.io/Nexus-portfolio/prof-gecko.html</loc>
+    <lastmod>2026-10-05</lastmod>
   </url>
   <url>
     <loc>https://falker47.github.io/Nexus-portfolio/consigli.html</loc>

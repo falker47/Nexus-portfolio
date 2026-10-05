@@ -41,6 +41,7 @@ const projectsMap = {
   "ProfGecko": {
     title: "Prof. Gecko",
     descriptionKey: "ProfGeckoDesc",
+    detailUrl: "prof-gecko.html",
     image: "assets/projects/prof-gecko.jpg",
     category: "app",
     tags: [

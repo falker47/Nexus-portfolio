@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prof. Gecko — Maurizio Falconi (falker47)</title>
+    <meta
+      name="description"
+      content="Prof. Gecko è un'app web Pokémon bilingue creata da Maurizio Falconi (falker47), con assistente RAG, Pokédex, Team Builder, Data Hub e strumenti di confronto."
+    />
+    <meta name="author" content="Maurizio Falconi (falker47)" />
+    <link rel="canonical" href="https://falker47.github.io/Nexus-portfolio/prof-gecko.html" />
+    <link rel="stylesheet" href="style.css?v=20261005-ringmin-entity-v1" />
+    <link rel="stylesheet" href="research.css?v=20261003-compact-research-v1" />
+    <link href="assets/branding/falkerlogo.png" rel="icon" type="image/png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nexus Portfolio" />
+    <meta property="og:title" content="Prof. Gecko — Maurizio Falconi (falker47)" />
+    <meta
+      property="og:description"
+      content="Bilingual Pokémon knowledge app by Maurizio Falconi (falker47): RAG assistant, Pokédex, Team Builder, Data Hub and comparison tools."
+    />
+    <meta property="og:url" content="https://falker47.github.io/Nexus-portfolio/prof-gecko.html" />
+    <meta
+      property="og:image"
+      content="https://falker47.github.io/Nexus-portfolio/assets/projects/prof-gecko.jpg"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Prof. Gecko — Maurizio Falconi (falker47)" />
+    <meta
+      name="twitter:description"
+      content="Bilingual Pokémon knowledge app by Maurizio Falconi (falker47): RAG assistant, Pokédex, Team Builder, Data Hub and comparison tools."
+    />
+    <meta
+      name="twitter:image"
+      content="https://falker47.github.io/Nexus-portfolio/assets/projects/prof-gecko.jpg"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://falker47.github.io/#person",
+            "name": "Maurizio Falconi",
+            "alternateName": "falker47",
+            "url": "https://falker47.github.io/",
+            "sameAs": [
+              "https://github.com/falker47",
+              "https://www.linkedin.com/in/mauriziofalconi/",
+              "https://orcid.org/0009-0005-3162-3651",
+              "https://scholar.google.com/citations?user=5xHRNvoAAAAJ",
+              "https://oeis.org/wiki/User:Maurizio_Falconi"
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://falker47.github.io/Nexus-portfolio/prof-gecko.html#page",
+            "url": "https://falker47.github.io/Nexus-portfolio/prof-gecko.html",
+            "name": "Prof. Gecko — Maurizio Falconi (falker47)",
+            "about": {
+              "@id": "https://falker47.github.io/Nexus-portfolio/prof-gecko.html#app"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://falker47.github.io/Nexus-portfolio/prof-gecko.html#app",
+            "name": "Prof. Gecko",
+            "applicationCategory": "ReferenceApplication",
+            "operatingSystem": "Web",
+            "inLanguage": ["it", "en"],
+            "url": "https://profgecko.vercel.app/",
+            "sameAs": "https://profgecko.vercel.app/",
+            "image": "https://falker47.github.io/Nexus-portfolio/assets/projects/prof-gecko.jpg",
+            "description": "A bilingual Pokémon knowledge application with a game- and generation-aware RAG assistant, Pokédex, Team Builder, Data Hub and comparison tools.",
+            "author": {
+              "@id": "https://falker47.github.io/#person"
+            },
+            "creator": {
+              "@id": "https://falker47.github.io/#person"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://falker47.github.io/Nexus-portfolio/prof-gecko.html#page"
+            }
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="research-page">
+    <nav class="navbar" aria-label="Navigazione principale">
+      <a class="logo" href="index.html#hero" aria-label="Maurizio Falconi — Home">
+        <img src="assets/branding/falkerlogo.png" alt="" class="logo-img" />
+        <span>Maurizio Falconi</span>
+      </a>
+
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="research.html" data-i18n="navResearch">Ricerca</a></li>
+        <li><a href="index.html#contact" data-i18n="navContact">Contatti</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="language-toggle" role="group" aria-label="Language selection">
+          <button class="lang-option" type="button" data-lang="it" aria-label="Italiano" aria-pressed="true" title="Italiano">
+            <span class="lang-flag lang-flag--it" aria-hidden="true"></span>
+          </button>
+          <button class="lang-option" type="button" data-lang="en" aria-label="English" aria-pressed="false" title="English">
+            <span class="lang-flag lang-flag--en" aria-hidden="true"></span>
+          </button>
+        </div>
+        <button class="nav-toggle" type="button" aria-label="Apri menu" aria-controls="primary-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="research-main">
+      <section class="research-intro" aria-labelledby="prof-gecko-title">
+        <p class="research-kicker" data-i18n="profGeckoKicker">Applied AI · RAG · Pokémon data</p>
+        <h1 id="prof-gecko-title">Prof. Gecko</h1>
+        <p data-i18n="profGeckoIntro">
+          Un hub Pokémon bilingue creato da Maurizio Falconi (falker47), pensato per unire consultazione strutturata e risposte contestuali in un'unica applicazione.
+        </p>
+      </section>
+
+      <section class="research-program" aria-labelledby="prof-gecko-overview">
+        <div class="research-program-heading">
+          <h2 id="prof-gecko-overview" data-i18n="profGeckoOverviewTitle">Che cos'è</h2>
+          <p data-i18n="profGeckoOverviewIntro">
+            L'app combina strumenti deterministici per esplorare dati Pokémon con un assistente RAG sensibile a gioco e generazione. Il prodotto è pubblico; il repository sorgente resta privato.
+          </p>
+        </div>
+
+        <div class="publication-list">
+          <article class="publication-row">
+            <div class="publication-marker" aria-hidden="true">01</div>
+            <div class="publication-main">
+              <p class="publication-bibliography" data-i18n="profGeckoFeature1Meta">Assistente contestuale</p>
+              <h3 data-i18n="profGeckoFeature1Title">RAG consapevole di gioco e generazione</h3>
+              <p class="publication-description" data-i18n="profGeckoFeature1Text">
+                Recupera il contesto pertinente prima di generare la risposta, distinguendo versioni, generazioni e domini informativi invece di trattare Pokémon come un'unica base dati indistinta.
+              </p>
+            </div>
+          </article>
+
+          <article class="publication-row">
+            <div class="publication-marker" aria-hidden="true">02</div>
+            <div class="publication-main">
+              <p class="publication-bibliography" data-i18n="profGeckoFeature2Meta">Strumenti strutturati</p>
+              <h3 data-i18n="profGeckoFeature2Title">Pokédex, Team Builder, Data Hub e confronti</h3>
+              <p class="publication-description" data-i18n="profGeckoFeature2Text">
+                Le risposte conversazionali sono affiancate da strumenti navigabili e verificabili per consultare dati, costruire squadre e confrontare Pokémon.
+              </p>
+            </div>
+          </article>
+
+          <article class="publication-row">
+            <div class="publication-marker" aria-hidden="true">03</div>
+            <div class="publication-main">
+              <p class="publication-bibliography" data-i18n="profGeckoFeature3Meta">Progetto pubblico · sorgente privata</p>
+              <h3 data-i18n="profGeckoFeature3Title">Un prodotto accessibile, senza pubblicare il repository</h3>
+              <p class="publication-description" data-i18n="profGeckoFeature3Text">
+                Prof. Gecko è disponibile come applicazione web pubblica. Questa pagina documenta in modo stabile il progetto e la sua attribuzione a Maurizio Falconi / falker47, mentre il codice sorgente resta privato.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="research-reproducibility" aria-labelledby="prof-gecko-access-title">
+        <div class="research-band-heading">
+          <h2 id="prof-gecko-access-title" data-i18n="profGeckoAccessTitle">Accedi al progetto</h2>
+          <p data-i18n="profGeckoAccessIntro">
+            La versione pubblica è disponibile sul deployment ufficiale. Il Nexus Portfolio resta la pagina di attribuzione e contesto del progetto.
+          </p>
+        </div>
+
+        <div class="research-resource-actions">
+          <a class="resource-action" href="https://profgecko.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <span class="resource-icon"><i class="fas fa-globe" aria-hidden="true"></i></span>
+            <span class="resource-copy">
+              <strong data-i18n="profGeckoLiveTitle">Prof. Gecko</strong>
+              <small data-i18n="profGeckoLiveDescription">Apri l'app web pubblica.</small>
+            </span>
+            <span class="resource-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="resource-action" href="index.html#projects">
+            <span class="resource-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
+            <span class="resource-copy">
+              <strong data-i18n="profGeckoPortfolioTitle">Nexus Portfolio</strong>
+              <small data-i18n="profGeckoPortfolioDescription">Torna agli altri progetti selezionati di falker47.</small>
+            </span>
+            <span class="resource-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="https://falker47.github.io/" rel="author">
+          <span data-i18n="footerName">Maurizio Falconi</span> · falker47
+        </a>
+        <span class="footer-separator" aria-hidden="true">&nbsp;-&nbsp;</span>
+        <a href="https://falker47.github.io/Nexus-portfolio/">Nexus Portfolio</a>
+        <span id="currentYear"></span>
+      </p>
+    </footer>
+
+    <script src="js/translations.js?v=20261005-prof-gecko-page-v1"></script>
+    <script src="script.js?v=20261005-prof-gecko-page-v1"></script>
+  </body>
+</html>
