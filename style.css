@@ -2229,7 +2229,7 @@ footer {
 }
 
 .intro .hero-research {
-  margin: 7px 0 0;
+  margin: 7px auto 0;
   color: var(--text-muted);
   font-size: clamp(0.68rem, 0.72vw, 0.76rem);
   line-height: 1.35;
