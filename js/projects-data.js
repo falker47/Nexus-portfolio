@@ -42,7 +42,7 @@ const projectsMap = {
     title: "Prof. Gecko",
     descriptionKey: "ProfGeckoDesc",
     detailUrl: "prof-gecko.html",
-    image: "assets/projects/prof-gecko.jpg",
+    image: "assets/projects/prof-gecko.webp",
     category: "app",
     tags: [
       { text: "App", type: "app", emoji: "💻", tooltip: "Public application with private source code" },
@@ -57,7 +57,7 @@ const projectsMap = {
   "ChiLhaDetto": {
     title: "Chi l'ha detto?",
     descriptionKey: "ChiLhaDettoDesc",
-    image: "assets/projects/chilhadetto.png",
+    image: "assets/projects/chilhadetto.webp",
     category: "game",
     tags: [
       { text: "Game", type: "game", emoji: "🎮", tooltip: "Deployed interactive web game" },
