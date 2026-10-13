@@ -107,7 +107,7 @@ function renderProjects() {
     card.setAttribute('data-project', projectId);
 
     const imageHtml = p.image
-      ? `<div class="project-media"><img src="${p.image}" alt="${p.title || 'Project'}" loading="lazy"></div>`
+      ? `<div class="project-media"><img src="${p.image}" alt="${p.title || 'Project'}" loading="lazy" decoding="async"></div>`
       : `<div class="project-image-fallback" role="img" aria-label="${p.title || 'Project'}">${p.icon || '◆'}</div>`;
 
     card.innerHTML = `
@@ -141,7 +141,7 @@ function renderCertifications() {
     item.innerHTML = `
       <div class="certification-card">
         <a href="${c.image}" class="cert-thumb-link" title="${c.title}">
-          <img src="${c.image}" alt="${c.title}" class="cert-thumb" loading="lazy">
+          <img src="${c.thumbnail || c.image}" alt="${c.title}" class="cert-thumb" loading="lazy" decoding="async">
         </a>
         <div class="cert-info">
           <h3>${c.title}</h3>
