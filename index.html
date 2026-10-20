@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://falker47.github.io/Nexus-portfolio/" />
     <meta name="google-site-verification" content="ZOWij9OnT_HZBDPG4FcCeEwF5m7MvFjqJuK53YtkCWw" />
     <!-- Link al file CSS -->
-    <link rel="stylesheet" href="style.css?v=20261021-project-first-v6" />
+    <link rel="stylesheet" href="style.css?v=20261020-balanced-section-rhythm-v4" />
 
     <!-- Favicons -->
     <link
@@ -103,6 +103,13 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,400;1,500&display=swap"
       rel="stylesheet"
     />
+    <!-- Preload Hero Poster -->
+    <link
+      rel="preload"
+      href="assets/hero/poster.webp"
+      as="image"
+      fetchpriority="high"
+    />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -119,15 +126,14 @@
 
     <!-- Navbar -->
     <nav class="navbar" aria-label="Navigazione principale">
-      <a class="logo" href="https://falker47.github.io/" aria-label="Maurizio Falconi — Home">
+      <a class="logo" href="#hero" aria-label="Maurizio Falconi — Home">
         <img src="assets/branding/falkerlogo.webp" alt="" class="logo-img" />
         <span>Maurizio Falconi</span>
       </a>
 
       <ul class="nav-links" id="primary-nav">
-        <li><a href="https://falker47.github.io/" data-i18n="navHome">Home</a></li>
-        <li><a href="index.html" data-i18n="navPortfolio" aria-current="page">Portfolio</a></li>
         <li><a href="research.html" data-i18n="navResearch">Ricerca</a></li>
+        <li><a href="#contact" data-i18n="navContact">Contatti</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -153,16 +159,86 @@
             <span class="lang-flag lang-flag--en" aria-hidden="true"></span>
           </button>
         </div>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Apri menu"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
 
+    <!-- Compact portfolio intro -->
+    <section class="hero intro" id="hero">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        id="hero-video"
+        poster="assets/hero/poster.webp"
+      >
+        <source src="assets/hero/video.webm" type="video/webm" />
+        Il tuo browser non supporta il video.
+      </video>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-card hero-quote-card">
+          <div class="hero-main">
+            <div class="hero-post">
+              <img
+                class="hero-profile-photo"
+                src="assets/profile/maurizio-falconi-falker47.webp"
+                alt="Maurizio Falconi (falker47)"
+                width="132"
+                height="132"
+                fetchpriority="high"
+                decoding="async"
+              />
+
+              <div class="hero-identity-copy">
+                <strong>Maurizio Falconi</strong>
+                <span>@falker47</span>
+              </div>
+
+              <blockquote class="hero-quote">
+                <h1 data-i18n="heroTitle">“Se ancora non esiste,<br />allora lo costruisco.”</h1>
+              </blockquote>
+            </div>
+
+            <div class="hero-divider" aria-hidden="true"></div>
+
+            <p class="hero-description">
+              <span data-i18n="heroDescriptionLead">
+                Imparo le tecnologie che servono a costruire ciò che vorrei esistesse.
+              </span>
+              <span data-i18n="heroDescriptionTail">
+                A volte è qualcosa di utile, molto più spesso qualcosa di divertente.
+              </span>
+            </p>
+          </div>
+
+          <p class="hero-kicker" data-i18n="heroKicker">
+            Ingegneria dei dati · Automazione e AI applicata · Algoritmi · Ricerca computazionale
+          </p>
+          <p class="hero-research" data-i18n="heroResearch">
+            Ricerca indipendente: <a href="research.html">Ringmin · 2 paper su arXiv</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Sezione Progetti -->
     <section class="projects" id="projects">
-      <header class="portfolio-intro" id="hero">
-        <p class="portfolio-brand">Nexus Portfolio</p>
-        <h1 data-i18n="projectsTitle" class="section-title">Progetti selezionati</h1>
-        <p class="portfolio-summary" data-i18n="portfolioSummary">Applicazioni, strumenti e ricerca selezionati.</p>
-      </header>
+      <h2 data-i18n="projectsTitle" class="section-title">Progetti</h2>
 
       <!-- Project Filter -->
       <div class="project-filter">
@@ -229,6 +305,57 @@
         </a>
       </div>
 
+      <div class="contact-socials">
+        <a
+          class="contact-social"
+          href="https://www.linkedin.com/in/mauriziofalconi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a
+          class="contact-social"
+          href="https://github.com/falker47"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          class="contact-social"
+          href="https://orcid.org/0009-0005-3162-3651"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="ORCID"
+          title="ORCID"
+        >
+          <i class="fab fa-orcid"></i>
+        </a>
+        <!-- Google Scholar temporarily hidden; retained for future use.
+        <a
+          class="contact-social"
+          href="https://scholar.google.com/citations?user=5xHRNvoAAAAJ"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Google Scholar"
+          title="Google Scholar"
+        >
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        -->
+        <a
+          class="contact-social"
+          href="https://www.letuelezioni.it/insegnanti/maurizio-falconi.htm"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Tutoring"
+        >
+          <i class="fas fa-chalkboard-teacher"></i>
+        </a>
+      </div>
 
       <div class="contact-recommendations-container">
         <a class="contact-recommendations" href="consigli.html">
@@ -257,9 +384,9 @@
     </button>
 
     <!-- Link al file JavaScript -->
-    <script src="js/translations.js?v=20261021-project-first-v6"></script>
+    <script src="js/translations.js?v=20261020-expander-pill-v1"></script>
     <script src="js/certifications-data.js?v=20261013-webp-v1"></script>
     <script src="js/projects-data.js?v=20261013-webp-v1"></script>
-    <script src="script.js?v=20261020-nav-hero-v5"></script>
+    <script src="script.js?v=20261013-webp-v1"></script>
   </body>
 </html>
