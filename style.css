@@ -1957,6 +1957,11 @@ footer {
   display: none;
 }
 
+.navbar .nav-links a:focus-visible {
+  outline: 2px solid var(--primary-soft);
+  outline-offset: 2px;
+}
+
 .nav-actions {
   justify-self: end;
   display: flex;
@@ -2344,7 +2349,7 @@ footer {
     justify-self: stretch;
     align-self: stretch;
     width: 100%;
-    padding: 0 0 6px;
+    padding: 0 0 4px;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
@@ -2369,7 +2374,7 @@ footer {
 
   .navbar .nav-links li a {
     width: 100%;
-    min-height: 36px;
+    min-height: 40px;
     padding: 0 6px;
     justify-content: center;
     border: 1px solid transparent;
