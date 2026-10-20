@@ -467,6 +467,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollProgress();
   initBackToTop();
   initProjectFilter();
+  initMobileNav();
   initHeroVideo();
 
   // Set Current Year in Footer
@@ -746,4 +747,33 @@ function initScrollAnimations() {
   // Ensure everything is visible immediately
   projectCards.forEach(el => el.style.opacity = '1');
   sections.forEach(el => el.style.opacity = '1');
+}
+
+/**
+ * Compact mobile navigation.
+ */
+function initMobileNav() {
+  const navbar = document.querySelector('.navbar');
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelectorAll('.nav-links a');
+
+  if (!navbar || !toggle) return;
+
+  const setOpen = (open) => {
+    navbar.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Chiudi menu' : 'Apri menu');
+  };
+
+  toggle.addEventListener('click', () => {
+    setOpen(!navbar.classList.contains('nav-open'));
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) setOpen(false);
+  });
 }
