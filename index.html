@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://falker47.github.io/Nexus-portfolio/" />
     <meta name="google-site-verification" content="ZOWij9OnT_HZBDPG4FcCeEwF5m7MvFjqJuK53YtkCWw" />
     <!-- Link al file CSS -->
-    <link rel="stylesheet" href="style.css?v=20261020-balanced-section-rhythm-v4" />
+    <link rel="stylesheet" href="style.css?v=20261020-nav-hero-v5" />
 
     <!-- Favicons -->
     <link
@@ -132,8 +132,9 @@
       </a>
 
       <ul class="nav-links" id="primary-nav">
+        <li><a href="#hero" data-i18n="navHome" aria-current="page">Home</a></li>
         <li><a href="research.html" data-i18n="navResearch">Ricerca</a></li>
-        <li><a href="#contact" data-i18n="navContact">Contatti</a></li>
+        <li><a href="consigli.html" data-i18n="navPicks">Consigli</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -159,18 +160,6 @@
             <span class="lang-flag lang-flag--en" aria-hidden="true"></span>
           </button>
         </div>
-
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-label="Apri menu"
-          aria-controls="primary-nav"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
     </nav>
 
@@ -192,6 +181,12 @@
 
       <div class="hero-content">
         <div class="hero-card hero-quote-card">
+          <ul class="hero-expertise">
+            <li data-i18n="heroSkillData">Ingegneria dei dati</li>
+            <li data-i18n="heroSkillAI">AI applicata e automazione</li>
+            <li data-i18n="heroSkillAlgorithms">Algoritmi</li>
+            <li data-i18n="heroSkillResearch">Ricerca computazionale</li>
+          </ul>
           <div class="hero-main">
             <div class="hero-post">
               <img
@@ -226,12 +221,23 @@
             </p>
           </div>
 
-          <p class="hero-kicker" data-i18n="heroKicker">
-            Ingegneria dei dati · Automazione e AI applicata · Algoritmi · Ricerca computazionale
-          </p>
           <p class="hero-research" data-i18n="heroResearch">
             Ricerca indipendente: <a href="research.html">Ringmin · 2 paper su arXiv</a>
           </p>
+          <div class="hero-socials">
+            <a class="hero-social" href="https://www.linkedin.com/in/mauriziofalconi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a class="hero-social" href="https://orcid.org/0009-0005-3162-3651" target="_blank" rel="noopener noreferrer" aria-label="ORCID" title="ORCID">
+              <i class="fab fa-orcid" aria-hidden="true"></i>
+            </a>
+            <a class="hero-social" href="https://github.com/falker47" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a class="hero-social" href="https://www.letuelezioni.it/insegnanti/maurizio-falconi.htm" target="_blank" rel="noopener noreferrer" aria-label="LeTueLezioni" title="LeTueLezioni">
+              <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -305,57 +311,6 @@
         </a>
       </div>
 
-      <div class="contact-socials">
-        <a
-          class="contact-social"
-          href="https://www.linkedin.com/in/mauriziofalconi/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-        >
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a
-          class="contact-social"
-          href="https://github.com/falker47"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-        <a
-          class="contact-social"
-          href="https://orcid.org/0009-0005-3162-3651"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="ORCID"
-          title="ORCID"
-        >
-          <i class="fab fa-orcid"></i>
-        </a>
-        <!-- Google Scholar temporarily hidden; retained for future use.
-        <a
-          class="contact-social"
-          href="https://scholar.google.com/citations?user=5xHRNvoAAAAJ"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Google Scholar"
-          title="Google Scholar"
-        >
-          <i class="fas fa-graduation-cap"></i>
-        </a>
-        -->
-        <a
-          class="contact-social"
-          href="https://www.letuelezioni.it/insegnanti/maurizio-falconi.htm"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Tutoring"
-        >
-          <i class="fas fa-chalkboard-teacher"></i>
-        </a>
-      </div>
 
       <div class="contact-recommendations-container">
         <a class="contact-recommendations" href="consigli.html">
@@ -384,9 +339,9 @@
     </button>
 
     <!-- Link al file JavaScript -->
-    <script src="js/translations.js?v=20261020-expander-pill-v1"></script>
+    <script src="js/translations.js?v=20261020-nav-hero-v5"></script>
     <script src="js/certifications-data.js?v=20261013-webp-v1"></script>
     <script src="js/projects-data.js?v=20261013-webp-v1"></script>
-    <script src="script.js?v=20261013-webp-v1"></script>
+    <script src="script.js?v=20261020-nav-hero-v5"></script>
   </body>
 </html>
