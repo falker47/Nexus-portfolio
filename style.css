@@ -358,7 +358,7 @@ a {
 
 /* Contact section: return to the darker alternating surface after Certifications. */
 .contact {
-  padding: 30px 20px 44px;
+  padding: 44px 20px 44px;
   background: linear-gradient(180deg, #0f1014 0%, #111722 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.035);
   color: #ddd;
@@ -682,7 +682,7 @@ footer a:hover {
 
 /* Sezione Certificazioni */
 .certifications {
-  padding: 48px 20px 68px;
+  padding: 53px 20px 54px;
   background: linear-gradient(180deg, var(--bg-elevated), #151a24);
   color: #ddd;
   text-align: center;
@@ -954,7 +954,7 @@ footer a:hover {
 
 @media (max-width: 480px) {
   .certifications {
-    padding: 44px 16px 68px;
+    padding: 50px 16px 54px;
   }
 
   .certification-list {
@@ -1630,7 +1630,7 @@ footer a:hover {
    and stable sizing when filters leave only one or two results. */
 .projects {
   max-width: 1240px;
-  padding: 48px 20px 64px;
+  padding: 48px 20px 61px;
 }
 
 .project-grid {
@@ -1832,7 +1832,7 @@ footer a:hover {
 
 @media (max-width: 767px) {
   .projects {
-    padding: 44px 16px 68px;
+    padding: 44px 16px 63px;
   }
 
   .project-grid {
@@ -2759,7 +2759,7 @@ footer {
 /* ===== CONTACT IDENTITY LINKS ===== */
 @media (max-width: 520px) {
   .contact {
-    padding: 26px 16px 38px;
+    padding: 40px 16px 38px;
   }
 
   .contact-mail-container {
@@ -2860,7 +2860,7 @@ footer.site-footer {
   .projects {
     max-width: calc(1120px + (var(--section-space-x) * 2));
     padding-top: 32px;
-    padding-bottom: 52px;
+    padding-bottom: 49px;
   }
 
   .projects .section-title,
@@ -2933,8 +2933,12 @@ footer.site-footer {
   }
 
   .certifications {
+    padding-top: 37px;
+    padding-bottom: 48px;
+  }
+
+  .contact {
     padding-top: 34px;
-    padding-bottom: 52px;
   }
 
   .certifications-container {
