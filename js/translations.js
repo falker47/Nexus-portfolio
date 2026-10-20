@@ -6,6 +6,7 @@ const translations = {
   it: {
     logoName: "Maurizio Falconi",
     navHome: "Home",
+    navPortfolio: "Portfolio",
     navProjects: "Progetti",
     navResearch: "Ricerca",
     navPicks: "Consigli",
@@ -20,6 +21,7 @@ const translations = {
     heroDescriptionLead: "Imparo le tecnologie che servono a costruire ciò che vorrei esistesse.",
     heroDescriptionTail: "A volte è qualcosa di utile, molto più spesso qualcosa di divertente.",
     projectsTitle: "Progetti selezionati",
+    portfolioSummary: "Applicazioni, strumenti e ricerca selezionati.",
     contactMail: "Contattami",
     contactRecommendations: "Cosa utilizzo e consiglio",
     Certifications: "Certificazioni",
@@ -129,6 +131,7 @@ const translations = {
   en: {
     logoName: "Maurizio Falconi",
     navHome: "Home",
+    navPortfolio: "Portfolio",
     navProjects: "Projects",
     navResearch: "Research",
     navPicks: "Picks",
@@ -143,6 +146,7 @@ const translations = {
     heroDescriptionLead: "I learn the technologies I need to build what I wish existed.",
     heroDescriptionTail: "Sometimes it's something useful, much more often something fun.",
     projectsTitle: "Selected projects",
+    portfolioSummary: "Selected applications, tools and research projects.",
     contactMail: "Contact me",
     contactRecommendations: "What I use & recommend",
     Certifications: "Certifications",
