@@ -861,8 +861,9 @@ footer a:hover {
   position: absolute;
   z-index: 2;
   left: 50%;
-  bottom: 12px;
-  transform: translateX(-50%);
+  bottom: 0;
+  /* Anchor the pill's midpoint to the exact section boundary. */
+  transform: translate(-50%, 50%);
   pointer-events: auto;
   display: inline-flex;
   flex-direction: row;
@@ -898,11 +899,11 @@ footer a:hover {
   background: rgba(40, 58, 94, 0.98);
   border-color: var(--primary-soft);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
-  transform: translateX(-50%) translateY(-1px);
+  transform: translate(-50%, calc(50% - 1px));
 }
 
 .section-toggle:active {
-  transform: translateX(-50%) translateY(0);
+  transform: translate(-50%, 50%);
 }
 
 .section-toggle:focus-visible {
@@ -990,7 +991,6 @@ footer a:hover {
   }
 
   .section-toggle {
-    bottom: 10px;
     min-height: 50px;
     gap: 9px;
     padding: 8px 11px 8px 15px;
