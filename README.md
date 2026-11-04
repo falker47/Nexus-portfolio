@@ -1,80 +1,30 @@
 # Nexus Portfolio
 
-Nexus is my public portfolio hub: a **curated selection**, not a mirror of every repository in my GitHub account.
+Nexus Portfolio is [Maurizio Falconi](https://github.com/falker47)'s personal website, showcasing selected software projects and independent research. It is a curated portfolio rather than a complete list of my GitHub repositories.
 
-## Live site
+**[Explore the portfolio](https://falker47.github.io/Nexus-portfolio/)** · [Research and publications](https://falker47.github.io/Nexus-portfolio/research.html)
 
-https://falker47.github.io/Nexus-portfolio/
+## What's inside
 
-## Portfolio structure
+Projects are organized into four categories: **Research, Apps, Utilities, and Games**. Each project card links to available resources, including live demos, source repositories, publications, or download pages.
 
-The project selection is organized around four themes:
+Highlights include [Ringmin](https://github.com/falker47/ringmin), [Prof. Gecko](https://falker47.github.io/Nexus-portfolio/prof-gecko.html), [Camaleonte](https://github.com/falker47/camaleonte), and [Hogwarts Legacy Save Editor](https://github.com/falker47/HogwartsLegacy-SaveEditor). Prof. Gecko is presented through its public application, while its source repository remains private.
 
-- **Research** — computational geometry and certified algorithmic results.
-- **Products** — deployed applications with a clear user-facing purpose.
-- **Gaming / Tooling** — save editors, fan utilities, and practical software tooling.
-- **Utilities / Games** — smaller projects kept only when they have a focused scope and a solid verification story.
-
-Historical, archived, dormant, private, or low-signal repositories are intentionally omitted.
-
-## Selected projects
-
-Current highlights include, ordered roughly by portfolio impact:
-
-- Prof. Gecko
-- Ringmin
-- Camaleonte
-- Chi l'ha detto?
-- Diario di Bordo
-- Hogwarts Legacy Save Editor
-- ZEROfilez
-- Pokémon Mystery Dungeon Tools (Save Editor + Reverse Quiz)
-- IBAN Checker
-- SOMMATRIX
-- Crack the Code
-
-Prof. Gecko is represented through its public product; its source repository remains private.
-
-## Site features
-
-- Italian / English content toggle
-- curated project filters
-- responsive project cards
-- certifications gallery with lightbox
-- responsive layout for desktop and mobile
-- static deployment through GitHub Pages
+The site also features Italian and English content, project filters, and a certifications gallery with image previews.
 
 ## Tech stack
 
-- HTML5
-- CSS3
-- vanilla JavaScript
-- Font Awesome
-- Google Fonts
-- Swiper for the mobile certifications carousel
+The website uses HTML, CSS, and vanilla JavaScript, alongside Font Awesome and Google Fonts. Its layout adapts to desktop and mobile screens.
 
-## Structure
+Content is maintained in three main files:
 
-```text
-.
-├── index.html
-├── style.css
-├── script.js
-├── js/
-│   ├── projects-data.js
-│   ├── translations.js
-│   └── certifications-data.js
-└── assets/
-    ├── branding/
-    ├── certifications/
-    ├── documents/
-    ├── hero/
-    └── projects/
-```
+- [`js/projects-data.js`](js/projects-data.js) — project information and links.
+- [`js/translations.js`](js/translations.js) — Italian and English text.
+- [`js/certifications-data.js`](js/certifications-data.js) — certification entries.
 
 ## Contact
 
-- LinkedIn: https://www.linkedin.com/in/mauriziofalconi/
-- GitHub: https://github.com/falker47
+- [LinkedIn](https://www.linkedin.com/in/mauriziofalconi/)
+- [GitHub](https://github.com/falker47)
 
 © 2026 Maurizio Falconi
