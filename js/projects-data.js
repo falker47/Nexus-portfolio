@@ -201,7 +201,7 @@ const projectsMap = {
   },
 
   "SocialViewer": {
-    title: "Social Viewer",
+    title: "SocialViewer",
     descriptionKey: "SocialViewerDesc",
     image: "assets/socialviewer/testers-preview.webp",
     category: "app",
